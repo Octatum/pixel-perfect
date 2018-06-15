@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
-
 import { NodeGroup } from 'react-move';
 
-const timeBetweenSlides = 5000;
+const defaultTimeBetweenSlides = 999999;
 
 const Controllers = styled.div`
   position: absolute; 
@@ -15,10 +14,11 @@ const Controllers = styled.div`
   align-items: flex-start;
 `;
 
-const FullscreenDiv = styled.div`
+const FullSizeDiv = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 `;
 
 const SlideButton = styled.div.attrs({
@@ -40,37 +40,40 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    this.slideTimer = setInterval(this.nextSlide, timeBetweenSlides); 
+    this.timeBetweenSlides = this.props.timeBetweenSlides || defaultTimeBetweenSlides;
+    // Set timer and store it
+    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides); 
   }
 
   componentWillUnmount() {
+    // Delete slide-changing timer
     clearInterval(this.slideTimer);
   }
 
   nextSlide = () => {
-    console.log("next slide");
+    // Advance slide counter and set it
     const currentSlide = (this.state.currentSlide + 1) % this.props.items.length;
-
     this.setState({currentSlide});
   }
 
   previousSlide = () => {
-    console.log("previous slide");
+    // Make counter go back one slide. 
     const currentSlide = (this.state.currentSlide + this.props.items.length - 1) % this.props.items.length;
-
     this.setState({currentSlide});
   }
 
+  /**
+   * Reset slide-changing timer
+   */
   resetTimer = () => {
     // Clear interval if it exists, then create it again
     if(!this.slideTimer) return;
 
     clearInterval(this.slideTimer);
-    this.slideTimer = setInterval(this.nextSlide, timeBetweenSlides);     
+    this.slideTimer = setInterval(this.nextSlide, this.timeBetweenSlides);     
   }
 
   setCurrentSlide = (slideIndex) => {
-    console.log(`Changed slide index to ${slideIndex}`)
     this.setState({
       currentSlide: slideIndex
     });
@@ -78,57 +81,60 @@ class Slideshow extends Component {
   }
 
   render() {
+    
     const SlideButtons = this.props.items.map((_, index) => (
       <SlideButton 
         selected={index === this.state.currentSlide}
         key={index}
-        onClick={() => this.setCurrentSlide(index)}
-      />
+        onClick={() => this.setCurrentSlide(index)} />
     ));
+
+    const currentItem = this.props.items[this.state.currentSlide];
 
     return (
       <Fragment>
         <NodeGroup
           data={[{
-            id: this.props.items[this.state.currentSlide].background,
-            current: this.state.currentSlide
+            // Required. Identifier for each element
+            key: currentItem.key,
+            // Spread remaining props
+            ...currentItem
           }]}
-          keyAccessor={(c) => c.id}
+          keyAccessor={(c) => c.key}
           start={() => ({
             opacity: [0],
-            scale: 1,
+            translateY: [-10],
           })}
           enter={() => ({
             opacity: [1],
             timing: { duration: 600, delay: 200 },
+            translateY: [0],
           })}
           update={() => ({
             opacity: [1],
           })}
           leave={() => ({
             opacity: [0],
+            translateY: [10],
             timing: { duration: 200 },
           })}>
             {(nodes) => (
-              <FullscreenDiv>
-                {nodes.map(({key, data, state: { opacity, translateY } }) => (
+              <FullSizeDiv>
+                {nodes.map(({key, data, state: { opacity } }) => (
                   <div
                     key={key}
                     style={{
                       position: 'absolute',
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      left: 0,
                       width: "100%",
                       height: "100%",
-                      background: data.id,
+                      top: 0,
+                      left: 0,
                       opacity,
-                  }}>
-                    {this.props.renderElement(data.id)}
+                    }}>
+                    {data.render ? data.render(data) : this.props.defaultElementRender(data)}
                   </div>
                 ))}
-              </FullscreenDiv>)} 
+              </FullSizeDiv>)} 
         </NodeGroup>
         <Controllers>
           {SlideButtons}

@@ -17,3 +17,5 @@ if (typeof document !== 'undefined') {
   // Render!
   render(App)
 }
+
+if (module.hot) module.hot.accept()

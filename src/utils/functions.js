@@ -43,5 +43,5 @@ export function throttle (func, limit) {
 }
 
 export function setPageTitle(title) {
-  document.title = `${title} - Lucía Corona`;
+  document.title = `${title}`;
 }

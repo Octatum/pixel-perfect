@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, injectGlobal } from 'styled-components';
 
 export const bounceAnimation = keyframes`
   0%, 100% {

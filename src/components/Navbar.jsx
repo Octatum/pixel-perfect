@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link as _Link } from 'react-static';
 
-import { MainText } from '../styles/AppStyles';
+import { Link } from './Utils';
 
 const Navsection = styled.nav`
   position: fixed;
@@ -14,15 +13,6 @@ const Navsection = styled.nav`
   min-height: 110px;
   padding: 3vh 0;
 `;
-
-const Link = MainText(styled(_Link)`
-  text-decoration: none;
-  color: ${props => props.theme.mainLightText};
-
-  &:visited {
-    text-decoration: none;
-  }
-`);
 
 const Logo = Link.extend`
   width: 280px;
@@ -46,14 +36,12 @@ const ListElement = styled.li`
   font-size: 1.1em;
 `;
 
-
-
 const Navbar = () => (
   <Navsection>
     <Logo to="/">PIXELPERFECT</Logo>
     <Links>
-      <ListElement><Link to="/">servicios</Link></ListElement>
-      <ListElement><Link to="/">nosotros</Link></ListElement>
+      <ListElement><Link to="/nosotros">nosotros</Link></ListElement>
+      <ListElement><Link to="/servicios">servicios</Link></ListElement>
       <ListElement><Link to="/">contacto</Link></ListElement>
     </Links>
   </Navsection>

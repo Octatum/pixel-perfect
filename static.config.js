@@ -13,29 +13,19 @@ export default {
     return [
       {
         path: '/',
-        component: 'src/containers/Home',
+        component: 'src/pages/Home',
       },
       {
-        path: '/about',
-        component: 'src/containers/About',
+        path: '/servicios',
+        component: 'src/pages/Services',
       },
       {
-        path: '/blog',
-        component: 'src/containers/Blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
+        path: '/nosotros',
+        component: 'src/pages/About',
       },
       {
         is404: true,
-        component: 'src/containers/404',
+        component: 'src/pages/404',
       },
     ]
   },
