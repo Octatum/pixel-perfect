@@ -9,6 +9,7 @@ import StyleReset from './components/StyleReset';
 import { globalTheme } from './styles/themes';
 import imports from './imports.css';
 import AnimatedRoutes from './components/AnimatedRoutes';
+import _ from './styles/AppStyles';
 
 const App = () => (
   <Router>    
