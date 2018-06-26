@@ -19,16 +19,16 @@ export default withSiteData(() => (
       items={[
         {
           key: 0,
-          background:"darkred",
+          background:'darkred',
         }, 
         {
           key: 1,
-          background:"darkblue",
+          background:'darkblue',
           render: ((data) => <SlideOne {...data} />)
         },
         {
           key: 2,
-          background:"green",
+          background:'green',
           render: ((data) => <SlideTwo {...data} />)          
         },
       ]}

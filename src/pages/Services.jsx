@@ -35,7 +35,7 @@ const SecondaryText = styled.div`
 
 
 export default withRouteData(() => (
-  <Layout background='slateblue'> 
+  <Layout background="black"> 
     <InfoBoxes />  
     <RightTextbox>
       <MainSlideText>¿Qué<br/><Bold>hacemos?</Bold></MainSlideText>

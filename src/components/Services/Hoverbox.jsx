@@ -71,7 +71,7 @@ const _Hoverbox = styled.div`
     `: ``}
 
   ${props => !props.isLastElement && !props.isFirstElement ? `
-    left: calc(50% - 11rem);
+    left: calc(50% - 10.5rem);
 
     &::before {
       left: 11rem;
