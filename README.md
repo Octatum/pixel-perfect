@@ -1,2 +1,3 @@
 # PixelPerfectWebsite
-Pixel Perfect's website react app
+
+Pixel Perfect's React-based website.
