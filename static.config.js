@@ -24,6 +24,10 @@ export default {
         component: 'src/pages/About',
       },
       {
+        path: '/contacto',
+        component: 'src/pages/Contact',
+      },
+      {
         is404: true,
         component: 'src/pages/404',
       },

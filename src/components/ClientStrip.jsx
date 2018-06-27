@@ -1,0 +1,66 @@
+import React from 'react'
+import styled from 'styled-components'
+
+import toyotaLogo from '../assets/images/toyota-logo.jpg'
+import tunaLogo from '../assets/images/la-tuna-group-logo.png'
+import cemexLogo from '../assets/images/cemex_logo.png'
+import monsantoLogo from '../assets/images/monsanto-logo.png'
+import bengalaLogo from '../assets/images/bengala-logo.png'
+
+const Container = styled.div`
+  display: flex;
+  background: white;
+  height: 29vh;
+  width: 100%;
+  margin: 1vh 0;
+`
+
+const LogoList = styled.div`
+  display: flex;
+  flex: 2.6;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+`
+
+const Logo = styled.img`
+  height: 30%;
+  width: auto;
+  max-width: 100%;
+`
+
+const VerticalLine = styled.div`
+  align-self: center;
+  border-left: 2px solid black;
+  height: 50%;
+`
+
+const Header = styled.h2`
+  align-self: center;
+  font-size: 4.3em;
+  font-weight: 200;
+  width: 27vw;
+  box-sizing: border-box;
+  padding: 0.3em 1em 0.3em 0;
+  text-align: right;
+
+  b {
+    font-weight: bold;
+  }
+`
+
+const ClientStrip = () => (
+  <Container>
+    <LogoList>
+      <Logo src={toyotaLogo} />
+      <Logo src={tunaLogo} />
+      <Logo src={cemexLogo} />
+      <Logo src={monsantoLogo} />
+      <Logo src={bengalaLogo} />
+    </LogoList>
+    <VerticalLine />
+    <Header>Nuestros <b>Clientes</b></Header>
+  </Container>
+)
+
+export default ClientStrip
