@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DarkText } from '../styles/AppStyles'
+
 import toyotaLogo from '../assets/images/toyota-logo.jpg'
 import tunaLogo from '../assets/images/la-tuna-group-logo.png'
 import cemexLogo from '../assets/images/cemex_logo.png'
@@ -35,19 +37,14 @@ const VerticalLine = styled.div`
   height: 50%;
 `
 
-const Header = styled.h2`
+const Header = DarkText(styled.h2`
   align-self: center;
   font-size: 4.3em;
-  font-weight: 200;
   width: 27vw;
   box-sizing: border-box;
   padding: 0.3em 1em 0.3em 0;
   text-align: right;
-
-  b {
-    font-weight: bold;
-  }
-`
+`)
 
 const ClientStrip = () => (
   <Container>
