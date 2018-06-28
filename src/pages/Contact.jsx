@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { MainText } from '../styles/AppStyles'
 import ClientStrip from '../components/ClientStrip'
+import ContactInfo from '../components/ContactInfo'
 
 const Background = styled.div`
   background: black;
@@ -21,16 +21,11 @@ const Layout = styled.div`
   margin-top: calc(8em + 3vh);
 `
 
-const TextLayout = MainText(styled.div`
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-`)
-
 export default () => (
   <Background>
     <Layout>
       <ClientStrip />
+      <ContactInfo />
     </Layout>
   </Background>
 )
