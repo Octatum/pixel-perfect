@@ -12,14 +12,13 @@ import bengalaLogo from '../assets/images/bengala-logo.png'
 const Container = styled.div`
   display: flex;
   background: white;
-  height: 29vh;
   width: 100%;
   margin: 1vh 0;
 `
 
 const LogoList = styled.div`
   display: flex;
-  flex: 2.6;
+  flex: 5.2;
   align-items: center;
   justify-content: space-around;
   padding: 1em;
@@ -39,10 +38,10 @@ const VerticalLine = styled.div`
 
 const Header = DarkText(styled.h2`
   align-self: center;
-  font-size: 4.3em;
-  width: 27vw;
+  font-size: 4.7vmax;
+  flex: 1;
   box-sizing: border-box;
-  padding: 0.3em 1em 0.3em 0;
+  padding: 0.3em 1em 0.3em 0.5em;
   text-align: right;
 `)
 
@@ -56,7 +55,10 @@ const ClientStrip = () => (
       <Logo src={bengalaLogo} />
     </LogoList>
     <VerticalLine />
-    <Header>Nuestros <b>Clientes</b></Header>
+    <Header>
+      Nuestros<br />
+      <b>Clientes</b>
+    </Header>
   </Container>
 )
 

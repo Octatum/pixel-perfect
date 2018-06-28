@@ -53,8 +53,12 @@ const Message = styled.div`
     padding: 0 2em 0 0;
   }
 
-  input {
+  span {
     flex: 1;
+  }
+
+  input {
+    width: 100%;
     background: transparent;
     border: 0;
     border-bottom: 1px solid white;
@@ -85,11 +89,11 @@ const ContactInfo = () => (
       <Message>
         <div>
           <p>Nombre</p>
-          <input type="text" name="Nombre" />
+          <span><input type="text" name="Nombre" /></span>
         </div>
         <div>
           <p>Compañía</p>
-          <input type="text" name="Empresa" />
+          <span><input type="text" name="Empresa" /></span>
         </div>
         <div>
           <p>Mensaje</p>
