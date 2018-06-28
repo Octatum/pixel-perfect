@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { DarkText } from '../styles/AppStyles'
+import { Bold } from './Utils'
 
 import toyotaLogo from '../assets/images/toyota-logo.jpg'
 import tunaLogo from '../assets/images/la-tuna-group-logo.png'
@@ -14,6 +15,7 @@ const Container = styled.div`
   background: white;
   width: 100%;
   margin: 1vh 0;
+  padding: 2.5vh 0;
 `
 
 const LogoList = styled.div`
@@ -57,7 +59,7 @@ const ClientStrip = () => (
     <VerticalLine />
     <Header>
       Nuestros<br />
-      <b>Clientes</b>
+      <Bold>Clientes</Bold>
     </Header>
   </Container>
 )
