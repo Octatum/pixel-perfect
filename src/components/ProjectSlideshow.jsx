@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
+import { Link } from './Utils'
+
 const SliderLayout = styled.div`
   position: relative;
 
@@ -44,10 +46,10 @@ class ProjectSlideshow extends Component {
     return (
       <SliderLayout>
         <Slider {...settings}>
-          <ColorBox background="darkred" />
-          <ColorBox background="darkblue" />
-          <ColorBox background="darkgreen" />
-          <ColorBox background="white" />
+          <Link to="/portfolio/test"><ColorBox background="darkred" /></Link>
+          <Link to="/portfolio/test"><ColorBox background="darkblue" /></Link>
+          <Link to="/portfolio/test"><ColorBox background="darkgreen" /></Link>
+          <Link to="/portfolio/test"><ColorBox background="white" /></Link>
         </Slider>
       </SliderLayout>
     );

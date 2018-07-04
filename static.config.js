@@ -22,6 +22,12 @@ export default {
       {
         path: '/portfolio',
         component: 'src/pages/Portfolio',
+        children: [
+          {
+            path: '/test',
+            component: 'src/components/ProjectSpotlight'
+          }
+        ],
       },
       {
         path: '/nosotros',
