@@ -14,38 +14,35 @@ const Container = styled.div`
   display: flex;
   background: white;
   width: 100%;
-  margin: 1vh 0;
-  padding: 2.5vh 0;
-`
+`;
 
 const LogoList = styled.div`
   display: flex;
-  flex: 5.2;
   align-items: center;
   justify-content: space-around;
-  padding: 1em;
-`
-
+  width: 100%;
+`;
+;
 const Logo = styled.img`
-  height: 30%;
-  width: auto;
-  max-width: 100%;
-`
+  width: 5rem;
+  max-height: 100%;
+`;
 
 const VerticalLine = styled.div`
   align-self: center;
   border-left: 2px solid black;
   height: 50%;
-`
+`;
 
-const Header = DarkText(styled.h2`
+const Header = styled.h2`
   align-self: center;
   font-size: 4.7vmax;
   flex: 1;
   box-sizing: border-box;
   padding: 0.3em 1em 0.3em 0.5em;
   text-align: right;
-`)
+  color: ${props => props.theme.mainDarkText};
+`;
 
 const ClientStrip = () => (
   <Container>

@@ -25,7 +25,3 @@ export const MainText = Component => styled(Component)`
     font-weight: bold;
   }
 `
-
-export const DarkText = Component => MainText(Component).extend`
-  color: ${props => props.theme.mainDarkText};
-`
