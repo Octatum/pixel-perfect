@@ -20,6 +20,16 @@ export default {
         component: 'src/pages/Services',
       },
       {
+        path: '/portfolio',
+        component: 'src/pages/Portfolio',
+        children: [
+          {
+            path: '/test',
+            component: 'src/components/ProjectSpotlight'
+          }
+        ],
+      },
+      {
         path: '/nosotros',
         component: 'src/pages/About',
       },
