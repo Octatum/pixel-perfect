@@ -42,7 +42,7 @@ const Navbar = () => (
     <Links>
       <ListElement><Link to="/nosotros">nosotros</Link></ListElement>
       <ListElement><Link to="/servicios">servicios</Link></ListElement>
-      <ListElement><Link to="/">contacto</Link></ListElement>
+      <ListElement><Link to="/contacto">contacto</Link></ListElement>
     </Links>
   </Navsection>
 );
