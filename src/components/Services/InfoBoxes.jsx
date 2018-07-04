@@ -41,8 +41,8 @@ const Elements = [{
 }, {
   img: tablet,
   url: "/",
-  title: 'Cursos',
-  content: `Entrenamos artistas de todo México con las técnicas y el software usado en la industria de efectos visuales internacionales.`,
+  title: 'Nuestro portafolio',
+  content: `Información sobre nuestro portafolio.`,
 }, {
   img: thunder,
   url: "/",
