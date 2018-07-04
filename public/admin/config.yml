@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
+public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
+
+collections:
+  - name: "home_slides" # Used in routes, e.g., /admin/collections/blog
+    label: "Home Slides" # Used in the UI
+    folder: "src/home_slides" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter.
+    # Remove any that aren't needed for posts
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Imagen de fondo", name: "imagen", widget: "image"}
+      - {label: "Subtitulo", name: "subtitle", widget: "string"}
+      - {label: "Enlace", name: "url", widget: "string"}
