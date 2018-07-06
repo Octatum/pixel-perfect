@@ -34,6 +34,7 @@ const Links = styled.ul`
 
 const ListElement = styled.li`
   font-size: 1.1em;
+  padding: 0 0.5em;
 `;
 
 const Navbar = () => (
