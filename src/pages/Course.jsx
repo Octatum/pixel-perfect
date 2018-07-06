@@ -34,7 +34,7 @@ const Question = styled.h2`
 
 const AttentionGrabber = styled.p`
   position: absolute;
-  width: 40%;
+  width: 38%;
   top: 72%;
   right: 3%;
   font-size: 1.2em;
@@ -44,7 +44,8 @@ const AttentionGrabber = styled.p`
 
 const CourseDetails = styled.div`
   display: flex;
-  height: 38%;
+  height: auto;
+  min-height: 38%;
   background-color: white;
 `;
 
@@ -70,17 +71,19 @@ const BookmarkIcon = styled.div`
 
 const Requirements = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: black;
 
   p, h3 {
     text-align: center;
     padding: 1rem 2rem;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   h3 {
-    font-size: 1.2em;
-    padding-top: 2rem;
+    font-size: 1.3em;
   }
 `;
 
