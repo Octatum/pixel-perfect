@@ -25,7 +25,9 @@ class SimpleSlider extends Component {
     return (
       <SliderLayout>
         <Slider {...settings}>
-          <MemberPicture color="grey" />
+          <MemberPicture
+            color="grey"
+            picture="http://i.imgur.com/YdhUZdZ.png" />
           <MemberPicture color="darkred" />
           <MemberPicture color="darkblue" />
           <MemberPicture color="green" />

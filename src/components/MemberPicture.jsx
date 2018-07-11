@@ -5,7 +5,9 @@ const Layout = styled.div`
   position: relative;
   height: 30vh;
   max-height: 160px;
-  background: ${props => props.bg};
+  background: url(${props => props.picture ? props.picture : null}) no-repeat center center fixed;
+  background-size: cover
+  background-color: ${props => props.bg};
 `
 
 const Icons = styled.div`
@@ -22,7 +24,7 @@ const Icons = styled.div`
 `
 
 export default props => (
-  <Layout bg={props.color}>
+  <Layout bg={props.color} picture={props.picture}>
     <Icons>
       <a href="/nosotros">
         <i className="fab fa-linkedin-in fa-fw" />
