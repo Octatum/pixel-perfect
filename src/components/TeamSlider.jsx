@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
 
+const SliderLayout = styled.div`
+  .slick-dots li button::before, .slick-dots li.slick-active button::before {
+    color: white;
+  }
+`
+
 const ColorBox = styled.div`
   height: 180px;
   background: ${props => props.background};
@@ -20,13 +26,15 @@ class SimpleSlider extends Component {
       autoplay: true,
     };
     return (
-      <Slider {...settings}>
-        <ColorBox background="black"/>
-        <ColorBox background="darkRed"/>
-        <ColorBox background="darkBlue"/>
-        <ColorBox background="green"/>
-        <ColorBox background="white"/>
-      </Slider>
+      <SliderLayout>
+        <Slider {...settings}>
+          <ColorBox background="black"/>
+          <ColorBox background="darkRed"/>
+          <ColorBox background="darkBlue"/>
+          <ColorBox background="green"/>
+          <ColorBox background="white"/>
+        </Slider>
+      </SliderLayout>
     );
   }
 }
