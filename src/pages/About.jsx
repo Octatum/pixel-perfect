@@ -6,9 +6,12 @@ import TeamSlider from '../components/TeamSlider';
 import FadeInOnEnter from '../utils/FadeInOnEnter';
 import { Bold } from '../components/Utils';
 
+import bg from '../assets/images/about-bg.jpeg'
+
 const Layout = styled.div`
   display: flex;
-  background: teal;
+  background: url(${bg}) no-repeat center center fixed;
+  background-size: cover;
   width: calc(100vw - 8em);
   height: calc(100vh - 8em);
   max-width: calc(100vw - 8em);
@@ -44,13 +47,13 @@ const SliderLayout = styled.div`
 
 
 export default () => (
-  <Layout >
+  <Layout>
     <TextLayout>
       <Header>¿Quiénes <Bold>somos</Bold>?</Header>
       <Subtext>Somos una empresa dedicada a entrenar <Bold>artistas</Bold> de todo <Bold>México</Bold> con las técnicas y el software usado en la industria de efectos visuales internacionales</Subtext>
     </TextLayout>
     <SliderLayout>
-    <TeamSlider />
+      <TeamSlider />
     </SliderLayout>
   </Layout>
 );
