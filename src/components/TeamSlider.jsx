@@ -2,20 +2,17 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
 
+import MemberPicture from './MemberPicture';
+
 const SliderLayout = styled.div`
   .slick-dots li button::before, .slick-dots li.slick-active button::before {
     color: white;
   }
 `
 
-const ColorBox = styled.div`
-  height: 180px;
-  background: ${props => props.background};
-`;
-
 class SimpleSlider extends Component {
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -28,11 +25,11 @@ class SimpleSlider extends Component {
     return (
       <SliderLayout>
         <Slider {...settings}>
-          <ColorBox background="black"/>
-          <ColorBox background="darkRed"/>
-          <ColorBox background="darkBlue"/>
-          <ColorBox background="green"/>
-          <ColorBox background="white"/>
+          <MemberPicture color="grey" />
+          <MemberPicture color="darkred" />
+          <MemberPicture color="darkblue" />
+          <MemberPicture color="green" />
+          <MemberPicture color="purple" />
         </Slider>
       </SliderLayout>
     );
