@@ -10,7 +10,32 @@ const Layout = styled.div`
   background-color: ${props => props.bg};
 `
 
-const Icons = styled.div`
+const _Icons = ({ className, linkedin, behance }) => {
+  const result = [];
+
+  if (linkedin !== undefined) {
+    result.push(
+      <a href={linkedin} target="_blank">
+        <i className="fab fa-linkedin-in fa-fw" />
+      </a>
+    );
+  }
+  if (behance !== undefined) {
+    result.push(
+      <a href={behance} target="_blank">
+        <i className="fas fa-star fa-fw" />
+      </a>
+    );
+  }
+
+  return (
+    <div className={className}>
+      {result}
+    </div>
+  );
+}
+
+const Icons = styled(_Icons)`
   position: absolute;
   left: 5px;
   bottom: 5px;
@@ -25,13 +50,6 @@ const Icons = styled.div`
 
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
-    <Icons>
-      <a href="/nosotros" target="_blank">
-        <i className="fab fa-linkedin-in fa-fw" />
-      </a>
-      <a href="/nosotros" target="_blank">
-        <i className="fas fa-star fa-fw" />
-      </a>
-    </Icons>
+    <Icons linkedin={props.linkedin} behance={props.behance} />
   </Layout>
 )

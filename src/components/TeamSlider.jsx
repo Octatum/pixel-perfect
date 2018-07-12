@@ -27,10 +27,17 @@ class SimpleSlider extends Component {
         <Slider {...settings}>
           <MemberPicture
             color="grey"
-            picture="http://i.imgur.com/YdhUZdZ.png" />
-          <MemberPicture color="darkred" />
-          <MemberPicture color="darkblue" />
-          <MemberPicture color="green" />
+            picture="http://i.imgur.com/YdhUZdZ.png"
+            linkedin="/nosotros"
+            behance="/nosotros"/>
+          <MemberPicture color="darkred"
+            picture="https://texasbarblog.lexblogplatformtwo.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg"
+            linkedin="/nosotros"/>
+          <MemberPicture color="darkblue"
+            picture="https://s3-us-west-2.amazonaws.com/s.cdpn.io/305956/profile/profile-512.jpg?6"
+            behance="/nosotros"/>
+          <MemberPicture color="green"
+            picture="https://img.memecdn.com/only-google-why_fb_2508449.jpg"/>
           <MemberPicture color="purple" />
         </Slider>
       </SliderLayout>
