@@ -26,10 +26,10 @@ const Icons = styled.div`
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
     <Icons>
-      <a href="/nosotros">
+      <a href="/nosotros" target="_blank">
         <i className="fab fa-linkedin-in fa-fw" />
       </a>
-      <a href="/nosotros">
+      <a href="/nosotros" target="_blank">
         <i className="fas fa-star fa-fw" />
       </a>
     </Icons>
