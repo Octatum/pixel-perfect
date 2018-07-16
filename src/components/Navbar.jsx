@@ -53,7 +53,6 @@ const Links = styled.ul`
   min-width: 30%;
   padding-right: 5%;
   text-align: center;
-  text-shadow: 0 0 5px black;
 
   @media screen and ${device.mobile} {
     display: none;
@@ -74,6 +73,7 @@ const ListElement = styled.li`
   @media screen and ${device.mobile} {
     font-size: 0.9em;
     padding: 1.2em 0;
+    text-shadow: 0 0 5px black;
   }
 `;
 
