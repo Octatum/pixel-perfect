@@ -7,7 +7,7 @@ import Slideshow from '../components/Slideshow';
 import DefaultSlide, { SlideOne, SlideTwo } from '../components/DefaultSlide';
 
 const Layout = styled.div`
-  display: flex; 
+  display: flex;
   background: black;
   position: relative;
   height: 100vh;
@@ -15,12 +15,12 @@ const Layout = styled.div`
 
 export default withSiteData(() => (
   <Layout>
-    <Slideshow 
+    <Slideshow
       items={[
         {
           key: 0,
           background:'darkred',
-        }, 
+        },
         {
           key: 1,
           background:'darkblue',
@@ -29,11 +29,11 @@ export default withSiteData(() => (
         {
           key: 2,
           background:'green',
-          render: ((data) => <SlideTwo {...data} />)          
+          render: ((data) => <SlideTwo {...data} />)
         },
       ]}
       defaultElementRender={(data) => <DefaultSlide {...data}/>}
-      timeBetweenSlides={5000}
+      timeBetweenSlides={5000000}
     />
   </Layout>
 ))

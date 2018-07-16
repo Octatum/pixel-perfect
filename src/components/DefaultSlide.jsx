@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 import { MainText } from '../styles/AppStyles';
+import { device } from '../utils/device'
 
 
 const Bg = styled.div.attrs({
@@ -13,12 +14,29 @@ const Bg = styled.div.attrs({
   height: 100%;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and ${device.tablet} {
+    justify-content: flex-start;
+  }
 `;
 
-const RightTextbox = MainText(styled.div`
-  min-width: 450px;
+const Textbox = MainText(styled.div`
   width: 30%;
-  margin-right: 60px;
+  min-width: 450px;
+  margin: 0 2em;
+  box-sizing: border-box;
+
+  @media screen and ${device.tablet} {
+    position: absolute;
+    width: auto;
+    min-width: 0;
+    max-width: 30em;
+    top: 49%;
+  }
+
+  @media screen and ${device.mobile} {
+    font-size: 0.8em;
+  }
 `);
 
 const MainSlideText = styled.div`
@@ -26,7 +44,7 @@ const MainSlideText = styled.div`
 `;
 
 const SecondaryText = styled.div`
-  font-size: 2em;
+  font-size: 1.2em;
   margin-top: 1em;
   line-height: 1.3em;
 `;
@@ -38,10 +56,10 @@ const Bold = styled.span`
 
 const DefaultSlide = (data) => (
   <Bg {...data}>
-    <RightTextbox>
+    <Textbox>
       <MainSlideText>Perfeccionando la industria en <Bold>Monterrey</Bold></MainSlideText>
       <SecondaryText>demo <Bold>reel</Bold></SecondaryText>
-    </RightTextbox>
+    </Textbox>
   </Bg>
 );
 
@@ -49,18 +67,18 @@ export default DefaultSlide;
 
 export const SlideOne = (data) => (
   <Bg background={data.background}>
-    <RightTextbox>
+    <Textbox>
       <MainSlideText>Lorem ipsum dolor sit amet</MainSlideText>
       <SecondaryText>Lorem dolor sit amet.</SecondaryText>
-    </RightTextbox>
+    </Textbox>
   </Bg>
 );
 
 export const SlideTwo = (data) => (
   <Bg background={data.background}>
-    <RightTextbox>
+    <Textbox>
       <MainSlideText>Consectetur adipisicing elit</MainSlideText>
       <SecondaryText>Aspernatur corrupti excepturi vel, esse consequatur eaque porro!</SecondaryText>
-    </RightTextbox>
+    </Textbox>
   </Bg>
 );
