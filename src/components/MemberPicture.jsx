@@ -25,17 +25,18 @@ const Layout = styled.div`
 
 const _Icons = ({ className, linkedin, behance }) => {
   const result = [];
+  let i = 0;
 
   if (linkedin !== undefined) {
     result.push(
-      <a href={linkedin} target="_blank">
+      <a href={linkedin} target="_blank" key={i++}>
         <i className="fab fa-linkedin-in fa-fw" />
       </a>
     );
   }
   if (behance !== undefined) {
     result.push(
-      <a href={behance} target="_blank">
+      <a href={behance} target="_blank" key={i++}>
         <i className="fas fa-star fa-fw" />
       </a>
     );
