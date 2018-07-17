@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styled from 'styled-components';
 
 import MemberPicture from './MemberPicture';
+import { numberValues } from '../utils/device';
 
 const SliderLayout = styled.div`
   .slick-dots li button::before, .slick-dots li.slick-active button::before {
@@ -21,7 +22,32 @@ class SimpleSlider extends Component {
       arrows: false,
       autoplaySpeed: 2000,
       autoplay: true,
+      responsive: [
+        {
+          breakpoint: numberValues.laptop,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: numberValues.tablet,
+          settings: {
+            slidesToShow: 3,
+            dots: false,
+            arrows: true,
+          },
+        },
+        {
+          breakpoint: numberValues.mobile,
+          settings: {
+            slidesToShow: 2,
+            dots: false,
+            arrows: true,
+          },
+        },
+      ],
     };
+
     return (
       <SliderLayout>
         <Slider {...settings}>

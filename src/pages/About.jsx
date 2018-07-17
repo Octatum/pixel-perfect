@@ -7,23 +7,47 @@ import FadeInOnEnter from '../utils/FadeInOnEnter';
 import { Bold } from '../components/Utils';
 
 import bg from '../assets/images/about-bg.jpeg'
+import { device } from '../utils/device'
+
+const Background = styled.div`
+  position: relative;
+  background: url(${bg}) no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+`;
 
 const Layout = styled.div`
   display: flex;
-  background: url(${bg}) no-repeat center center fixed;
-  background-size: cover;
-  width: calc(100vw - 8em);
-  height: calc(100vh - 8em);
-  max-width: calc(100vw - 8em);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   padding: 4em;
   align-items: center;
   justify-content: center;
-`;
+  flex-wrap: wrap;
+
+  @media screen and ${device.tablet} {
+    position: relative;
+    top: 40%;
+    height: 60%;
+    padding: 0 1em;
+    align-items: baseline;
+  }
+`
 
 const TextLayout = MainText(styled.div`
   align-items: center;
   justify-content: center;
-  flex: 1;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 2em;
+
+  @media screen and ${device.tablet} {
+    flex: 1 1 100%;
+    padding: 0 0.5em;
+    font-size: 0.7em;
+  }
 `);
 
 const Header = styled.div`
@@ -35,25 +59,42 @@ const Subtext = styled.div`
   margin-top: 1em;
   line-height: 1.3em;
   font-size: 1.4em;
+
+  @media screen and ${device.tablet} {
+    margin: 0.7em 0;
+    font-size: 1.7em;
+  }
+
+  @media screen and ${device.mobile} {
+    font-size: 1.4em;
+  }
 `;
 
 const SliderLayout = styled.div`
-  width: 51.5%;
-  min-width: 400px;
-  margin-left: 2.5%;
-  margin-right: 1%;
-  flex: 1;
+  width: 50%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0 2em;
+
+  @media screen and ${device.tablet} {
+    position: relative;
+    bottom: 5%;
+    padding: 0 2em;
+    flex: 1 1 100%;
+  }
 `;
 
 
 export default () => (
-  <Layout>
-    <TextLayout>
-      <Header>¿Quiénes <Bold>somos</Bold>?</Header>
-      <Subtext>Somos una empresa dedicada a entrenar <Bold>artistas</Bold> de todo <Bold>México</Bold> con las técnicas y el software usado en la industria de efectos visuales internacionales</Subtext>
-    </TextLayout>
-    <SliderLayout>
-      <TeamSlider />
-    </SliderLayout>
-  </Layout>
+  <Background>
+    <Layout>
+      <TextLayout>
+        <Header>¿Quiénes <Bold>somos</Bold>?</Header>
+        <Subtext>Somos una empresa dedicada a entrenar <Bold>artistas</Bold> de todo <Bold>México</Bold> con las técnicas y el software usado en la industria de efectos visuales internacionales</Subtext>
+      </TextLayout>
+      <SliderLayout>
+        <TeamSlider />
+      </SliderLayout>
+    </Layout>
+  </Background>
 );
