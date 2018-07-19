@@ -4,18 +4,26 @@ import styled from 'styled-components';
 import screen from '../../assets/Services/screen.png';
 import tablet from '../../assets/Services/tablet.png';
 import thunder from '../../assets/Services/thunder.png';
-import { Link, Shake } from './../Utils';
 import Hoverbox from './Hoverbox';
+import { Link, Shake } from './../Utils';
 import { MainText } from './../../styles/AppStyles';
+import { device } from '../../utils/device';
 
 const Layout = MainText(styled.div`
+  flex: 1;
   align-self: flex-end;
   display: flex;
-  width: calc(50% - 3rem);
+  flex-direction: column;
   justify-content: space-between;
-  margin-left: 1rem;
+  margin: 0 1rem 0 auto;
   color: white;
   position: relative;
+
+  @media screen and ${device.tablet} {
+    flex: 1 1 100%;
+    margin: 0;
+    align-self: flex-start;
+  }
 `);
 
 const Img = styled.img`
@@ -31,7 +39,16 @@ const Img = styled.img`
   &:active {
     transform: scale(0.9);
   }
+
+  @media screen and ${device.mobile} {
+    height: 2.5rem;
+  }
 `;
+
+const IconList = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
 const Elements = [{
   img: screen,
@@ -66,15 +83,17 @@ class InfoBoxes extends Component {
           element={Elements[this.state.currentlySelected]}
           isFirstElement={this.state.currentlySelected === 0}
           isLastElement={this.state.currentlySelected === Elements.length - 1} />
-        {Elements.map(({url, img, hoverBoxContent}, index) => (
-          <Link
-            key={index}
-            to={url}
-            onMouseEnter={() => this.selectElement(index)}>
-              <Img 
-                src={img} />
-          </Link>
-        ))}
+        <IconList>
+          {Elements.map(({url, img, hoverBoxContent}, index) => (
+            <Link
+              key={index}
+              to={url}
+              onMouseEnter={() => this.selectElement(index)}>
+                <Img
+                  src={img} />
+            </Link>
+          ))}
+        </IconList>
       </Layout>
     );
   }

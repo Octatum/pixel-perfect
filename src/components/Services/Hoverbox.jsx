@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Bold } from '../Utils';
-import { Link } from './../Utils';
+
+import { Bold, Link } from '../Utils';
+import { device } from '../../utils/device';
 
 const _Hoverbox = styled.div`
   --bg-color: rgba(7, 0, 109, 0.6);
-  --transition: 0.5s ease left;
+  --transition: 0.5s ease all;
   display: flex;
-  position: absolute;
+  position: relative;
   height: 10rem;
-  width: 20rem;
-  max-width: 20rem;  
-  top: -18rem;
+  max-width: 20rem;
+  margin-bottom: 4rem;
   background: var(--bg-color);
   transition: var(--transition);
   align-items: center;
@@ -22,6 +22,14 @@ const _Hoverbox = styled.div`
   flex-direction: column;
   padding: 0 1rem;
   z-index: 1;
+
+  @media screen and ${device.tablet} {
+
+  }
+
+  @media screen and ${device.mobile} {
+    
+  }
 
   &::before,
   &::after {
@@ -50,7 +58,7 @@ const _Hoverbox = styled.div`
     &::before,
     &::after {
       left: 0;
-    } 
+    }
 
     &::after {
       opacity 0;
@@ -58,12 +66,13 @@ const _Hoverbox = styled.div`
     `: ``}
 
   ${props => props.isLastElement ? `
-    left: calc(100% - 22rem);
+    left: 100%;
+    transform: translateX(-100%);
 
-    &::before, 
+    &::before,
     &::after {
       left: calc(100% - 4rem);
-    } 
+    }
 
     &::before {
       opacity 0;
@@ -71,7 +80,8 @@ const _Hoverbox = styled.div`
     `: ``}
 
   ${props => !props.isLastElement && !props.isFirstElement ? `
-    left: calc(50% - 10.5rem);
+    left: 50%;
+    transform: translateX(-50%);
 
     &::before {
       left: 11rem;
