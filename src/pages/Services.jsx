@@ -37,7 +37,7 @@ const RightTextbox = MainText(styled.div`
   }
 
   @media screen and ${device.mobile} {
-    top: 3.5em;
+    top: 2.5em;
   }
 `);
 
@@ -46,6 +46,10 @@ const MainSlideText = styled.div`
 
   @media screen and ${device.tablet} {
     font-size: 3rem;
+  }
+
+  @media screen and ${device.mobile} {
+    font-size: 2.5rem;
   }
 `;
 

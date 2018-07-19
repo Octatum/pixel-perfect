@@ -24,11 +24,9 @@ const _Hoverbox = styled.div`
   z-index: 1;
 
   @media screen and ${device.tablet} {
-
-  }
-
-  @media screen and ${device.mobile} {
-    
+    margin: 1rem 0 1.5rem 0;
+    height: auto;
+    padding: 1rem;
   }
 
   &::before,
@@ -71,7 +69,8 @@ const _Hoverbox = styled.div`
 
     &::before,
     &::after {
-      left: calc(100% - 4rem);
+      left: 100%;
+      transform: translateX(-100%);
     }
 
     &::before {
@@ -84,11 +83,11 @@ const _Hoverbox = styled.div`
     transform: translateX(-50%);
 
     &::before {
-      left: 11rem;
+      left: 50%;
     }
 
     &::after {
-      left: 7rem;
+      left: calc(50% - 4rem);
     }
   ` : ''}
 `;
