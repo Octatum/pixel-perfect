@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { DarkText } from '../styles/AppStyles'
+import { MainText } from '../styles/AppStyles'
 import { Bold } from './Utils'
 
 import toyotaLogo from '../assets/images/toyota-logo.jpg'
@@ -24,7 +24,8 @@ const LogoList = styled.div`
 `;
 ;
 const Logo = styled.img`
-  width: 5rem;
+  width: 12%;
+  max-width: 7rem;
   max-height: 100%;
 `;
 
@@ -34,7 +35,7 @@ const VerticalLine = styled.div`
   height: 50%;
 `;
 
-const Header = styled.h2`
+const Header = MainText(styled.h2`
   align-self: center;
   font-size: 4.7vmax;
   flex: 1;
@@ -42,7 +43,7 @@ const Header = styled.h2`
   padding: 0.3em 1em 0.3em 0.5em;
   text-align: right;
   color: ${props => props.theme.mainDarkText};
-`;
+`, true);
 
 const ClientStrip = () => (
   <Container>

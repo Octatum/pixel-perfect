@@ -31,12 +31,14 @@ const InfoList = styled.div`
   font-size: 1.1em;
 
   div, a {
+    display: flex;
     padding: 0.7em 0;
   }
 
   a {
     color: white;
-    
+    text-decoration: none;
+
     :visited {
       color: white;
     }
@@ -95,7 +97,8 @@ const TextArea = styled.textarea`
 class ContactInfo extends Component {
   state = {
     name: '',
-    message: ''
+    company: '',
+    message: '',
   };
 
   handleChange = ({target}) => {
@@ -127,6 +130,10 @@ class ContactInfo extends Component {
             <div>
               <p>Nombre</p>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
+            </div>
+            <div>
+              <p>Compañía</p>
+              <span><Input type="text" name="company" value={this.state.company} onChange={this.handleChange} /></span>
             </div>
             <div>
               <p>Mensaje</p>

@@ -16,8 +16,8 @@ export const Section = styled.section`
   max-height: 800px;
 `
 
-export const MainText = Component => styled(Component)`
-  color: ${props => props.theme.mainLightText};
+export const MainText = (Component, dark) => styled(Component)`
+  color: ${props => dark ? props.theme.mainDarkText : props.theme.mainLightText};
   font-family: ${props => props.theme.mainTextFontFamily};
   font-weight: 200;
 
