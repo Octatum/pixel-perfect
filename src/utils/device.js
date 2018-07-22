@@ -7,6 +7,14 @@ const size = {
   desktop: '2560px'
 }
 
+export const numberValues = {
+  mobile: 480,
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
+  desktop: 2560,
+}
+
 export const device = {
   mobile: `(max-width: ${size.mobile})`,
   tablet: `(max-width: ${size.tablet})`,
