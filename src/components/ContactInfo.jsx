@@ -3,12 +3,22 @@ import styled from 'styled-components'
 
 import { MainText } from '../styles/AppStyles'
 import { Component } from 'react';
+import { device } from '../utils/device'
 
 const Container = MainText(styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   padding-top: 2em;
+
+  @media screen and ${device.tablet} {
+    font-size: 0.8em;
+  }
+
+  @media screen and ${device.mobile} {
+    font-size: 0.7em;
+    padding-top: 4.5em;
+  }
 `)
 
 const Header = styled.h2`
@@ -21,6 +31,15 @@ const InnerContainer = styled.div`
   display: flex;
   flex: 1;
   padding: 1.2em 5em;
+
+  @media screen and ${device.tablet} {
+    flex-wrap: wrap;
+    padding: 1.2em 3em;
+  }
+
+  @media screen and ${device.mobile} {
+    padding: 1.2em 1em;
+  }
 `
 
 const InfoList = styled.div`
@@ -49,6 +68,10 @@ const InfoList = styled.div`
     font-size: 1.3em;
     padding: 0 0 0 0.7em;
   }
+
+  @media screen and ${device.tablet} {
+    flex: 1 1 100%;
+  }
 `
 
 const Message = styled.div`
@@ -58,7 +81,7 @@ const Message = styled.div`
   div {
     display: flex;
     align-items: center;
-    padding: 0.9em 2em 1em 1em;
+    padding: 1em 2em 1em 1em;
   }
 
   p {
@@ -68,6 +91,14 @@ const Message = styled.div`
 
   span {
     flex: 1;
+  }
+
+  @media screen and ${device.tablet} {
+    flex: 1 1 100%;
+
+    div {
+      padding: 0.5em 2em 0.5em 1em;
+    }
   }
 `;
 
