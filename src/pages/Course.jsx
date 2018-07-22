@@ -24,13 +24,31 @@ const Title = styled.h1`
   text-align: right;
 `;
 
-const Question = styled.h2`
+const LeftTitle = styled.h2`
   position: absolute;
-  bottom: 7%;
-  left: 4%;
+  bottom: 1.5rem;
+  left: 3.5rem;
   font-size: 3.5em;
   font-weight: 200;
 `;
+
+const RightTextbox = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  right: 3.5rem;
+  width: 45%;
+  text-align: right;
+
+  h1 {
+    font-size: 4em;
+    font-weight: 200;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.3;
+  }
+`
 
 const AttentionGrabber = styled.p`
   position: absolute;
@@ -127,17 +145,19 @@ const LMWhiteBlock = LMBlock.extend`
 export default () => (
   <Layout>
     <CourseHeader>
-      <Title>
-        Roto<br />
-        <Bold>Painting</Bold>
-      </Title>
-      <Question>
+      <LeftTitle>
         What's this<br />
         <Bold>all about?</Bold>
-      </Question>
-      <AttentionGrabber>
-        Ab qui malis iudicem, quae cohaerescant constias fore eiusmod. E singulis ita constias, ne illum incididunt aliquip. Illum appellat nostrud, nisi ut o duis quamquam. Pariatur ea duis mandaremus e aute deserunt iis singulis.
-      </AttentionGrabber>
+      </LeftTitle>
+      <RightTextbox>
+        <h1>
+          Roto<br />
+          <Bold>Painting</Bold>
+        </h1>
+        <p>
+          Ab qui malis iudicem, quae cohaerescant constias fore eiusmod. E singulis ita constias, ne illum incididunt aliquip. Illum appellat nostrud, nisi ut o duis quamquam. Pariatur ea duis mandaremus e aute deserunt iis singulis.
+        </p>
+      </RightTextbox>
     </CourseHeader>
     <CourseDetails>
       <Description>
