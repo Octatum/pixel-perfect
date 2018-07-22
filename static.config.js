@@ -3,7 +3,7 @@ import axios from 'axios'
 export default {
   devServer: {
     port: 3001,
-    host: 'localhost'
+    host: 'localhost',
   },
   getSiteData: () => ({
     title: 'Pixel Perfect',
@@ -25,9 +25,13 @@ export default {
         children: [
           {
             path: '/test',
-            component: 'src/components/ProjectSpotlight'
-          }
+            component: 'src/components/ProjectSpotlight',
+          },
         ],
+      },
+      {
+        path: '/course',
+        component: 'src/pages/Course',
       },
       {
         path: '/nosotros',
