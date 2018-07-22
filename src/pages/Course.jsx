@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { MainText } from '../styles/AppStyles'
 import { Link, Bold } from '../components/Utils'
+import { device } from '../utils/device'
 
 const Layout = MainText(styled.div`
   height: 100vh;
@@ -13,15 +14,14 @@ const CourseHeader = styled.div`
   position: relative;
   height: 62%;
   background-color: rgba(120, 12, 64, 0.5);
-`;
 
-const Title = styled.h1`
-  position: absolute;
-  top: 40%;
-  right: 3%;
-  font-size: 4em;
-  font-weight: 200;
-  text-align: right;
+  @media screen and ${device.tablet} {
+    font-size: 0.8em;
+  }
+
+  @media screen and ${device.mobile} {
+    font-size: 1em;
+  }
 `;
 
 const LeftTitle = styled.h2`
@@ -30,38 +30,60 @@ const LeftTitle = styled.h2`
   left: 3.5rem;
   font-size: 3.5em;
   font-weight: 200;
+
+  @media screen and ${device.tablet} {
+    left: 1.5rem;
+  }
+
+  @media screen and ${device.mobile} {
+    display: none;
+  }
 `;
 
 const RightTextbox = styled.div`
   position: absolute;
   bottom: 1.5rem;
   right: 3.5rem;
-  width: 45%;
+  width: 40%;
   text-align: right;
 
   h1 {
     font-size: 4em;
     font-weight: 200;
+    padding-bottom: 1rem;
   }
 
   p {
     font-size: 1.2em;
     line-height: 1.3;
   }
-`
 
-const AttentionGrabber = styled.p`
-  position: absolute;
-  width: 38%;
-  top: 72%;
-  right: 3%;
-  font-size: 1.2em;
-  line-height: 1.3;
-  text-align: right;
-`;
+  @media screen and ${device.tablet} {
+    right: 1.5rem;
+  }
+
+  @media screen and ${device.mobile} {
+    position: absolute;
+    right: initial;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1;
+    }
+  }
+`
 
 const CourseDetails = styled.div`
   display: flex;
+  flex-wrap: wrap;
   height: auto;
   min-height: 38%;
   background-color: white;
@@ -70,21 +92,48 @@ const CourseDetails = styled.div`
 const Description = styled.div`
   position: relative;
   flex: 2;
-  color: ${props => props.theme.mainDarkText}
+  color: ${props => props.theme.mainDarkText};
+
+  h2 {
+    display: none;
+    font-size: 2.8em;
+    font-weight: 200;
+    padding-bottom: 1rem;
+  }
 
   p {
     padding: 1rem 3rem;
     font-size: 1.3em;
     line-height: 1.2;
   }
+
+  @media screen and ${device.tablet} {
+    flex: 1 1 100%;
+  }
+
+  @media screen and ${device.mobile} {
+    padding: 1rem;
+
+    h2 {
+      display: block;
+    }
+
+    p {
+      padding: 0;
+    }
+  }
 `;
 
 const BookmarkIcon = styled.div`
   position: absolute;
-  left: 3%;
+  left: 1em;
   width: 1.2em;
   height: 4.2em;
   background-color: black;
+
+  @media screen and ${device.mobile} {
+    display: none;
+  }
 `;
 
 const Requirements = styled.div`
@@ -103,6 +152,10 @@ const Requirements = styled.div`
   h3 {
     font-size: 1.3em;
   }
+
+  @media screen and ${device.mobile} {
+    flex: 1 1 100%;
+  }
 `;
 
 const LearnMore = styled.div`
@@ -115,6 +168,8 @@ const LearnMore = styled.div`
 const LMBlock = styled.div`
   flex: 1;
   display: flex;
+  box-sizing: border-box;
+  padding: 1em;
   align-items: center;
   justify-content: center;
   background-color: #494949;
@@ -162,6 +217,10 @@ export default () => (
     <CourseDetails>
       <Description>
         <BookmarkIcon />
+        <h2>
+          What's this<br />
+          <Bold>all about?</Bold>
+        </h2>
         <p>Velit occaecat te tempor elit, illum occaecat <Bold>cohaerescant</Bold>. Ad dolore export ab constias id in quae reprehenderit. Magna adipisicing iudicem ipsum <Bold>ullamco</Bold> e <Bold>appellat</Bold> eram laborum. Sint eiusmod a incididunt nam culpa pariatur et elit legam. Et irure possumus hic tamen probant consequat. Culpa id aut aute officia ut eu in quae esse <Bold>cillum</Bold>.</p>
         <p><Bold>This is what we've worked on...</Bold></p>
       </Description>
