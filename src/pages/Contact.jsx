@@ -10,6 +10,7 @@ const Layout = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   height: 100vh;
+  overflow-x: hidden;  
   padding-top: calc(3vh + 8em);
 
   @media screen and ${device.tablet} {

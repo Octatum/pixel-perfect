@@ -24,6 +24,7 @@ const _Hoverbox = styled.div`
   z-index: 1;
 
   @media screen and ${device.tablet} {
+    display: none;
     margin: 1rem 0 1.5rem 0;
     height: auto;
     padding: 1rem;

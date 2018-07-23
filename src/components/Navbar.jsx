@@ -4,39 +4,56 @@ import styled from 'styled-components';
 import { Link } from './Utils';
 import { device } from '../utils/device'
 
+const elasticTransitionTimingFunction = `
+  -webkit-transition-timing-function: cubic-bezier(0.295, 0, 0.675, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
+    -moz-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
+      -o-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
+          transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); /* custom */
+`;
+
 const Navsection = styled.nav`
-  position: fixed;
+  position: absolute;
   z-index: 1;
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  max-height: 15vh;
-  min-height: 110px;
   padding: 3vh 0;
+
+  @media screen and ${device.tablet} {
+    box-sizing: border-box;
+    padding: 3vh 1.5em;
+    z-index: 1;
+  }
+`;
+
+const DropdownButton = styled.a.attrs({
+  style: ({open}) => ({
+    // transform: `rotate(${(open ? 0 : 360)}deg)`
+  })
+})`
+  position: fixed;
+  right: 1em;
+  display: none;
+  font-size: 2em;
+  color: white;
+  justify-self: flex-end;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.5s all;
+  ${elasticTransitionTimingFunction};
 
   @media screen and ${device.mobile} {
     display: block;
   }
 `;
 
-const DropdownButton = styled.a`
-  display: none;
-  font-size: 1.7em;
-  color: white;
-  margin: 0.2rem 0 0 1.3rem;
-  cursor: pointer;
-
-  @media screen and ${device.mobile} {
-    display: inline-block;
-  }
-`
-
 const LogoDiv = styled.div`
   padding-left: 1.5em;
   font-size: 2.3em;
 
   @media screen and ${device.tablet} {
-    padding-left: 1.3rem;
+    padding-left: 0;
     font-size: 2em;
   }
 `;
@@ -44,9 +61,13 @@ const LogoDiv = styled.div`
 const Logo = Link.extend`
   font-weight: bold;
   letter-spacing: -0.1em;
-`
 
-const Links = styled.ul`
+  @media screen and ${device.tablet} {
+    mix-blend-mode: hard-light;
+  }
+`;
+
+const Links = styled.ul.attrs()`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,14 +76,15 @@ const Links = styled.ul`
   text-align: center;
 
   @media screen and ${device.mobile} {
-    display: none;
-
-    &.open {
-      display: block;
-      width: 40%;
-      padding: 0 0 0 3em;
-      text-align: left;
-    }
+    display: ${({open}) => open ? 'flex' : 'none'};
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    justify-content: flex-start;
   }
 `;
 
@@ -71,9 +93,23 @@ const ListElement = styled.li`
   padding: 0 0.5em;
 
   @media screen and ${device.mobile} {
-    font-size: 0.9em;
-    padding: 1.2em 0;
-    text-shadow: 0 0 5px black;
+    font-size: calc(1rem + 2vw);
+    text-align: center;
+    height: 3em;
+    width: 100%;
+
+    :first-of-type ${Link} {
+      border-top: 1px solid white;
+    }
+
+    ${Link} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid white;
+    }
   }
 `;
 
@@ -82,25 +118,28 @@ class Navbar extends Component {
     showNavMenu: false,
   }
 
-  navMenuHandler = () => {
+  toggleNavMenu = () => {
     this.setState({showNavMenu: !this.state.showNavMenu});
   }
 
-  render() {
-    let LinksClass = (this.state.showNavMenu ? 'open' : '');
+  closeNavbar = () => {
+    this.setState({showNavMenu: false})
+  }
 
+  render() {
     return (
       <Navsection>
         <LogoDiv>
           <Logo to="/">PIXELPERFECT</Logo>
         </LogoDiv>
-        <DropdownButton onClick={this.navMenuHandler}>
-          <i className="fas fa-bars" />
+        <DropdownButton onClick={this.toggleNavMenu} open={this.state.showNavMenu}>
+          <i className={this.state.showNavMenu ? "fas fa-times" : "fas fa-bars"} />
         </DropdownButton>
-        <Links className={LinksClass}>
-          <ListElement><Link to="/nosotros">nosotros</Link></ListElement>
-          <ListElement><Link to="/servicios">servicios</Link></ListElement>
-          <ListElement><Link to="/contacto">contacto</Link></ListElement>
+        <Links open={this.state.showNavMenu}>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/">inicio</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/nosotros">nosotros</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/servicios">servicios</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/contacto">contacto</Link></ListElement>
         </Links>
       </Navsection>
     )

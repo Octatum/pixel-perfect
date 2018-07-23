@@ -74,37 +74,18 @@ const InfoList = styled.div`
   }
 `
 
-const Message = styled.div`
+const Message = styled.form`
   flex: 1.2;
   padding: 0.5em 1.5em;
 
-  div {
-    display: flex;
-    align-items: center;
-    padding: 1em 2em 1em 1em;
-  }
-
-  p {
-    display: inline;
-    padding: 0 2em 0 0;
-  }
-
-  span {
-    flex: 1;
-  }
-
   @media screen and ${device.tablet} {
     flex: 1 1 100%;
-
-    div {
-      padding: 0.5em 2em 0.5em 1em;
-    }
   }
 `;
 
 const Input = styled.input`
   width: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   border: 0;
   border-bottom: 1px solid white;
   color: inherit;
@@ -115,7 +96,7 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   width: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   border: 0;
   border-bottom: 1px solid white;
   color: inherit;
@@ -123,6 +104,27 @@ const TextArea = styled.textarea`
   font-size: inherit;
   resize: none;
   height: 4em;
+`;
+
+const Label = styled.label`
+  display: flex;
+  font-size: 1rem;
+  padding: 0.5em 0;
+  
+  span {
+    flex: 1;
+    padding-bottom: 0.5em;
+  }
+
+  @media screen and ${device.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const InputName = styled.span`
+  max-width: 30%;
+  font-size: 1.2em;
+  font-weight: 700;
 `;
 
 class ContactInfo extends Component {
@@ -158,18 +160,18 @@ class ContactInfo extends Component {
             </a>
           </InfoList>
           <Message>
-            <div>
-              <p>Nombre</p>
+            <Label>
+              <InputName>Nombre</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
-            </div>
-            <div>
-              <p>Compañía</p>
+            </Label>
+            <Label>
+              <InputName>Compañía</InputName>
               <span><Input type="text" name="company" value={this.state.company} onChange={this.handleChange} /></span>
-            </div>
-            <div>
-              <p>Mensaje</p>
+            </Label>
+            <Label>
+              <InputName>Mensaje</InputName>
               <span><TextArea value={this.state.message} name="message" onChange={this.handleChange} /></span>
-            </div>
+            </Label>
           </Message>
         </InnerContainer>
       </Container>

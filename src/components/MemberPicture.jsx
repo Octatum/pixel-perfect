@@ -6,8 +6,8 @@ import { device } from '../utils/device'
 const Layout = styled.div`
   position: relative;
   height: calc((50vw - 8em) / 4);
-  background: url(${props => props.picture ? props.picture : null}) no-repeat center center fixed;
-  background-size: cover
+  background: url(${props => props.picture ? props.picture : null}) no-repeat center center;
+  background-size: cover;
   background-color: ${props => props.bg};
 
   @media screen and ${device.laptop} {
