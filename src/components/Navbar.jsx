@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Link } from './Utils';
 import { device } from '../utils/device'
+import Link from './Link';
 
 const elasticTransitionTimingFunction = `
   -webkit-transition-timing-function: cubic-bezier(0.295, 0, 0.675, 1); /* older webkit */
@@ -137,9 +137,9 @@ class Navbar extends Component {
         </DropdownButton>
         <Links open={this.state.showNavMenu}>
           <ListElement><Link onClick={() => this.closeNavbar()} to="/">inicio</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/nosotros">nosotros</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/servicios">servicios</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/contacto">contacto</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/about">nosotros</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/services">servicios</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/contact">contacto</Link></ListElement>
         </Links>
       </Navsection>
     )
