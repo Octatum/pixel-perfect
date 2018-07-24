@@ -20,7 +20,7 @@ const Navsection = styled.nav`
   width: 100vw;
   padding: 3vh 0;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     box-sizing: border-box;
     padding: 3vh 1.5em;
     z-index: 1;
@@ -43,7 +43,7 @@ const DropdownButton = styled.a.attrs({
   transition: 0.5s all;
   ${elasticTransitionTimingFunction};
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     display: block;
   }
 `;
@@ -52,7 +52,7 @@ const LogoDiv = styled.div`
   padding-left: 1.5em;
   font-size: 2.3em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     padding-left: 0;
     font-size: 2em;
   }
@@ -62,7 +62,7 @@ const Logo = Link.extend`
   font-weight: bold;
   letter-spacing: -0.1em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     mix-blend-mode: hard-light;
   }
 `;
@@ -75,7 +75,7 @@ const Links = styled.ul.attrs()`
   padding-right: 5%;
   text-align: center;
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     display: ${({open}) => open ? 'flex' : 'none'};
     position: fixed;
     width: 100vw;
@@ -92,7 +92,7 @@ const ListElement = styled.li`
   font-size: 1.1em;
   padding: 0 0.5em;
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: calc(1rem + 2vw);
     text-align: center;
     height: 3em;

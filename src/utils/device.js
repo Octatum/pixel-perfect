@@ -1,24 +1,15 @@
-
-const size = {
-  mobile: '480px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px'
-}
-
 export const numberValues = {
-  mobile: 480,
+  mobile: 540,
   tablet: 768,
   laptop: 1024,
   laptopL: 1440,
   desktop: 2560,
 }
 
-export const device = {
-  mobile: `(max-width: ${size.mobile})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-}
+export const device = Object.keys(numberValues).reduce((accumulator, label) => {
+  // use em in breakpoints to work properly cross-browser and support users
+  // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
+  const emSize = numberValues[label] / 16;
+  accumulator[label] = `@media (max-width: ${emSize}em)`;
+  return accumulator;
+}, {});

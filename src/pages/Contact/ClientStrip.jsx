@@ -15,7 +15,7 @@ const Container = styled.div`
   background: white;
   width: 100%;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     height: 25%;
   }
 `;
@@ -40,7 +40,7 @@ const VerticalLine = styled.div`
   border-left: 2px solid black;
   height: 50%;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     display: none;
   }
 `;
@@ -55,7 +55,7 @@ const Header = styled.h2`
   color: ${props => props.theme.color.dark};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     display: none;
     padding-right: 0.5em;
   }
@@ -66,7 +66,7 @@ const WhiteHeader = Header.extend`
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     display: block;
     position: absolute;
     bottom: 100%;

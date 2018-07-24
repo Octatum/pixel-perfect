@@ -12,7 +12,7 @@ const Layout = styled.div`
   min-height: 40vh;
   height: 30em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     max-width: 100vw;
   }
 

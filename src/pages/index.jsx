@@ -21,7 +21,7 @@ function Home () {
     <Layout>
       <BackgroundVideoPlayer 
         video={backgroundVideo}
-        poster={""}
+        poster={backgroundImage}
       />
     </Layout>
   )

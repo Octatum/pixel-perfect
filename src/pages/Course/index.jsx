@@ -16,11 +16,11 @@ const CourseHeader = styled.div`
   height: 62%;
   background-color: rgba(120, 12, 64, 0.5);
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     font-size: 0.8em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: 1em;
   }
 `;
@@ -32,11 +32,11 @@ const LeftTitle = styled.h2`
   font-size: 3.5em;
   font-weight: 200;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     left: 1.5rem;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     display: none;
   }
 `;
@@ -59,11 +59,11 @@ const RightTextbox = styled.div`
     line-height: 1.3;
   }
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     right: 1.5rem;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     position: absolute;
     right: initial;
     bottom: 0;
@@ -108,11 +108,11 @@ const Description = styled.div`
     line-height: 1.2;
   }
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     padding: 1rem;
 
     h2 {
@@ -132,7 +132,7 @@ const BookmarkIcon = styled.div`
   height: 4.2em;
   background-color: black;
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     display: none;
   }
 `;
@@ -154,7 +154,7 @@ const Requirements = styled.div`
     font-size: 1.3em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     flex: 1 1 100%;
   }
 `;
