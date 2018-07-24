@@ -11,21 +11,21 @@ const Background = styled.div`
   background-color: darkred;
   opacity: 0.15;
   z-index: -1;
-`
+`;
 
 const SpotlightLayout = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-`
+`;
 
 const FillerDiv = styled.div`
   max-height: 15vh;
   min-height: 40px;
   width: 100vw;
   padding: 3vh 0;
-`
+`;
 
 const ProjectContainer = styled.div`
   display: flex;

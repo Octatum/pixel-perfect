@@ -18,7 +18,7 @@ const Video = styled.video`
   transform: translateX(-50%) translateY(-50%);
   background-size: cover; 
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     display: none;
   }
 `;

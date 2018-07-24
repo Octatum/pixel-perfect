@@ -11,11 +11,11 @@ const Container = styled.div`
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     font-size: 0.8em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: 0.7em;
     padding-top: 4.5em;
   }
@@ -32,12 +32,12 @@ const InnerContainer = styled.div`
   flex: 1;
   padding: 1.2em 5em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex-wrap: wrap;
     padding: 1.2em 3em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     padding: 1.2em 1em;
   }
 `;
@@ -69,7 +69,7 @@ const InfoList = styled.div`
     padding: 0 0 0 0.7em;
   }
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
   }
 `;
@@ -78,7 +78,7 @@ const Message = styled.form`
   flex: 1.2;
   padding: 0.5em 1.5em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
   }
 `;
@@ -116,7 +116,7 @@ const Label = styled.label`
     padding-bottom: 0.5em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     flex-direction: column;
   }
 `;
