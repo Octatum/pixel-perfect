@@ -13,11 +13,11 @@ const Layout = styled.div`
   overflow-x: hidden;  
   padding-top: calc(3vh + 8em);
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     padding-top: calc(3vh + 11em);
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     padding-top: calc(3vh + 14em);
   }
 `;

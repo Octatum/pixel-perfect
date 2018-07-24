@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
-import { device } from '../../utils/device'
+import { device } from '../../utils/device';
 
 const Bg = styled.div.attrs({
   style: (props) => ({...props})
@@ -13,7 +13,7 @@ const Bg = styled.div.attrs({
   align-items: center;
   justify-content: flex-end;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     justify-content: flex-start;
   }
 `;
@@ -26,7 +26,7 @@ const Textbox = styled.div`
   margin: 0 2em;
   box-sizing: border-box;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     position: absolute;
     width: auto;
     min-width: 0;
@@ -34,7 +34,7 @@ const Textbox = styled.div`
     top: 49%;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: 0.8em;
   }
 `;

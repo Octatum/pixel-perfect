@@ -10,15 +10,15 @@ const Layout = styled.div`
   background-size: cover;
   background-color: ${props => props.bg};
 
-  @media screen and ${device.laptop} {
+  ${device.laptop} {
     height: calc((50vw - 8em) / 3);
   }
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     height: calc((100vw - 6em) / 3);
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     height: calc((100vw - 6em) / 2);
   }
 `

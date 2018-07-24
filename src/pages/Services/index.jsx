@@ -15,7 +15,7 @@ const Layout = styled.div.attrs({
   box-sizing: border-box;
   padding: 4rem;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex-wrap: wrap-reverse;
     padding: 2rem;
   }
@@ -29,14 +29,14 @@ const RightTextbox = styled.div`
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
     align-self: baseline;
     position: relative;
     top: 2em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     top: 2.5em;
   }
 `;
@@ -44,11 +44,11 @@ const RightTextbox = styled.div`
 const MainSlideText = styled.div`
   font-size: 4rem;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     font-size: 3rem;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: 2.5rem;
   }
 `;
@@ -58,7 +58,7 @@ const SecondaryText = styled.div`
   margin-top: 2rem;
   line-height: 1.2em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     font-size: 1rem;
   }
 `;

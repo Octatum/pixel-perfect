@@ -23,7 +23,7 @@ const Layout = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     position: relative;
     top: 40%;
     height: 60%;
@@ -41,7 +41,7 @@ const TextLayout = styled.div`
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
     padding: 0 0.5em;
     font-size: 0.7em;
@@ -58,12 +58,12 @@ const Subtext = styled.div`
   line-height: 1.3em;
   font-size: 1.4em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     margin: 0.7em 0;
     font-size: 1.7em;
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     font-size: 1.4em;
   }
 `;
@@ -74,7 +74,7 @@ const SliderLayout = styled.div`
   box-sizing: border-box;
   padding: 0 2em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     position: relative;
     bottom: 5%;
     padding: 0 2em;

@@ -19,7 +19,7 @@ const Layout = styled.div`
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     flex: 1 1 100%;
     margin: 0;
     align-self: flex-start;
@@ -36,7 +36,7 @@ const Img = styled.img`
     transform: scale(0.9);
   }
 
-  @media screen and ${device.mobile} {
+  ${device.mobile} {
     height: 2.5rem;
   }
 `;

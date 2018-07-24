@@ -1,39 +1,27 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import Slideshow from './Home/Slideshow';
-import DefaultSlide, { SlideOne, SlideTwo } from './Home/DefaultSlide';
+import backgroundVideo from './Home/assets/demoreel.mp4'
+import BackgroundVideoPlayer from './Home/BackgroundVideoPlayer';
+import backgroundImage from './Home/assets/vfx.png'
 
 const Layout = styled.div`
   display: flex;
-  background: black;
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: url("${backgroundImage}") no-repeat center center fixed;
+  background-size: auto 100%;
 `;
+
 
 function Home () {
   return (
     <Layout>
-      <Slideshow
-        items={[
-          {
-            key: 0,
-            background:'darkred',
-          },
-          {
-            key: 1,
-            background:'darkblue',
-            render: ((data) => <SlideOne {...data} />)
-          },
-          {
-            key: 2,
-            background:'green',
-            render: ((data) => <SlideTwo {...data} />)
-          },
-        ]}
-        defaultElementRender={(data) => <DefaultSlide {...data}/>}
-        timeBetweenSlides={5000000}
+      <BackgroundVideoPlayer 
+        video={backgroundVideo}
+        poster={backgroundImage}
       />
     </Layout>
   )
