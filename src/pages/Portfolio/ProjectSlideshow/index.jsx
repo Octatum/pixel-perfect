@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import styled from 'styled-components'
 import Link from './../../../components/Link';
 
-import { numberValues } from '../../../utils/device'
+import { device, numberValues } from '../../../utils/device'
 
 const SliderLayout = styled.div`
   position: relative;
@@ -29,6 +29,10 @@ const SliderLayout = styled.div`
 const ColorBox = styled.div`
   height: 100vh;
   background: ${props => props.background};
+
+  @media screen and ${device.tablet} {
+    opacity: 0.6;
+  }
 `;
 
 function ProjectSlideshow() {
