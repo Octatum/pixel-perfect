@@ -264,3 +264,11 @@ function ProjectSpotlight() {
 }
 
 export default ProjectSpotlight;
+
+export const pageQuery = graphql`
+  query GetProjectData($route: String!){
+    projectsJson(path: {eq: $route}) {
+      name
+    }
+  }
+`;

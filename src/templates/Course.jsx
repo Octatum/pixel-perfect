@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { device } from '../../utils/device'
-import Link from '../../components/Link';
+import { device } from '../utils/device'
+import Link from '../components/Link';
 
 const Layout = styled.div`
   height: 100vh;
@@ -198,7 +198,9 @@ const LMWhiteBlock = LMBlock.extend`
   }
 `;
 
-function Course () {
+function Course ({data}) {
+  console.table(data);
+
   return (
     <Layout>
       <CourseHeader>
@@ -254,3 +256,12 @@ function Course () {
 }
 
 export default Course;
+
+
+export const pageQuery = graphql`
+  query GetCourseData($route: String!){
+    coursesJson(path: {eq: $route}) {
+      name
+    }
+  }
+`;

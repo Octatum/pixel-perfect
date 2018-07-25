@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
-import Link from './../../../components/Link';
 
-import { device, numberValues } from '../../../utils/device'
+import Link from './../../components/Link';
+import { device, numberValues } from '../../utils/device'
 
 const SliderLayout = styled.div`
   position: relative;

@@ -22,7 +22,7 @@ const Layout = styled.div.attrs({
 `;
 
 const RightTextbox = styled.div`
-  flex: 2;
+  flex: 1;
   align-self: center;
   justify-self: flex-end;
 
@@ -62,7 +62,7 @@ const SecondaryText = styled.div`
   font-size: 1.5rem;
   margin-top: 2rem;
   line-height: 1.2em;
-  width: 70%;
+  width: 100%;
 
   ${device.tablet} {
     font-size: 1rem;

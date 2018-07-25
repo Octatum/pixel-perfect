@@ -79,7 +79,7 @@ class InfoBoxes extends Component {
           isLastElement={this.state.currentlySelected === Elements.length - 1} 
         />
         <IconList>
-          {Elements.map(({url, img, hoverBoxContent}, index) => (
+          {Elements.map(({url, img}, index) => (
             <Link
               key={index}
               to={url}
