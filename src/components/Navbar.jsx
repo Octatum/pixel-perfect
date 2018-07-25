@@ -19,6 +19,7 @@ const Navsection = styled.nav`
   justify-content: space-between;
   width: 100vw;
   padding: 3vh 0;
+  background: rgba(0, 0, 0, 0.3);
 
   ${device.tablet} {
     box-sizing: border-box;
@@ -26,6 +27,7 @@ const Navsection = styled.nav`
     z-index: 1;
   }
 `;
+
 
 const DropdownButton = styled.a.attrs({
   style: ({open}) => ({

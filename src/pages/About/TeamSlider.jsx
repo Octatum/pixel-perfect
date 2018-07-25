@@ -5,6 +5,11 @@ import styled from 'styled-components';
 import MemberPicture from './MemberPicture';
 import { numberValues } from '../../utils/device';
 
+import rene from './assets/memberpictures/Rene.png';
+import eden from './assets/memberpictures/eden.png';
+import Ana from './assets/memberpictures/Ana.png';
+import Ricky from './assets/memberpictures/Rikcy.png';
+
 const SliderLayout = styled.div`
   .slick-dots li button::before, .slick-dots li.slick-active button::before {
     color: white;
@@ -47,23 +52,32 @@ function SimpleSlider () {
     ],
   };
 
+  const members = [{
+    image: rene,
+    linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/',
+    imdb: 'https://www.imdb.com/name/nm5727065/'
+  }, {
+    image: eden,
+    linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/',
+    imdb: 'https://www.imdb.com/name/nm6097371/'
+  }, {
+    image: Ricky,
+    linkedin: 'https://www.linkedin.com/in/rsantillana/'
+  }, {
+    image: Ana,
+    linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
+  }];
+  
   return (
     <SliderLayout>
       <Slider {...settings}>
-        <MemberPicture
-          color="grey"
-          picture="http://i.imgur.com/YdhUZdZ.png"
-          linkedin="/nosotros"
-          behance="/nosotros"/>
-        <MemberPicture color="darkred"
-          picture="https://texasbarblog.lexblogplatformtwo.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg"
-          linkedin="/nosotros"/>
-        <MemberPicture color="darkblue"
-          picture="https://s3-us-west-2.amazonaws.com/s.cdpn.io/305956/profile/profile-512.jpg?6"
-          behance="/nosotros"/>
-        <MemberPicture color="green"
-          picture="https://img.memecdn.com/only-google-why_fb_2508449.jpg"/>
-        <MemberPicture color="purple" />
+        {members.map(member => (
+          <MemberPicture
+            picture={member.image}
+            linkedin={member.linkedin}
+            behance={member.imdb}
+          />
+        ))}
       </Slider>
     </SliderLayout>
   );

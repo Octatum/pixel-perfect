@@ -35,10 +35,6 @@ const Img = styled.img`
   &:active {
     transform: scale(0.9);
   }
-
-  ${device.mobile} {
-    height: 2.5rem;
-  }
 `;
 
 const IconList = styled.div`
@@ -46,22 +42,7 @@ const IconList = styled.div`
   justify-content: space-between;
 `;
 
-const Elements = [{
-    img: screen,
-    url: "/",
-    title: 'Cursos',
-    content: `Entrenamos artistas de todo México con las técnicas y el software usado en la industria de efectos visuales internacionales.`,
-  }, {
-    img: tablet,
-    url: "/portfolio",
-    title: 'Nuestro portafolio',
-    content: `Información sobre nuestro portafolio.`,
-  }, {
-    img: thunder,
-    url: "/course",
-    title: 'Cursos',
-    content: `Entrenamos artistas de todo México con las técnicas y el software usado en la industria de efectos visuales internacionales.`,
-}];
+
 
 class InfoBoxes extends Component {
   state = {
@@ -73,6 +54,23 @@ class InfoBoxes extends Component {
   }
 
   render () {
+    const Elements = [{
+      img: tablet,
+      url: "/portfolio",
+      title: 'VFX',
+      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking, etc.`,
+    }, {
+      img: screen,
+      url: "/",
+      title: 'VFX',
+      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking, etc.`,
+    }, {
+      img: thunder,
+      url: "/course",
+      title: 'Courses',
+      content: `We offer courses in Roto Paint and Matchmove for those interested in learning the basic skills.`,
+    }];
+
     return (
       <Layout>
         <Hoverbox

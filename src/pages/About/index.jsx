@@ -49,8 +49,8 @@ const TextLayout = styled.div`
 `;
 
 const Header = styled.div`
-  font-size: 3.9em;
-  width: 50%;
+  font-size: 4em;
+  width: 100%;
 `;
 
 const Subtext = styled.div`
@@ -88,8 +88,8 @@ function About() {
     <Background>
       <Layout>
         <TextLayout>
-          <Header>¿Quiénes <strong>somos</strong>?</Header>
-          <Subtext>Somos una empresa dedicada a entrenar <strong>artistas</strong> de todo <strong>México</strong> con las técnicas y el software usado en la industria de efectos visuales internacionales</Subtext>
+          <Header>Who are we</Header>
+          <Subtext>We specialize in training artists from all over Mexico using the techniques and software used in the VFX industry.</Subtext>
         </TextLayout>
         <SliderLayout>
           <TeamSlider />

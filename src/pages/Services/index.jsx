@@ -22,9 +22,14 @@ const Layout = styled.div.attrs({
 `;
 
 const RightTextbox = styled.div`
-  flex: 1;
+  flex: 2;
   align-self: center;
   justify-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
   text-align: right;
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
@@ -57,6 +62,7 @@ const SecondaryText = styled.div`
   font-size: 1.5rem;
   margin-top: 2rem;
   line-height: 1.2em;
+  width: 70%;
 
   ${device.tablet} {
     font-size: 1rem;
@@ -69,13 +75,11 @@ function Services() {
     <Layout background="black">
       <InfoBoxes />
       <RightTextbox>
-        <MainSlideText>¿Qué<br/><strong>hacemos?</strong></MainSlideText>
+        <MainSlideText>What we do</MainSlideText>
         <SecondaryText>
-          <p>Somos una empresa dedicada a entrenar <strong>artistas</strong> de
-          todo <strong>México</strong> con las técnicas y el software usado en la
-          industria de efectos visuales internacionales.</p>
+          <p>Our services include training courses for those seeking a career in VFX industry. We also offer production and post-production services for visual media projects.</p>
           <br />
-          <Link to="/portfolio"><strong>Nuestros proyectos</strong></Link>
+          <Link to="/portfolio"><strong>Our projects</strong></Link>
         </SecondaryText>
       </RightTextbox>
     </Layout>

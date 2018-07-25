@@ -8,14 +8,6 @@ const Layout = styled.div`
   position: relative;
 `;
 
-const OpaqueDiv = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 0;
-  height: 5em;
-  background: rgba(0, 0, 0, 0.3);
-`;
-
 const MovieGrid = styled.div`
   display: flex;
   width: 100vw;
@@ -96,7 +88,6 @@ class StudentPortfolio extends Component {
                 "GOTTA FOLLOW MY RAINBOW"
               ]} />
         </MovieGrid>
-        <OpaqueDiv />
       </Layout>
     )
   }
