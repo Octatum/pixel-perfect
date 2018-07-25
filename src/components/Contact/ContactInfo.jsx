@@ -177,7 +177,7 @@ class ContactInfo extends React.Component {
               <p>/Pixelperfectvfx</p>
             </a>
           </InfoList>
-          <Message name="contact" method="POST" netlify>
+          <Message name="contact" method="POST" data-netlify>
             <Label>
               <InputName>Name</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
