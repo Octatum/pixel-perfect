@@ -9,7 +9,7 @@ const SpotlightLayout = styled.div`
   position: relative;
   width: 100vw;
   min-height: 100vh;
-`
+`;
 
 const Background = styled.div`
   position: absolute;
@@ -45,7 +45,7 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const BigPicture = styled.div`
+const BigPicture = styled.img`
   background-color: darkcyan;
   height: 37em;
   min-width: 25em;
@@ -217,42 +217,35 @@ const PlotOutline = styled.div`
   }
 `
 
-function ProjectSpotlight() {
+function ProjectSpotlight({data: {projectsJson}}) {
+  const { name, release, genre, studio, about, image, plot } = projectsJson;
+
   return (
     <div>
       <SpotlightLayout>
-        <Background/>
+        <Background />
         <FillerDiv />
         <ProjectContainer>
-          <BigPicture />
+          <BigPicture src={`/images/${image}`}/>
           <InfoGrid>
             <Info>
               <h3>Release Date</h3>
-              <p>XXXX</p>
+              <p>{release}</p>
               <br />
               <h3>Genre</h3>
-              <p>The best genre</p>
+              <p>{genre}</p>
               <br />
               <h3>Studio</h3>
-              <p>A galaxy far, far away...</p>
-              <br />
-              <h3>About</h3>
-              <p>It's a movie, 'nuff said</p>
+              <p>{studio}</p>
             </Info>
             <Title>
               <h1>
-                INTERESTING<br />
-                <strong>NAME</strong>
+                {name}
               </h1>
             </Title>
-            <PictureGallery>
-              <SmallPicture bg='darkred' />
-              <SmallPicture bg='darkblue' />
-              <SmallPicture bg='darkgreen' />
-            </PictureGallery>
             <PlotOutline>
               <h3>Plot Outline</h3>
-              <p>Enim aliquip exercitation, et occaecat firmissimum. Cupidatat elit nam mentitum imitarentur, amet coniunctione mentitum quamquam. Iis fore quibusdam consequat, hic labore occaecat consectetur.</p>
+              <p>{plot}</p>
             </PlotOutline>
             <OpaqueDiv start='2' end='5' opacity='0.5'/>
             <OpaqueDiv start='3' end='5' opacity='1'/>
@@ -269,6 +262,12 @@ export const pageQuery = graphql`
   query GetProjectData($route: String!){
     projectsJson(path: {eq: $route}) {
       name
+      release
+      genre
+      studio
+      about
+      image
+      plot
     }
   }
 `;

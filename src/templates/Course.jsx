@@ -198,8 +198,8 @@ const LMWhiteBlock = LMBlock.extend`
   }
 `;
 
-function Course ({data}) {
-  console.table(data);
+function Course ({data: {coursesJson}}) {
+  const { name, description, about, requirements } = coursesJson;
 
   return (
     <Layout>
@@ -210,11 +210,10 @@ function Course ({data}) {
         </LeftTitle>
         <RightTextbox>
           <h1>
-            Roto<br />
-            <strong>Painting</strong>
+            {name}
           </h1>
           <p>
-            Ab qui malis iudicem, quae cohaerescant constias fore eiusmod. E singulis ita constias, ne illum incididunt aliquip. Illum appellat nostrud, nisi ut o duis quamquam. Pariatur ea duis mandaremus e aute deserunt iis singulis.
+            {description}
           </p>
         </RightTextbox>
       </CourseHeader>
@@ -225,13 +224,11 @@ function Course ({data}) {
             What's this<br />
             <strong>all about?</strong>
           </h2>
-          <p>Velit occaecat te tempor elit, illum occaecat <strong>cohaerescant</strong>. Ad dolore export ab constias id in quae reprehenderit. Magna adipisicing iudicem ipsum <strong>ullamco</strong> e <strong>appellat</strong> eram laborum. Sint eiusmod a incididunt nam culpa pariatur et elit legam. Et irure possumus hic tamen probant consequat. Culpa id aut aute officia ut eu in quae esse <strong>cillum</strong>.</p>
-          <p><strong>This is what we've worked on...</strong></p>
+          <p>{about}</p>
         </Description>
         <Requirements>
           <h3>Requirements</h3>
-          <p>Non quis voluptate ad <strong>ingeniis ipsum</strong> quis hic elit. A irure cupidatat ea de <strong>ipsum quibusdam</strong>.</p>
-          <p>Iis quem despicationes si admodum magna expetendis expetendis.</p>
+          <p>{requirements}</p>
         </Requirements>
         <LearnMore>
           <LMBlock>
@@ -246,7 +243,7 @@ function Course ({data}) {
           <LMBlock>
             <p>
               Need more info?<br />
-              <Link to='/course'><strong>Write us!</strong></Link>
+              <Link to='/contact'><strong>Write us!</strong></Link>
             </p>
           </LMBlock>
         </LearnMore>
@@ -262,6 +259,9 @@ export const pageQuery = graphql`
   query GetCourseData($route: String!){
     coursesJson(path: {eq: $route}) {
       name
+      description
+      about
+      requirements
     }
   }
 `;
