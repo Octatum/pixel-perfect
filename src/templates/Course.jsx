@@ -14,7 +14,20 @@ const Layout = styled.div`
 const CourseHeader = styled.div`
   position: relative;
   height: 62%;
-  background-color: rgba(120, 12, 64, 0.5);
+  background-size: cover;
+  background-position: top;
+  background: ${props => props.background};
+
+  ::before {
+    content: "";
+    background: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
   ${device.tablet} {
     font-size: 0.8em;
@@ -199,14 +212,14 @@ const LMWhiteBlock = LMBlock.extend`
 `;
 
 function Course ({data: {coursesJson}}) {
-  const { name, description, about, requirements } = coursesJson;
+  const { name, description, about, requirements, image, courseFile } = coursesJson;
 
   return (
     <Layout>
-      <CourseHeader>
+      <CourseHeader background={`url("/images/${image}")`}>
         <LeftTitle>
-          What's this<br />
-          <strong>all about?</strong>
+          What you <br />
+          <strong>will learn</strong>
         </LeftTitle>
         <RightTextbox>
           <h1>
@@ -221,8 +234,8 @@ function Course ({data: {coursesJson}}) {
         <Description>
           <BookmarkIcon />
           <h2>
-            What's this<br />
-            <strong>all about?</strong>
+            What you <br />
+            <strong>will learn</strong>
           </h2>
           <p>{about}</p>
         </Description>
@@ -238,7 +251,7 @@ function Course ({data: {coursesJson}}) {
             </h3>
           </LMBlock>
           <LMWhiteBlock>
-            <Link to='/course'><i className="fas fa-download fa-2x"></i></Link>
+            <Link to={`/files/${courseFile}`} target="_blank"><i className="fas fa-download fa-2x"></i></Link>
           </LMWhiteBlock>
           <LMBlock>
             <p>
@@ -262,6 +275,8 @@ export const pageQuery = graphql`
       description
       about
       requirements
+      image
+      courseFile
     }
   }
 `;

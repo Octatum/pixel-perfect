@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device } from '../../utils/device';
+import { device } from '../utils/device';
 
 const Layout = styled.div`
   position: relative;

@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import backgroundVideo from './Home/assets/demoreel.mp4'
-import BackgroundVideoPlayer from './Home/BackgroundVideoPlayer';
-import backgroundImage from './Home/assets/vfx.png'
+import backgroundVideo from '../components/Home/assets/demoreel.mp4'
+import BackgroundVideoPlayer from '../components/Home/BackgroundVideoPlayer';
+import backgroundImage from '../components/Home/assets/vfx.png'
+import { device } from '../utils/device';
 
 const Layout = styled.div`
   display: flex;
@@ -21,13 +22,18 @@ const Layout = styled.div`
     opacity: 1;
     filter: blur(0);
   }
+
+  ${device.tablet} {
+    justify-content: center;
+  }
 `;
 
 const Header = styled.h1`
   color: ${props => props.theme.color.light};
+  position: relative;
   font-family: ${props => props.theme.font.main};
   z-index: 1;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 400;
   width: 30%;
   padding: 2rem;
@@ -37,6 +43,20 @@ const Header = styled.h1`
   transition: 500ms ease-in-out all;
   opacity: 0;
   filter: blur(2em);
+
+  ${device.laptop} {
+    font-size: 2.5rem;
+  }
+  
+  ${device.tablet} {
+    margin: 0;
+    z-index: 0;
+    text-align: center;
+    opacity: 1;
+    filter: none;
+    width: 60%;
+    justify-self: center;
+  }
 `;
 
 function Home() { 

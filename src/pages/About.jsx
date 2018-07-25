@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import TeamSlider from './TeamSlider';
-import bg from './assets/about-bg.jpeg'
-import { device } from '../../utils/device'
+import TeamSlider from '../components/About/TeamSlider';
+import bg from '../components/About/assets/about-bg.jpeg'
+import { device } from '../utils/device'
 
 const Background = styled.div`
   position: relative;

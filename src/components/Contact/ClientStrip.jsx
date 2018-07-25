@@ -47,7 +47,7 @@ const VerticalLine = styled.div`
 
 const Header = styled.h2`
   align-self: center;
-  font-size: 4.7vmax;
+  font-size: calc(3rem + 1vmax);
   flex: 1;
   box-sizing: border-box;
   padding: 0.3em 1em 0.3em 0.5em;
@@ -79,7 +79,7 @@ function ClientStrip () {
   return (
     <Container>
       <WhiteHeader>
-        Nuestros<br />Clientes
+        Our Clients
       </WhiteHeader>
       <LogoList>
         <Logo src={toyotaLogo} />
@@ -90,7 +90,7 @@ function ClientStrip () {
       </LogoList>
       <VerticalLine />
       <Header>
-        Nuestros<br />Clientes
+        Our Clients
       </Header>
     </Container>
   );

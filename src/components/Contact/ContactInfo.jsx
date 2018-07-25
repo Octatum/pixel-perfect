@@ -127,6 +127,24 @@ const InputName = styled.span`
   font-weight: 700;
 `;
 
+const ButtonSubmitContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3em;
+`;
+
+const ButtonSubmit = styled.button`
+  background: inherit;
+  color: ${props => props.theme.color.light};
+  font-size: 1.5rem;
+  padding: 0.25em 0.5em;
+  transition: 0.3s ease-in-out all;
+
+  ${device.mobile} {
+    flex: 1;
+  }
+`;
+
 class ContactInfo extends React.Component {
   state = {
     name: '',
@@ -143,7 +161,7 @@ class ContactInfo extends React.Component {
   render() {
     return (
       <Container>
-        <Header>Contáctanos</Header>
+        <Header>Contact us</Header>
         <InnerContainer>
           <InfoList>
             <div>
@@ -159,19 +177,22 @@ class ContactInfo extends React.Component {
               <p>/Pixelperfectvfx</p>
             </a>
           </InfoList>
-          <Message>
+          <Message name="contact" method="POST" netlify>
             <Label>
-              <InputName>Nombre</InputName>
+              <InputName>Name</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
             </Label>
             <Label>
-              <InputName>Compañía</InputName>
+              <InputName>Company</InputName>
               <span><Input type="text" name="company" value={this.state.company} onChange={this.handleChange} /></span>
             </Label>
             <Label>
-              <InputName>Mensaje</InputName>
+              <InputName>Message</InputName>
               <span><TextArea value={this.state.message} name="message" onChange={this.handleChange} /></span>
             </Label>
+            <ButtonSubmitContainer>
+              <ButtonSubmit type="Send">Send</ButtonSubmit>
+            </ButtonSubmitContainer>
           </Message>
         </InnerContainer>
       </Container>

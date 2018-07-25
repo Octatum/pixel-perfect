@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { device } from '../../../utils/device';
-import Link from '../../../components/Link';
+import Link from '../../Link';
 
 const _Hoverbox = styled.div`
   --bg-color: rgba(7, 0, 109, 0.6);

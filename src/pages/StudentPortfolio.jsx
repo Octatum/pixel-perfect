@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import ProjectPortfolioSlot from './ProjectPortfolioSlot'
+import ProjectPortfolioSlot from '../components/ProjectPortfolioSlot'
 
 const Layout = styled.div`
   display: flex;

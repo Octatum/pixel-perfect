@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { device } from '../utils/device'
+import Link from '../components/Link';
 
 const SpotlightLayout = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100vw;
   min-height: 100vh;
 `;
 
@@ -25,7 +25,6 @@ const Background = styled.div`
 const FillerDiv = styled.div`
   max-height: 15vh;
   min-height: 40px;
-  width: 100vw;
   padding: 3vh 0;
 
   ${device.tablet} {
@@ -45,10 +44,11 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const BigPicture = styled.img`
-  background-color: darkcyan;
+const BigPicture = styled.div`
+  background: ${props => props.background};
   height: 37em;
   min-width: 25em;
+  background-size: 100% auto;
 
   ${device.tablet} {
     position: absolute;
@@ -196,14 +196,15 @@ const SmallPicture = styled.div`
     height: calc(5em * 0.6);
     width: calc(9em * 0.6);
   }
-`
+`;
 
 const PlotOutline = styled.div`
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
   ${device.laptop} {
-    grid-column: 1 / 5;
+    grid-column: 1 / 3;
+    max-width: 65%;
     grid-row: 4 / 5;
   }
 
@@ -215,7 +216,17 @@ const PlotOutline = styled.div`
   ${device.mobile} {
     font-size: 0.8em;
   }
-`
+`;
+
+const BackToProjectsUrl = Link.extend`
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  font-size: 3rem;
+  border: 0.1em solid white;
+  border-radius: 100%;
+  padding: 0.3em;
+`;
 
 function ProjectSpotlight({data: {projectsJson}}) {
   const { name, release, genre, studio, about, image, plot } = projectsJson;
@@ -226,7 +237,7 @@ function ProjectSpotlight({data: {projectsJson}}) {
         <Background />
         <FillerDiv />
         <ProjectContainer>
-          <BigPicture src={`/images/${image}`}/>
+          <BigPicture background={`url("/images/${image}") center repeat-x`}/>
           <InfoGrid>
             <Info>
               <h3>Release Date</h3>
@@ -244,13 +255,19 @@ function ProjectSpotlight({data: {projectsJson}}) {
               </h1>
             </Title>
             <PlotOutline>
-              <h3>Plot Outline</h3>
-              <p>{plot}</p>
+              {plot.length > 0 && (
+                <span>
+                  <h3>Plot Outline</h3>
+                  <p>{plot}</p>
+                </span>
+              )}
             </PlotOutline>
-            <OpaqueDiv start='2' end='5' opacity='0.5'/>
             <OpaqueDiv start='3' end='5' opacity='1'/>
           </InfoGrid>
         </ProjectContainer>
+        <BackToProjectsUrl to="/portfolio">
+          <i className="fa fa-arrow-left"/>
+        </BackToProjectsUrl>
       </SpotlightLayout>
     </div>
   );

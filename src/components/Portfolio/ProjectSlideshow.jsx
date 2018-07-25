@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
-import Link from './../../components/Link';
+import Link from '../Link';
 import { device, numberValues } from '../../utils/device'
 
 const SliderLayout = styled.div`
@@ -29,13 +29,14 @@ const SliderLayout = styled.div`
 const ColorBox = styled.div`
   height: 100vh;
   background: ${props => props.background};
+  background-size: 100% auto;
 
   ${device.tablet} {
     opacity: 0.6;
   }
 `;
 
-function ProjectSlideshow() {
+function ProjectSlideshow({projects}) {
   const settings = {
     infinite: true,
     speed: 1000,
@@ -57,10 +58,9 @@ function ProjectSlideshow() {
   return (
     <SliderLayout>
       <Slider {...settings}>
-        <Link to="/projectspotlight"><ColorBox background="darkred" /></Link>
-        <Link to="/projectspotlight"><ColorBox background="darkblue" /></Link>
-        <Link to="/projectspotlight"><ColorBox background="darkgreen" /></Link>
-        <Link to="/projectspotlight"><ColorBox background="white" /></Link>
+        {projects.map(project => (
+          <Link to={`/portfolio/${project.path}`}><ColorBox background={`url("/images/${project.image}") center`} /></Link>
+        ))}
       </Slider>
     </SliderLayout>
   );

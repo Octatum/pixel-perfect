@@ -1,19 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import InfoBoxes from './InfoBoxes';
-import { device } from '../../utils/device';
-import Link from '../../components/Link';
+import InfoBoxes from '../components/Services/InfoBoxes';
+import { device } from '../utils/device';
+import Link from '../components/Link';
+import bgImage from '../components/Services/assets/cgi.jpg';
 
-const Layout = styled.div.attrs({
-  style: (props) => ({...props})
-})`
+const Layout = styled.div`
   position: relative;
   display: flex;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
   padding: 4rem;
+  background: ${props => props.background};
+  background-size: cover;
+  
+  ::before {
+    content: "";
+    background: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
   ${device.tablet} {
     flex-wrap: wrap-reverse;
@@ -22,6 +34,7 @@ const Layout = styled.div.attrs({
 `;
 
 const RightTextbox = styled.div`
+  position: relative;
   flex: 1;
   align-self: center;
   justify-self: flex-end;
@@ -72,7 +85,7 @@ const SecondaryText = styled.div`
 
 function Services() {
   return (
-    <Layout background="black">
+    <Layout background={`url("${bgImage}")`}>
       <InfoBoxes />
       <RightTextbox>
         <MainSlideText>What we do</MainSlideText>

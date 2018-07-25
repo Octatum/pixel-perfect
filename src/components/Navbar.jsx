@@ -138,10 +138,10 @@ class Navbar extends Component {
           <i className={this.state.showNavMenu ? "fas fa-times" : "fas fa-bars"} />
         </DropdownButton>
         <Links open={this.state.showNavMenu}>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/">inicio</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/about">nosotros</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/services">servicios</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/contact">contacto</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/">home</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/about">about</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/services">services</Link></ListElement>
+          <ListElement><Link onClick={() => this.closeNavbar()} to="/contact">contact</Link></ListElement>
         </Links>
       </Navsection>
     )

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ProjectSlideshow from './ProjectSlideshow';
-import { device } from '../../utils/device'
+import ProjectSlideshow from '../components/Portfolio/ProjectSlideshow';
+import { device } from '../utils/device'
 
 const SlideshowLayout = styled.div`
   position: relative;
@@ -31,15 +31,37 @@ const Header = styled.h2`
   font-weight: 200;
 `;
 
-function Portfolio() {
+function Portfolio({data}) {
+  const {projects: projectsData} = data;
+
+  const projects = projectsData.edges.map(({node}) => ({
+    name: node.name,
+    image: node.image,
+    path: node.path
+  }));
+
   return (
     <SlideshowLayout>
-      <ProjectSlideshow />
+      <ProjectSlideshow projects={projects}/>
       <TextLayout>
-        <Header>Nuestros <strong>Proyectos</strong></Header>
+        <Header>Our Projects</Header>
       </TextLayout>
     </SlideshowLayout>
   );
 }
 
 export default Portfolio;
+
+export const query = graphql`
+  query GetJsonCourses {
+    projects: allProjectsJson {
+      edges {
+        node {
+          name
+          image
+          path
+        }
+      }
+    }
+  }
+`;

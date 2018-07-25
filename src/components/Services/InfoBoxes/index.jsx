@@ -6,7 +6,7 @@ import tablet from './assets/tablet.png';
 import thunder from './assets/thunder.png';
 import Hoverbox from './Hoverbox';
 import { device } from '../../../utils/device';
-import Link from '../../../components/Link';
+import Link from '../../Link';
 
 const Layout = styled.div`
   flex: 1;

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ClientStrip from './ClientStrip'
-import ContactInfo from './ContactInfo'
-import { device } from '../../utils/device'
+import ClientStrip from '../components/Contact/ClientStrip'
+import ContactInfo from '../components/Contact/ContactInfo'
+import { device } from '../utils/device'
 
 const Layout = styled.div`
   display: flex;
