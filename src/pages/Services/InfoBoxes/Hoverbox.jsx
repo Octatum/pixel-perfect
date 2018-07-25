@@ -18,7 +18,7 @@ const _Hoverbox = styled.div`
   justify-content: center;
   text-align: center;
   line-height: 1.1em;
-  font-size: 1.1rem;
+  font-size: 1rem;
   flex-direction: column;
   padding: 0 1rem;
   z-index: 1;

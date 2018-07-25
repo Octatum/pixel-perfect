@@ -57,18 +57,18 @@ class InfoBoxes extends Component {
     const Elements = [{
       img: tablet,
       url: "/portfolio",
-      title: 'VFX',
-      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking, etc.`,
+      title: 'CGI / VFX',
+      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like 3D modelling and animation, lighting, etc. `,
     }, {
       img: screen,
-      url: "/",
-      title: 'VFX',
-      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking, etc.`,
+      url: "/course/roto-painting",
+      title: 'Roto Painting',
+      content: `A roto artist is able to trace areas from live action frames and remove objects from them through digital compositing.`,
     }, {
       img: thunder,
-      url: "/course",
-      title: 'Courses',
-      content: `We offer courses in Roto Paint and Matchmove for those interested in learning the basic skills.`,
+      url: "/course/matchmove",
+      title: 'Matchmove',
+      content: `Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.`,
     }];
 
     return (
