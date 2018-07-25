@@ -27,6 +27,10 @@ const FillerDiv = styled.div`
   min-height: 40px;
   width: 100vw;
   padding: 3vh 0;
+
+  ${device.tablet} {
+    display: none;
+  }
 `;
 
 const ProjectContainer = styled.div`
@@ -35,12 +39,25 @@ const ProjectContainer = styled.div`
   padding: 1em 3em;
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
+
+  ${device.tablet} {
+    padding: 0;
+  }
 `;
 
 const BigPicture = styled.div`
   background-color: darkcyan;
   height: 37em;
   min-width: 25em;
+
+  ${device.tablet} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 `
 
 const InfoGrid = styled.div`
@@ -51,8 +68,30 @@ const InfoGrid = styled.div`
   font-size: 1.1em;
   line-height: 1.3;
 
-  @media screen and ${device.laptop} {
-    padding: 2em 1em;
+  ${device.laptop} {
+    padding: 0;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 10em;
+
+    > div {
+      padding: 2em 1em;
+    }
+  }
+
+  ${device.mobile} {
+    grid-template-rows: 15em;
+  }
+`
+
+const OpaqueDiv = styled.div`
+  display: none;
+  grid-column: 1 / 3;
+  grid-row: ${props => props.start} / ${props => props.end};
+  background: rgba(0, 0, 0, ${props => props.opacity});
+  z-index: -1;
+
+  ${device.tablet} {
+    display: block;
   }
 `
 
@@ -61,9 +100,18 @@ const Info = styled.div`
   grid-row: 1 / 3;
   padding-bottom: 1em;
 
-  @media screen and ${device.laptop} {
+  ${device.laptop} {
     grid-column: 1 / 5;
     grid-row: 3 / 4;
+  }
+
+  ${device.tablet} {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  ${device.mobile} {
+    font-size: 0.8em;
   }
 `
 
@@ -78,11 +126,26 @@ const Title = styled.div`
     line-height: 1.1;
   }
 
-  @media screen and ${device.laptop} {
-    grid-column: 1 / 5;;
+  ${device.laptop} {
+    grid-column: 1 / 5;
 
     h1 {
       font-size: 2.5em;
+    }
+  }
+
+  ${device.tablet} {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    h1 {
+      float: right;
+    }
+  }
+
+  ${device.mobile} {
+    h1 {
+      font-size: 2em;
     }
   }
 `
@@ -95,11 +158,21 @@ const PictureGallery = styled.div`
   justify-content: flex-end;
   padding: 0.3em 0;
 
-  @media screen and ${device.laptop} {
+  ${device.laptop} {
     grid-column: 1 / 5;
     grid-row: 2 / 3;
     justify-content: center;
     padding: 1em 0;
+  }
+
+  ${device.tablet} {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    justify-content: center;
+  }
+
+  ${device.mobile} {
+    padding: 0.5em 0 !important;
   }
 `
 
@@ -109,9 +182,19 @@ const SmallPicture = styled.div`
   margin: 0.2em;
   background-color: ${props => props.bg};
 
-  @media screen and ${device.laptop} {
+  ${device.laptop} {
     height: calc(5em * 0.8);
     width: calc(9em * 0.8);
+  }
+
+  ${device.tablet} {
+    height: 5em;
+    width: 9em;
+  }
+
+  ${device.mobile} {
+    height: calc(5em * 0.6);
+    width: calc(9em * 0.6);
   }
 `
 
@@ -119,9 +202,18 @@ const PlotOutline = styled.div`
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 
-  @media screen and ${device.laptop} {
+  ${device.laptop} {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
+  }
+
+  ${device.tablet} {
+    grid-column: 1 / 3;
+    padding-top: 0 !important;
+  }
+
+  ${device.mobile} {
+    font-size: 0.8em;
   }
 `
 
@@ -162,6 +254,8 @@ function ProjectSpotlight() {
               <h3>Plot Outline</h3>
               <p>Enim aliquip exercitation, et occaecat firmissimum. Cupidatat elit nam mentitum imitarentur, amet coniunctione mentitum quamquam. Iis fore quibusdam consequat, hic labore occaecat consectetur.</p>
             </PlotOutline>
+            <OpaqueDiv start='2' end='5' opacity='0.5'/>
+            <OpaqueDiv start='3' end='5' opacity='1'/>
           </InfoGrid>
         </ProjectContainer>
       </SpotlightLayout>

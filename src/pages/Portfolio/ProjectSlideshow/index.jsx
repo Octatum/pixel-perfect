@@ -30,7 +30,7 @@ const ColorBox = styled.div`
   height: 100vh;
   background: ${props => props.background};
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     opacity: 0.6;
   }
 `;

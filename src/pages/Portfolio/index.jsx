@@ -19,7 +19,7 @@ const TextLayout = styled.div`
   width: 5em;
   height: 2.2em;
 
-  @media screen and ${device.tablet} {
+  ${device.tablet} {
     font-size: 3em;
     top: 30%;
   }
