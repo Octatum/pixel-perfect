@@ -58,18 +58,19 @@ const RightTextbox = styled.div`
   position: absolute;
   bottom: 1.5rem;
   right: 3.5rem;
-  width: 40%;
+  width: 40em;
   text-align: right;
 
   h1 {
     font-size: 4em;
-    font-weight: 200;
+    font-weight: bold;
     padding-bottom: 1rem;
   }
 
   p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     line-height: 1.3;
+    padding-left: 14em;
   }
 
   ${device.tablet} {
@@ -91,6 +92,7 @@ const RightTextbox = styled.div`
     p {
       font-size: 1.5em;
       line-height: 1;
+      padding: 0;
     }
   }
 `
@@ -116,7 +118,7 @@ const Description = styled.div`
   }
 
   p {
-    padding: 1rem 3rem;
+    padding: 1rem 9rem 1rem 3rem;
     font-size: 1.3em;
     line-height: 1.2;
   }
@@ -246,8 +248,8 @@ function Course ({data: {coursesJson}}) {
         <LearnMore>
           <LMBlock>
             <h3>
-              Know our<br />
-              <strong>stuff</strong>
+              Full<br />
+              <strong>program</strong>
             </h3>
           </LMBlock>
           <LMWhiteBlock>
@@ -266,7 +268,6 @@ function Course ({data: {coursesJson}}) {
 }
 
 export default Course;
-
 
 export const pageQuery = graphql`
   query GetCourseData($route: String!){
