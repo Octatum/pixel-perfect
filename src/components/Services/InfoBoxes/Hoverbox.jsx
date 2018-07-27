@@ -5,7 +5,7 @@ import { device } from '../../../utils/device';
 import Link from '../../Link';
 
 const _Hoverbox = styled.div`
-  --bg-color: rgba(7, 0, 109, 0.6);
+  --bg-color: ${props => props.color};
   --transition: 0.5s ease all;
   display: flex;
   position: relative;

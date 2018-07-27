@@ -48,6 +48,11 @@ const IconList = styled.div`
 class InfoBoxes extends Component {
   state = {
     currentlySelected: 1,
+    boxColor: [
+      'rgba(11, 120, 84, 0.6)',
+      'rgba(7, 0, 109, 0.6)',
+      'rgba(7, 0, 109, 0.6)'
+    ]
   }
 
   selectElement = (elementIndex) => {
@@ -58,17 +63,17 @@ class InfoBoxes extends Component {
     const Elements = [{
       img: tablet,
       url: "/portfolio",
-      title: 'CGI / VFX',
+      title: 'Service: CGI / VFX',
       content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like 3D modelling and animation, lighting, etc. `,
     }, {
       img: screen,
       url: "/course/roto-painting",
-      title: 'Roto Painting',
+      title: 'Course: Roto Painting',
       content: `A roto artist is able to trace areas from live action frames and remove objects from them through digital compositing.`,
     }, {
       img: thunder,
       url: "/course/matchmove",
-      title: 'Matchmove',
+      title: 'Course: Matchmove',
       content: `Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.`,
     }];
 
@@ -76,6 +81,7 @@ class InfoBoxes extends Component {
       <Layout>
         <Hoverbox
           element={Elements[this.state.currentlySelected]}
+          color={this.state.boxColor[this.state.currentlySelected]}
           isFirstElement={this.state.currentlySelected === 0}
           isLastElement={this.state.currentlySelected === Elements.length - 1}
         />
