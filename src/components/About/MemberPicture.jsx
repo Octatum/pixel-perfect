@@ -21,9 +21,26 @@ const Layout = styled.div`
   ${device.mobile} {
     height: calc((100vw - 6em) / 2);
   }
+
+  div {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  .name {
+    max-height: 0;
+  }
+
+  &:hover div {
+    opacity: 1;
+  }
+
+  &:hover .name {
+    max-height: 40%;
+  }
 `
 
-const _Icons = ({ className, linkedin, behance }) => {
+const _Icons = ({ className, linkedin, imdb }) => {
   const result = [];
   let i = 0;
 
@@ -34,9 +51,9 @@ const _Icons = ({ className, linkedin, behance }) => {
       </a>
     );
   }
-  if (behance !== undefined) {
+  if (imdb !== undefined) {
     result.push(
-      <a href={behance} target="_blank" key={i++}>
+      <a href={imdb} target="_blank" key={i++}>
         <i className="fas fa-star fa-fw" />
       </a>
     );
@@ -62,8 +79,22 @@ const Icons = styled(_Icons)`
   }
 `
 
+const Name = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: ${props => props.theme.font.main};
+  font-size: 0.8em;
+  text-align: center;
+`
+
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
-    <Icons linkedin={props.linkedin} behance={props.behance} />
+    <Icons linkedin={props.linkedin} imdb={props.imdb} />
+    <Name className='name'>{props.name}</Name>
   </Layout>
 )
