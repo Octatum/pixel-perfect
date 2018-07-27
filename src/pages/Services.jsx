@@ -15,7 +15,7 @@ const Layout = styled.div`
   padding: 4rem;
   background: ${props => props.background};
   background-size: cover;
-  
+
   ::before {
     content: "";
     background: black;
@@ -92,11 +92,11 @@ function Services() {
         <SecondaryText>
           <p>Our services include training courses for those seeking a career in VFX industry. We also offer production and post-production services for visual media projects.</p>
           <br />
-          <Link to="/portfolio"><strong>Our projects</strong></Link>
+          <Link to="/portfolio"><strong><em>Our projects</em></strong></Link>
         </SecondaryText>
       </RightTextbox>
     </Layout>
-  );  
+  );
 }
 
 export default Services;

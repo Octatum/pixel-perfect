@@ -105,7 +105,9 @@ const Hoverbox = ({element: {content, title, url}, ...rest}) => (
     <strong>{title}</strong>
     <Spacer />
     <div>
-      {content}<strong><Link to={url}>&nbsp;View more</Link></strong>
+      {content}
+      <br/>
+      <strong><em><Link to={url}>&nbsp;View more...</Link></em></strong>
     </div>
   </_Hoverbox>
 );

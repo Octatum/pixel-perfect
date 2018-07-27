@@ -30,6 +30,7 @@ const Img = styled.img`
   max-height: 100%;
   cursor: pointer;
   height: 4rem;
+  width: 4rem;
   transition: 0.2s ease transform;
 
   &:active {
@@ -76,7 +77,7 @@ class InfoBoxes extends Component {
         <Hoverbox
           element={Elements[this.state.currentlySelected]}
           isFirstElement={this.state.currentlySelected === 0}
-          isLastElement={this.state.currentlySelected === Elements.length - 1} 
+          isLastElement={this.state.currentlySelected === Elements.length - 1}
         />
         <IconList>
           {Elements.map(({url, img}, index) => (
