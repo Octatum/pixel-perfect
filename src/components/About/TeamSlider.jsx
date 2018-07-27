@@ -53,29 +53,34 @@ function SimpleSlider () {
   };
 
   const members = [{
+    name: 'Rene Allegretti',
     image: rene,
     linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/',
     imdb: 'https://www.imdb.com/name/nm5727065/'
   }, {
+    name: 'Eden Muñoz',
     image: eden,
     linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/',
     imdb: 'https://www.imdb.com/name/nm6097371/'
   }, {
+    name: 'Ricardo Santillana',
     image: Ricky,
     linkedin: 'https://www.linkedin.com/in/rsantillana/'
   }, {
+    name: 'Ana Luisa López Segovia',
     image: Ana,
     linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
   }];
-  
+
   return (
     <SliderLayout>
       <Slider {...settings}>
         {members.map(member => (
           <MemberPicture
+            name={member.name}
             picture={member.image}
             linkedin={member.linkedin}
-            behance={member.imdb}
+            imdb={member.imdb}
           />
         ))}
       </Slider>
