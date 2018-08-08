@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { navigateTo } from "gatsby-link";
 
 import { device } from '../../utils/device';
 
@@ -158,6 +159,21 @@ class ContactInfo extends React.Component {
     });
   }
 
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => {
+        alert("Your message has been sent.");
+        navigateTo("/contact");
+      })
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
   render() {
     return (
       <Container>
@@ -177,7 +193,7 @@ class ContactInfo extends React.Component {
               <p>/Pixelperfectvfx</p>
             </a>
           </InfoList>
-          <Message name="contact" method="POST" netlify>
+          <Message name="contact" method="POST" data-netlify onSubmit={this.handleSubmit}>
             <Label>
               <InputName>Name</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>

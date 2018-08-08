@@ -88,7 +88,7 @@ function About() {
     <Background>
       <Layout>
         <TextLayout>
-          <Header>Who are we</Header>
+          <Header>Who we are</Header>
           <Subtext>We specialize in training artists from all over Mexico using the techniques and software used in the VFX industry.</Subtext>
         </TextLayout>
         <SliderLayout>
