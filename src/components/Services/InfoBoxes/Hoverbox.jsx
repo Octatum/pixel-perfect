@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { device } from '../../../utils/device';
 import Link from '../../Link';
 
-const _Hoverbox = styled.div`
+const Box = styled.div`
   --bg-color: ${props => props.color};
   --transition: 0.5s ease all;
   display: flex;
@@ -100,8 +100,8 @@ const Spacer = styled.div`
   background: white;
 `;
 
-const Hoverbox = ({element: {content, title, url}, ...rest}) => (
-  <_Hoverbox {...rest}>
+const Hoverbox = ({element: {content, title, url, color}, ...rest}) => (
+  <Box color={color} {...rest}>
     <strong>{title}</strong>
     <Spacer />
     <div>
@@ -109,7 +109,7 @@ const Hoverbox = ({element: {content, title, url}, ...rest}) => (
       <br/>
       <strong><em><Link to={url}>&nbsp;View more...</Link></em></strong>
     </div>
-  </_Hoverbox>
+  </Box>
 );
 
 export default Hoverbox;
