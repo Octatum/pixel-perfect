@@ -213,12 +213,35 @@ const LMWhiteBlock = LMBlock.extend`
   }
 `;
 
-function Course ({data: {coursesJson}}) {
-  const { name, description, about, requirements, image, courseFile } = coursesJson;
+const Arrow = styled.i`
+  position: absolute;
+  font-size: 6em;
+  top: 6rem;
+  left: ${props => props.previous ? '1rem' : 'initial'};
+  right ${props => props.next ? '1rem' : 'initial'};
+`
+
+const adjacentPath = (allCoursesJson, targetIndex) => {
+  const courseCount = allCoursesJson.edges.length;
+
+  if (targetIndex < 0) {
+    return "/course/".concat(allCoursesJson.edges[courseCount - 1].node.path);
+  }
+  return "/course/".concat(allCoursesJson.edges[targetIndex % courseCount].node.path);
+}
+
+function Course ({data: {coursesJson, allCoursesJson}}) {
+  const { index, name, description, about, requirements, image, courseFile } = coursesJson;
 
   return (
     <Layout>
       <CourseHeader background={`url("/images/${image}")`}>
+        <Link to={adjacentPath(allCoursesJson, index - 1)}>
+          <Arrow previous className="fas fa-caret-left"/>
+        </Link>
+        <Link to={adjacentPath(allCoursesJson, index + 1)}>
+          <Arrow next className="fas fa-caret-right"/>
+        </Link>
         <LeftTitle>
           What you <br />
           <strong>will learn</strong>
@@ -270,14 +293,24 @@ function Course ({data: {coursesJson}}) {
 export default Course;
 
 export const pageQuery = graphql`
-  query GetCourseData($route: String!){
+  query GetCourseData($route: String!) {
     coursesJson(path: {eq: $route}) {
+      index
       name
       description
       about
       requirements
       image
       courseFile
+    }
+
+    allCoursesJson {
+      edges {
+        node {
+          id
+          path
+        }
+      }
     }
   }
 `;

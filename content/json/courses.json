@@ -1,4 +1,5 @@
 [{
+  "index": 0,
   "name": "Roto Painting",
   "path": "roto-painting",
   "description": "A roto artist is able to trace areas from live action frames and remove objects from them through digital compositing.",
@@ -7,6 +8,7 @@
   "image": "roto-paint.jpg",
   "courseFile": "roto-painting.pdf"
 }, {
+  "index": 1,
   "name": "Matchmove",
   "path": "matchmove",
   "description": "Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.",
