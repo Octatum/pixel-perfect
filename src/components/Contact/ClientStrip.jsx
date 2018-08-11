@@ -12,10 +12,11 @@ const Container = styled.div`
   display: flex;
   position: relative;
   background: white;
+  height: 15em;
   width: 100%;
 
   ${device.tablet} {
-    height: 25%;
+    height: 10em;
   }
 `;
 
@@ -28,7 +29,7 @@ const LogoList = styled.div`
 ;
 
 const Logo = styled.img`
-  width: 12%;
+  width: 15%;
   max-width: 7rem;
   max-height: 100%;
   padding: 1em 0;
@@ -53,6 +54,7 @@ const Header = styled.h2`
   text-align: right;
   color: ${props => props.theme.color.dark};
   font-family: ${props => props.theme.font.main};
+  font-weight: lighter;
 
   ${device.tablet} {
     display: none;
@@ -64,6 +66,7 @@ const WhiteHeader = Header.extend`
   display: none;
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
+  font-weight: lighter;
 
   ${device.tablet} {
     display: block;
@@ -78,7 +81,8 @@ function ClientStrip () {
   return (
     <Container>
       <WhiteHeader>
-        Our Clients
+        Our <br/>
+        <strong>Clients</strong>
       </WhiteHeader>
       <LogoList>
         <Logo src={toyotaLogo} />
@@ -88,7 +92,7 @@ function ClientStrip () {
       </LogoList>
       <VerticalLine />
       <Header>
-        Our Clients
+        Our <strong>Clients</strong>
       </Header>
     </Container>
   );

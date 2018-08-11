@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Header = styled.h2`
   font-size: 3.2em;
-  font-weight: 200;
+  font-weight: lighter;
   padding: 0 1.4rem;
 `;
 
@@ -111,7 +111,7 @@ const Label = styled.label`
   display: flex;
   font-size: 1rem;
   padding: 0.5em 0;
-  
+
   span {
     flex: 1;
     padding-bottom: 0.5em;
