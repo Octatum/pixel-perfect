@@ -6,8 +6,7 @@ import { device, numberValues } from '../../utils/device';
 import toyotaLogo from './assets/toyota-logo.jpg';
 import tunaLogo from './assets/la-tuna-group-logo.png';
 import cemexLogo from './assets/cemex_logo.png';
-import monsantoLogo from './assets/monsanto-logo.png';
-import bengalaLogo from './assets/bengala-logo.png';
+import octatumLogo from './assets/octatum-logo.svg'
 
 const Container = styled.div`
   display: flex;
@@ -85,8 +84,7 @@ function ClientStrip () {
         <Logo src={toyotaLogo} />
         <Logo src={tunaLogo} />
         <Logo src={cemexLogo} />
-        <Logo src={monsantoLogo} />
-        <Logo src={bengalaLogo} />
+        <Logo src={octatumLogo} />
       </LogoList>
       <VerticalLine />
       <Header>
