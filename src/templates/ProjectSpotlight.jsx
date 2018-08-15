@@ -229,7 +229,7 @@ const BackToProjectsUrl = Link.extend`
 `;
 
 function ProjectSpotlight({data: {projectsJson}}) {
-  const { name, release, genre, studio, about, image, plot } = projectsJson;
+  const { name, release, genre, studio, about, image, plot, link } = projectsJson;
 
   return (
     <div>
@@ -248,6 +248,12 @@ function ProjectSpotlight({data: {projectsJson}}) {
               <br />
               <h3>Studio</h3>
               <p>{studio}</p>
+              {link !== undefined && (
+                <span>
+                  <br />
+                  <h3 style={{"text-decoration": "underline", }}><i><Link to={link.url}>{link.header}</Link></i></h3>
+                </span>
+              )}
             </Info>
             <Title>
               <h1>
@@ -285,6 +291,10 @@ export const pageQuery = graphql`
       about
       image
       plot
+      link {
+        header
+        url
+      }
     }
   }
 `;

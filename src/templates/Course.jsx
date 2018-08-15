@@ -215,7 +215,7 @@ const LMWhiteBlock = LMBlock.extend`
 
 const Arrow = styled.i`
   position: absolute;
-  font-size: 6em;
+  font-size: 2em;
   top: 6rem;
   left: ${props => props.previous ? '1rem' : 'initial'};
   right ${props => props.next ? '1rem' : 'initial'};
@@ -237,10 +237,10 @@ function Course ({data: {coursesJson, allCoursesJson}}) {
     <Layout>
       <CourseHeader background={`url("/images/${image}")`}>
         <Link to={adjacentPath(allCoursesJson, index - 1)}>
-          <Arrow previous className="fas fa-caret-left"/>
+          <Arrow previous className="fas fa-chevron-circle-left"/>
         </Link>
         <Link to={adjacentPath(allCoursesJson, index + 1)}>
-          <Arrow next className="fas fa-caret-right"/>
+          <Arrow next className="fas fa-chevron-circle-right"/>
         </Link>
         <LeftTitle>
           What you <br />
