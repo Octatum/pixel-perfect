@@ -6,7 +6,6 @@ import { device, numberValues } from '../../utils/device';
 import toyotaLogo from './assets/toyota-logo.jpg';
 import tunaLogo from './assets/la-tuna-group-logo.png';
 import cemexLogo from './assets/cemex_logo.png';
-import octatumLogo from './assets/octatum-logo.svg'
 
 const Container = styled.div`
   display: flex;
@@ -29,7 +28,7 @@ const LogoList = styled.div`
 ;
 
 const Logo = styled.img`
-  width: 15%;
+  width: 20%;
   max-width: 7rem;
   max-height: 100%;
   padding: 1em 0;
@@ -88,7 +87,6 @@ function ClientStrip () {
         <Logo src={toyotaLogo} />
         <Logo src={tunaLogo} />
         <Logo src={cemexLogo} />
-        <Logo src={octatumLogo} />
       </LogoList>
       <VerticalLine />
       <Header>
