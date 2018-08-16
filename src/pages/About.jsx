@@ -88,7 +88,7 @@ function About() {
     <Background>
       <Layout>
         <TextLayout>
-          <Header>Who we are</Header>
+          <Header>Who are we?</Header>
           <Subtext>Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico.
 This company was born by the idea of perfecting the industry in Monterrey, our mission is to deliver the highest quality product in the north of Mexico and eventually the whole country.</Subtext>
         </TextLayout>

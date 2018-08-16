@@ -66,12 +66,12 @@ function SimpleSlider () {
     imdb: 'https://www.imdb.com/name/nm6097371/'
   }, {
     name: 'Ricardo Santillana',
-    role: "Project Manager, CG Generalist",
+    role: "CG Generalist",
     image: Ricky,
     linkedin: 'https://www.linkedin.com/in/rsantillana/'
   }, {
     name: 'Ana Luisa López Segovia',
-    role: "CG Generalist",
+    role: "Project Manager, CG Generalist",
     image: Ana,
     linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
   }];

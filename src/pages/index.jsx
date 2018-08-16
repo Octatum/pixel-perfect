@@ -17,12 +17,6 @@ const Layout = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  &:hover > h1,
-  & > h1:hover {
-    opacity: 1;
-    filter: blur(0);
-  }
-
   ${device.tablet} {
     justify-content: center;
   }
@@ -41,8 +35,6 @@ const Header = styled.h1`
   background: rgba(0, 0, 0, 0.3);
   margin-right: 3rem;
   transition: 500ms ease-in-out all;
-  opacity: 0;
-  filter: blur(2em);
 
   ${device.laptop} {
     font-size: 2.5rem;
@@ -59,6 +51,15 @@ const Header = styled.h1`
   }
 `;
 
+const Subheader = styled.div`
+  font-size: 0.5em;
+
+  > a {
+    font-weight: 700;
+    color: white;
+  }
+`;
+
 function Home() { 
   return (
     <Layout>
@@ -68,6 +69,7 @@ function Home() {
       />
       <Header >
         Perfecting the <br />VFX industry in <strong>Monterrey</strong>
+        <Subheader>Watch our <a href="https://vimeo.com/256454623" target="_blank">Demo Reel</a></Subheader>
       </Header>
     </Layout>
   );
