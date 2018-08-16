@@ -141,16 +141,27 @@ const ButtonSubmit = styled.button`
   padding: 0.25em 0.5em;
   transition: 0.3s ease-in-out all;
 
+  :disabled {
+    opacity: 0.1;
+  }
+
   ${device.mobile} {
     flex: 1;
   }
 `;
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 class ContactInfo extends React.Component {
   state = {
-    name: '',
-    company: '',
+    messageSent: false,
     message: '',
+    company: '',
+    name: ''
   };
 
   handleChange = ({target}) => {
@@ -160,18 +171,22 @@ class ContactInfo extends React.Component {
   }
 
   handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    const self = this;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
-    })
-      .then(() => {
-        alert("Your message has been sent.");
-        navigateTo("/contact");
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...self.state
       })
-      .catch(error => alert(error));
-
-    e.preventDefault();
+    })
+    .then(() => {
+      self.setState({messageSent: true});
+      alert("Your message was sent!");
+    })
+    .catch(error => alert(error));
   };
 
   render() {
@@ -193,7 +208,13 @@ class ContactInfo extends React.Component {
               <p>/Pixelperfectvfx</p>
             </a>
           </InfoList>
-          <Message name="contact" method="POST" data-netlify onSubmit={this.handleSubmit}>
+          <Message 
+            name="contact"
+            method="POST"
+            onSubmit={this.handleSubmit}
+            data-netlify
+            data-netlify-honeypot="bot-field"
+          >
             <Label>
               <InputName>Name</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
@@ -207,7 +228,9 @@ class ContactInfo extends React.Component {
               <span><TextArea value={this.state.message} name="message" onChange={this.handleChange} /></span>
             </Label>
             <ButtonSubmitContainer>
-              <ButtonSubmit type="Send">Send</ButtonSubmit>
+              <ButtonSubmit type="Send" disabled={this.state.messageSent}>
+                Send
+              </ButtonSubmit>
             </ButtonSubmitContainer>
           </Message>
         </InnerContainer>
