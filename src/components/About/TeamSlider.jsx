@@ -81,6 +81,7 @@ function SimpleSlider () {
       <Slider {...settings}>
         {members.map(member => (
           <MemberPicture
+            key={member.name + member.role}
             name={member.name}
             role={member.role}
             picture={member.image}

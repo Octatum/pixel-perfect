@@ -14,17 +14,16 @@ const elasticTransitionTimingFunction = `
 
 const Navsection = styled.nav`
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   padding: 3vh 0;
   background: rgba(0, 0, 0, 0.3);
 
   ${device.tablet} {
     box-sizing: border-box;
     padding: 3vh 1.5em;
-    z-index: 1;
   }
 `;
 

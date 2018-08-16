@@ -6,9 +6,10 @@ import Link from '../components/Link';
 
 const Layout = styled.div`
   height: 100vh;
-  width: 100vw;
   color: ${props => props.dark ? props.theme.color.dark : props.theme.color.light};
   font-family: ${props => props.theme.font.main};
+  display: flex;
+  flex-direction: column;
 `;
 
 const CourseHeader = styled.div`
@@ -16,7 +17,6 @@ const CourseHeader = styled.div`
   height: 62%;
   background: ${props => props.background};
   background-size: 100% auto;
-  background-position: top;
 
   ::before {
     content: "";
@@ -34,7 +34,17 @@ const CourseHeader = styled.div`
   }
 
   ${device.mobile} {
+    position: relative;
+    flex-flow: row wrap;
     font-size: 1em;
+    background-position: top;
+    display: flex;
+    padding: 0 1em;
+    padding-top: 5em;
+
+    > * {
+      z-index: 1;
+    }
   }
 `;
 
@@ -54,12 +64,12 @@ const LeftTitle = styled.h2`
   }
 `;
 
-const RightTextbox = styled.div`
+const CourseTitle = styled.div`
   position: absolute;
   bottom: 1.5rem;
-  right: 3.5rem;
+  left: 3.5rem;
   width: 40em;
-  text-align: right;
+  text-align: left;
 
   h1 {
     font-size: 4em;
@@ -70,20 +80,20 @@ const RightTextbox = styled.div`
   p {
     font-size: 1.3em;
     line-height: 1.3;
-    padding-left: 14em;
   }
 
   ${device.tablet} {
     right: 1.5rem;
+    max-width: 80%;
   }
 
   ${device.mobile} {
-    position: absolute;
-    right: initial;
+    position: relative;
+    left: 0;
     bottom: 0;
-    width: 100%;
+    min-width: 100%;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 1rem 0;
 
     h1 {
       font-size: 2.5em;
@@ -109,16 +119,16 @@ const Description = styled.div`
   position: relative;
   flex: 2;
   color: ${props => props.theme.color.dark};
+  padding: 1rem 9rem 0 3rem;
 
   h2 {
-    display: none;
+    display: block;
     font-size: 2.8em;
     font-weight: 200;
     padding-bottom: 1rem;
   }
 
   p {
-    padding: 1rem 9rem 1rem 3rem;
     font-size: 1.3em;
     line-height: 1.2;
   }
@@ -129,10 +139,6 @@ const Description = styled.div`
 
   ${device.mobile} {
     padding: 1rem;
-
-    h2 {
-      display: block;
-    }
 
     p {
       padding: 0;
@@ -146,6 +152,7 @@ const BookmarkIcon = styled.div`
   width: 1.2em;
   height: 4.2em;
   background-color: black;
+  top: 0;
 
   ${device.mobile} {
     display: none;
@@ -218,16 +225,28 @@ const Arrow = styled.i`
   font-size: 2em;
   top: 6rem;
   left: ${props => props.previous ? '1rem' : 'initial'};
-  right ${props => props.next ? '1rem' : 'initial'};
-`
+  right: ${props => props.next ? '1rem' : 'initial'};
+
+  ${device.mobile} {
+    position: initial;
+  }
+`;
+
+const CustomArrowLink = Link.extend`
+  ${({textAlign}) => textAlign && `text-align: ${textAlign}`};
+
+  ${device.mobile} {
+    flex: 1;
+  }
+`;
 
 const adjacentPath = (allCoursesJson, targetIndex) => {
   const courseCount = allCoursesJson.edges.length;
 
   if (targetIndex < 0) {
-    return "/course/".concat(allCoursesJson.edges[courseCount - 1].node.path);
+    return `/course/${allCoursesJson.edges[courseCount - 1].node.path}`;
   }
-  return "/course/".concat(allCoursesJson.edges[targetIndex % courseCount].node.path);
+  return `/course/${allCoursesJson.edges[targetIndex % courseCount].node.path}`;
 }
 
 function Course ({data: {coursesJson, allCoursesJson}}) {
@@ -236,24 +255,20 @@ function Course ({data: {coursesJson, allCoursesJson}}) {
   return (
     <Layout>
       <CourseHeader background={`url("/images/${image}")`}>
-        <Link to={adjacentPath(allCoursesJson, index - 1)}>
+        <CustomArrowLink to={adjacentPath(allCoursesJson, index - 1)} textAlign="left">
           <Arrow previous className="fas fa-chevron-circle-left"/>
-        </Link>
-        <Link to={adjacentPath(allCoursesJson, index + 1)}>
+        </CustomArrowLink>
+        <CustomArrowLink to={adjacentPath(allCoursesJson, index + 1)} textAlign="right">
           <Arrow next className="fas fa-chevron-circle-right"/>
-        </Link>
-        <LeftTitle>
-          What you <br />
-          <strong>will learn</strong>
-        </LeftTitle>
-        <RightTextbox>
+        </CustomArrowLink>
+        <CourseTitle>
           <h1>
             {name}
           </h1>
           <p>
             {description}
           </p>
-        </RightTextbox>
+        </CourseTitle>
       </CourseHeader>
       <CourseDetails>
         <Description>
