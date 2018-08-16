@@ -215,6 +215,13 @@ class ContactInfo extends React.Component {
             data-netlify
             data-netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>
+                Don’t fill this out:{" "}
+                <input name="bot-field" onChange={this.handleChange} />
+              </label>
+            </p>
             <Label>
               <InputName>Name</InputName>
               <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
