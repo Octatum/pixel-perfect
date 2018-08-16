@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { device, numberValues } from '../../utils/device';
+import { device } from '../../utils/device';
 
 import toyotaLogo from './assets/toyota-logo.jpg';
 import tunaLogo from './assets/la-tuna-group-logo.png';
+import laysLogo from './assets/Lays_Chips.svg';
+import oxxoLogo from './assets/OXXO_logo.svg';
 import cemexLogo from './assets/cemex_logo.png';
 
 const Container = styled.div`
@@ -87,6 +89,8 @@ function ClientStrip () {
         <Logo src={toyotaLogo} />
         <Logo src={tunaLogo} />
         <Logo src={cemexLogo} />
+        <Logo src={laysLogo} />
+        <Logo src={oxxoLogo} />
       </LogoList>
       <VerticalLine />
       <Header>
