@@ -54,20 +54,24 @@ function SimpleSlider () {
 
   const members = [{
     name: 'Rene Allegretti',
+    role: "Co-founder",
     image: rene,
     linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/',
     imdb: 'https://www.imdb.com/name/nm5727065/'
   }, {
     name: 'Eden Muñoz',
+    role: "Co-founder",
     image: eden,
     linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/',
     imdb: 'https://www.imdb.com/name/nm6097371/'
   }, {
     name: 'Ricardo Santillana',
+    role: "Project Manager, CG Generalist",
     image: Ricky,
     linkedin: 'https://www.linkedin.com/in/rsantillana/'
   }, {
     name: 'Ana Luisa López Segovia',
+    role: "CG Generalist",
     image: Ana,
     linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
   }];
@@ -78,6 +82,7 @@ function SimpleSlider () {
         {members.map(member => (
           <MemberPicture
             name={member.name}
+            role={member.role}
             picture={member.image}
             linkedin={member.linkedin}
             imdb={member.imdb}

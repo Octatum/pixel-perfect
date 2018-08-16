@@ -95,6 +95,12 @@ const Name = styled.div`
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
     <Icons linkedin={props.linkedin} imdb={props.imdb} />
-    <Name className='name'>{props.name}</Name>
+    <Name className='name'>
+      <p>
+        <b>{props.name}</b>
+        <br/>
+        <i>{props.role}</i>
+      </p>
+    </Name>
   </Layout>
 )
