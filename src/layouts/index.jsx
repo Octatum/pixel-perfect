@@ -18,11 +18,11 @@ const Layout = ({ children, data }) => (
         ]}
         link={[{
           rel:"shortcut icon",
-          href:"/favicon.ico",
+          href:"/favicon.ico?v=2",
           type:"image/x-icon"
         }, {
           rel:"icon",
-          href:"/favicon.ico",
+          href:"/favicon.ico?v=2",
           type:"image/x-icon"
         }]}
       />
