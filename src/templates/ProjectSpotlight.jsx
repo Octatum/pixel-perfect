@@ -228,6 +228,10 @@ const BackToProjectsUrl = Link.extend`
   padding: 0.3em;
 `;
 
+const ExternalLink = styled.a`
+  color: white;
+`;
+
 function ProjectSpotlight({data: {projectsJson}}) {
   const { name, release, genre, studio, about, image, plot, link } = projectsJson;
 
@@ -248,10 +252,12 @@ function ProjectSpotlight({data: {projectsJson}}) {
               <br />
               <h3>Studio</h3>
               <p>{studio}</p>
-              {link !== undefined && (
+              {link && (
                 <span>
                   <br />
-                  <h3 style={{"text-decoration": "underline", }}><i><Link to={link.url}>{link.header}</Link></i></h3>
+                  <h3>
+                    <ExternalLink target="_blank" href={link.url}>{link.header}</ExternalLink>
+                  </h3>
                 </span>
               )}
             </Info>

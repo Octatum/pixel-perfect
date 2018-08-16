@@ -8,8 +8,8 @@
   "image": "alex.png",
   "plot": "A teenager with behavioral disorders engages in murky worlds in order to find a solution at the expense of everything.",
   "link": {
-    "header": "Facebook",
-    "url": "https://www.facebook.com/AlexWinterFilm/"
+    "header": "Watch railer",
+    "url": "https://vimeo.com/234437323"
   }
 }, {
   "name": "Ghetto Kids",
@@ -21,7 +21,7 @@
   "image": "ghetto.png",
   "plot": "",
   "link": {
-    "header": "Video",
+    "header": "Watch music video",
     "url": "https://www.youtube.com/watch?v=BzkiX_zFAqg"
   }
 }, {
@@ -34,7 +34,7 @@
   "image": "vela.png",
   "plot": "Susana, a tennager girl scout, walks with her friends into the woods to play an mysterious rite of initiation.",
   "link": {
-    "header": "Video",
+    "header": "Watch trailer",
     "url": "https://vimeo.com/272864287"
   }
 }]
