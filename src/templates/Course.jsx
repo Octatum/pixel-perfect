@@ -18,6 +18,17 @@ const CourseHeader = styled.div`
   background: ${props => props.background};
   background-size: cover;
 
+  ::before {
+    content: "";
+    background: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
   ${device.tablet} {
     font-size: 0.8em;
   }
