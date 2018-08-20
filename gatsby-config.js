@@ -12,5 +12,14 @@ module.exports = {
         path: `${__dirname}/content/json`,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `white`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
   ],
 }
