@@ -63,6 +63,7 @@ class BackgroundVideoPlayer extends React.Component {
         loop
         poster=""
         autoPlay
+        preload="none"
       >
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
