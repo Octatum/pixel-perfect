@@ -274,8 +274,8 @@ function Course ({data: {coursesJson, allCoursesJson}}) {
         <Description>
           <BookmarkIcon />
           <h2>
-            What you <br />
-            <strong>will learn</strong>
+            What will <br />
+            <strong>you learn</strong>
           </h2>
           <p>{about}</p>
         </Description>
