@@ -17,7 +17,7 @@ const CourseHeader = styled.div`
   height: 62%;
   background: ${props => props.background};
   background-size: cover;
-  background-position: 0 5em;
+  background-position: top;
 
   ::before {
     content: "";
