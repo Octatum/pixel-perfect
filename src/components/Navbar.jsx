@@ -117,6 +117,7 @@ const ListElement = styled.li`
 class Navbar extends Component {
   state = {
     showNavMenu: false,
+    hoveringServices: false,
   }
 
   toggleNavMenu = () => {
