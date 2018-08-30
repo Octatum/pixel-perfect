@@ -18,12 +18,16 @@ const Navsection = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 3vh 0;
+  padding: 0;
   background: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 
   ${device.tablet} {
-    box-sizing: border-box;
-    padding: 3vh 1.5em;
+    padding-left: 1.5em;
+  }
+
+  ${device.mobile} {
+    padding: 1.5em;
   }
 `;
 
@@ -62,10 +66,11 @@ const LogoDiv = styled.div`
 const Logo = Link.extend`
   font-weight: bold;
   letter-spacing: -0.1em;
-
-  ${device.tablet} {
-    mix-blend-mode: hard-light;
-  }
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Links = styled.ul.attrs()`
@@ -91,13 +96,15 @@ const Links = styled.ul.attrs()`
 
 const ListElement = styled.li`
   font-size: 1.1em;
-  padding: 0 0.5em;
+  box-sizing: border-box;
+  padding: 1.5em 0.5em;
 
   ${device.mobile} {
     font-size: calc(1rem + 2vw);
     text-align: center;
     height: 3em;
     width: 100%;
+    padding: 0;
 
     :first-of-type ${Link} {
       border-top: 1px solid white;
@@ -114,10 +121,65 @@ const ListElement = styled.li`
   }
 `;
 
+const HoverableListItem = ListElement.extend`
+  position: relative;
+
+  :hover > ul {
+    transform: translateX(-50%) translateY(0) scaleY(1);
+    opacity: 1;
+  }
+`;
+
+const SubmenuItems = styled.ul`
+  position: absolute;
+  min-width: 100%;
+  border-top: 1px solid white;
+  margin-top: 1.5em;
+  left: 50%;
+  transition: 300ms ease-in-out all;
+  transform: translateX(-50%) translateY(-50%) scaleY(0);
+  opacity: 0;
+
+  > li:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    height: 1px;
+    background: white;
+    top: 0;
+  }
+
+  ${device.mobile} {
+    display: none;
+  }
+`;
+
+const SubmenuItem = styled.li`
+  color: white;
+  position: relative;
+  text-align: center;
+`;
+
+const SubmenuLink = styled(Link)`
+  box-sizing: border-box;
+  display: block;
+  padding: 0.7rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  transition: background-color 300ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+
+  :hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+`;
+
 class Navbar extends Component {
   state = {
     showNavMenu: false,
-    hoveringServices: false,
   }
 
   toggleNavMenu = () => {
@@ -140,7 +202,14 @@ class Navbar extends Component {
         <Links open={this.state.showNavMenu}>
           <ListElement><Link onClick={() => this.closeNavbar()} to="/">home</Link></ListElement>
           <ListElement><Link onClick={() => this.closeNavbar()} to="/about">about</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/services">services</Link></ListElement>
+          <HoverableListItem>
+            <Link onClick={() => this.closeNavbar()} to="/services">services</Link>
+            <SubmenuItems>
+              <SubmenuItem><SubmenuLink to="/portfolio">Portfolio</SubmenuLink></SubmenuItem>
+              <SubmenuItem><SubmenuLink to="/course/matchmove">Matchmove</SubmenuLink></SubmenuItem>
+              <SubmenuItem><SubmenuLink to="/course/roto-painting">Roto painting</SubmenuLink></SubmenuItem>
+            </SubmenuItems>
+          </HoverableListItem>
           <ListElement><Link onClick={() => this.closeNavbar()} to="/contact">contact</Link></ListElement>
         </Links>
       </Navsection>
