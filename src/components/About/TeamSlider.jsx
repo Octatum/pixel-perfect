@@ -9,6 +9,7 @@ import rene from './assets/memberpictures/Rene.png';
 import eden from './assets/memberpictures/eden.png';
 import Ana from './assets/memberpictures/Ana.png';
 import Ricky from './assets/memberpictures/Rikcy.png';
+import Eduardo from './assets/memberpictures/eduardo.jpg';
 
 const SliderLayout = styled.div`
   .slick-dots li button::before, .slick-dots li.slick-active button::before {
@@ -59,11 +60,16 @@ function SimpleSlider () {
     linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/',
     imdb: 'https://www.imdb.com/name/nm5727065/'
   }, {
-    name: 'Eden Muñoz',
+    name: 'Edén Muñoz',
     role: "Co-founder",
     image: eden,
     linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/',
     imdb: 'https://www.imdb.com/name/nm6097371/'
+  }, {
+    name: 'Eduardo Parra',
+    role: "Visual Effects Executive Producer",
+    image: Eduardo,
+    linkedin: 'https://www.linkedin.com/in/edparrao/'
   }, {
     name: 'Ricardo Santillana',
     role: "CG Generalist",
