@@ -51,7 +51,9 @@ const Box = styled.div`
     border-right-color: var(--bg-color);
   }
 
-  ${props => props.isFirstElement ? `
+  ${props =>
+    props.isFirstElement
+      ? `
     left: 0;
 
     &::before,
@@ -62,9 +64,12 @@ const Box = styled.div`
     &::after {
       opacity 0;
     }
-    `: ``}
+    `
+      : ``}
 
-  ${props => props.isLastElement ? `
+  ${props =>
+    props.isLastElement
+      ? `
     left: 100%;
     transform: translateX(-100%);
 
@@ -77,9 +82,12 @@ const Box = styled.div`
     &::before {
       opacity 0;
     }
-    `: ``}
+    `
+      : ``}
 
-  ${props => !props.isLastElement && !props.isFirstElement ? `
+  ${props =>
+    !props.isLastElement && !props.isFirstElement
+      ? `
     left: 50%;
     transform: translateX(-50%);
 
@@ -90,7 +98,8 @@ const Box = styled.div`
     &::after {
       left: calc(50% - 4rem);
     }
-  ` : ''}
+  `
+      : ''}
 `;
 
 const Spacer = styled.div`
@@ -100,14 +109,18 @@ const Spacer = styled.div`
   background: white;
 `;
 
-const Hoverbox = ({element: {content, title, url, color}, ...rest}) => (
+const Hoverbox = ({ element: { content, title, url, color }, ...rest }) => (
   <Box color={color} {...rest}>
     <strong>{title}</strong>
     <Spacer />
     <div>
       {content}
-      <br/>
-      <strong><em><Link to={url}>&nbsp;View more...</Link></em></strong>
+      <br />
+      <strong>
+        <em>
+          <Link to={url}>&nbsp;View more...</Link>
+        </em>
+      </strong>
     </div>
   </Box>
 );

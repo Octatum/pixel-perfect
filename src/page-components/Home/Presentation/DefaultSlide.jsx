@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { device } from '../../utils/device';
+import { device } from '../../../utils/device';
 
 const Bg = styled.div.attrs({
-  style: (props) => ({...props})
+  style: props => ({ ...props }),
 })`
   position: relative;
   display: flex;
@@ -53,19 +53,22 @@ const Bold = styled.span`
   font-weight: bold;
 `;
 
-
-const DefaultSlide = (data) => (
+const DefaultSlide = data => (
   <Bg {...data}>
     <Textbox>
-      <MainSlideText>Perfeccionando la industria en <strong>Monterrey</strong></MainSlideText>
-      <SecondaryText>demo <strong>reel</strong></SecondaryText>
+      <MainSlideText>
+        Perfeccionando la industria en <strong>Monterrey</strong>
+      </MainSlideText>
+      <SecondaryText>
+        demo <strong>reel</strong>
+      </SecondaryText>
     </Textbox>
   </Bg>
 );
 
 export default DefaultSlide;
 
-export const SlideOne = (data) => (
+export const SlideOne = data => (
   <Bg background={data.background}>
     <Textbox>
       <MainSlideText>Lorem ipsum dolor sit amet</MainSlideText>
@@ -74,11 +77,13 @@ export const SlideOne = (data) => (
   </Bg>
 );
 
-export const SlideTwo = (data) => (
+export const SlideTwo = data => (
   <Bg background={data.background}>
     <Textbox>
       <MainSlideText>Consectetur adipisicing elit</MainSlideText>
-      <SecondaryText>Aspernatur corrupti excepturi vel, esse consequatur eaque porro!</SecondaryText>
+      <SecondaryText>
+        Aspernatur corrupti excepturi vel, esse consequatur eaque porro!
+      </SecondaryText>
     </Textbox>
   </Bg>
 );

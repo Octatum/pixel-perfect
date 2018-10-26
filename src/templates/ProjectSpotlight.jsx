@@ -1,8 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import { device } from '../utils/device'
+import { device } from '../utils/device';
 import Link from '../components/Link';
+import AppLayout from '../components/AppLayout';
+import { graphql } from 'gatsby';
 
 const SpotlightLayout = styled.div`
   display: flex;
@@ -58,7 +60,7 @@ const BigPicture = styled.div`
     height: 100%;
     z-index: -1;
   }
-`
+`;
 
 const InfoGrid = styled.div`
   flex: 1;
@@ -81,7 +83,7 @@ const InfoGrid = styled.div`
   ${device.mobile} {
     grid-template-rows: 15em;
   }
-`
+`;
 
 const OpaqueDiv = styled.div`
   display: none;
@@ -93,7 +95,7 @@ const OpaqueDiv = styled.div`
   ${device.tablet} {
     display: block;
   }
-`
+`;
 
 const Info = styled.div`
   grid-column: 1 / 2;
@@ -113,7 +115,7 @@ const Info = styled.div`
   ${device.mobile} {
     font-size: 0.8em;
   }
-`
+`;
 
 const Title = styled.div`
   grid-column: 2 / 5;
@@ -148,7 +150,7 @@ const Title = styled.div`
       font-size: 2em;
     }
   }
-`
+`;
 
 const PictureGallery = styled.div`
   grid-column: 2 / 5;
@@ -174,7 +176,7 @@ const PictureGallery = styled.div`
   ${device.mobile} {
     padding: 0.5em 0 !important;
   }
-`
+`;
 
 const SmallPicture = styled.div`
   height: 5em;
@@ -218,7 +220,7 @@ const PlotOutline = styled.div`
   }
 `;
 
-const BackToProjectsUrl = Link.extend`
+const BackToProjectsUrl = styled(Link)`
   position: absolute;
   bottom: 3rem;
   right: 3rem;
@@ -232,16 +234,25 @@ const ExternalLink = styled.a`
   color: white;
 `;
 
-function ProjectSpotlight({data: {projectsJson}}) {
-  const { name, release, genre, studio, about, image, plot, link } = projectsJson;
+function ProjectSpotlight({ data: { projectsJson } }) {
+  const {
+    name,
+    release,
+    genre,
+    studio,
+    about,
+    image,
+    plot,
+    link,
+  } = projectsJson;
 
   return (
-    <div>
+    <AppLayout>
       <SpotlightLayout>
         <Background />
         <FillerDiv />
         <ProjectContainer>
-          <BigPicture background={`url("/images/${image}") center repeat-x`}/>
+          <BigPicture background={`url("/images/${image}") center repeat-x`} />
           <InfoGrid>
             <Info>
               <h3>Release Date</h3>
@@ -256,15 +267,15 @@ function ProjectSpotlight({data: {projectsJson}}) {
                 <span>
                   <br />
                   <h3>
-                    <ExternalLink target="_blank" href={link.url}>{link.header}</ExternalLink>
+                    <ExternalLink target="_blank" href={link.url}>
+                      {link.header}
+                    </ExternalLink>
                   </h3>
                 </span>
               )}
             </Info>
             <Title>
-              <h1>
-                {name}
-              </h1>
+              <h1>{name}</h1>
             </Title>
             <PlotOutline>
               {plot.length > 0 && (
@@ -274,22 +285,22 @@ function ProjectSpotlight({data: {projectsJson}}) {
                 </span>
               )}
             </PlotOutline>
-            <OpaqueDiv start='3' end='5' opacity='1'/>
+            <OpaqueDiv start="3" end="5" opacity="1" />
           </InfoGrid>
         </ProjectContainer>
         <BackToProjectsUrl to="/portfolio">
-          <i className="fa fa-arrow-left"/>
+          <i className="fa fa-arrow-left" />
         </BackToProjectsUrl>
       </SpotlightLayout>
-    </div>
+    </AppLayout>
   );
 }
 
 export default ProjectSpotlight;
 
 export const pageQuery = graphql`
-  query GetProjectData($route: String!){
-    projectsJson(path: {eq: $route}) {
+  query GetProjectData($route: String!) {
+    projectsJson(path: { eq: $route }) {
       name
       release
       genre

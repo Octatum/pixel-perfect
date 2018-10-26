@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
-import TeamSlider from '../components/About/TeamSlider';
-import bg from '../components/About/assets/about-bg.jpg'
-import { device } from '../utils/device'
+import TeamSlider from './TeamSlider';
+import bg from './assets/about-bg.jpg';
+import AppLayout from '../../../components/AppLayout';
+import { device } from '../../../utils/device';
 
 const Background = styled.div`
   position: relative;
   background: url(${bg}) no-repeat center center fixed;
   background-size: cover;
-  width: 100vw;
   height: 100vh;
 `;
 
@@ -82,21 +82,27 @@ const SliderLayout = styled.div`
   }
 `;
 
-
 function About() {
   return (
-    <Background>
-      <Layout>
-        <TextLayout>
-          <Header>Who are we?</Header>
-          <Subtext>Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico.
-This company was born by the idea of perfecting the industry in Monterrey, our mission is to deliver the highest quality product in the north of Mexico and eventually the whole country.</Subtext>
-        </TextLayout>
-        <SliderLayout>
-          <TeamSlider />
-        </SliderLayout>
-      </Layout>
-    </Background>
+    <AppLayout>
+      <Background>
+        <Layout>
+          <TextLayout>
+            <Header>Who are we?</Header>
+            <Subtext>
+              Pixel Perfect VFX is a visual effects studio and training center
+              based in Monterrey, Mexico. This company was born by the idea of
+              perfecting the industry in Monterrey, our mission is to deliver
+              the highest quality product in the north of Mexico and eventually
+              the whole country.
+            </Subtext>
+          </TextLayout>
+          <SliderLayout>
+            <TeamSlider />
+          </SliderLayout>
+        </Layout>
+      </Background>
+    </AppLayout>
   );
 }
 

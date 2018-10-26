@@ -43,37 +43,39 @@ const IconList = styled.div`
   justify-content: space-between;
 `;
 
-
-
 class InfoBoxes extends Component {
   state = {
     currentlySelected: 1,
-  }
+  };
 
-  selectElement = (elementIndex) => {
-    this.setState({currentlySelected: elementIndex});
-  }
+  selectElement = elementIndex => {
+    this.setState({ currentlySelected: elementIndex });
+  };
 
-  render () {
-    const Elements = [{
-      img: tablet,
-      url: "/portfolio",
-      title: 'Service: CGI / VFX',
-      content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like 3D modelling and animation, lighting, etc. `,
-      color: 'rgba(11, 120, 84, 0.6)'
-    }, {
-      img: screen,
-      url: "/course/roto-painting",
-      title: 'Course: Roto Painting',
-      content: `A roto artist is able to trace areas from live action frames and remove objects from them through digital compositing.`,
-      color: 'rgba(7, 0, 109, 0.6)'
-    }, {
-      img: thunder,
-      url: "/course/matchmove",
-      title: 'Course: Matchmove',
-      content: `Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.`,
-      color: 'rgba(7, 0, 109, 0.6)'
-    }];
+  render() {
+    const Elements = [
+      {
+        img: tablet,
+        url: '/portfolio',
+        title: 'Service: CGI / VFX',
+        content: `We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like 3D modelling and animation, lighting, etc. `,
+        color: 'rgba(11, 120, 84, 0.6)',
+      },
+      {
+        img: screen,
+        url: '/course/roto-painting',
+        title: 'Course: Roto Painting',
+        content: `A roto artist is able to trace areas from live action frames and remove objects from them through digital compositing.`,
+        color: 'rgba(7, 0, 109, 0.6)',
+      },
+      {
+        img: thunder,
+        url: '/course/matchmove',
+        title: 'Course: Matchmove',
+        content: `Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.`,
+        color: 'rgba(7, 0, 109, 0.6)',
+      },
+    ];
 
     return (
       <Layout>
@@ -83,7 +85,7 @@ class InfoBoxes extends Component {
           isLastElement={this.state.currentlySelected === Elements.length - 1}
         />
         <IconList>
-          {Elements.map(({url, img}, index) => (
+          {Elements.map(({ url, img }, index) => (
             <Link
               key={index}
               to={url}

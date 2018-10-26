@@ -20,7 +20,7 @@ const Layout = styled.div`
     padding: 2em 2.5em;
     opacity: 1;
   }
-`
+`;
 
 const ListDiv = styled.div`
   position: absolute;
@@ -43,20 +43,20 @@ const grabNames = arr => {
   if (arr === undefined || arr.length === 0) {
     return null;
   }
-  return arr.map(name => (<li>{name}</li>));
-}
+  return arr.map(name => <li>{name}</li>);
+};
 
 function ProjectPortfolioSlot(props) {
   return (
     <Layout bg={props.bg}>
       <ListDiv className="list">
-        <ul>
-          {grabNames(props.names)}
-        </ul>
-        <p><strong>...</strong></p>
+        <ul>{grabNames(props.names)}</ul>
+        <p>
+          <strong>...</strong>
+        </p>
       </ListDiv>
     </Layout>
-  )
+  );
 }
 
 export default ProjectPortfolioSlot;

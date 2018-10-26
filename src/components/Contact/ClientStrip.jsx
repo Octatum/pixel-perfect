@@ -27,8 +27,6 @@ const LogoList = styled.div`
   justify-content: space-around;
   width: 100%;
 `;
-;
-
 const Logo = styled.img`
   width: 20%;
   max-width: 7rem;
@@ -63,7 +61,7 @@ const Header = styled.h2`
   }
 `;
 
-const WhiteHeader = Header.extend`
+const WhiteHeader = styled(Header)`
   display: none;
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
@@ -78,11 +76,11 @@ const WhiteHeader = Header.extend`
   }
 `;
 
-function ClientStrip () {
+function ClientStrip() {
   return (
     <Container>
       <WhiteHeader>
-        Our <br/>
+        Our <br />
         <strong>Clients</strong>
       </WhiteHeader>
       <LogoList>

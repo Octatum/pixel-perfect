@@ -1,12 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { device } from '../../../utils/device';
 
-import { device } from '../../utils/device'
 
 const Layout = styled.div`
   position: relative;
   height: calc((50vw - 8em) / 4);
-  background: url(${props => props.picture ? props.picture : null}) no-repeat center center;
+  background: url(${props => (props.picture ? props.picture : null)}) no-repeat
+    center center;
   background-size: cover;
   background-color: ${props => props.bg};
 
@@ -38,7 +39,7 @@ const Layout = styled.div`
   &:hover .name {
     max-height: 40%;
   }
-`
+`;
 
 const _Icons = ({ className, linkedin, imdb }) => {
   const result = [];
@@ -59,12 +60,8 @@ const _Icons = ({ className, linkedin, imdb }) => {
     );
   }
 
-  return (
-    <div className={className}>
-      {result}
-    </div>
-  );
-}
+  return <div className={className}>{result}</div>;
+};
 
 const Icons = styled(_Icons)`
   position: absolute;
@@ -77,7 +74,7 @@ const Icons = styled(_Icons)`
     text-decoration: none;
     color: white;
   }
-`
+`;
 
 const Name = styled.div`
   position: absolute;
@@ -90,17 +87,17 @@ const Name = styled.div`
   font-family: ${props => props.theme.font.main};
   font-size: 0.8em;
   text-align: center;
-`
+`;
 
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
     <Icons linkedin={props.linkedin} imdb={props.imdb} />
-    <Name className='name'>
+    <Name className="name">
       <p>
         <b>{props.name}</b>
-        <br/>
+        <br />
         <i>{props.role}</i>
       </p>
     </Name>
   </Layout>
-)
+);

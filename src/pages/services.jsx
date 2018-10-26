@@ -5,6 +5,7 @@ import InfoBoxes from '../components/Services/InfoBoxes';
 import { device } from '../utils/device';
 import Link from '../components/Link';
 import bgImage from '../components/Services/assets/cgi.jpg';
+import AppLayout from '../components/AppLayout';
 
 const Layout = styled.div`
   position: relative;
@@ -17,7 +18,7 @@ const Layout = styled.div`
   background-size: cover;
 
   ::before {
-    content: "";
+    content: '';
     background: black;
     opacity: 0.3;
     width: 100%;
@@ -82,20 +83,29 @@ const SecondaryText = styled.div`
   }
 `;
 
-
 function Services() {
   return (
-    <Layout background={`url("${bgImage}")`}>
-      <InfoBoxes />
-      <RightTextbox>
-        <MainSlideText>What we do</MainSlideText>
-        <SecondaryText>
-          <p>Our services include training courses for those seeking a career in VFX industry. We also offer production and post-production services for visual media projects.</p>
-          <br />
-          <Link to="/portfolio"><strong><em>Our projects</em></strong></Link>
-        </SecondaryText>
-      </RightTextbox>
-    </Layout>
+    <AppLayout>
+      <Layout background={`url("${bgImage}")`}>
+        <InfoBoxes />
+        <RightTextbox>
+          <MainSlideText>What we do</MainSlideText>
+          <SecondaryText>
+            <p>
+              Our services include training courses for those seeking a career
+              in VFX industry. We also offer production and post-production
+              services for visual media projects.
+            </p>
+            <br />
+            <Link to="/portfolio">
+              <strong>
+                <em>Our projects</em>
+              </strong>
+            </Link>
+          </SecondaryText>
+        </RightTextbox>
+      </Layout>
+    </AppLayout>
   );
 }
 

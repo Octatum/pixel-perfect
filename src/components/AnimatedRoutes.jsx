@@ -1,9 +1,9 @@
-import React from 'react'
-import { Route, cleanPath } from 'react-static'
-import { easeCubicInOut } from 'd3-ease'
-import { NodeGroup } from 'react-move'
-import { withContext, getContext } from 'recompose'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Route, cleanPath } from 'react-static';
+import { easeCubicInOut } from 'd3-ease';
+import { NodeGroup } from 'react-move';
+import { withContext, getContext } from 'recompose';
+import PropTypes from 'prop-types';
 
 // The magic :)
 const AnimatedRoutes = getContext({
@@ -18,9 +18,9 @@ const AnimatedRoutes = getContext({
     path="*"
     render={props => {
       // Get the component for this path
-      let Comp = getComponentForPath(cleanPath(props.location.pathname))
+      let Comp = getComponentForPath(cleanPath(props.location.pathname));
       if (!Comp) {
-        Comp = getComponentForPath('404')
+        Comp = getComponentForPath('404');
       }
 
       // When we're rendering for static HTML, be sure to NOT animate in.
@@ -30,7 +30,7 @@ const AnimatedRoutes = getContext({
           <div style={{ position: 'relative' }}>
             <Comp {...props} />
           </div>
-        )
+        );
       }
 
       // Use React-Move 0to animate the different components coming in and out
@@ -74,8 +74,8 @@ const AnimatedRoutes = getContext({
                   },
                   () => ({
                     router: data.router,
-                  }),
-                )(props => <div {...props} />)
+                  })
+                )(props => <div {...props} />);
 
                 return (
                   <PreservedRouterContext
@@ -92,14 +92,14 @@ const AnimatedRoutes = getContext({
                   >
                     <data.Comp {...data.props} />
                   </PreservedRouterContext>
-                )
+                );
               })}
             </div>
           )}
         </NodeGroup>
-      )
+      );
     }}
   />
-))
+));
 
 export default AnimatedRoutes;

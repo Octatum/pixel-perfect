@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { device } from '../utils/device'
+import { device } from '../utils/device';
 import Link from './Link';
 
 const elasticTransitionTimingFunction = `
@@ -31,11 +31,10 @@ const Navsection = styled.nav`
   }
 `;
 
-
 const DropdownButton = styled.a.attrs({
-  style: ({open}) => ({
+  style: ({ open }) => ({
     // transform: `rotate(${(open ? 0 : 360)}deg)`
-  })
+  }),
 })`
   position: fixed;
   right: 1em;
@@ -63,7 +62,7 @@ const LogoDiv = styled.div`
   }
 `;
 
-const Logo = Link.extend`
+const Logo = styled(Link)`
   font-weight: bold;
   letter-spacing: -0.1em;
   display: flex;
@@ -82,9 +81,8 @@ const Links = styled.ul.attrs()`
   text-align: center;
 
   ${device.mobile} {
-    display: ${({open}) => open ? 'flex' : 'none'};
+    display: ${({ open }) => (open ? 'flex' : 'none')};
     position: fixed;
-    width: 100vw;
     height: 100vh;
     background: black;
     flex-direction: column;
@@ -121,7 +119,7 @@ const ListElement = styled.li`
   }
 `;
 
-const HoverableListItem = ListElement.extend`
+const HoverableListItem = styled(ListElement)`
   position: relative;
 
   :hover > ul {
@@ -141,7 +139,7 @@ const SubmenuItems = styled.ul`
   opacity: 0;
 
   > li:not(:first-of-type)::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 70%;
     left: 15%;
@@ -180,15 +178,15 @@ const SubmenuLink = styled(Link)`
 class Navbar extends Component {
   state = {
     showNavMenu: false,
-  }
+  };
 
   toggleNavMenu = () => {
-    this.setState({showNavMenu: !this.state.showNavMenu});
-  }
+    this.setState({ showNavMenu: !this.state.showNavMenu });
+  };
 
   closeNavbar = () => {
-    this.setState({showNavMenu: false})
-  }
+    this.setState({ showNavMenu: false });
+  };
 
   render() {
     return (
@@ -196,24 +194,51 @@ class Navbar extends Component {
         <LogoDiv>
           <Logo to="/">PIXELPERFECT</Logo>
         </LogoDiv>
-        <DropdownButton onClick={this.toggleNavMenu} open={this.state.showNavMenu}>
-          <i className={this.state.showNavMenu ? "fas fa-times" : "fas fa-bars"} />
+        <DropdownButton
+          onClick={this.toggleNavMenu}
+          open={this.state.showNavMenu}
+        >
+          <i
+            className={this.state.showNavMenu ? 'fas fa-times' : 'fas fa-bars'}
+          />
         </DropdownButton>
         <Links open={this.state.showNavMenu}>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/">home</Link></ListElement>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/about">about</Link></ListElement>
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/">
+              home
+            </Link>
+          </ListElement>
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/about">
+              about
+            </Link>
+          </ListElement>
           <HoverableListItem>
-            <Link onClick={() => this.closeNavbar()} to="/services">services</Link>
+            <Link onClick={() => this.closeNavbar()} to="/services">
+              services
+            </Link>
             <SubmenuItems>
-              <SubmenuItem><SubmenuLink to="/portfolio">Portfolio</SubmenuLink></SubmenuItem>
-              <SubmenuItem><SubmenuLink to="/course/matchmove">Matchmove</SubmenuLink></SubmenuItem>
-              <SubmenuItem><SubmenuLink to="/course/roto-painting">Roto painting</SubmenuLink></SubmenuItem>
+              <SubmenuItem>
+                <SubmenuLink to="/portfolio">Portfolio</SubmenuLink>
+              </SubmenuItem>
+              <SubmenuItem>
+                <SubmenuLink to="/course/matchmove">Matchmove</SubmenuLink>
+              </SubmenuItem>
+              <SubmenuItem>
+                <SubmenuLink to="/course/roto-painting">
+                  Roto painting
+                </SubmenuLink>
+              </SubmenuItem>
             </SubmenuItems>
           </HoverableListItem>
-          <ListElement><Link onClick={() => this.closeNavbar()} to="/contact">contact</Link></ListElement>
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/contact">
+              contact
+            </Link>
+          </ListElement>
         </Links>
       </Navsection>
-    )
+    );
   }
 }
 

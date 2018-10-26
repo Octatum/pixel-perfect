@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navigateTo } from "gatsby-link";
+import { navigateTo } from 'gatsby-link';
 
 import { device } from '../../utils/device';
 
@@ -50,7 +50,8 @@ const InfoList = styled.div`
   padding: 0.5em 1.5em;
   font-size: 1.1em;
 
-  div, a {
+  div,
+  a {
     display: flex;
     padding: 0.7em 0;
   }
@@ -152,8 +153,8 @@ const ButtonSubmit = styled.button`
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 }
 
 class ContactInfo extends React.Component {
@@ -161,32 +162,32 @@ class ContactInfo extends React.Component {
     messageSent: false,
     message: '',
     company: '',
-    name: ''
+    name: '',
   };
 
-  handleChange = ({target}) => {
+  handleChange = ({ target }) => {
     this.setState({
-      [target.name]: target.value
+      [target.name]: target.value,
     });
-  }
+  };
 
   handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
     const self = this;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        "form-name": form.getAttribute("name"),
-        ...self.state
+        'form-name': form.getAttribute('name'),
+        ...self.state,
+      }),
+    })
+      .then(() => {
+        self.setState({ messageSent: true });
+        alert('Your message was sent!');
       })
-    })
-    .then(() => {
-      self.setState({messageSent: true});
-      alert("Your message was sent!");
-    })
-    .catch(error => alert(error));
+      .catch(error => alert(error));
   };
 
   render() {
@@ -208,7 +209,7 @@ class ContactInfo extends React.Component {
               <p>/Pixelperfectvfx</p>
             </a>
           </InfoList>
-          <Message 
+          <Message
             name="contact"
             method="POST"
             onSubmit={this.handleSubmit}
@@ -218,21 +219,41 @@ class ContactInfo extends React.Component {
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
-                Don’t fill this out:{" "}
+                Don’t fill this out:{' '}
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
             </p>
             <Label>
               <InputName>Name</InputName>
-              <span><Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></span>
+              <span>
+                <Input
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </span>
             </Label>
             <Label>
               <InputName>Company</InputName>
-              <span><Input type="text" name="company" value={this.state.company} onChange={this.handleChange} /></span>
+              <span>
+                <Input
+                  type="text"
+                  name="company"
+                  value={this.state.company}
+                  onChange={this.handleChange}
+                />
+              </span>
             </Label>
             <Label>
               <InputName>Message</InputName>
-              <span><TextArea value={this.state.message} name="message" onChange={this.handleChange} /></span>
+              <span>
+                <TextArea
+                  value={this.state.message}
+                  name="message"
+                  onChange={this.handleChange}
+                />
+              </span>
             </Label>
             <ButtonSubmitContainer>
               <ButtonSubmit type="Send" disabled={this.state.messageSent}>
@@ -242,8 +263,8 @@ class ContactInfo extends React.Component {
           </Message>
         </InnerContainer>
       </Container>
-    )
+    );
   }
 }
 
-export default ContactInfo
+export default ContactInfo;

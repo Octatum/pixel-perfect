@@ -1,9 +1,9 @@
-import React from 'react'
-import Slider from 'react-slick'
-import styled from 'styled-components'
+import React from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
 
 import Link from '../Link';
-import { device, numberValues } from '../../utils/device'
+import { device, numberValues } from '../../utils/device';
 
 const SliderLayout = styled.div`
   position: relative;
@@ -13,7 +13,8 @@ const SliderLayout = styled.div`
     opacity: 0.8;
   }
 
-  .slick-prev, .slide-next {
+  .slick-prev,
+  .slide-next {
     z-index: 1;
   }
 
@@ -36,7 +37,7 @@ const ColorBox = styled.div`
   }
 `;
 
-function ProjectSlideshow({projects}) {
+function ProjectSlideshow({ projects }) {
   const settings = {
     infinite: true,
     speed: 1000,
@@ -49,21 +50,23 @@ function ProjectSlideshow({projects}) {
       {
         breakpoint: numberValues.tablet,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  }
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <SliderLayout>
       <Slider {...settings}>
         {projects.map(project => (
-          <Link to={`/portfolio/${project.path}`}><ColorBox background={`url("/images/${project.image}") center`} /></Link>
+          <Link to={`/portfolio/${project.path}`}>
+            <ColorBox background={`url("/images/${project.image}") center`} />
+          </Link>
         ))}
       </Slider>
     </SliderLayout>
   );
 }
 
-export default ProjectSlideshow
+export default ProjectSlideshow;

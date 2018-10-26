@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ProjectSlideshow from '../components/Portfolio/ProjectSlideshow';
-import { device } from '../utils/device'
+import { device } from '../utils/device';
+import AppLayout from '../components/AppLayout';
+import { graphql } from 'gatsby';
 
 const SlideshowLayout = styled.div`
   position: relative;
@@ -31,22 +33,24 @@ const Header = styled.h2`
   font-weight: 200;
 `;
 
-function Portfolio({data}) {
-  const {projects: projectsData} = data;
+function Portfolio({ data }) {
+  const { projects: projectsData } = data;
 
-  const projects = projectsData.edges.map(({node}) => ({
+  const projects = projectsData.edges.map(({ node }) => ({
     name: node.name,
     image: node.image,
-    path: node.path
+    path: node.path,
   }));
 
   return (
-    <SlideshowLayout>
-      <ProjectSlideshow projects={projects}/>
-      <TextLayout>
-        <Header>Our Projects</Header>
-      </TextLayout>
-    </SlideshowLayout>
+    <AppLayout>
+      <SlideshowLayout>
+        <ProjectSlideshow projects={projects} />
+        <TextLayout>
+          <Header>Our Projects</Header>
+        </TextLayout>
+      </SlideshowLayout>
+    </AppLayout>
   );
 }
 
