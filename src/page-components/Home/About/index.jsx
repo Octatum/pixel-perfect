@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 import TeamSlider from './TeamSlider';
 import bg from './assets/about-bg.jpg';
-import AppLayout from '../../../components/AppLayout';
 import { device } from '../../../utils/device';
 
 const Background = styled.div`
   position: relative;
   background: url(${bg}) no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Layout = styled.div`
@@ -21,13 +23,12 @@ const Layout = styled.div`
   padding: 4em;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 
   ${device.tablet} {
     position: relative;
     top: 40%;
     height: 60%;
-    padding: 0 1em;
+    padding: 2em 1em;
     align-items: baseline;
   }
 `;
@@ -84,25 +85,23 @@ const SliderLayout = styled.div`
 
 function About() {
   return (
-    <AppLayout>
-      <Background>
-        <Layout>
-          <TextLayout>
-            <Header>Who are we?</Header>
-            <Subtext>
-              Pixel Perfect VFX is a visual effects studio and training center
-              based in Monterrey, Mexico. This company was born by the idea of
-              perfecting the industry in Monterrey, our mission is to deliver
-              the highest quality product in the north of Mexico and eventually
-              the whole country.
-            </Subtext>
-          </TextLayout>
-          <SliderLayout>
-            <TeamSlider />
-          </SliderLayout>
-        </Layout>
-      </Background>
-    </AppLayout>
+    <Background>
+      <Layout>
+        <TextLayout>
+          <Header>Who are we?</Header>
+          <Subtext>
+            Pixel Perfect VFX is a visual effects studio and training center
+            based in Monterrey, Mexico. This company was born by the idea of
+            perfecting the industry in Monterrey, our mission is to deliver the
+            highest quality product in the north of Mexico and eventually the
+            whole country.
+          </Subtext>
+        </TextLayout>
+        <SliderLayout>
+          <TeamSlider />
+        </SliderLayout>
+      </Layout>
+    </Background>
   );
 }
 

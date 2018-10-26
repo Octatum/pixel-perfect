@@ -11,15 +11,15 @@ const Layout = styled.div`
   display: flex;
   position: relative;
   flex: 1;
-  width: 100%;
-  height: 100%;
   min-height: 100vh;
-  background: url("${backgroundImage}") no-repeat center center fixed;
+  overflow: hidden;
   background-size: auto 100%;
   align-items: center;
   justify-content: flex-end;
 
   ${device.tablet} {
+    background: url("${backgroundImage}") no-repeat center center fixed;
+    background-size: cover;
     justify-content: center;
   }
 `;
@@ -65,22 +65,19 @@ const Subheader = styled.div`
 function Presentation() {
   return (
     <Layout>
-      <BackgroundVideoPlayer
-        video={backgroundVideo}
-        poster={backgroundImage}
-      />
+      <BackgroundVideoPlayer video={backgroundVideo} poster={backgroundImage} />
       <Header>
         Perfecting the <br />
         VFX industry in <strong>Monterrey</strong>
         <Subheader>
           Watch our{' '}
-          <a href="https://vimeo.com/256454623" target="_blank">
+          <a href="https://vimeo.com/256454623" target="_blank" rel="noopener noreferrer">
             Demo Reel
           </a>
         </Subheader>
       </Header>
     </Layout>
-  )
+  );
 }
 
 export default Presentation;

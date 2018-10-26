@@ -10,6 +10,7 @@ const Video = styled.video`
   left: 50%;
   min-width: 100%;
   min-height: 100%;
+  max-width: 100vw;
   width: auto;
   height: auto;
   -ms-transform: translateX(-50%) translateY(-50%);

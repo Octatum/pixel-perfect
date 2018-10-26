@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../../utils/device';
 
-
 const Layout = styled.div`
   position: relative;
   height: calc((50vw - 8em) / 4);
@@ -47,14 +46,14 @@ const _Icons = ({ className, linkedin, imdb }) => {
 
   if (linkedin !== undefined) {
     result.push(
-      <a href={linkedin} target="_blank" key={i++}>
+      <a href={linkedin} target="_blank" rel="noopener noreferrer" key={i++}>
         <i className="fab fa-linkedin-in fa-fw" />
       </a>
     );
   }
   if (imdb !== undefined) {
     result.push(
-      <a href={imdb} target="_blank" key={i++}>
+      <a href={imdb} target="_blank" rel="noopener noreferrer" key={i++}>
         <i className="fas fa-star fa-fw" />
       </a>
     );

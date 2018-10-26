@@ -52,22 +52,6 @@ const CourseHeader = styled.div`
   }
 `;
 
-const LeftTitle = styled.h2`
-  position: absolute;
-  bottom: 1.5rem;
-  left: 3.5rem;
-  font-size: 3.5em;
-  font-weight: 200;
-
-  ${device.tablet} {
-    left: 1.5rem;
-  }
-
-  ${device.mobile} {
-    display: none;
-  }
-`;
-
 const CourseTitle = styled.div`
   position: absolute;
   bottom: 1.5rem;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navigateTo } from 'gatsby-link';
 
 import { device } from '../../utils/device';
 
@@ -204,7 +203,7 @@ class ContactInfo extends React.Component {
               <i className="fas fa-mobile-alt fa-fw" />
               <p>8123541330</p>
             </div>
-            <a href="http://facebook.com/Pixelperfectvfx" target="_blank">
+            <a href="http://facebook.com/Pixelperfectvfx" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook-square fa-fw" />
               <p>/Pixelperfectvfx</p>
             </a>

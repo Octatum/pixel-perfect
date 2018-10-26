@@ -64,10 +64,7 @@ const Subheader = styled.div`
 function HomePresentation() {
   return (
     <Layout>
-      <BackgroundVideoPlayer
-        video={backgroundVideo}
-        poster={backgroundImage}
-      />
+      <BackgroundVideoPlayer video={backgroundVideo} poster={backgroundImage} />
       <Header>
         Perfecting the <br />
         VFX industry in <strong>Monterrey</strong>
@@ -79,7 +76,7 @@ function HomePresentation() {
         </Subheader>
       </Header>
     </Layout>
-  )
+  );
 }
 
 export default HomePresentation;
