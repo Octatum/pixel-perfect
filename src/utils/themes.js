@@ -1,7 +1,7 @@
 export const globalTheme = {
   color: {
     light: 'white',
-    dark: '#333',
+    dark: '#111',
     black: 'black',
   },
   font: {

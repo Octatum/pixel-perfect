@@ -9,6 +9,8 @@ import FeaturedIn from '../page-components/Home/FeaturedIn';
 import OurStaff from '../page-components/Home/OurStaff';
 import OurStudents from '../page-components/Home/OurStudents';
 import OurProjects from '../page-components/Home/OurProjects';
+import OurClients from '../page-components/Home/OurClients';
+import Contact from '../page-components/Home/Contact';
 
 const Layout = styled.div`
   display: flex;
@@ -26,6 +28,8 @@ function Home() {
         <OurStaff />
         <OurStudents />
         <OurProjects />
+        <OurClients />
+        <Contact />
       </Layout>
     </AppLayout>
   );
