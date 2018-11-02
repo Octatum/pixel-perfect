@@ -71,7 +71,11 @@ function Presentation() {
         VFX industry in <strong>Monterrey</strong>
         <Subheader>
           Watch our{' '}
-          <a href="https://vimeo.com/256454623" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://vimeo.com/256454623"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Demo Reel
           </a>
         </Subheader>

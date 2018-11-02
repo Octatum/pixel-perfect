@@ -5,7 +5,7 @@ import Text from '../../../components/Text';
 import FeaturedGrid from './FeaturedGrid';
 
 const Layout = styled.section`
-  background: ${({theme}) => theme.color.black};
+  background: ${({ theme }) => theme.color.black};
   margin: 3em 0;
   display: flex;
   flex-direction: column;
@@ -34,12 +34,20 @@ const FeaturedIn = () => {
   return (
     <Layout>
       <HeaderSection>
-        <Text size={10}>Featured<Text as="span" bold size={2}>in</Text></Text>
-        <Text size={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Text>
+        <Text size={10}>
+          Featured
+          <Text as="span" bold size={2}>
+            in
+          </Text>
+        </Text>
+        <Text size={2}>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.{' '}
+        </Text>
       </HeaderSection>
       <FeaturedGrid />
     </Layout>
   );
-}
+};
 
 export default FeaturedIn;

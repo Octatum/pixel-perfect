@@ -203,7 +203,11 @@ class ContactInfo extends React.Component {
               <i className="fas fa-mobile-alt fa-fw" />
               <p>8123541330</p>
             </div>
-            <a href="http://facebook.com/Pixelperfectvfx" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://facebook.com/Pixelperfectvfx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-facebook-square fa-fw" />
               <p>/Pixelperfectvfx</p>
             </a>

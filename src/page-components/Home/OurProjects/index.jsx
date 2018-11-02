@@ -1,10 +1,10 @@
 import React from 'react';
-import Text from '../../components/Text';
-import SlidesSection from './SlidesSection';
-import TextSection from './TextSection';
-import OurLayout from './OurLayout';
+import OurLayout from '../OurLayout';
+import TextSection from '../TextSection';
+import Text from '../../../components/Text';
+import ProjectGrid from './ProjectGrid';
 
-const OurStaff = () => {
+const OurProjects = () => {
   return (
     <OurLayout>
       <TextSection>
@@ -12,16 +12,16 @@ const OurStaff = () => {
           <Text as="span" bold>
             Our
           </Text>
-          Staff
+          Projects
         </Text>
         <Text size={1}>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy{' '}
         </Text>
       </TextSection>
-      <SlidesSection />
+      <ProjectGrid />
     </OurLayout>
   );
 };
 
-export default OurStaff;
+export default OurProjects;

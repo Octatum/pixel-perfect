@@ -16,7 +16,7 @@ const Layout = styled.div`
 
   ${device.tablet} {
     grid-auto-rows: minmax(15em, 33vw);
-    grid-template-columns: repeat(3, 1fr);    
+    grid-template-columns: repeat(3, 1fr);
   }
 
   ${device.mobile} {
@@ -28,19 +28,17 @@ const Layout = styled.div`
 const FeaturedGrid = () => {
   return (
     <Layout>
-      {
-        [1, 2, 3, 4, 5, 6, 7].map((value) => (
-          <FeaturedCell 
-            name="E3 Conference"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            image="https://s3-alpha.figma.com/img/404f/4a3a/1fa836f13510ee6e09a0f467c3ade313"
-            key={value}
-            highlight={value % 2 === 0}
-          />
-        ))
-      }
+      {[1, 2, 3, 4, 5, 6, 7].map(value => (
+        <FeaturedCell
+          name="E3 Conference"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          image="https://s3-alpha.figma.com/img/404f/4a3a/1fa836f13510ee6e09a0f467c3ade313"
+          key={value}
+          highlight={value % 2 === 0}
+        />
+      ))}
     </Layout>
   );
-}
+};
 
 export default FeaturedGrid;

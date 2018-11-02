@@ -20,6 +20,6 @@ const ProjectGrid = () => {
       <ProjectCell color="white" highlightHorizontal />
     </Layout>
   );
-}
+};
 
 export default ProjectGrid;

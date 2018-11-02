@@ -33,10 +33,21 @@ const SlideHeader = styled(Text)`
 const ServiceSlide = () => {
   return (
     <Layout>
-      <Text bold size={9} as="h2">Services</Text>
+      <Text bold size={9} as="h2">
+        Services
+      </Text>
       <TextSection>
-        <SlideHeader align="right" bold size={7}>Screen Replacements</SlideHeader>
-        <Text align="right">We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like <Text bold as="span">3D modelling</Text> and animation, lighting, etc.</Text>
+        <SlideHeader align="right" bold size={7}>
+          Screen Replacements
+        </SlideHeader>
+        <Text align="right">
+          We assist in the post-production process with services like
+          compositing, rotoscoping, cleanup, 3D tracking and CGI services like{' '}
+          <Text bold as="span">
+            3D modelling
+          </Text>{' '}
+          and animation, lighting, etc.
+        </Text>
       </TextSection>
     </Layout>
   );

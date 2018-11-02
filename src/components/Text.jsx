@@ -6,8 +6,8 @@ const increments = {
   default: 0.4,
   laptop: 0.35,
   tablet: 0.3,
-  mobile: 0.2
-}
+  mobile: 0.2,
+};
 
 const setColor = ({ theme, dark }) => {
   const { color } = theme;
@@ -30,7 +30,7 @@ const setFontSize = ({ size }, increment) => {
 
 const setAlign = ({ align }) => {
   return align || 'inherit';
-}
+};
 
 const Text = styled.div`
   line-height: 1.2em;

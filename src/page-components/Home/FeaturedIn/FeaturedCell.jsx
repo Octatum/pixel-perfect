@@ -6,7 +6,7 @@ import Text from '../../../components/Text';
 const Cell = styled.div`
   width: 100%;
   height: 100%;
-  grid-column: span ${({highlight}) => highlight ? 2 : 1};
+  grid-column: span ${({ highlight }) => (highlight ? 2 : 1)};
   position: relative;
   transition: 0.3s ease all;
   overflow: hidden;
@@ -18,7 +18,7 @@ const Cell = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url('${({image}) => image}');
+    background-image: url('${({ image }) => image}');
     background-position: center;
     background-size: cover;
     transform: scale(1);
@@ -55,35 +55,39 @@ const TextDelimiter = styled.div`
   align-items: flex-end;
   flex-direction: column;
   height: 100%;
-  width: ${({highlight}) => highlight ? 60 : 100 }%;
+  width: ${({ highlight }) => (highlight ? 60 : 100)}%;
 `;
 
 const CellHeader = styled(Text)`
   margin-bottom: 0.8rem;
 `;
 
-const FeaturedCell = ({highlight, name, description, ...rest}) => {
+const FeaturedCell = ({ highlight, name, description, ...rest }) => {
   return (
     <Cell highlight={highlight} {...rest}>
       <Overlay>
         <TextDelimiter highlight={highlight}>
-          <CellHeader size={highlight ? 7 : 3} align="right" bold>{name}</CellHeader>
-          <Text size={1} align="right">{description}</Text>
+          <CellHeader size={highlight ? 7 : 3} align="right" bold>
+            {name}
+          </CellHeader>
+          <Text size={1} align="right">
+            {description}
+          </Text>
         </TextDelimiter>
       </Overlay>
     </Cell>
   );
-}
+};
 
 FeaturedCell.defaultProps = {
-  highlight: false
+  highlight: false,
 };
 
 FeaturedCell.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  highlight: PropTypes.bool
+  highlight: PropTypes.bool,
 };
 
 export default FeaturedCell;
