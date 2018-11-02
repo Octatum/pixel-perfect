@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from '../../../components/Text';
-import SlidesSection from '../SlidesSection';
+import Text from '../../components/Text';
+import SlidesSection from './SlidesSection';
+import TextSection from './TextSection';
 
 const Layout = styled.div`
   background: ${({theme}) => theme.color.black};
@@ -10,17 +11,10 @@ const Layout = styled.div`
   flex-direction: column;
 `;
 
-const TextSection = styled("div")`
-  margin-bottom: 6em;
-  margin-right: 3em;
-  width: 55%;
-  align-self: flex-end;
-`;
-
 const OurStudents = () => {
   return (
     <Layout>
-      <TextSection>
+      <TextSection align="end">
         <Text align="right" size={9}><Text as="span" bold>Our</Text>Students</Text>
         <Text align="right" size={1}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </Text>
       </TextSection>

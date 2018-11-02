@@ -7,7 +7,8 @@ import About from '../page-components/Home/About';
 import Services from '../page-components/Home/Services';
 import FeaturedIn from '../page-components/Home/FeaturedIn';
 import OurStaff from '../page-components/Home/OurStaff';
-import OurStudents from '../page-components/Home/OutStudents';
+import OurStudents from '../page-components/Home/OurStudents';
+import OurProjects from '../page-components/Home/OurProjects';
 
 const Layout = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ function Home() {
         <FeaturedIn />
         <OurStaff />
         <OurStudents />
+        <OurProjects />
       </Layout>
     </AppLayout>
   );
