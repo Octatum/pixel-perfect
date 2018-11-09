@@ -22,7 +22,11 @@ describe("Presentación de curso", () => {
       <CoursePresentation {...testData} />,
     );
   
-    expect(getByTestId('container').tagName.toLowerCase()).toEqual('section');
+
+    const mainContainer = getByTestId('container');
+    expect(mainContainer.tagName.toLowerCase()).toEqual('section');
+    expect(mainContainer).toHaveStyle('display: grid');
+
     expect(getByText('Matchmove').tagName.toLowerCase()).toEqual('h2');
     expect(getByText('Requirements').tagName.toLowerCase()).toEqual('h2');
     expect(getByText(/What will/ig).tagName.toLowerCase()).toEqual('h2');
@@ -34,8 +38,6 @@ describe("Presentación de curso", () => {
 
     const writeusText = getByText("Write us!");
     expect(writeusText.tagName.toLowerCase()).toEqual('a');
-    expect(writeusText).toHaveAttribute('aria-label');
-
-    
+    expect(writeusText).toHaveAttribute('aria-label'); 
   });
 });

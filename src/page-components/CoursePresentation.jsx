@@ -6,7 +6,8 @@ const Container = styled('section')`
   display: grid;
 `;
 
-const CoursePresentation = () => {
+const CoursePresentation = props => {
+  const { title, requirements, learnings, programFile } = props;
   return <Container data-testid="container" />;
 };
 
