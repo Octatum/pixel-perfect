@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectContainer from '../page-components/Projects';
+import AppLayout from '../components/AppLayout';
 
 const mockData = {
   banner:
@@ -9,9 +10,9 @@ const mockData = {
   releaseDate: '2018',
   plot:
     'A teenager with behavioral disorders engages in murky worlds in order to find a solution at the expense of everything.',
-  videoUrl: {
+  videoData: {
     type: 'vimeo',
-    url: '',
+    url: 'https://vimeo.com/234437323',
   },
   slideshowImages: [
     'https://s3-alpha.figma.com/img/18bb/1625/81ce2c25c06fc39d920f6b0cff5332be',
@@ -44,7 +45,11 @@ It was popularised in.
 };
 
 const ProjectTemplate = () => {
-  return <ProjectContainer data={mockData} />;
+  return (
+    <AppLayout>
+      <ProjectContainer data={mockData} />
+    </AppLayout>
+  );
 };
 
 export default ProjectTemplate;

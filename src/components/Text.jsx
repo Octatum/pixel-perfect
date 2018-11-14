@@ -33,7 +33,7 @@ const setAlign = ({ align }) => {
 };
 
 const Text = styled.div`
-  line-height: 1.2em;
+  line-height: ${({ lineHeight }) => lineHeight || '1.2em'};
   font-family: ${({ theme }) => theme.font.main};
   color: ${setColor};
   font-size: ${props => setFontSize(props, increments.default)};
