@@ -44,7 +44,6 @@ const ProjectContainer = props => {
       <VideoShowcase videoData={videoData} />
       <Slideshow images={slideshowImages} />
       <WhatWeDid activities={activities} />
-      <BeforeAfter beforeAfterImages={beforeAfterImages} />
       <Share />
     </Layout>
   );
