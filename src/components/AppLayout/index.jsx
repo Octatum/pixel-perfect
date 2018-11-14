@@ -30,7 +30,7 @@ const Layout = ({ children, data }) => (
         ]}
       />
       <link
-        href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700"
+        href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700"
         rel="stylesheet"
       />
       <link

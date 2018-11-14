@@ -19,7 +19,7 @@ const setColor = ({ theme, dark }) => {
 const setWeight = ({ bold }) => {
   bold = bold || false;
 
-  return bold ? '700' : 'initial';
+  return bold ? '700' : '300';
 };
 
 const setFontSize = ({ size }, increment) => {
