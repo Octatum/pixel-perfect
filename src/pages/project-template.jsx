@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectContainer from '../page-components/Projects';
 
 const mockData = {
   banner:
@@ -43,7 +44,7 @@ It was popularised in.
 };
 
 const ProjectTemplate = () => {
-  return <div />;
+  return <ProjectContainer data={mockData} />;
 };
 
 export default ProjectTemplate;
