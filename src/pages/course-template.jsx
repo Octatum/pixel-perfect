@@ -4,7 +4,8 @@ import AppLayout from '../components/AppLayout';
 
 const testData = {
   title: 'Matchmove',
-  requirements: 'Basic knowledge of **3D software** (preferably **Autodesk Maya**)',
+  requirements:
+    'Basic knowledge of **3D software** (preferably **Autodesk Maya**)',
   description:
     'Allows to replicate the movement of a physical camera in live action shots in a **3D digital environment**.',
   learnings: `

@@ -19,7 +19,7 @@ const BackgroundImageContainer = styled('div')`
   position: relative;
 
   ::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -52,9 +52,9 @@ const WhiteLine = styled.div`
 `;
 
 const GridCell = styled('div')`
-  grid-area: ${({area}) => area};
-  align-self: ${({align}) => align || 'initial'};
-  justify-self: ${({justify}) => justify || 'initial'};
+  grid-area: ${({ area }) => area};
+  align-self: ${({ align }) => align || 'initial'};
+  justify-self: ${({ justify }) => justify || 'initial'};
 `;
 
 const ProgramSection = styled('div')`
@@ -67,14 +67,13 @@ const SectionHeader = styled(Text)`
 `;
 
 const RightSlideArrow = styled('span')`
-  
   > * {
     transform: rotate(180deg);
   }
 `;
 
 const Img = styled('img')`
-  height: ${({height}) => height || '1em'};
+  height: ${({ height }) => height || '1em'};
 `;
 
 const CoursePresentation = props => {
@@ -115,13 +114,18 @@ const CoursePresentation = props => {
               <br /> you learn
             </Text>
           </SectionHeader>
-          <Text size={1.5} as={ReactMarkdown} align="right">{learnings}</Text>
+          <Text size={1.5} as={ReactMarkdown} align="right">
+            {learnings}
+          </Text>
         </GridCell>
       </Container>
-      <WhiteLine/>
+      <WhiteLine />
       <ProgramSection>
         <Text size={6} bold>
-          Full<br />program{' '}<Img height='0.8em' src={downloadButton} alt="download program"/>
+          Full
+          <br />
+          program{' '}
+          <Img height="0.8em" src={downloadButton} alt="download program" />
         </Text>
         <Text>
           <br />
