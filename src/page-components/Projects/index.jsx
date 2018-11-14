@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ProjectContainer = (props) => {
   const {
@@ -36,8 +37,8 @@ ProjectContainer.propTypes = {
 
 ProjectContainer.defaultProps = {
   slidwshowImages: [],
-  videoUrl: null,
   beforeAfterImages: [],
+  videoUrl: null,
 }
 
 export default ProjectContainer;
