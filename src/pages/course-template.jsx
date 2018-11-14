@@ -5,7 +5,8 @@ import AppLayout from '../components/AppLayout';
 const testData = {
   title: 'Matchmove',
   requirements: 'Basic knowledge of *3D software* (preferably *Autodesk Maya*)',
-  description: 'Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.',
+  description:
+    'Allows to replicate the movement of a physical camera in live action shots in a 3D digital environment.',
   learnings: `
     In this course you’ll learn to use camera and object *tracking techniques*,
     and the interaction between the *3D tracking* and *modelling softwares*.
@@ -16,9 +17,9 @@ const testData = {
 
 const CourseTemplate = () => {
   return (
-  <AppLayout>
-    <CoursePresentation {...testData} />
-  </AppLayout>
+    <AppLayout>
+      <CoursePresentation {...testData} />
+    </AppLayout>
   );
 };
 
