@@ -6,10 +6,6 @@ const Layout = styled('div')`
   background-color: ${({ color }) => color};
   height: 32.36vw;
   position: relative;
-
-  :hover > div {
-    opacity: 1;
-  }
 `;
 
 const Overlay = styled('div')`

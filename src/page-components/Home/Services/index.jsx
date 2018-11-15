@@ -13,7 +13,6 @@ const Layout = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
-  border-bottom: 1px solid #333;
 `;
 
 const slidesData = [
@@ -39,6 +38,7 @@ const _PrevArrow = styled('img')`
   width: var(--arrow-width);
   height: var(--arrow-height);
   z-index: 1;
+  cursor: pointer;
 `;
 
 const _NextArrow = styled(_PrevArrow)`

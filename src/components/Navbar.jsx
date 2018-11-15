@@ -13,7 +13,7 @@ const elasticTransitionTimingFunction = `
 `;
 
 const Navsection = styled.nav`
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -209,30 +209,27 @@ class Navbar extends Component {
             </Link>
           </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to="/about">
+            <Link onClick={() => this.closeNavbar()} to="/">
               about
             </Link>
           </ListElement>
-          <HoverableListItem>
-            <Link onClick={() => this.closeNavbar()} to="/services">
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/">
               services
             </Link>
-            <SubmenuItems>
-              <SubmenuItem>
-                <SubmenuLink to="/portfolio">Portfolio</SubmenuLink>
-              </SubmenuItem>
-              <SubmenuItem>
-                <SubmenuLink to="/course/matchmove">Matchmove</SubmenuLink>
-              </SubmenuItem>
-              <SubmenuItem>
-                <SubmenuLink to="/course/roto-painting">
-                  Roto painting
-                </SubmenuLink>
-              </SubmenuItem>
-            </SubmenuItems>
-          </HoverableListItem>
+          </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to="/contact">
+            <Link onClick={() => this.closeNavbar()} to="/">
+              featured
+            </Link>
+          </ListElement>
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/">
+              projects
+            </Link>
+          </ListElement>
+          <ListElement>
+            <Link onClick={() => this.closeNavbar()} to="/">
               contact
             </Link>
           </ListElement>

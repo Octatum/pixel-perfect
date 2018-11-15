@@ -4,7 +4,7 @@ import SlideLayout from './SlideLayout';
 
 const IntroSlide = () => {
   return (
-    <SlideLayout background="black">
+    <SlideLayout background="darkred">
       <Text as="h1" align="right" size={10}>
         Title example
       </Text>
@@ -13,12 +13,6 @@ const IntroSlide = () => {
       </Text>
       <Text size={6} align="right" bold>
         important word
-      </Text>
-      <Text align="right">
-        see our{' '}
-        <Text bold as="span">
-          works
-        </Text>
       </Text>
     </SlideLayout>
   );
