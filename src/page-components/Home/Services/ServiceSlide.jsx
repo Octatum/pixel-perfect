@@ -1,16 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import Markdown from 'react-markdown';
 import Text from '../../../components/Text';
 import { device } from '../../../utils/device';
-
-const Layout = styled.div`
-  padding: 2em;
-  min-height: 100vh;
-  background: midnightblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
+import SlideLayout from './SlideLayout';
 
 const TextSection = styled.div`
   margin-bottom: 3em;
@@ -30,26 +23,19 @@ const SlideHeader = styled(Text)`
   margin: 0.75em 0;
 `;
 
-const ServiceSlide = () => {
+const ServiceSlide = props => {
+  const { name, description } = props;
   return (
-    <Layout>
-      <Text bold size={9} as="h2">
-        Services
-      </Text>
+    <SlideLayout background="midnightblue">
       <TextSection>
         <SlideHeader align="right" bold size={7}>
-          Screen Replacements
+          {name}
         </SlideHeader>
-        <Text align="right">
-          We assist in the post-production process with services like
-          compositing, rotoscoping, cleanup, 3D tracking and CGI services like{' '}
-          <Text bold as="span">
-            3D modelling
-          </Text>{' '}
-          and animation, lighting, etc.
+        <Text align="right" as={Markdown}>
+          {description}
         </Text>
       </TextSection>
-    </Layout>
+    </SlideLayout>
   );
 };
 

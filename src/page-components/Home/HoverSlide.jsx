@@ -20,18 +20,17 @@ const Overlay = styled('div')`
   transition: 0.3s ease-in-out opacity;
   background: rgba(0, 0, 0, 0.4);
   padding: 1rem;
+  box-sizing: border-box;
 `;
 
-const HoverSlide = (props) => {
+const HoverSlide = props => {
   const { color } = props;
 
   return (
     <Layout color={color}>
-      <Overlay>
-
-      </Overlay>
+      <Overlay />
     </Layout>
   );
-}
+};
 
 export default HoverSlide;

@@ -34,7 +34,13 @@ const _Icons = ({ className, linkedin, imdb }) => {
 
   if (linkedin !== undefined) {
     result.push(
-      <Text as="a" href={linkedin} target="_blank" rel="noopener noreferrer" key={i++}>
+      <Text
+        as="a"
+        href={linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={i++}
+      >
         <i className="fab fa-linkedin-in fa-fw" />
       </Text>
     );
@@ -42,7 +48,13 @@ const _Icons = ({ className, linkedin, imdb }) => {
 
   if (imdb !== undefined) {
     result.push(
-      <Text as="a" href={imdb} target="_blank" rel="noopener noreferrer" key={i++}>
+      <Text
+        as="a"
+        href={imdb}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={i++}
+      >
         <i className="fas fa-star fa-fw" />
       </Text>
     );
