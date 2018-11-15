@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../../utils/device';
+import Text from '../../../components/Text';
 
 const Layout = styled.div`
   position: relative;
@@ -22,21 +23,8 @@ const Layout = styled.div`
     height: calc((100vw - 6em) / 2);
   }
 
-  div {
-    opacity: 0;
-    transition: all 0.5s;
-  }
-
-  .name {
-    max-height: 0;
-  }
-
-  &:hover div {
+  :hover > div {
     opacity: 1;
-  }
-
-  &:hover .name {
-    max-height: 40%;
   }
 `;
 
@@ -46,16 +34,17 @@ const _Icons = ({ className, linkedin, imdb }) => {
 
   if (linkedin !== undefined) {
     result.push(
-      <a href={linkedin} target="_blank" rel="noopener noreferrer" key={i++}>
+      <Text as="a" href={linkedin} target="_blank" rel="noopener noreferrer" key={i++}>
         <i className="fab fa-linkedin-in fa-fw" />
-      </a>
+      </Text>
     );
   }
+
   if (imdb !== undefined) {
     result.push(
-      <a href={imdb} target="_blank" rel="noopener noreferrer" key={i++}>
+      <Text as="a" href={imdb} target="_blank" rel="noopener noreferrer" key={i++}>
         <i className="fas fa-star fa-fw" />
-      </a>
+      </Text>
     );
   }
 
@@ -63,40 +52,37 @@ const _Icons = ({ className, linkedin, imdb }) => {
 };
 
 const Icons = styled(_Icons)`
-  position: absolute;
-  left: 5px;
-  bottom: 5px;
   font-size: 1.2em;
+`;
 
-  a {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-  }
+const Overlay = styled('div')`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  opacity: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease-in-out opacity;
 `;
 
 const Name = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.5em;
-  background: rgba(0, 0, 0, 0.4);
   color: white;
   font-family: ${props => props.theme.font.main};
   font-size: 0.8em;
-  text-align: center;
 `;
 
 export default props => (
   <Layout bg={props.color} picture={props.picture}>
-    <Icons linkedin={props.linkedin} imdb={props.imdb} />
-    <Name className="name">
-      <p>
-        <b>{props.name}</b>
-        <br />
-        <i>{props.role}</i>
-      </p>
-    </Name>
+    <Overlay>
+      <Name className="name">
+        <Text bold>{props.name}</Text>
+        <Text>{props.role}</Text>
+      </Name>
+      <Icons linkedin={props.linkedin} imdb={props.imdb} />
+    </Overlay>
   </Layout>
 );

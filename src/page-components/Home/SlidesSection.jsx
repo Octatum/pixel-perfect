@@ -1,24 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import HoverSlide from './HoverSlide';
 
 const Layout = styled('div')`
   display: flex;
 `;
 
-const Slide = styled('div')`
-  flex: 1;
-  background-color: ${({ color }) => color};
-  height: 32.36vw;
-`;
-
 const SlidesSection = () => {
   return (
     <Layout>
-      <Slide color="darkred" />
-      <Slide color="teal" />
-      <Slide color="magenta" />
-      <Slide color="darkslateblue" />
-      <Slide color="DarkSlateGray" />
+      <HoverSlide color="darkred" />
+      <HoverSlide color="teal" />
+      <HoverSlide color="magenta" />
+      <HoverSlide color="darkslateblue" />
+      <HoverSlide color="DarkSlateGray" />
     </Layout>
   );
 };
