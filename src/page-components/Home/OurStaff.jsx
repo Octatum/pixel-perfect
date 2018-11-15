@@ -19,7 +19,7 @@ const OurStaff = () => {
           industry. Lorem Ipsum has been the industry's standard dummy{' '}
         </Text>
       </TextSection>
-      <SlidesSection />
+      <SlidesSection rtl/>
     </OurLayout>
   );
 };

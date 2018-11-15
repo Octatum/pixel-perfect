@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../../components/Text';
+import GatsbyLink from 'gatsby-link';
 
 const Cell = styled.div`
   grid-column: span
@@ -31,16 +32,20 @@ const Overlay = styled.div`
   justify-content: center;
 `;
 
+const ViewMoreLink = styled(Text)`
+  text-decoration: none;
+`;
+
 function ProjectCell(props) {
   return (
     <Cell {...props}>
       <Overlay>
-        <Text size={4} align="center">
+        <ViewMoreLink as={GatsbyLink} to="/project-template" size={4} align="center">
           View
           <Text as="span" bold>
             more...
           </Text>
-        </Text>
+        </ViewMoreLink>
       </Overlay>
     </Cell>
   );

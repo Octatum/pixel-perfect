@@ -23,6 +23,16 @@ const SlideHeader = styled(Text)`
   margin: 0.75em 0;
 `;
 
+const MarkdownText = styled(Text)`
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: white;
+  }
+`;
+
 const ServiceSlide = props => {
   const { name, description } = props;
   return (
@@ -31,9 +41,9 @@ const ServiceSlide = props => {
         <SlideHeader align="right" bold size={7}>
           {name}
         </SlideHeader>
-        <Text align="right" as={Markdown}>
+        <MarkdownText align="right" as={Markdown}>
           {description}
-        </Text>
+        </MarkdownText>
       </TextSection>
     </SlideLayout>
   );

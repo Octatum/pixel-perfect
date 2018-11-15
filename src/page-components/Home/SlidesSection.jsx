@@ -1,19 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import Slick from 'react-slick';
 import HoverSlide from './HoverSlide';
 
 const Layout = styled('div')`
-  display: flex;
+  width: 100%;
+  max-width: 100%;
 `;
 
-const SlidesSection = () => {
+const colors = [
+  "darkred",
+  "teal",
+  "magenta",
+  "darkslateblue",
+  "midnightblue",
+  "darkslategray",
+  "red",
+  "white"
+];
+
+const SlidesSection = (props) => {
+  const { rtl } = props;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    speed: 1500,
+    autoplaySpeed: 2000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    rtl
+  };
+
   return (
     <Layout>
-      <HoverSlide color="darkred" />
-      <HoverSlide color="teal" />
-      <HoverSlide color="magenta" />
-      <HoverSlide color="darkslateblue" />
-      <HoverSlide color="DarkSlateGray" />
+      <Slick {...settings}>
+        {colors.map(color => (
+          <HoverSlide key={color} color={color} />
+        ))}
+      </Slick>
     </Layout>
   );
 };

@@ -11,13 +11,19 @@ const Image = styled('img')`
   max-height: 30rem;
 `;
 
+const Dot = styled('div')`
+  padding: 2px;
+  background: white;
+  margin-top: 0.5rem;
+`;
+
 const Slideshow = props => {
   const { images } = props;
   const settings = {
     dots: true,
     infinite: true,
     arrows: false,
-    speed: 2000,
+    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -30,6 +36,9 @@ const Slideshow = props => {
         },
       },
     ],
+    customPaging: i => (
+      <Dot />
+    )
   };
 
   return (

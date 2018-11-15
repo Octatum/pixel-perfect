@@ -20,6 +20,9 @@ const slidesData = [
     name: 'Screen Replacements',
     description: `
 We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like **3D modelling** and animation, lighting, etc.
+
+
+[See more...](/course-template)
   `,
   },
 ];
