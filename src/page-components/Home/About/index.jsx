@@ -38,7 +38,7 @@ const TextLayout = styled.div`
   justify-content: center;
   width: 50%;
   box-sizing: border-box;
-  padding: 0 2em;
+  padding: 0 1em;
   color: ${props => props.theme.color.light};
   font-family: ${props => props.theme.font.main};
 

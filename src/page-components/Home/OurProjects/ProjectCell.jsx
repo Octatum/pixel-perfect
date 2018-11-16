@@ -10,13 +10,15 @@ const Cell = styled.div`
   background-color: ${({ color }) => color};
   position: relative;
 
-  &:hover > div {
+  &:hover > * {
     opacity: 1;
+
   }
 `;
 
 const Overlay = styled.div`
   background: black;
+  text-decoration: none;
   padding: 1em;
   box-sizing: border-box;
   position: absolute;
@@ -39,8 +41,8 @@ const ViewMoreLink = styled(Text)`
 function ProjectCell(props) {
   return (
     <Cell {...props}>
-      <Overlay>
-        <ViewMoreLink as={GatsbyLink} to="/project-template" size={4} align="center">
+      <Overlay as={GatsbyLink} to="/project-template">
+        <ViewMoreLink  size={4} align="center">
           View
           <Text as="span" bold>
             more...
