@@ -40,7 +40,12 @@ function ProjectCell(props) {
   return (
     <Cell {...props}>
       <Overlay>
-        <ViewMoreLink as={GatsbyLink} to="/project-template" size={4} align="center">
+        <ViewMoreLink
+          as={GatsbyLink}
+          to="/project-template"
+          size={4}
+          align="center"
+        >
           View
           <Text as="span" bold>
             more...

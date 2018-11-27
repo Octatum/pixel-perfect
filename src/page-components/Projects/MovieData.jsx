@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../components/Text';
+import { device } from '../../utils/device';
 
 const Layout = styled('div')`
   display: flex;
@@ -13,17 +14,29 @@ const Layout = styled('div')`
   > div:not(:last-child) {
     margin-bottom: 1em;
   }
+
+  ${device.tablet} {
+    margin-bottom: 2rem;
+  }
 `;
 
 const TextContainer = styled('div')`
   width: 45%;
+
+  ${device.tablet} {
+    width: 80%;
+  }
 `;
 
 const MovieData = props => {
-  const { genre, studio, releaseDate, plot } = props.data;
+  const { genre, title, studio, releaseDate, plot } = props.data;
 
   return (
     <Layout>
+      <TextContainer>
+        <Text bold>Title</Text>
+        <Text>{title}</Text>
+      </TextContainer>
       <TextContainer>
         <Text bold>Genre</Text>
         <Text>{genre}</Text>

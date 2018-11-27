@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
 import MovieData from './MovieData';
@@ -7,6 +8,8 @@ import Slideshow from './Slideshow';
 import WhatWeDid from './WhatWeDid';
 import BeforeAfter from './BeforeAfter';
 import Share from './Share';
+import { device } from '../../utils/device';
+import getCurrentLocation from '../../utils/getCurrentLocation';
 
 const Banner = styled('img')`
   width: 100%;
@@ -15,6 +18,10 @@ const Banner = styled('img')`
 const Layout = styled('main')`
   display: flex;
   flex-direction: column;
+
+  ${device.tablet} {
+    padding-top: 5rem;
+  }
 `;
 
 const ProjectContainer = props => {
@@ -22,6 +29,7 @@ const ProjectContainer = props => {
     banner,
     genre,
     studio,
+    title,
     releaseDate,
     plot,
     videoData,
@@ -32,9 +40,21 @@ const ProjectContainer = props => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{title}</title>
+        <meta property="og:url" content={`${getCurrentLocation()}`} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`${title} - A project by Pixel Perfect`}
+        />
+        <meta property="og:description" content={plot} />
+        <meta property="og:image" content={banner} />
+      </Helmet>
       <Banner src={banner} />
       <MovieData
         data={{
+          title,
           genre,
           studio,
           releaseDate,
@@ -42,9 +62,10 @@ const ProjectContainer = props => {
         }}
       />
       <VideoShowcase videoData={videoData} />
-      <Slideshow images={slideshowImages} />
+      <BeforeAfter beforeAfterImages={beforeAfterImages} />
       <WhatWeDid activities={activities} />
-      <Share />
+      <Slideshow images={slideshowImages} />
+      <Share title={`${title} - PixelPerfect's projects.`} description={plot} />
     </Layout>
   );
 };

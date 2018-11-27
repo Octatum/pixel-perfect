@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { numberValues } from '../../utils/device';
 
 const Layout = styled('div')`
@@ -13,8 +13,13 @@ const Image = styled('img')`
 
 const Dot = styled('div')`
   padding: 2px;
-  background: white;
+  background: rgba(255, 255, 255, 1);
   margin-top: 0.5rem;
+  transition: 0.3s ease-in-out all;
+
+  .slick-active > & {
+    opacity: 0.3;
+  }
 `;
 
 const Slideshow = props => {
@@ -36,9 +41,7 @@ const Slideshow = props => {
         },
       },
     ],
-    customPaging: i => (
-      <Dot />
-    )
+    customPaging: i => <Dot />,
   };
 
   return (

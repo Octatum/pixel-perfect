@@ -9,17 +9,17 @@ const Layout = styled('div')`
 `;
 
 const colors = [
-  "darkred",
-  "teal",
-  "magenta",
-  "darkslateblue",
-  "midnightblue",
-  "darkslategray",
-  "red",
-  "white"
+  'darkred',
+  'teal',
+  'magenta',
+  'darkslateblue',
+  'midnightblue',
+  'darkslategray',
+  'red',
+  'white',
 ];
 
-const SlidesSection = (props) => {
+const SlidesSection = props => {
   const { rtl } = props;
 
   const settings = {
@@ -32,7 +32,7 @@ const SlidesSection = (props) => {
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl
+    rtl,
   };
 
   return (

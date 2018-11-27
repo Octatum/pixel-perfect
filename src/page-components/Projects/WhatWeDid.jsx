@@ -11,6 +11,7 @@ const Layout = styled('div')`
   justify-content: center;
   text-align: center;
   position: relative;
+  margin-top: 3rem;
 
   ::after {
     content: '';

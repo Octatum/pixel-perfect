@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import ReactBA from 'react-before-after-slider';
+import ReactCompare from 'react-compare-image';
+import { device } from '../../utils/device';
 
 const Layout = styled('div')`
   display: flex;
@@ -12,9 +13,10 @@ const Layout = styled('div')`
 
 const SliderItem = styled('div')`
   margin-top: 5rem;
+  max-width: 100%;
 
-  > * {
-    max-width: 100%;
+  ${device.tablet} {
+    margin-top: 3rem;
   }
 `;
 
@@ -25,12 +27,7 @@ const BeforeAfter = props => {
     <Layout>
       {beforeAfterImages.map(item => (
         <SliderItem key={item.before}>
-          <ReactBA
-            before={item.before}
-            after={item.after}
-            width={1024}
-            height={576}
-          />
+          <ReactCompare leftImage={item.before} rightImage={item.after} hover />
         </SliderItem>
       ))}
     </Layout>

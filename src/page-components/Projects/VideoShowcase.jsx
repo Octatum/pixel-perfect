@@ -1,15 +1,22 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+import { device } from '../../utils/device';
 
 const Layout = styled('div')`
+  display: flex;
   padding: 0 5%;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
   margin-top: 1%;
+  justify-content: center;
+
+  ${device.mobile} {
+    padding: 0;
+  }
 `;
 
 const Iframe = styled('iframe')`
+  display: block;
   flex: 1;
   height: calc(99vw * 0.5625);
 `;

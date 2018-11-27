@@ -3,6 +3,7 @@ import ProjectContainer from '../page-components/Projects';
 import AppLayout from '../components/AppLayout';
 
 const mockData = {
+  title: 'Alex Winter',
   banner:
     'https://s3-alpha.figma.com/img/a38e/2ba4/37d8073d34cb67a400a2e112902be274',
   genre: 'Drama / Thriller',
