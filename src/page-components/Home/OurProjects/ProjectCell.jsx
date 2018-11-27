@@ -10,13 +10,15 @@ const Cell = styled.div`
   background-color: ${({ color }) => color};
   position: relative;
 
-  &:hover > div {
+  &:hover > * {
     opacity: 1;
+
   }
 `;
 
 const Overlay = styled.div`
   background: black;
+  text-decoration: none;
   padding: 1em;
   box-sizing: border-box;
   position: absolute;

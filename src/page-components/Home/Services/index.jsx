@@ -36,8 +36,8 @@ const _PrevArrow = styled('img')`
   --arrow-width: 1.8rem;
   --arrow-height: calc(2 * var(--arrow-width));
   position: absolute;
-  top: 3rem;
-  right: calc(1 * var(--arrow-width) + 2rem);
+  top: 5rem;
+  right: calc(1 * var(--arrow-width) + 5rem);
   width: var(--arrow-width);
   height: var(--arrow-height);
   z-index: 1;
@@ -45,7 +45,7 @@ const _PrevArrow = styled('img')`
 `;
 
 const _NextArrow = styled(_PrevArrow)`
-  right: 2rem;
+  right: 5rem;
   transform: rotate(180deg);
 `;
 
