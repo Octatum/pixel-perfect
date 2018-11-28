@@ -8,40 +8,104 @@ public_folder: "/uploads"
 collections:
   - name: "featured" 
     label: "Featured in" 
-    folder: "src/featured" 
+    folder: "content/featured" 
     create: true 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Imagen de fondo", name: "backgroundImage", widget: "image"}
-      - {label: "Subtitulo", name: "subtitle", widget: "string"}
-      - {label: "Descripción", name: "description", widget: "text"}
-      - {label: "Enlace", name: "url", widget: "string"}
-  
-  - name: "staffProject"
-    label: "Our staff"
-    folder: "src/staff-projects"
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "featued" }
+      - { label: "Imagen de fondo", name: "backgroundImage", widget: "image" }
+      - { label: "Subtitulo", name: "subtitle", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Enlace", name: "url", widget: "string" }
+      - label: "Dimensiones en página de inicio"
+        name: "dimensions"
+        widget: "object"
+        fields: 
+          - { label: "Ancho", name: "width", widget: "select", options: ["1", "2"] }
+          - { label: "Alto", name: "height", widget: "select", options: ["1", "2"] }
+
+  - name: "ourStaff"
+    label: Our staff projects
+    folder: "content/staff-projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Imagen de página de inicio", name: "image", widget: "image"}
-      - {label: "Banner", name: "banner", widget: "image"}
-      - {label: "Género", name: "genre", widget: "string"}
-      - {label: "Estudio", name: "studio", widget: "string"}
-      - {label: "Fecha de salida", name: "releaseDate", widget: "string"}
-      - {label: "Descripción de trama", name: "plot", widget: "text"}
+      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStaff" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+
+  - name: "ourStudents"
+    label: Our students' projects
+    folder: "content/students-projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStudents" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+  
+  - name: "projects"
+    label: "Proyectos"
+    folder: "content/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagen de página de inicio", name: "image", widget: "image" }
+      - label: "Dimensiones en página de inicio"
+        name: "dimensions"
+        widget: "object"
+        fields: 
+          - { label: "Ancho", name: "width", widget: "select", options: ["1", "2"] }
+          - { label: "Alto", name: "height", widget: "select", options: ["1", "2"] }
+      - { label: "Banner", name: "banner", widget: "image" }
+      - { label: "Género", name: "genre", widget: "string", required: false}
+      - { label: "Estudio", name: "studio", widget: "string", required: false}
+      - { label: "Fecha de salida", name: "releaseDate", widget: "string", required: false }
+      - { label: "Descripción de trama", name: "plot", widget: "text", required: false }
       - label: "Video"
         name: "videoData"
         widget: "object"
         fields:
           - { label: "Tipo", name: "type", widget: "string" }
           - { label: "Liga del video", name: "url", widget: "select", options: ["vimeo", "youtube"] }
-      - {label: "Actividades", name: "activities", widget: "markdown"}
+      - { label: "Actividades", name: "activities", widget: "markdown", required: false }
       - label: "Imágenes antes/después"
         name: "beforeAfterImages"
         widget: "list"
         allow_add: true
-        fields: 
+        required: false
+        fields:
           - { label: "Antes", name: "before", widget: "image" }
           - { label: "Después", name: "after", widget: "image" }
+
+  - label: "Configuración"
+    name: "config"
+    fields:
+      - label: "Página de inicio"
+        name: "home"
+        file: "content/json/home.md"
+        fields: 
+          - { label: "Título", name: "title", widget: "string", default: "Pixel Perfect" }
+          - label: "Demo reel"
+            name: "demoReel"
+            widget: "object"
+            fields:
+              - { label: "Video de fondo", name: "backgroundVideo", widget: "file" }
+              - { label: "Contenido de overlay", name: "content", widget: "markdown" }
+          - label: "Who are we?"
+            name: "whoAreWe"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string", default: "Who are we?" }
+              - { label: "Contenido de bloque", name: "content", widget: "markdown" }
+              - label: "Miembros de equipo"
+                name: teamMembers
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Rol", name: "role", widget: "string" }
+                  - { label: "Linkedin", name: "linkedin", widget: "string" }
+                  - { label: "IMDB", name: "imdb", widget: "string", required: false }
+                  - { label: "Imagen", name: "image", widget: "image" }
