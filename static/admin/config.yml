@@ -82,7 +82,7 @@ collections:
 
   - label: "Configuración"
     name: "config"
-    fields:
+    files:
       - label: "Página de inicio"
         name: "home"
         file: "content/json/home.md"
