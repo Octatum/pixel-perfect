@@ -6,6 +6,16 @@ media_folder: "public/uploads"
 public_folder: "/uploads" 
 
 collections:
+  - label: "Clientes"
+    name: "customers"
+    folder: "content/customers"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields:
+      - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Enlace a proyecto", name: "url", widget: "string", required: false }
+
   - name: "featured" 
     label: "Featured in" 
     folder: "content/featured" 
@@ -24,27 +34,7 @@ collections:
         fields: 
           - { label: "Ancho", name: "width", widget: "select", options: ["1", "2"] }
           - { label: "Alto", name: "height", widget: "select", options: ["1", "2"] }
-
-  - name: "ourStaff"
-    label: Our staff projects
-    folder: "content/staff-projects"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
-    fields: 
-      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStaff" }
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
-
-  - name: "ourStudents"
-    label: Our students' projects
-    folder: "content/students-projects"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
-    fields: 
-      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStudents" }
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Imagen", name: "image", widget: "image" }
-  
+            
   - label: "Miembros de equipo"
     name: "teamMembers"
     folder: "content/team-members"
@@ -57,15 +47,25 @@ collections:
       - { label: "IMDB", name: "imdb", widget: "string", required: false }
       - { label: "Imagen", name: "image", widget: "image" }
 
-  - label: "Clientes"
-    name: "customers"
-    folder: "content/customers"
+  - name: "ourStaff"
+    label: Our staff projects
+    folder: "content/staff-projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
-    fields:
-      - { label: "Nombre", name: "title", widget: "string" }
+    fields: 
+      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStaff" }
+      - { label: "Título", name: "title", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Enlace a proyecto", name: "url", widget: "string", required: false }
+
+  - name: "ourStudents"
+    label: "Our students' projects"
+    folder: "content/students-projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - { label: "Tipo", name: "type", widget: "hidden", default: "ourStudents" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
 
   - name: "projects"
     label: "Proyectos"
@@ -102,8 +102,8 @@ collections:
           - { label: "Antes", name: "before", widget: "image" }
           - { label: "Después", name: "after", widget: "image" }
 
-  - label: "Configuración"
-    name: "config"
+  - label: "Página"
+    name: "page"
     files:
       - label: "Página de inicio"
         name: "home"
@@ -136,22 +136,6 @@ collections:
                   - { label: "Texto inferior", name: "lowerText", widget: "string", required: false }
                   - { label: "Imagen", name: "image", widget: "image" }
               - { label: "Contenido de bloque", name: "content", widget: "markdown" }
-              
           - { label: "Texto de Featured in", name: "featuredInContent", widget: "string" }
           - { label: "Texto de Our staff", name: "ourStaffContent", widget: "string" }
           - { label: "Texto de Our students", name: "ourStudentsContent", widget: "string" }
-          - label: "Services"
-            name: "services"
-            widget: "object"
-            fields:
-              - { label: "Título", name: "title", widget: "string", default: "Services" }
-              - { label: "Contenido de bloque", name: "content", widget: "markdown" }
-              - label: "Slide inicial"
-                name: "initialSlide"
-                widget: "object"
-                fields:
-                  - { label: "Título", name: "title", widget: "string", required: false }
-                  - { label: "Texto superior", name: "upperText", widget: "string", required: false }
-                  - { label: "Texto inferior", name: "lowerText", widget: "string", required: false }
-                  - { label: "Imagen", name: "image", widget: "image" }
-              
