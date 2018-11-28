@@ -1,1 +1,44 @@
-{}
+{
+  "title": "Pixel Perfect VFX",
+  "demoReel": {
+    "content": "# Perfecting the\n\n# VFX industry in **Monterrey**\n\nWatch our [**Demo Reel**](https://vimeo.com/256454623)"
+  },
+  "whoAreWe": {
+    "title": "Who are we?",
+    "content": "Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico. This company was born by the idea of perfecting the industry in Monterrey, our mission is to deliver the highest quality product in the north of Mexico and eventually the whole country.",
+    "teamMembers": [
+      {
+        "name": "Rene Allegretti",
+        "role": "Co-founder",
+        "linkedin": "https://www.linkedin.com/in/rene-allegretti-4269b546/",
+        "imdb": "https://www.imdb.com/name/nm5727065/",
+        "image": "/uploads/rene.png"
+      },
+      {
+        "name": "Edén Muñoz",
+        "role": "Co-founder",
+        "linkedin": "https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/",
+        "imdb": "https://www.imdb.com/name/nm6097371/",
+        "image": "/uploads/eden.png"
+      },
+      {
+        "name": "Eduardo Parra",
+        "role": "Visual Effects Executive Producer",
+        "linkedin": "https://www.linkedin.com/in/edparrao/",
+        "image": "/uploads/eduardo.jpg"
+      },
+      {
+        "name": "Ricardo Santillana",
+        "role": "CG Generalist",
+        "linkedin": "https://www.linkedin.com/in/rsantillana/",
+        "image": "/uploads/rikcy.png"
+      },
+      {
+        "name": "Ana Luisa López Segovia",
+        "role": "Project Manager, CG Generalist",
+        "linkedin": "https://www.linkedin.com/in/ana-luisa-lopez-segovia/",
+        "image": "/uploads/ana.png"
+      }
+    ]
+  }
+}
