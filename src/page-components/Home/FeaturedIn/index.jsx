@@ -13,7 +13,7 @@ const Layout = styled.section`
 `;
 
 const HeaderSection = styled.div`
-  width: 30%;
+  width: 40%;
   text-align: center;
   margin-bottom: 6em;
 
@@ -34,7 +34,7 @@ const FeaturedIn = () => {
   return (
     <Layout>
       <HeaderSection>
-        <Text size={10}>
+        <Text size={10} mobileSize={8}>
           Featured
           <Text as="span" bold size={2}>
             in

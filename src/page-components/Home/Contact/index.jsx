@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../../components/Text';
 import ContactForm from './ContactForm';
+import { device } from '../../../utils/device';
 
 const Layout = styled.div`
   padding: 6em 4em;
@@ -13,6 +14,16 @@ const Layout = styled.div`
     '. header'
     'contact-form socials';
   grid-gap: 2em;
+
+  ${device.tablet} {
+    padding: 3rem 2rem;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'contact-form'
+      'socials';
+  }
 `;
 
 const HeaderSection = styled.div`

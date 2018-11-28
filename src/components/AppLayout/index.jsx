@@ -5,13 +5,12 @@ import { ThemeProvider } from 'styled-components';
 import './index.css';
 import Navbar from '../Navbar';
 import { globalTheme } from '../../utils/themes';
-import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = ({ children, data }) => (
   <ThemeProvider theme={globalTheme}>
     <React.Fragment>
       <Helmet
-        titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+        titleTemplate={`%s - Pixel Perfect VFX`}
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
@@ -55,18 +54,4 @@ const Layout = ({ children, data }) => (
     </React.Fragment>
   </ThemeProvider>
 );
-
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => <Layout data={data} {...props} />}
-  />
-);
+export default Layout;

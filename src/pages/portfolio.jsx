@@ -34,13 +34,8 @@ const Header = styled.h2`
 `;
 
 function Portfolio({ data }) {
-  const { projects: projectsData } = data;
 
-  const projects = projectsData.edges.map(({ node }) => ({
-    name: node.name,
-    image: node.image,
-    path: node.path,
-  }));
+  const projects = []
 
   return (
     <AppLayout>
@@ -55,17 +50,3 @@ function Portfolio({ data }) {
 }
 
 export default Portfolio;
-
-export const query = graphql`
-  query GetJsonCourses {
-    projects: allProjectsJson {
-      edges {
-        node {
-          name
-          image
-          path
-        }
-      }
-    }
-  }
-`;

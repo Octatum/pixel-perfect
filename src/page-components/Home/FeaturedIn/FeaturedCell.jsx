@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../../components/Text';
+import { device } from '../../../utils/device';
 
 const Cell = styled.div`
   width: 100%;
@@ -45,8 +46,12 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
-  padding: 1em 1.8em;
+  padding: 1rem 1.8rem;
   opacity: 0;
+
+  ${device.mobile} {
+    padding: 1rem; 
+  }
 `;
 
 const TextDelimiter = styled.div`
@@ -62,12 +67,14 @@ const CellHeader = styled(Text)`
   margin-bottom: 0.8rem;
 `;
 
-const FeaturedCell = ({ highlight, name, description, ...rest }) => {
+const FeaturedCell = (props) => {
+  const { highlight, name, description, ...rest } = props;
+
   return (
     <Cell highlight={highlight} {...rest}>
       <Overlay>
         <TextDelimiter highlight={highlight}>
-          <CellHeader size={highlight ? 7 : 3} align="right" bold>
+          <CellHeader mobileSize={highlight ? 5 : 2} size={highlight ? 7 : 3} align="right" bold>
             {name}
           </CellHeader>
           <Text size={1} align="right">

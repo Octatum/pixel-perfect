@@ -15,7 +15,7 @@ const OurStudents = () => {
   return (
     <Layout>
       <TextSection align="end">
-        <Text align="right" size={9}>
+        <Text align="right" size={9} mobileSize={6}>
           <Text as="span" bold>
             Our
           </Text>

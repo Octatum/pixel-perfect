@@ -7,6 +7,7 @@ const SlideLayout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: var(--margin);
 `;
 
 export default SlideLayout;

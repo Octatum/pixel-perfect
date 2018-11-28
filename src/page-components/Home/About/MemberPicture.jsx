@@ -17,10 +17,12 @@ const Layout = styled.div`
 
   ${device.tablet} {
     height: calc((100vw - 6em) / 3);
+    width: calc((100vw - 6em) / 3);
   }
 
   ${device.mobile} {
     height: calc((100vw - 6em) / 2);
+    width: calc((100vw - 6em) / 2);
   }
 
   :hover > div {

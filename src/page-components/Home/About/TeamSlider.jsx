@@ -38,14 +38,6 @@ function SimpleSlider() {
       {
         breakpoint: numberValues.tablet,
         settings: {
-          slidesToShow: 3,
-          dots: false,
-          arrows: true,
-        },
-      },
-      {
-        breakpoint: numberValues.mobile,
-        settings: {
           slidesToShow: 2,
           dots: false,
           arrows: true,

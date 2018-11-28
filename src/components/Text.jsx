@@ -4,9 +4,9 @@ import { device } from '../utils/device';
 const defaultSize = 1;
 const increments = {
   default: 0.4,
-  laptop: 0.35,
-  tablet: 0.3,
-  mobile: 0.2,
+  laptop: 0.3,
+  tablet: 0.35,
+  mobile: 0.3,
 };
 
 const setColor = ({ theme, dark }) => {
@@ -49,7 +49,7 @@ const Text = styled.div`
   }
 
   ${device.mobile} {
-    font-size: ${props => setFontSize(props, increments.mobile)};
+    font-size: ${props => setFontSize({size: props.mobileSize || props.size}, increments.mobile)};
   }
 `;
 

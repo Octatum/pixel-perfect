@@ -23,7 +23,7 @@ const getAllFilesQuery = `
   }
 `;
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
+const createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return graphql(getAllFilesQuery).then(result => {

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
+import { device } from '../../../utils/device';
 
 const Form = styled.form`
   display: flex;
@@ -16,6 +17,10 @@ const Form = styled.form`
 
 const Label = styled.label`
   display: flex;
+
+  ${device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled(Text)`
@@ -32,6 +37,7 @@ const FlexText = styled(Text)`
   display: flex;
   flex: 1;
   align-items: flex-end;
+  margin-bottom: 0.5rem;
 `;
 
 const ButtonSection = styled('div')`
@@ -43,15 +49,15 @@ const ContactForm = () => {
   return (
     <Form>
       <Label>
-        <FlexText as="div">Name</FlexText>
+        <FlexText as="p">Name</FlexText>
         <Input as="input" />
       </Label>
       <Label>
-        <FlexText as="div">Company</FlexText>
+        <FlexText as="p">Company</FlexText>
         <Input as="input" />
       </Label>
       <Label>
-        <FlexText as="div">Message</FlexText>
+        <FlexText as="p">Message</FlexText>
         <Input as="textarea" />
       </Label>
       <ButtonSection>

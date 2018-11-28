@@ -12,7 +12,7 @@ const Button = styled('button')`
   }
 
   ${device.mobile} {
-    flex: 1;
+    padding: 0.5em 1em;
   }
 `;
 

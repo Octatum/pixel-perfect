@@ -7,12 +7,24 @@ import ServiceSlide from './ServiceSlide';
 import IntroSlide from './IntroSlide';
 import SlideLayout from './SlideLayout';
 import arrowImage from '../../assets/arrow.svg';
+import { device } from '../../../utils/device';
 
 const Layout = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
+  --margin: 5rem;
+
+  ${device.laptop} {
+    --margin: 4rem;
+  }
+  ${device.tablet} {
+    --margin: 2.5rem;
+  }
+  ${device.tablet} {
+    --margin: 2rem;
+  }
 `;
 
 const slidesData = [
@@ -36,16 +48,24 @@ const _PrevArrow = styled('img')`
   --arrow-width: 1.8rem;
   --arrow-height: calc(2 * var(--arrow-width));
   position: absolute;
-  top: 5rem;
-  right: calc(1 * var(--arrow-width) + 5rem);
+  top: var(--margin);
+  right: calc(1 * var(--arrow-width) + var(--margin));
   width: var(--arrow-width);
   height: var(--arrow-height);
   z-index: 1;
   cursor: pointer;
+
+  ${device.tablet} {
+    --arrow-width: 1.6rem;
+  }
+
+  ${device.mobile} {
+    --arrow-width: 1.5rem;
+  }
 `;
 
 const _NextArrow = styled(_PrevArrow)`
-  right: 5rem;
+  right: var(--margin);
   transform: rotate(180deg);
 `;
 

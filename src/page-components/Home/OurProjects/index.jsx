@@ -13,7 +13,7 @@ const OurProjects = () => {
   return (
     <Layout>
       <TextSection>
-        <Text size={9}>
+        <Text size={9} mobileSize={6}>
           <Text as="span" bold>
             Our
           </Text>

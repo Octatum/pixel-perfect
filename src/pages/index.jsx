@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
 
 import AppLayout from '../components/AppLayout';
 import HomePresentation from '../page-components/Home/Presentation';
@@ -20,6 +21,10 @@ const Layout = styled.div`
 function Home() {
   return (
     <AppLayout>
+      <Helmet
+        title={"Pixel Perfect VFX"}
+        titleTemplate={""}
+      />
       <Layout>
         <HomePresentation />
         <About />

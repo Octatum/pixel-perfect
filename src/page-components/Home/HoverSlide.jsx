@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { device } from '../../utils/device';
 
 const Layout = styled('div')`
   flex: 1;
   background-color: ${({ color }) => color};
   height: 32.36vw;
   position: relative;
+
+  ${device.tablet} {
+    min-height: 20rem;
+  }
 `;
 
 const Overlay = styled('div')`

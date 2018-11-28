@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TeamSlider from './TeamSlider';
 import bg from './assets/about-bg.jpg';
 import { device } from '../../../utils/device';
+import Text from '../../../components/Text';
 
 const Background = styled.div`
   position: relative;
@@ -26,10 +27,8 @@ const Layout = styled.div`
 
   ${device.tablet} {
     position: relative;
-    top: 40%;
-    height: 60%;
     padding: 2em 1em;
-    align-items: baseline;
+    flex-direction: column;
   }
 `;
 
@@ -43,29 +42,18 @@ const TextLayout = styled.div`
   font-family: ${props => props.theme.font.main};
 
   ${device.tablet} {
-    flex: 1 1 100%;
+    flex: 1;
     padding: 0 0.5em;
     font-size: 0.7em;
+    width: 80%;
   }
 `;
 
-const Header = styled.div`
-  font-size: 4em;
-  width: 100%;
-`;
-
-const Subtext = styled.div`
+const Subtext = styled(Text)`
   margin-top: 1em;
-  line-height: 1.3em;
-  font-size: 1.4em;
 
   ${device.tablet} {
     margin: 0.7em 0;
-    font-size: 1.7em;
-  }
-
-  ${device.mobile} {
-    font-size: 1.4em;
   }
 `;
 
@@ -77,9 +65,15 @@ const SliderLayout = styled.div`
 
   ${device.tablet} {
     position: relative;
-    bottom: 5%;
     padding: 0 2em;
-    flex: 1 1 100%;
+    margin-top: 2em;
+    flex: 1;
+    width: 70%;
+  }
+
+  ${device.mobile} {
+    width: 100%;
+    min-width: 10rem;
   }
 `;
 
@@ -88,8 +82,8 @@ function About() {
     <Background>
       <Layout>
         <TextLayout>
-          <Header>Who are we?</Header>
-          <Subtext>
+          <Text size={9}>Who are we?</Text>
+          <Subtext size={2} mobileSize={3}>
             Pixel Perfect VFX is a visual effects studio and training center
             based in Monterrey, Mexico. This company was born by the idea of
             perfecting the industry in Monterrey, our mission is to deliver the

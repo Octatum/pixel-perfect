@@ -205,11 +205,6 @@ class Navbar extends Component {
         <Links open={this.state.showNavMenu}>
           <ListElement>
             <Link onClick={() => this.closeNavbar()} to="/">
-              home
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link onClick={() => this.closeNavbar()} to="/">
               about
             </Link>
           </ListElement>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../components/Text';
 import CustomerImage from '../../components/Contact/assets/cemex_logo.png';
+import { device } from '../../utils/device';
 
 const Layout = styled.section`
   display: flex;
@@ -16,11 +17,26 @@ const HeaderSection = styled.div`
 
 const CustomerSection = styled.div`
   display: grid;
+  --row-gap: 5rem;
+
   grid-template-columns: repeat(5, 1fr);
   grid-auto-columns: 15vw;
-  grid-column-gap: 5rem;
-  grid-row-gap: 7.5rem;
-  padding-bottom: 1.5em;
+  grid-column-gap: var(--row-gap);
+  grid-row-gap: calc(var(--row-gap) * 1.5);
+  padding-bottom: 1.5rem;
+
+  ${device.laptop} {
+    grid-template-columns: repeat(4, 1fr);
+    --row-gap: 4rem;
+  }
+
+  ${device.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  ${device.mobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const CustomerCell = styled.img`

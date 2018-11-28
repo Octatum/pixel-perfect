@@ -314,25 +314,3 @@ function Course({ data: { coursesJson, allCoursesJson } }) {
 
 export default Course;
 
-export const pageQuery = graphql`
-  query GetCourseData($route: String!) {
-    coursesJson(path: { eq: $route }) {
-      index
-      name
-      description
-      about
-      requirements
-      image
-      courseFile
-    }
-
-    allCoursesJson {
-      edges {
-        node {
-          id
-          path
-        }
-      }
-    }
-  }
-`;

@@ -46,6 +46,7 @@ function ProjectCell(props) {
           as={GatsbyLink}
           to="/project-template"
           size={4}
+          mobileSize={3}
           align="center"
         >
           View

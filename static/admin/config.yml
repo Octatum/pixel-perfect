@@ -6,13 +6,42 @@ media_folder: "public/uploads"
 public_folder: "/uploads" 
 
 collections:
-  - name: "home_slides" 
-    label: "Home Slides" 
-    folder: "src/home_slides" 
+  - name: "featured" 
+    label: "Featured in" 
+    folder: "src/featured" 
     create: true 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
       - {label: "Título", name: "title", widget: "string"}
-      - {label: "Imagen de fondo", name: "imagen", widget: "image"}
+      - {label: "Imagen de fondo", name: "backgroundImage", widget: "image"}
       - {label: "Subtitulo", name: "subtitle", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
       - {label: "Enlace", name: "url", widget: "string"}
+  
+  - name: "staffProject"
+    label: "Our staff"
+    folder: "src/staff-projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Imagen de página de inicio", name: "image", widget: "image"}
+      - {label: "Banner", name: "banner", widget: "image"}
+      - {label: "Género", name: "genre", widget: "string"}
+      - {label: "Estudio", name: "studio", widget: "string"}
+      - {label: "Fecha de salida", name: "releaseDate", widget: "string"}
+      - {label: "Descripción de trama", name: "plot", widget: "text"}
+      - label: "Video"
+        name: "videoData"
+        widget: "object"
+        fields:
+          - { label: "Tipo", name: "type", widget: "string" }
+          - { label: "Liga del video", name: "url", widget: "select", options: ["vimeo", "youtube"] }
+      - {label: "Actividades", name: "activities", widget: "markdown"}
+      - label: "Imágenes antes/después"
+        name: "beforeAfterImages"
+        widget: "list"
+        allow_add: true
+        fields: 
+          - { label: "Antes", name: "before", widget: "image" }
+          - { label: "Después", name: "after", widget: "image" }
