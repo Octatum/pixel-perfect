@@ -45,6 +45,28 @@ collections:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
   
+  - label: "Miembros de equipo"
+    name: "teamMembers"
+    folder: "content/team-members"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields:
+      - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Rol", name: "role", widget: "string" }
+      - { label: "Linkedin", name: "linkedin", widget: "string" }
+      - { label: "IMDB", name: "imdb", widget: "string", required: false }
+      - { label: "Imagen", name: "image", widget: "image" }
+
+  - label: "Clientes"
+    name: "customers"
+    folder: "content/customers"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields:
+      - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Enlace a proyecto", name: "url", widget: "string", required: false }
+
   - name: "projects"
     label: "Proyectos"
     folder: "content/projects"
@@ -100,12 +122,36 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string", default: "Who are we?" }
               - { label: "Contenido de bloque", name: "content", widget: "markdown" }
-              - label: "Miembros de equipo"
-                name: teamMembers
-                widget: "list"
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string", default: "Services" }
+              - label: "Slide inicial"
+                name: "initialSlide"
+                widget: "object"
                 fields:
-                  - { label: "Nombre", name: "name", widget: "string" }
-                  - { label: "Rol", name: "role", widget: "string" }
-                  - { label: "Linkedin", name: "linkedin", widget: "string" }
-                  - { label: "IMDB", name: "imdb", widget: "string", required: false }
+                  - { label: "Título", name: "title", widget: "string", required: false }
+                  - { label: "Texto superior", name: "upperText", widget: "string", required: false }
+                  - { label: "Texto inferior", name: "lowerText", widget: "string", required: false }
                   - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Contenido de bloque", name: "content", widget: "markdown" }
+              
+          - { label: "Texto de Featured in", name: "featuredInContent", widget: "string" }
+          - { label: "Texto de Our staff", name: "ourStaffContent", widget: "string" }
+          - { label: "Texto de Our students", name: "ourStudentsContent", widget: "string" }
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string", default: "Services" }
+              - { label: "Contenido de bloque", name: "content", widget: "markdown" }
+              - label: "Slide inicial"
+                name: "initialSlide"
+                widget: "object"
+                fields:
+                  - { label: "Título", name: "title", widget: "string", required: false }
+                  - { label: "Texto superior", name: "upperText", widget: "string", required: false }
+                  - { label: "Texto inferior", name: "lowerText", widget: "string", required: false }
+                  - { label: "Imagen", name: "image", widget: "image" }
+              
