@@ -7,6 +7,7 @@ import GatsbyLink from 'gatsby-link';
 import slideArrow from './assets/arrow.svg';
 import Text from '../components/Text';
 import downloadButton from './assets/download.svg';
+import { device } from '../utils/device';
 
 const BackgroundImageContainer = styled('div')`
   --padding: 3.5rem;
@@ -26,6 +27,11 @@ const BackgroundImageContainer = styled('div')`
     background-color: black;
     opacity: 0.3;
   }
+
+  ${device.tablet} {
+    --padding: 2rem;
+    background-position: center;
+  }
 `;
 
 const Container = styled('section')`
@@ -43,6 +49,17 @@ const Container = styled('section')`
   padding-top: 5rem;
   min-height: 100vh;
   position: inherit;
+
+  ${device.tablet} {
+    grid-column-gap: 0;
+    grid-row-gap: 3rem;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      '. arrows'
+      'title title'
+      'requirements requirements'
+      'learnings learnings';
+  }
 `;
 
 const WhiteLine = styled.div`

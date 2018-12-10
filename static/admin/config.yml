@@ -25,7 +25,6 @@ collections:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Tipo", name: "type", widget: "hidden", default: "featued" }
       - { label: "Imagen de fondo", name: "backgroundImage", widget: "image" }
-      - { label: "Subtitulo", name: "subtitle", widget: "string" }
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Enlace", name: "url", widget: "string" }
       - label: "Dimensiones en página de inicio"
