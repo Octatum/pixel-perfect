@@ -1,5 +1,5 @@
 ---
-title: El Norte interview
+title: El Norte Interview
 type: featued
 backgroundImage: /uploads/entrevistanorte.jpg
 subtitle: El norte
