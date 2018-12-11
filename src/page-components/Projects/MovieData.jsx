@@ -37,22 +37,33 @@ const MovieData = props => {
         <Text bold>Title</Text>
         <Text>{title}</Text>
       </TextContainer>
-      <TextContainer>
-        <Text bold>Genre</Text>
-        <Text>{genre}</Text>
-      </TextContainer>
-      <TextContainer>
-        <Text bold>Studio</Text>
-        <Text>{studio}</Text>
-      </TextContainer>
-      <TextContainer>
-        <Text bold>Release Date</Text>
-        <Text>{releaseDate}</Text>
-      </TextContainer>
-      <TextContainer>
-        <Text bold>Plot outline</Text>
-        <Text>{plot}</Text>
-      </TextContainer>
+
+      {genre && (
+        <TextContainer>
+          <Text bold>Genre</Text>
+          <Text>{genre}</Text>
+        </TextContainer>
+      )}
+      {studio && (
+        <TextContainer>
+          <Text bold>Studio</Text>
+          <Text>{studio}</Text>
+        </TextContainer>
+      )}
+
+      {releaseDate && (
+        <TextContainer>
+          <Text bold>Release Date</Text>
+          <Text>{releaseDate}</Text>
+        </TextContainer>
+      )}
+
+      {plot && (
+        <TextContainer>
+          <Text bold>Plot outline</Text>
+          <Text>{plot}</Text>
+        </TextContainer>
+      )}
     </Layout>
   );
 };
