@@ -1,5 +1,5 @@
 ---
-type: projects
+type: project
 title: Cuando la vela se apague
 image: /uploads/vela.png
 dimensions:
@@ -14,5 +14,6 @@ plot: >-
 videoData:
   type: vimeo
   url: 'https://vimeo.com/272864287'
+beforeAfterImages: []
 ---
 

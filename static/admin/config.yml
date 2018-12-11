@@ -74,8 +74,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
-      - { label: "Tipo", name: "type", widget: "hidden", default: "projects" }
-      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "project" }
+      - { label: "Título", name: "title", widget: "string", default: "" }
       - { label: "Imagen de página de inicio", name: "image", widget: "image" }
       - label: "Dimensiones en página de inicio"
         name: "dimensions"
@@ -84,17 +84,22 @@ collections:
           - { label: "Ancho", name: "width", widget: "select", options: ["1", "2"] }
           - { label: "Alto", name: "height", widget: "select", options: ["1", "2"] }
       - { label: "Banner", name: "banner", widget: "image" }
-      - { label: "Género", name: "genre", widget: "string", required: false}
-      - { label: "Estudio", name: "studio", widget: "string", required: false}
-      - { label: "Fecha de salida", name: "releaseDate", widget: "string", required: false }
-      - { label: "Descripción de trama", name: "plot", widget: "text", required: false }
+      - { label: "Género", name: "genre", widget: "string", required: false, default: ""}
+      - { label: "Estudio", name: "studio", widget: "string", required: false, default: ""}
+      - { label: "Fecha de salida", name: "releaseDate", widget: "string", required: false, default: "" }
+      - name: "images"
+        label: "Imagenes"
+        widget: "list"
+        fields: 
+          - { name: "image", label: "Imagen", widget: "image" }
+      - { label: "Descripción de trama", name: "plot", widget: "text", required: false, default: "" }
       - label: "Video"
         name: "videoData"
         widget: "object"
         fields:
-          - { label: "Liga del video", name: "url", widget: "string" }
+          - { label: "Liga del video", name: "url", widget: "string", default: "" }
           - { label: "Tipo", name: "type", widget: "select", options: ["vimeo", "youtube"] }
-      - { label: "Actividades", name: "activities", widget: "markdown", required: false }
+      - { label: "Actividades", name: "activities", widget: "markdown", required: false, default: "" }
       - label: "Imágenes antes/después"
         name: "beforeAfterImages"
         widget: "list"
