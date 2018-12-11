@@ -12,7 +12,6 @@ const Cell = styled.div`
 
   &:hover > * {
     opacity: 1;
-
   }
 `;
 

@@ -9,19 +9,8 @@ const Layout = styled('div')`
   max-width: 100%;
 `;
 
-const colors = [
-  'darkred',
-  'teal',
-  'magenta',
-  'darkslateblue',
-  'midnightblue',
-  'darkslategray',
-  'red',
-  'white',
-];
-
 const SlidesSection = props => {
-  const { rtl } = props;
+  const { items = [], rtl } = props;
 
   const settings = {
     dots: true,
@@ -59,8 +48,8 @@ const SlidesSection = props => {
   return (
     <Layout>
       <Slick {...settings}>
-        {colors.map(color => (
-          <HoverSlide key={color} color={color} />
+        {items.map(item => (
+          <HoverSlide key={item.title} src={item.image} />
         ))}
       </Slick>
     </Layout>

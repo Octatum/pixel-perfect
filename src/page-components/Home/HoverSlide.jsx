@@ -4,9 +4,12 @@ import { device } from '../../utils/device';
 
 const Layout = styled('div')`
   flex: 1;
-  background-color: ${({ color }) => color};
   height: 32.36vw;
   position: relative;
+  background-color: red;
+  background-image: url('${({ src }) => src}');
+  background-position: center;
+  background-size: cover;
 
   ${device.tablet} {
     min-height: 20rem;
@@ -25,10 +28,10 @@ const Overlay = styled('div')`
 `;
 
 const HoverSlide = props => {
-  const { color } = props;
+  const { src } = props;
 
   return (
-    <Layout color={color}>
+    <Layout src={src}>
       <Overlay />
     </Layout>
   );

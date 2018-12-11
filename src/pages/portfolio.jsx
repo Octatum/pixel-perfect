@@ -34,8 +34,7 @@ const Header = styled.h2`
 `;
 
 function Portfolio({ data }) {
-
-  const projects = []
+  const projects = [];
 
   return (
     <AppLayout>

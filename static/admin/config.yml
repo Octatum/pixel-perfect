@@ -42,7 +42,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
       - { label: "Nombre", name: "title", widget: "string" }
-      - { label: "Tipo", name: "type", widget: "hidden", default: "team-member" }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "teamMember" }
       - { label: "Rol", name: "role", widget: "string" }
       - { label: "Linkedin", name: "linkedin", widget: "string" }
       - { label: "IMDB", name: "imdb", widget: "string", required: false }

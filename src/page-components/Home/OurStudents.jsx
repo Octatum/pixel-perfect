@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Text from '../../components/Text';
 import SlidesSection from './SlidesSection';
 import TextSection from './TextSection';
+import { graphql, StaticQuery } from 'gatsby';
 
 const Layout = styled.div`
   background: ${({ theme }) => theme.color.black};
@@ -11,7 +12,12 @@ const Layout = styled.div`
   flex-direction: column;
 `;
 
-const OurStudents = () => {
+const OurStudents = props => {
+  const { data } = props;
+  const slides = data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+  }));
+
   return (
     <Layout>
       <TextSection align="end">
@@ -26,9 +32,29 @@ const OurStudents = () => {
           industry. Lorem Ipsum has been the industry's standard dummy{' '}
         </Text>
       </TextSection>
-      <SlidesSection />
+      <SlidesSection items={slides} />
     </Layout>
   );
 };
 
-export default OurStudents;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "ourStudents" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                image
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <OurStudents data={data} {...props} />}
+  />
+);

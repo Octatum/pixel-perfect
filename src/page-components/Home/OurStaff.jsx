@@ -3,8 +3,14 @@ import Text from '../../components/Text';
 import SlidesSection from './SlidesSection';
 import TextSection from './TextSection';
 import OurLayout from './OurLayout';
+import { StaticQuery, graphql } from 'gatsby';
 
-const OurStaff = () => {
+const OurStaff = props => {
+  const { data } = props;
+  const slides = data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+  }));
+
   return (
     <OurLayout>
       <TextSection>
@@ -19,9 +25,29 @@ const OurStaff = () => {
           industry. Lorem Ipsum has been the industry's standard dummy{' '}
         </Text>
       </TextSection>
-      <SlidesSection rtl />
+      <SlidesSection items={slides} rtl />
     </OurLayout>
   );
 };
 
-export default OurStaff;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "ourStaff" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                image
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <OurStaff data={data} {...props} />}
+  />
+);

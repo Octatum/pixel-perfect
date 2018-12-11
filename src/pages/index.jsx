@@ -21,10 +21,7 @@ const Layout = styled.div`
 function Home() {
   return (
     <AppLayout>
-      <Helmet
-        title={"Pixel Perfect VFX"}
-        titleTemplate={""}
-      />
+      <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
       <Layout>
         <HomePresentation />
         <About />

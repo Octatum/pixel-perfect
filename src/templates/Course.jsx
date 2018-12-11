@@ -313,4 +313,3 @@ function Course({ data: { coursesJson, allCoursesJson } }) {
 }
 
 export default Course;
-

@@ -50,7 +50,7 @@ const Overlay = styled.div`
   opacity: 0;
 
   ${device.mobile} {
-    padding: 1rem; 
+    padding: 1rem;
   }
 `;
 
@@ -67,14 +67,19 @@ const CellHeader = styled(Text)`
   margin-bottom: 0.8rem;
 `;
 
-const FeaturedCell = (props) => {
+const FeaturedCell = props => {
   const { highlight, name, description, ...rest } = props;
 
   return (
     <Cell highlight={highlight} {...rest}>
       <Overlay>
         <TextDelimiter highlight={highlight}>
-          <CellHeader mobileSize={highlight ? 5 : 2} size={highlight ? 7 : 3} align="right" bold>
+          <CellHeader
+            mobileSize={highlight ? 5 : 2}
+            size={highlight ? 7 : 3}
+            align="right"
+            bold
+          >
             {name}
           </CellHeader>
           <Text size={1} align="right">

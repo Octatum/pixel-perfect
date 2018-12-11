@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import Text from '../../components/Text';
-import CustomerImage from '../../components/Contact/assets/cemex_logo.png';
 import { device } from '../../utils/device';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -49,9 +48,11 @@ const CustomerCell = styled.img`
   max-height: 100%;
 `;
 
-const OurClients = (props) => {
+const OurClients = props => {
   const { data } = props;
-  const customers = data.allMarkdownRemark.edges.map(({node}) => ({...node.frontmatter}));
+  const customers = data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+  }));
 
   return (
     <Layout>
@@ -65,18 +66,20 @@ const OurClients = (props) => {
       </HeaderSection>
       <CustomerSection>
         {customers.map(customer => (
-          <CustomerCell src={customer.image}/>
+          <CustomerCell src={customer.image} />
         ))}
       </CustomerSection>
     </Layout>
   );
 };
 
-export default (props) => (
-  <StaticQuery 
+export default props => (
+  <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter:{ type: {eq: "customer"}}}) {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "customer" } } }
+        ) {
           edges {
             node {
               frontmatter {
@@ -88,8 +91,6 @@ export default (props) => (
         }
       }
     `}
-    render={
-      data => <OurClients data={data} {...props} />
-    }
+    render={data => <OurClients data={data} {...props} />}
   />
 );

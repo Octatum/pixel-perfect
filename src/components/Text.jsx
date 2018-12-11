@@ -49,7 +49,8 @@ const Text = styled.div`
   }
 
   ${device.mobile} {
-    font-size: ${props => setFontSize({size: props.mobileSize || props.size}, increments.mobile)};
+    font-size: ${props =>
+      setFontSize({ size: props.mobileSize || props.size }, increments.mobile)};
   }
 `;
 

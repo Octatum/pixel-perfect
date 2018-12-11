@@ -297,4 +297,3 @@ function ProjectSpotlight({ data: { projectsJson } }) {
 }
 
 export default ProjectSpotlight;
-
