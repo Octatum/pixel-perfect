@@ -1,9 +1,9 @@
 ---
-title: 'Publicación en CONECTA '
+title: CONECTA
 type: featued
 backgroundImage: /uploads/conecta.jpg
-subtitle: 'Publicación en CONECTA, el sitio de noticias del Tecnológico de Monterrey.'
-description: 'Publicación en CONECTA, el sitio de noticias del Tecnológico de Monterrey.'
+subtitle: 'CONECTA, news website of Tecnológico de Monterrey.'
+description: 'CONECTA, news website of Tecnológico de Monterrey.'
 url: >-
   https://tec.mx/es/noticias/nacional/arte-y-cultura/los-4-exatec-que-hicieron-magia-visual-en-game-thrones
 dimensions:
