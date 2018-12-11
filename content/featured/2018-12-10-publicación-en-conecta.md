@@ -1,7 +1,7 @@
 ---
 title: 'Publicación en CONECTA '
 type: featued
-backgroundImage: /uploads/got.jpg
+backgroundImage: /uploads/conecta.jpg
 subtitle: 'Publicación en CONECTA, el sitio de noticias del Tecnológico de Monterrey.'
 description: 'Publicación en CONECTA, el sitio de noticias del Tecnológico de Monterrey.'
 url: >-
