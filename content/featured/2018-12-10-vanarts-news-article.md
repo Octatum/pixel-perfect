@@ -1,6 +1,6 @@
 ---
 title: VanArts News Article
-type: featued
+type: featured
 backgroundImage: /uploads/vanarts.jpg
 subtitle: News article featuring Eden Muñoz and Eduardo Parra.
 description: News article featuring Eden Muñoz and Eduardo Parra.

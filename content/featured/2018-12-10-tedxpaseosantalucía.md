@@ -1,6 +1,6 @@
 ---
 title: TEDxPaseoSantaLucía
-type: featued
+type: featured
 backgroundImage: /uploads/eden.png
 subtitle: Ted Talk
 description: 'Ted Talk: "Creando la industria de los efectos visuales"'

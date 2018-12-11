@@ -1,6 +1,6 @@
 ---
 title: CONECTA
-type: featued
+type: featured
 backgroundImage: /uploads/conecta.jpg
 subtitle: 'CONECTA, news website of Tecnológico de Monterrey.'
 description: >-

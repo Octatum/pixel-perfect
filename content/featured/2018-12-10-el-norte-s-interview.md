@@ -1,6 +1,6 @@
 ---
 title: El Norte Interview
-type: featued
+type: featured
 backgroundImage: /uploads/entrevistanorte.jpg
 subtitle: El norte
 description: 'Interview for El Norte, a newspaper based in Monterrey. '

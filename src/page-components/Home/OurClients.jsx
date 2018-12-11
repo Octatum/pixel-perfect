@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import Text from '../../components/Text';
 import CustomerImage from '../../components/Contact/assets/cemex_logo.png';
 import { device } from '../../utils/device';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = styled.section`
   display: flex;
@@ -24,6 +25,8 @@ const CustomerSection = styled.div`
   grid-column-gap: var(--row-gap);
   grid-row-gap: calc(var(--row-gap) * 1.5);
   padding-bottom: 1.5rem;
+  align-items: center;
+  justify-items: center;
 
   ${device.laptop} {
     grid-template-columns: repeat(4, 1fr);
@@ -46,7 +49,10 @@ const CustomerCell = styled.img`
   max-height: 100%;
 `;
 
-const OurClients = () => {
+const OurClients = (props) => {
+  const { data } = props;
+  const customers = data.allMarkdownRemark.edges.map(({node}) => ({...node.frontmatter}));
+
   return (
     <Layout>
       <HeaderSection>
@@ -58,18 +64,32 @@ const OurClients = () => {
         </Text>
       </HeaderSection>
       <CustomerSection>
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
-        <CustomerCell src={CustomerImage} />
+        {customers.map(customer => (
+          <CustomerCell src={customer.image}/>
+        ))}
       </CustomerSection>
     </Layout>
   );
 };
 
-export default OurClients;
+export default (props) => (
+  <StaticQuery 
+    query={graphql`
+      query {
+        allMarkdownRemark(filter: {frontmatter:{ type: {eq: "customer"}}}) {
+          edges {
+            node {
+              frontmatter {
+                title
+                image
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={
+      data => <OurClients data={data} {...props} />
+    }
+  />
+);

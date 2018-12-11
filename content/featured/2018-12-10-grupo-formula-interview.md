@@ -1,6 +1,6 @@
 ---
 title: Grupo Formula Interview
-type: featued
+type: featured
 backgroundImage: /uploads/formula.jpg
 subtitle: Grupo formula
 description: 'Interview with radio host Javier Poza about Game of Thrones. '

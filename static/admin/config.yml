@@ -15,6 +15,7 @@ collections:
       - { label: "Nombre", name: "title", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Enlace a proyecto", name: "url", widget: "string", required: false }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "customer" }
 
   - name: "featured" 
     label: "Featured in" 
@@ -23,7 +24,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Tipo", name: "type", widget: "hidden", default: "featued" }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "featured" }
       - { label: "Imagen de fondo", name: "backgroundImage", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Enlace", name: "url", widget: "string" }
@@ -41,6 +42,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
       - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Tipo", name: "type", widget: "hidden", default: "team-member" }
       - { label: "Rol", name: "role", widget: "string" }
       - { label: "Linkedin", name: "linkedin", widget: "string" }
       - { label: "IMDB", name: "imdb", widget: "string", required: false }
@@ -72,6 +74,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields: 
+      - { label: "Tipo", name: "type", widget: "hidden", default: "projects" }
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Imagen de página de inicio", name: "image", widget: "image" }
       - label: "Dimensiones en página de inicio"
@@ -89,8 +92,8 @@ collections:
         name: "videoData"
         widget: "object"
         fields:
-          - { label: "Tipo", name: "type", widget: "string" }
-          - { label: "Liga del video", name: "url", widget: "select", options: ["vimeo", "youtube"] }
+          - { label: "Liga del video", name: "url", widget: "string" }
+          - { label: "Tipo", name: "type", widget: "select", options: ["vimeo", "youtube"] }
       - { label: "Actividades", name: "activities", widget: "markdown", required: false }
       - label: "Imágenes antes/después"
         name: "beforeAfterImages"
