@@ -26,16 +26,16 @@ const Layout = styled('main')`
 
 const ProjectContainer = props => {
   const {
-    banner,
-    genre,
-    studio,
-    title,
-    releaseDate,
-    plot,
-    videoData,
-    slideshowImages,
-    activities,
-    beforeAfterImages,
+    banner = '',
+    genre = '',
+    studio = '',
+    title = '',
+    releaseDate = '',
+    plot = '',
+    videoData = undefined,
+    slideshowImages = [],
+    activities = '',
+    beforeAfterImages = [],
   } = props.data;
 
   return (
@@ -61,10 +61,12 @@ const ProjectContainer = props => {
           plot,
         }}
       />
-      <VideoShowcase videoData={videoData} />
-      <BeforeAfter beforeAfterImages={beforeAfterImages} />
-      <WhatWeDid activities={activities} />
-      <Slideshow images={slideshowImages} />
+      {videoData && <VideoShowcase videoData={videoData} />}
+      {beforeAfterImages.length > 0 && (
+        <BeforeAfter beforeAfterImages={beforeAfterImages} />
+      )}
+      {activities && <WhatWeDid activities={activities} />}
+      {slideshowImages.length > 0 && <Slideshow images={slideshowImages} />}
       <Share title={`${title} - PixelPerfect's projects.`} description={plot} />
     </Layout>
   );

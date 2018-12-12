@@ -25,6 +25,7 @@ collections:
     fields: 
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Tipo", name: "type", widget: "hidden", default: "featured" }
+      - { name: "index", label: "Indice", widget: "number", valueType: "int", min: 1, default: 1 }
       - { label: "Imagen de fondo", name: "backgroundImage", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Enlace", name: "url", widget: "string" }

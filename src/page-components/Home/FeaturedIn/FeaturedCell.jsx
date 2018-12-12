@@ -7,7 +7,8 @@ import { device } from '../../../utils/device';
 const Cell = styled.div`
   width: 100%;
   height: 100%;
-  grid-column: span ${({ highlight }) => (highlight ? 2 : 1)};
+  grid-column: span ${({ dimensions }) => dimensions.width};
+  grid-row: span ${({ dimensions }) => dimensions.height};
   position: relative;
   transition: 0.3s ease all;
   overflow: hidden;
@@ -19,7 +20,7 @@ const Cell = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url('${({ image }) => image}');
+    background-image: url('${({ backgroundImage }) => backgroundImage}');
     background-position: center;
     background-size: cover;
     transform: scale(1);
@@ -68,19 +69,19 @@ const CellHeader = styled(Text)`
 `;
 
 const FeaturedCell = props => {
-  const { highlight, name, description, ...rest } = props;
+  const { dimensions, title, description, ...rest } = props;
 
   return (
-    <Cell highlight={highlight} {...rest}>
+    <Cell dimensions={dimensions} {...rest}>
       <Overlay>
-        <TextDelimiter highlight={highlight}>
+        <TextDelimiter highlight={dimensions.width > 1}>
           <CellHeader
-            mobileSize={highlight ? 5 : 2}
-            size={highlight ? 7 : 3}
+            mobileSize={dimensions.width > 1 ? 5 : 2}
+            size={dimensions.width > 1 ? 7 : 3}
             align="right"
             bold
           >
-            {name}
+            {title}
           </CellHeader>
           <Text size={1} align="right">
             {description}

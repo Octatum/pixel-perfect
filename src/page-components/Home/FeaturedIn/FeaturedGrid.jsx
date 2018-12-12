@@ -25,16 +25,19 @@ const Layout = styled.div`
   }
 `;
 
-const FeaturedGrid = () => {
+const FeaturedGrid = props => {
+  const { items } = props;
+
   return (
     <Layout>
-      {[1, 2, 3, 4, 5, 6, 7].map(value => (
+      {items.map(item => (
         <FeaturedCell
-          name="E3 Conference"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-          image="https://s3-alpha.figma.com/img/404f/4a3a/1fa836f13510ee6e09a0f467c3ade313"
-          key={value}
-          highlight={value % 2 === 0}
+          key={item.title}
+          {...item}
+          title={item.title}
+          description={item.description}
+          backgroundImage={item.backgroundImage}
+          dimensions={item.dimensions}
         />
       ))}
     </Layout>

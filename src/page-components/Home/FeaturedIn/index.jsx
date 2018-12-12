@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import { device } from '../../../utils/device';
 import Text from '../../../components/Text';
 import FeaturedGrid from './FeaturedGrid';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = styled.section`
   background: ${({ theme }) => theme.color.black};
@@ -30,7 +31,11 @@ const HeaderSection = styled.div`
   }
 `;
 
-const FeaturedIn = () => {
+const FeaturedIn = props => {
+  const data = props.data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+  }));
+
   return (
     <Layout>
       <HeaderSection>
@@ -45,9 +50,35 @@ const FeaturedIn = () => {
           industry.{' '}
         </Text>
       </HeaderSection>
-      <FeaturedGrid />
+      <FeaturedGrid items={data} />
     </Layout>
   );
 };
 
-export default FeaturedIn;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "featured" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                backgroundImage
+                description
+                url
+                dimensions {
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <FeaturedIn data={data} {...props} />}
+  />
+);
