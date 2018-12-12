@@ -5,9 +5,11 @@ import GatsbyLink from 'gatsby-link';
 
 const Cell = styled.div`
   grid-column: span
-    ${({ highlightHorizontal }) => (highlightHorizontal ? 2 : 1)};
-  grid-row: span ${({ highlightVertical }) => (highlightVertical ? 2 : 1)};
-  background-color: ${({ color }) => color};
+    ${({ dimensions }) => dimensions.width};
+  grid-row: span ${({ dimensions }) => dimensions.height};
+  background-image: url('${({image}) => image}');
+  background-size: cover;
+  background-position: center;
   position: relative;
 
   &:hover > * {
@@ -38,12 +40,12 @@ const ViewMoreLink = styled(Text)`
 `;
 
 function ProjectCell(props) {
+  const { data } = props;
+
   return (
-    <Cell {...props}>
+    <Cell {...data} as={GatsbyLink} to="/project-template">
       <Overlay>
         <ViewMoreLink
-          as={GatsbyLink}
-          to="/project-template"
           size={4}
           mobileSize={3}
           align="center"

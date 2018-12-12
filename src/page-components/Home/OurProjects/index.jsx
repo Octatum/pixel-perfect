@@ -4,12 +4,15 @@ import OurLayout from '../OurLayout';
 import TextSection from '../TextSection';
 import Text from '../../../components/Text';
 import ProjectGrid from './ProjectGrid';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = styled(OurLayout)`
   margin-bottom: 0;
 `;
 
-const OurProjects = () => {
+const OurProjects = (props) => {
+  const projects = props.data.allMarkdownRemark.edges.map(({node}) => ({...node.frontmatter}));
+
   return (
     <Layout>
       <TextSection>
@@ -24,9 +27,33 @@ const OurProjects = () => {
           industry. Lorem Ipsum has been the industry's standard dummy{' '}
         </Text>
       </TextSection>
-      <ProjectGrid />
+      <ProjectGrid projects={projects} />
     </Layout>
   );
 };
 
-export default OurProjects;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "project" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                image
+                dimensions {
+                  height
+                  width
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <OurProjects data={data} {...props} />}
+  />
+);

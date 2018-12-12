@@ -20,15 +20,17 @@ const Layout = styled.div`
   }
 `;
 
-const ProjectGrid = () => {
+const ProjectGrid = (props) => {
+  const { projects } = props;
+
   return (
     <Layout>
-      <ProjectCell color="darkblue" highlightVertical />
-      <ProjectCell color="darkred" />
-      <ProjectCell color="salmon" />
-      <ProjectCell color="white" highlightHorizontal />
-      <ProjectCell color="purple" />
-      <ProjectCell color="#222" />
+      {projects.map(project => (
+        <ProjectCell 
+          key={project.title}
+          data={project}
+        />
+      ))}
     </Layout>
   );
 };
