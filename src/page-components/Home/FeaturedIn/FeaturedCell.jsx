@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Text from '../../../components/Text';
 import { device } from '../../../utils/device';
 
-const Cell = styled.div`
+const Cell = styled('a')`
   width: 100%;
   height: 100%;
   grid-column: span ${({ dimensions }) => dimensions.width};
@@ -69,10 +69,10 @@ const CellHeader = styled(Text)`
 `;
 
 const FeaturedCell = props => {
-  const { dimensions, title, description, ...rest } = props;
+  const { dimensions, title, url, description, ...rest } = props;
 
   return (
-    <Cell dimensions={dimensions} {...rest}>
+    <Cell dimensions={dimensions} {...rest} href={url} target="_blank" rel="noopener noreferrer">
       <Overlay>
         <TextDelimiter highlight={dimensions.width > 1}>
           <CellHeader
