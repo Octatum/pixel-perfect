@@ -41,9 +41,10 @@ const ViewMoreLink = styled(Text)`
 
 function ProjectCell(props) {
   const { data } = props;
+  const route = data.title.replace(' ', '_').toLowerCase().replace(/\W/g, '');
 
   return (
-    <Cell {...data} as={GatsbyLink} to="/project-template">
+    <Cell {...data} as={GatsbyLink} to={`/project/${route}`}>
       <Overlay>
         <ViewMoreLink
           size={4}
