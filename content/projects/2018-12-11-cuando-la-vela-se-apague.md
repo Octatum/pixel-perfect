@@ -3,7 +3,7 @@ type: project
 title: Cuando la vela se apague
 image: /uploads/vela.png
 dimensions:
-  height: '1'
+  height: '2'
   width: '1'
 banner: /uploads/vela-banner.jpg
 studio: 'Dark Mountain '
