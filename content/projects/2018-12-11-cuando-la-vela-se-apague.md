@@ -4,7 +4,7 @@ title: Cuando la vela se apague
 image: /uploads/vela.png
 dimensions:
   height: '1'
-  width: '2'
+  width: '1'
 banner: /uploads/vela-banner.jpg
 studio: 'Dark Mountain '
 releaseDate: '2018'
