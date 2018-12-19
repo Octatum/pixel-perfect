@@ -1,7 +1,7 @@
 ---
 title: CONECTA
 type: featured
-index: 4
+index: 5
 backgroundImage: /uploads/conecta.jpg
 description: >-
   CONECTA news article about 4 Tec de Monterrey ex-alumni who worked on Game of
