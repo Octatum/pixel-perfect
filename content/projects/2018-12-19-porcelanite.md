@@ -1,7 +1,7 @@
 ---
 type: project
 title: Porcelanite
-image: /uploads/porcelanite-poster.jpg
+image: /uploads/porcelanite-banner.jpg
 dimensions:
   height: '1'
   width: '1'
