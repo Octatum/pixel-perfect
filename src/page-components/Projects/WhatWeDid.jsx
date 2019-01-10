@@ -35,9 +35,9 @@ const WhatWeDid = props => {
   return (
     <Layout>
       <Header as="h2" size={9}>
-        What we{' '}
+        What did{' '}
         <Text as="span" bold>
-          did
+          we do?
         </Text>
       </Header>
       <Text size={1} lineHeight="1.4em">

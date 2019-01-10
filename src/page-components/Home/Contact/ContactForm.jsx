@@ -37,7 +37,6 @@ const FlexText = styled(Text)`
   display: flex;
   flex: 1;
   align-items: flex-end;
-  margin-bottom: 0.5rem;
 `;
 
 const ButtonSection = styled('div')`

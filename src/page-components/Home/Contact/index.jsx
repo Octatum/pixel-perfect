@@ -4,6 +4,9 @@ import Text from '../../../components/Text';
 import ContactForm from './ContactForm';
 import { device } from '../../../utils/device';
 import { navbarIds } from '../../../components/Navbar';
+import FacebookIcon from './assets/facebook.svg';
+import HomeIcon from './assets/home.svg';
+import PhoneIcon from './assets/phone.svg';
 
 const Layout = styled.div`
   padding: 6em 4em;
@@ -40,10 +43,22 @@ const SocialsSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 3rem;
 `;
 
-const Icon = styled(Text)`
-  margin-left: 0.5em;
+const Icon = styled('img')`
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+`;
+
+const IconSpacer = styled('span')`
+  display: inline-flex;
+  width: 1.5em;
+  height: 1.5em;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
 `;
 
 const Contact = () => {
@@ -63,15 +78,21 @@ const Contact = () => {
       <SocialsSection>
         <Text align="right">
           Lago Chapala #287, Monterrey, N.L.{' '}
-          <Icon size={2} as="i" className="fas fa-home fa-fw" />
+          <IconSpacer>
+          <Icon size={2} as="img" src={HomeIcon} />
+          </IconSpacer>
         </Text>
         <Text align="right">
           8123541330{' '}
-          <Icon size={2} as="i" className="fas fa-mobile-alt fa-fw" />
+          <IconSpacer>
+          <Icon size={2} as="img" src={PhoneIcon} />
+          </IconSpacer>
         </Text>
         <Text align="right">
           /Pixelperfectvfx{' '}
-          <Icon size={2} as="i" className="fab fa-facebook fa-fw" />
+          <IconSpacer>
+          <Icon size={2} as="img" src={FacebookIcon} />
+          </IconSpacer>
         </Text>
       </SocialsSection>
     </Layout>

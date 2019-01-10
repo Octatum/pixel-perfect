@@ -36,6 +36,10 @@ export const pageQuery = graphql`
           type
           url
         }
+        beforeAfterImages {
+          before
+          after
+        }
         activities
       }
     }

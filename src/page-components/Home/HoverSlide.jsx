@@ -4,7 +4,7 @@ import { device } from '../../utils/device';
 
 const Layout = styled('div')`
   flex: 1;
-  height: 32.36vw;
+  height: 16.18vw;
   position: relative;
   background-color: red;
   background-image: url('${({ src }) => src}');
@@ -12,7 +12,7 @@ const Layout = styled('div')`
   background-size: cover;
 
   ${device.tablet} {
-    min-height: 20rem;
+    min-height: 10rem;
   }
 `;
 

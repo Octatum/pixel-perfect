@@ -15,7 +15,7 @@ const OurStaff = props => {
   return (
     <OurLayout>
       <TextSection>
-        <Text size={9}>
+        <Text size={6} mobileSize={4}>
           <Text as="span" bold>
             Our
           </Text>

@@ -21,7 +21,7 @@ const OurStudents = props => {
   return (
     <Layout>
       <TextSection align="end">
-        <Text align="right" size={9} mobileSize={6}>
+        <Text align="right" size={6} mobileSize={4}>
           <Text as="span" bold>
             Our
           </Text>

@@ -19,7 +19,7 @@ const SlidesSection = props => {
     autoplay: true,
     speed: 1500,
     autoplaySpeed: 2000,
-    slidesToShow: 5,
+    slidesToShow: 8,
     slidesToScroll: 1,
     initialSlide: 0,
     rtl,
@@ -27,19 +27,19 @@ const SlidesSection = props => {
       {
         breakpoint: numberValues.laptop,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 8,
         },
       },
       {
         breakpoint: numberValues.tablet,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 6,
         },
       },
       {
         breakpoint: numberValues.mobile,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
         },
       },
     ],

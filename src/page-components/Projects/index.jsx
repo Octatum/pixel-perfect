@@ -62,7 +62,7 @@ const ProjectContainer = props => {
         }}
       />
       {videoData && <VideoShowcase videoData={videoData} />}
-      {beforeAfterImages.length > 0 && (
+      {beforeAfterImages && (
         <BeforeAfter beforeAfterImages={beforeAfterImages} />
       )}
       {activities && <WhatWeDid activities={activities} />}

@@ -9,6 +9,12 @@ const Layout = styled('div')`
   align-items: center;
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 5%;
+
+  ${device.mobile} {
+    padding: 0;
+  }
 `;
 
 const SliderItem = styled('div')`
