@@ -8,6 +8,7 @@ import IntroSlide from './IntroSlide';
 import SlideLayout from './SlideLayout';
 import arrowImage from '../../assets/arrow.svg';
 import { device } from '../../../utils/device';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled.section`
   flex: 1;
@@ -94,7 +95,7 @@ const settings = {
 
 const Services = () => {
   return (
-    <Layout>
+    <Layout id={navbarIds.services}>
       <Slider {...settings}>
         <IntroSlide />
         {slidesData.map(slide => (

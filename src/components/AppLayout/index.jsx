@@ -6,7 +6,7 @@ import './index.css';
 import Navbar from '../Navbar';
 import { globalTheme } from '../../utils/themes';
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <ThemeProvider theme={globalTheme}>
     <React.Fragment>
       <Helmet

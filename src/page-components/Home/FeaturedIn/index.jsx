@@ -4,6 +4,7 @@ import { device } from '../../../utils/device';
 import Text from '../../../components/Text';
 import FeaturedGrid from './FeaturedGrid';
 import { StaticQuery, graphql } from 'gatsby';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled.section`
   background: ${({ theme }) => theme.color.black};
@@ -37,7 +38,7 @@ const FeaturedIn = props => {
   }));
 
   return (
-    <Layout>
+    <Layout id={navbarIds.featured}>
       <HeaderSection>
         <Text size={10} mobileSize={8}>
           Featured

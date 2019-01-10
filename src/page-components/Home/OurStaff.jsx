@@ -4,6 +4,7 @@ import SlidesSection from './SlidesSection';
 import TextSection from './TextSection';
 import OurLayout from './OurLayout';
 import { StaticQuery, graphql } from 'gatsby';
+import { navbarIds } from '../../components/Navbar';
 
 const OurStaff = props => {
   const { data } = props;

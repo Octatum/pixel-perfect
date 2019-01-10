@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import Text from '../../../components/Text';
 import ContactForm from './ContactForm';
 import { device } from '../../../utils/device';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled.div`
   padding: 6em 4em;
@@ -47,7 +48,7 @@ const Icon = styled(Text)`
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout id={navbarIds.contact}>
       <HeaderSection>
         <Text size={9} align="right">
           Contact

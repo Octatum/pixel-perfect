@@ -8,7 +8,15 @@ const Layout = styled.section`
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 3rem;
+  padding: 3rem 15rem;
+
+  ${device.laptop} {
+    padding: 3rem 8rem;
+  }
+
+  ${device.tablet} {
+    padding: 3rem;
+  }
 `;
 
 const HeaderSection = styled.div`
@@ -17,12 +25,13 @@ const HeaderSection = styled.div`
 
 const CustomerSection = styled.div`
   display: grid;
-  --row-gap: 5rem;
+  --row-gap: 1.5rem;
+  --column-gap: 6rem;
 
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-columns: 15vw;
-  grid-column-gap: var(--row-gap);
-  grid-row-gap: calc(var(--row-gap) * 1.5);
+  grid-auto-rows: 15vw;
+  grid-column-gap: var(--column-gap);
+  grid-row-gap: var(--row-gap);
   padding-bottom: 1.5rem;
   align-items: center;
   justify-items: center;
@@ -38,6 +47,7 @@ const CustomerSection = styled.div`
 
   ${device.mobile} {
     grid-template-columns: repeat(2, 1fr);
+    --column-gap: 5rem;
   }
 `;
 
@@ -57,7 +67,7 @@ const OurClients = props => {
   return (
     <Layout>
       <HeaderSection>
-        <Text size={9} align="center" dark>
+        <Text size={8} align="center" dark>
           <Text as="span" bold dark>
             Our
           </Text>

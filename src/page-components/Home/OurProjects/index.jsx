@@ -5,6 +5,7 @@ import TextSection from '../TextSection';
 import Text from '../../../components/Text';
 import ProjectGrid from './ProjectGrid';
 import { StaticQuery, graphql } from 'gatsby';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled(OurLayout)`
   margin-bottom: 0;
@@ -14,7 +15,7 @@ const OurProjects = (props) => {
   const projects = props.data.allMarkdownRemark.edges.map(({node}) => ({...node.frontmatter}));
 
   return (
-    <Layout>
+    <Layout id={navbarIds.projects}>
       <TextSection>
         <Text size={9} mobileSize={6}>
           <Text as="span" bold>
