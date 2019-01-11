@@ -20,16 +20,13 @@ const Layout = styled.div`
   }
 `;
 
-const ProjectGrid = (props) => {
+const ProjectGrid = props => {
   const { projects } = props;
 
   return (
     <Layout>
       {projects.map(project => (
-        <ProjectCell 
-          key={project.title}
-          data={project}
-        />
+        <ProjectCell key={project.title} data={project} />
       ))}
     </Layout>
   );

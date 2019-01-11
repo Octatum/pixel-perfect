@@ -11,8 +11,10 @@ const Layout = styled(OurLayout)`
   margin-bottom: 0;
 `;
 
-const OurProjects = (props) => {
-  const projects = props.data.allMarkdownRemark.edges.map(({node}) => ({...node.frontmatter}));
+const OurProjects = props => {
+  const projects = props.data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+  }));
 
   return (
     <Layout id={navbarIds.projects}>

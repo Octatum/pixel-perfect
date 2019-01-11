@@ -7,7 +7,7 @@ const Cell = styled.div`
   grid-column: span
     ${({ dimensions }) => dimensions.width};
   grid-row: span ${({ dimensions }) => dimensions.height};
-  background-image: url('${({image}) => image}');
+  background-image: url('${({ image }) => image}');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -41,16 +41,15 @@ const ViewMoreLink = styled(Text)`
 
 function ProjectCell(props) {
   const { data } = props;
-  const route = data.title.replace(' ', '_').toLowerCase().replace(/\W/g, '');
+  const route = data.title
+    .replace(' ', '_')
+    .toLowerCase()
+    .replace(/\W/g, '');
 
   return (
     <Cell {...data} as={GatsbyLink} to={`/project/${route}`}>
       <Overlay>
-        <ViewMoreLink
-          size={4}
-          mobileSize={3}
-          align="center"
-        >
+        <ViewMoreLink size={4} mobileSize={3} align="center">
           View
           <Text as="span" bold>
             more...

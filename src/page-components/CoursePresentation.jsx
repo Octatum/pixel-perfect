@@ -8,6 +8,8 @@ import slideArrow from './assets/arrow.svg';
 import Text from '../components/Text';
 import downloadButton from './assets/download.svg';
 import { device } from '../utils/device';
+import backArrow from './assets/back-arrow.svg';
+import { navbarIds } from '../components/Navbar';
 
 const BackgroundImageContainer = styled('div')`
   --padding: 3.5rem;
@@ -40,7 +42,7 @@ const Container = styled('section')`
   grid-template-rows: 0.5fr 1fr 1.5fr;
   grid-column-gap: 25%;
   grid-template-areas:
-    '. arrows'
+    'back-arrow arrows'
     '. title'
     'requirements learnings';
   box-sizing: border-box;
@@ -55,7 +57,7 @@ const Container = styled('section')`
     grid-row-gap: 3rem;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      '. arrows'
+      'back-arrow arrows'
       'title title'
       'requirements requirements'
       'learnings learnings';
@@ -95,9 +97,15 @@ const Img = styled('img')`
 
 const CoursePresentation = props => {
   const { title, description, requirements, learnings, programFile } = props;
+
   return (
     <BackgroundImageContainer>
       <Container data-testid="container">
+        <GridCell area="back-arrow" align="center" justify="start">
+          <GatsbyLink to={`/#${navbarIds.services}`}>
+            <Img height='2rem' src={backArrow} alt="Go back" />
+          </GatsbyLink>
+        </GridCell>
         <GridCell area="arrows" align="center" justify="flex-end">
           <Text size={2}>
             <GatsbyLink to="">

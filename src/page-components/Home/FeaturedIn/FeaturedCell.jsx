@@ -72,7 +72,13 @@ const FeaturedCell = props => {
   const { dimensions, title, url, description, ...rest } = props;
 
   return (
-    <Cell dimensions={dimensions} {...rest} href={url} target="_blank" rel="noopener noreferrer">
+    <Cell
+      dimensions={dimensions}
+      {...rest}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Overlay>
         <TextDelimiter highlight={dimensions.width > 1}>
           <CellHeader

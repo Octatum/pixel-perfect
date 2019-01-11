@@ -180,7 +180,7 @@ export const navbarIds = {
   services: 'services',
   featured: 'featured',
   projects: 'projects',
-  contact: 'contact'
+  contact: 'contact',
 };
 
 class Navbar extends Component {
@@ -212,27 +212,42 @@ class Navbar extends Component {
         </DropdownButton>
         <Links open={this.state.showNavMenu}>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to={`/#${navbarIds.about}`}>
+            <Link
+              onClick={() => this.closeNavbar()}
+              to={`/#${navbarIds.about}`}
+            >
               about
             </Link>
           </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to={`/#${navbarIds.services}`}>
+            <Link
+              onClick={() => this.closeNavbar()}
+              to={`/#${navbarIds.services}`}
+            >
               services
             </Link>
           </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to={`/#${navbarIds.featured}`}>
+            <Link
+              onClick={() => this.closeNavbar()}
+              to={`/#${navbarIds.featured}`}
+            >
               featured
             </Link>
           </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to={`/#${navbarIds.projects}`}>
+            <Link
+              onClick={() => this.closeNavbar()}
+              to={`/#${navbarIds.projects}`}
+            >
               projects
             </Link>
           </ListElement>
           <ListElement>
-            <Link onClick={() => this.closeNavbar()} to={`/#${navbarIds.contact}`}>
+            <Link
+              onClick={() => this.closeNavbar()}
+              to={`/#${navbarIds.contact}`}
+            >
               contact
             </Link>
           </ListElement>

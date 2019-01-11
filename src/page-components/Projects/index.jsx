@@ -10,6 +10,7 @@ import BeforeAfter from './BeforeAfter';
 import Share from './Share';
 import { device } from '../../utils/device';
 import getCurrentLocation from '../../utils/getCurrentLocation';
+import NavigationButtons from './NavigationButtons';
 
 const Banner = styled('img')`
   width: 100%;
@@ -52,6 +53,7 @@ const ProjectContainer = props => {
         <meta property="og:image" content={banner} />
       </Helmet>
       <Banner src={banner} />
+      <NavigationButtons />
       <MovieData
         data={{
           title,

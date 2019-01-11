@@ -8,7 +8,7 @@ const Layout = styled.section`
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 3rem 15rem;
+  padding: 3rem 25%;
 
   ${device.laptop} {
     padding: 3rem 8rem;
@@ -25,8 +25,8 @@ const HeaderSection = styled.div`
 
 const CustomerSection = styled.div`
   display: grid;
-  --row-gap: 1.5rem;
-  --column-gap: 6rem;
+  --row-gap: 0rem;
+  --column-gap: 4rem;
 
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: 15vw;
