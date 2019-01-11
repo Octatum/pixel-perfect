@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { device } from '../../utils/device';
 
 const TextSection = styled('div')`
-  --margin: 5rem;
-  margin-bottom: 6em;
+  --margin: 3rem;
+  margin-bottom: 3em;
   margin-left: var(--margin);
   margin-right: var(--margin);
   width: 55%;

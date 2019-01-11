@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const OurLayout = styled.div`
   background: ${({ theme }) => theme.color.black};
-  margin: 3em 0;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 `;

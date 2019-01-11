@@ -13,7 +13,7 @@ const SlidesSection = props => {
   const { items = [], rtl } = props;
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     arrows: false,
     autoplay: true,

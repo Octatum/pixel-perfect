@@ -7,7 +7,7 @@ import { graphql, StaticQuery } from 'gatsby';
 
 const Layout = styled.div`
   background: ${({ theme }) => theme.color.black};
-  margin: 3em 0;
+  margin: 2em 0;
   display: flex;
   flex-direction: column;
 `;
@@ -21,7 +21,7 @@ const OurStudents = props => {
   return (
     <Layout>
       <TextSection align="end">
-        <Text align="right" size={6} mobileSize={4}>
+        <Text align="right" size={4} mobileSize={4}>
           <Text as="span" bold>
             Our
           </Text>
