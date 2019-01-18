@@ -5,7 +5,8 @@ import { device } from '../../utils/device';
 const Layout = styled('div')`
   display: flex;
   padding: 0 5%;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   box-sizing: border-box;
   margin-top: 1%;
   justify-content: center;

@@ -7,7 +7,8 @@ const Layout = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
   overflow: hidden;
   box-sizing: border-box;
   padding: 0 5%;

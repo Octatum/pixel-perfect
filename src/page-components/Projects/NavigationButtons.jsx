@@ -12,7 +12,7 @@ const Layout = styled('div')`
 `;
 
 const ImageIcon = styled('img')`
-  height: 2rem;
+  height: 1.2rem;
 `;
 
 const NavigationButtons = () => {
