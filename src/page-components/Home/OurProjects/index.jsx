@@ -8,6 +8,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled(OurLayout)`
+  padding-top: 2rem;
   margin-bottom: 0;
 `;
 
@@ -19,7 +20,7 @@ const OurProjects = props => {
   return (
     <Layout id={navbarIds.projects}>
       <TextSection>
-        <Text size={9} mobileSize={6}>
+        <Text size={6} mobileSize={6}>
           <Text as="span" bold>
             Our
           </Text>
