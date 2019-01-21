@@ -16,13 +16,14 @@ services:
     title: What we do
   serviceList:
     - content: >-
-        We specialize on Rotoscoping, the art of animating masks on a timeline,
-        isolating any element needed to be changed into a different background.
+        We specialize on **Rotoscoping**, the art of animating masks on a
+        timeline, isolating any element needed to be changed into a different
+        background.
       image: /uploads/roto.jpg
       name: Roto
     - content: >-
-        Clean up, as its name refers, it used to clean any unwanted element in a
-        scene, and, if combined with other techniques, can be replaced with
+        **Clean up**, as its name refers, it used to clean any unwanted element
+        in a scene, and, if combined with other techniques, can be replaced with
         another one.
       image: /uploads/cleanup.jpg
       name: Clean up
