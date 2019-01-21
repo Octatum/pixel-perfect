@@ -26,6 +26,11 @@ services:
         another one.
       image: /uploads/cleanup.jpg
       name: Clean up
+    - content: >-
+        This service consists of adding or changing elements of a set and
+        replacing them with computer-generated imagery.
+      image: /uploads/setextension.jpg
+      name: Set Extension
   title: Our services
 featuredInContent: Lorem ipsum 2
 ourStaffContent: Lorem ipsum 3
