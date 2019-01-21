@@ -118,7 +118,7 @@ collections:
     files:
       - label: "Página de inicio"
         name: "home"
-        file: "content/json/home.json"
+        file: "content/pages/home.md"
         fields: 
           - { label: "Título", name: "title", widget: "string", default: "Pixel Perfect" }
           - label: "Demo reel"
