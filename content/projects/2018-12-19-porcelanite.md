@@ -6,7 +6,7 @@ index: 12
 dimensions:
   height: '1'
   width: '1'
-banner: /uploads/porcelanite-banner.jpg
+banner: /uploads/bannerblank.jpg
 genre: ''
 studio: ''
 releaseDate: '2018'
