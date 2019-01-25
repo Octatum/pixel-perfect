@@ -103,7 +103,7 @@ const CoursePresentation = props => {
       <Container data-testid="container">
         <GridCell area="back-arrow" align="center" justify="start">
           <GatsbyLink to={`/#${navbarIds.services}`}>
-            <Img height='2rem' src={backArrow} alt="Go back" />
+            <Img height="2rem" src={backArrow} alt="Go back" />
           </GatsbyLink>
         </GridCell>
         <GridCell area="arrows" align="center" justify="flex-end">

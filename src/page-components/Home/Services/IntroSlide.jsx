@@ -1,21 +1,49 @@
 import React from 'react';
 import Text from '../../../components/Text';
 import SlideLayout from './SlideLayout';
+import { StaticQuery, graphql } from 'gatsby';
 
-const IntroSlide = () => {
+const IntroSlide = props => {
+  const {
+    lowerText,
+    upperText,
+    title,
+  } = props.data.markdownRemark.frontmatter.services.initialSlide;
+
   return (
     <SlideLayout background="darkred">
       <Text as="h1" align="right" size={10}>
-        Title example
+        {title}
       </Text>
       <Text size={2} align="right">
-        text example here
+        {upperText}
       </Text>
       <Text size={6} align="right" bold>
-        important word
+        {lowerText}
       </Text>
     </SlideLayout>
   );
 };
 
-export default IntroSlide;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query IntroSlide {
+        markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            title
+            services {
+              title
+              initialSlide {
+                lowerText
+                upperText
+                title
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <IntroSlide data={data} {...props} />}
+  />
+);

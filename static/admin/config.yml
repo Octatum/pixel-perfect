@@ -121,6 +121,7 @@ collections:
         file: "content/pages/home.md"
         fields: 
           - { label: "Título", name: "title", widget: "string", default: "Pixel Perfect" }
+          - { label: "type", name: "type", widget: "hidden", default: "start-page" }
           - label: "Demo reel"
             name: "demoReel"
             widget: "object"

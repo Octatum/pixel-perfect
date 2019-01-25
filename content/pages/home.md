@@ -1,5 +1,6 @@
 ---
-title: Lorem Impsum 1
+title: Services
+type: start-page
 demoReel:
   backgroundVideo: /uploads/roto.jpg
   content: Perfecting the VFX industry in **Monterrey**
@@ -12,7 +13,8 @@ whoAreWe:
   title: Who are we?
 services:
   initialSlide:
-    lowerText: ''
+    lowerText: 'Filler text'
+    upperText: 'Lorem ipsum'
     title: What we do
   serviceList:
     - content: >-

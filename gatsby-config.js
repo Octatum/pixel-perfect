@@ -36,6 +36,13 @@ module.exports = {
         path: `${__dirname}/content/students-projects`,
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+      },
+    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

@@ -9,6 +9,7 @@ import SlideLayout from './SlideLayout';
 import arrowImage from '../../assets/arrow.svg';
 import { device } from '../../../utils/device';
 import { navbarIds } from '../../../components/Navbar';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = styled.section`
   flex: 1;
@@ -93,22 +94,46 @@ const settings = {
   nextArrow: <NextArrow />,
 };
 
-const Services = () => {
+const Services = props => {
+  const { title } = props.data.markdownRemark.frontmatter;
+  const { serviceList } = props.data.markdownRemark.frontmatter.services;
+
   return (
     <Layout id={navbarIds.services}>
       <Slider {...settings}>
         <IntroSlide />
-        {slidesData.map(slide => (
-          <ServiceSlide {...slide} />
+        {serviceList.map(slide => (
+          <ServiceSlide name={slide.name} description={slide.content} background={slide.image} />
         ))}
       </Slider>
       <Overlay>
         <Text size={10} as="h1">
-          Services
+          {title}
         </Text>
       </Overlay>
     </Layout>
   );
 };
 
-export default Services;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query StartPageQuery {
+        markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            title
+            services {
+              title
+              serviceList {
+                content
+                image
+                name
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Services data={data} {...props} />}
+  />
+);

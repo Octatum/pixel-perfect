@@ -28,7 +28,11 @@ const NavigationButtons = () => {
           <ImageIcon src={arrow} alt="Previous project" />
         </GatsbyLink>
         <GatsbyLink to="/">
-          <ImageIcon style={{transform: 'rotate(180deg)'}} src={arrow} alt="Next project" />
+          <ImageIcon
+            style={{ transform: 'rotate(180deg)' }}
+            src={arrow}
+            alt="Next project"
+          />
         </GatsbyLink>
       </div>
     </Layout>

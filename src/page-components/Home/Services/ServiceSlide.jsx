@@ -34,9 +34,10 @@ const MarkdownText = styled(Text)`
 `;
 
 const ServiceSlide = props => {
-  const { name, description } = props;
+  const { name, description, background } = props;
+  console.log(description);
   return (
-    <SlideLayout background="midnightblue">
+    <SlideLayout background={`url('${background}')`}>
       <TextSection>
         <SlideHeader align="right" bold size={7}>
           {name}
