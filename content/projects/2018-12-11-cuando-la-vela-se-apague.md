@@ -2,6 +2,7 @@
 type: project
 title: Cuando la vela se apague
 image: /uploads/vela-poster.jpg
+index: 2
 dimensions:
   height: '1'
   width: '1'

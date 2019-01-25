@@ -2,6 +2,7 @@
 type: project
 title: 'Hellow Festival '
 image: /uploads/hellow-poster.jpg
+index: 11
 dimensions:
   height: '1'
   width: '1'
@@ -12,7 +13,7 @@ releaseDate: ''
 plot: ''
 videoData:
   type: vimeo
-  url: 'https://vimeo.com/163721649'
+  url: ''
 activities: ''
 ---
 

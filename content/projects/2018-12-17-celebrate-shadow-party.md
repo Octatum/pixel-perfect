@@ -2,6 +2,7 @@
 type: project
 title: Celebrate - Shadow Party
 image: /uploads/celebrate-poster.jpg
+index: 4
 dimensions:
   height: '1'
   width: '1'
