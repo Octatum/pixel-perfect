@@ -13,25 +13,23 @@ whoAreWe:
   title: Who are we?
 services:
   initialSlide:
-    lowerText: 'Filler text'
-    upperText: 'Lorem ipsum'
+    lowerText: Filler text
     title: What we do
+    upperText: Lorem ipsum
   serviceList:
     - content: >-
         We specialize on **Rotoscoping**, the art of animating masks on a
-        timeline, isolating any element needed to be changed into a different
-        background.
+        timeline, isolating any elements so they can be individually used in
+        further post production processes.
       image: /uploads/roto.jpg
-      name: Roto
-    - content: >-
-        **Clean up**, as its name refers, it used to clean any unwanted element
-        in a scene, and, if combined with other techniques, can be replaced with
-        another one.
+      name: Rotoscoping
+    - content: "With this technique we remove any unintended productions tools from a scene (such as wires, harnesses, microphones) or unwanted environment scenery (logos, ads, vehicles, etc.) to keep the final image flawless. \r\n\n****"
       image: /uploads/cleanup.jpg
       name: Clean up
     - content: >-
-        This service consists of adding or changing elements of a set and
-        replacing them with computer-generated imagery.
+        Using different techniques we create the illusion that an environment is
+        larger than what was originally filmed, reducing on-set production costs
+        and adding production value.
       image: /uploads/setextension.jpg
       name: Set Extension
   title: Our services
