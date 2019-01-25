@@ -1,5 +1,5 @@
 ---
-title: Services
+title: Our services
 type: start-page
 demoReel:
   backgroundVideo: /uploads/roto.jpg
