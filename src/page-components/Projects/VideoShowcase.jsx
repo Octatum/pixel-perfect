@@ -5,7 +5,7 @@ import { device } from '../../utils/device';
 const Layout = styled('div')`
   display: flex;
   padding: 0 5%;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   box-sizing: border-box;
   margin-top: 1%;
@@ -19,7 +19,7 @@ const Layout = styled('div')`
 const Iframe = styled('iframe')`
   display: block;
   flex: 1;
-  height: calc(99vw * 0.5625);
+  height: calc(60vw * 0.5625);
 `;
 
 const VideoShowcase = props => {

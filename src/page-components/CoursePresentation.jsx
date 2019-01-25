@@ -109,10 +109,10 @@ const CoursePresentation = props => {
         <GridCell area="arrows" align="center" justify="flex-end">
           <Text size={2}>
             <GatsbyLink to="">
-              <Img src={slideArrow} />
+              <Img height="1.5rem" src={slideArrow} />
             </GatsbyLink>
             <RightSlideArrow as={GatsbyLink} to="">
-              <Img src={slideArrow} />
+              <Img height="1.5rem" src={slideArrow} />
             </RightSlideArrow>
           </Text>
         </GridCell>

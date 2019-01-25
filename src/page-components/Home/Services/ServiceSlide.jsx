@@ -7,7 +7,7 @@ import SlideLayout from './SlideLayout';
 
 const TextSection = styled.div`
   margin-bottom: 3em;
-  padding-left: 30%;
+  padding-left: 50%;
   box-sizing: border-box;
 
   ${device.tablet} {
@@ -35,7 +35,6 @@ const MarkdownText = styled(Text)`
 
 const ServiceSlide = props => {
   const { name, description, background } = props;
-  console.log(description);
   return (
     <SlideLayout background={`url('${background}')`}>
       <TextSection>
