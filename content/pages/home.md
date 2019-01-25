@@ -78,8 +78,8 @@ services:
       image: /uploads/serviciosblank.png
       name: Training
   title: Our services
-featuredInContent: Lorem ipsum 2
-ourStaffContent: Lorem ipsum 3
-ourStudentsContent: Lorem ipsum 4
+featuredInContent: Latest updates
+ourStaffContent: This are some projects our staff has worked on.
+ourStudentsContent: And this are some projects our ex-alumni have worked on.
 ---
 
