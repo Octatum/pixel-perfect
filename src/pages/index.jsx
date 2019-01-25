@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
+import ReactFullpage from '@fullpage/react-fullpage';
+import 'fullpage.js/vendors/scrolloverflow';
 
 import AppLayout from '../components/AppLayout';
 import HomePresentation from '../page-components/Home/Presentation';
@@ -12,26 +14,53 @@ import OurStudents from '../page-components/Home/OurStudents';
 import OurProjects from '../page-components/Home/OurProjects';
 import OurClients from '../page-components/Home/OurClients';
 import Contact from '../page-components/Home/Contact';
+import { navbarIds } from '../components/Navbar';
 
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
 `;
+const Section = ({ children }) => <div className="section">{children}</div>;
 
 function Home() {
   return (
     <AppLayout>
       <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
       <Layout>
-        <HomePresentation />
-        <About />
-        <Services />
-        <FeaturedIn />
-        <OurStaff />
-        <OurStudents />
-        <OurProjects />
-        <OurClients />
-        <Contact />
+        <ReactFullpage
+          licenseKey="Key"
+          anchors={[navbarIds.about, navbarIds.services, navbarIds.featured, navbarIds.projects, navbarIds.contact]}
+          scrollOverflow
+          render={() => {
+            return (
+              <ReactFullpage.Wrapper>
+                <Section>
+                  <HomePresentation />
+                </Section>
+                <Section data-anchor={navbarIds.about}>
+                  <About />
+                </Section>
+                <Section data-anchor={navbarIds.services}>
+                  <Services />
+                </Section>
+                <Section data-anchor={navbarIds.featured}>
+                  <FeaturedIn />
+                  <OurStaff />
+                  <OurStudents />
+                </Section>
+                <Section data-anchor={navbarIds.projects}>
+                  <OurProjects />
+                </Section>
+                <Section>
+                  <OurClients />
+                </Section>
+                <Section data-anchor={navbarIds.contact}>
+                  <Contact />
+                </Section>
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
       </Layout>
     </AppLayout>
   );

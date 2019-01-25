@@ -5,10 +5,9 @@ import TextSection from '../TextSection';
 import Text from '../../../components/Text';
 import ProjectGrid from './ProjectGrid';
 import { StaticQuery, graphql } from 'gatsby';
-import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled(OurLayout)`
-  padding-top: 2rem;
+  padding-bottom: 0;
   margin-bottom: 0;
 `;
 
@@ -18,9 +17,9 @@ const OurProjects = props => {
   }));
 
   return (
-    <Layout id={navbarIds.projects}>
+    <Layout>
       <TextSection>
-        <Text size={6} mobileSize={6}>
+        <Text size={7} mobileSize={6}>
           <Text as="span" bold>
             Our
           </Text>

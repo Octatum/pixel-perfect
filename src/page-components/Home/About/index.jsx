@@ -5,7 +5,6 @@ import TeamSlider from './TeamSlider';
 import bg from './assets/about-bg.jpg';
 import { device } from '../../../utils/device';
 import Text from '../../../components/Text';
-import { navbarIds } from '../../../components/Navbar';
 
 const Background = styled.div`
   position: relative;
@@ -80,7 +79,7 @@ const SliderLayout = styled.div`
 
 function About() {
   return (
-    <Background id={navbarIds.about}>
+    <Background>
       <Layout>
         <TextLayout>
           <Text size={9}>Who are we?</Text>

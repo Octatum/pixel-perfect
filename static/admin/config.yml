@@ -114,6 +114,21 @@ collections:
           - { label: "Antes", name: "before", widget: "image" }
           - { label: "Después", name: "after", widget: "image" }
 
+  - name: "courses"
+    label: "Cursos"
+    folder: "content/courses"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields: 
+      - { label: "Tipo", name: "type", widget: "hidden", default: "courses" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Requisitos", name: "requirements", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Programa", name: "programFile", widget: "file" }
+      - { name: "index", label: "Indice", widget: "number", valueType: "int", min: 1, default: 1 }
+
+
   - label: "Página"
     name: "page"
     files:

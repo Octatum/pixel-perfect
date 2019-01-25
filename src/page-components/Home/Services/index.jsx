@@ -8,7 +8,6 @@ import IntroSlide from './IntroSlide';
 import SlideLayout from './SlideLayout';
 import arrowImage from '../../assets/arrow.svg';
 import { device } from '../../../utils/device';
-import { navbarIds } from '../../../components/Navbar';
 import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = styled.section`
@@ -99,11 +98,15 @@ const Services = props => {
   const { serviceList } = props.data.markdownRemark.frontmatter.services;
 
   return (
-    <Layout id={navbarIds.services}>
+    <Layout>
       <Slider {...settings}>
         <IntroSlide />
         {serviceList.map(slide => (
-          <ServiceSlide name={slide.name} description={slide.content} background={slide.image} />
+          <ServiceSlide
+            name={slide.name}
+            description={slide.content}
+            background={slide.image}
+          />
         ))}
       </Slider>
       <Overlay>

@@ -8,7 +8,7 @@ const Layout = styled.section`
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 3rem 25%;
+  padding: 5rem 25%;
 
   ${device.laptop} {
     padding: 3rem 8rem;

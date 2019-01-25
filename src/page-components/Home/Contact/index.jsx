@@ -3,7 +3,6 @@ import styled from 'styled-components/macro';
 import Text from '../../../components/Text';
 import ContactForm from './ContactForm';
 import { device } from '../../../utils/device';
-import { navbarIds } from '../../../components/Navbar';
 import FacebookIcon from './assets/facebook.svg';
 import HomeIcon from './assets/home.svg';
 import PhoneIcon from './assets/phone.svg';
@@ -63,7 +62,7 @@ const IconSpacer = styled('span')`
 
 const Contact = () => {
   return (
-    <Layout id={navbarIds.contact}>
+    <Layout>
       <HeaderSection>
         <Text size={9} align="right">
           Contact
