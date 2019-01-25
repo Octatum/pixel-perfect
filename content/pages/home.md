@@ -12,12 +12,13 @@ whoAreWe:
     in the north of Mexico and eventually the whole country.
   title: Who are we?
 services:
+  content: >-
+    Our services include production and post-production services for visual
+    media projects. We also offer  training courses for those seeking a career
+    in VFX industry. 
   initialSlide:
     image: /uploads/serviciosblank.png
-    lowerText: >-
-      Our services include production and post-production services for visual
-      media projects. We also offer  training courses for those seeking a career
-      in VFX industry. 
+    lowerText: ''
     title: What we do
     upperText: ''
   serviceList:
