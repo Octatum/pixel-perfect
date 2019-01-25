@@ -3,12 +3,25 @@ const path = require("path");
 exports.createPages = ({ actions, graphql }) => {
   const
     { createPage } = actions,
-    projectTemplate = path.resolve(`src/templates/ProjectTemplate.jsx`);
+    projectTemplate = path.resolve(`src/templates/ProjectTemplate.jsx`),
+    courseTemplate = path.resolve(`src/templates/CourseTemplate.jsx`);
 
   return graphql(`
     {
-      allMarkdownRemark(
+      projects: allMarkdownRemark(
         filter: {frontmatter: {type: {eq: "project"}}}
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+
+      courses: allMarkdownRemark(
+        filter: {frontmatter: {type: {eq: "course"}}}
       ) {
         edges {
           node {
@@ -24,7 +37,9 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const { courses, projects } = result.data;
+
+    projects && projects.edges.forEach(({ node }) => {
       const route = node.frontmatter.title.replace(' ', '_').toLowerCase().replace(/\W/g, '');
 
       createPage({
@@ -35,5 +50,17 @@ exports.createPages = ({ actions, graphql }) => {
         }
       });
     });
+
+    courses && courses.edges.forEach(({ node }) => {
+      const route = node.frontmatter.title.replace(' ', '_').toLowerCase().replace(/\W/g, '');
+
+      createPage({
+        path: `/course/${route}`,
+        component: courseTemplate,
+        context: {
+          title: node.frontmatter.title
+        }
+      });
+    });    
   });
 }

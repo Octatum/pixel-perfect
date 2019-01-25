@@ -122,8 +122,9 @@ collections:
     fields: 
       - { label: "Tipo", name: "type", widget: "hidden", default: "courses" }
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Requisitos", name: "requirements", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "string" }
+      - { label: "Requisitos", name: "requirements", widget: "markdown" }
+      - { label: "Descripción", name: "description", widget: "markdown" }
+      - { label: "Aprendizaje", name: "learnings", widget: "markdown" }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Programa", name: "programFile", widget: "file" }
       - { name: "index", label: "Indice", widget: "number", valueType: "int", min: 1, default: 1 }

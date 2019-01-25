@@ -29,7 +29,7 @@ function Home() {
       <Layout>
         <ReactFullpage
           licenseKey="Key"
-          anchors={[navbarIds.about, navbarIds.services, navbarIds.featured, navbarIds.projects, navbarIds.contact]}
+          anchors={["home", navbarIds.about, navbarIds.services, navbarIds.featured, navbarIds.projects, "customers", navbarIds.contact]}
           scrollOverflow
           render={() => {
             return (
