@@ -78,6 +78,7 @@ collections:
       - { label: "Tipo", name: "type", widget: "hidden", default: "project" }
       - { label: "Título", name: "title", widget: "string", default: "" }
       - { label: "Imagen de página de inicio", name: "image", widget: "image" }
+      - { label: "Índice", name: "index", widget: "number", default: 1, min: 0, valueType: "int" }
       - label: "Dimensiones en página de inicio"
         name: "dimensions"
         widget: "object"
