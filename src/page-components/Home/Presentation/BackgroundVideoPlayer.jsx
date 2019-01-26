@@ -59,7 +59,7 @@ class BackgroundVideoPlayer extends React.Component {
     return (
       <Video
         ref={this.videoRef}
-        playsInLine
+        playsInline
         muted
         loop
         poster=""

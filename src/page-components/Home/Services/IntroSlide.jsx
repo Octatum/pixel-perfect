@@ -2,25 +2,32 @@ import React from 'react';
 import Text from '../../../components/Text';
 import SlideLayout from './SlideLayout';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+
+const TextBox = styled(Text)`
+  width: 50%;
+  margin-bottom: 3rem;
+`;
 
 const IntroSlide = props => {
   const {
     lowerText,
     upperText,
     title,
+    image
   } = props.data.markdownRemark.frontmatter.services.initialSlide;
 
   return (
-    <SlideLayout background="darkred">
+    <SlideLayout style={{alignItems: 'flex-end'}} background={`url('${image}')`}>
       <Text as="h1" align="right" size={10}>
         {title}
       </Text>
       <Text size={2} align="right">
         {upperText}
       </Text>
-      <Text size={6} align="right" bold>
+      <TextBox size={2} align="right" bold>
         {lowerText}
-      </Text>
+      </TextBox>
     </SlideLayout>
   );
 };
@@ -38,6 +45,7 @@ export default props => (
                 lowerText
                 upperText
                 title
+                image
               }
             }
           }

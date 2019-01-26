@@ -8,7 +8,7 @@ import Text from '../../../components/Text';
 
 const Background = styled.div`
   position: relative;
-  background: url(${bg}) no-repeat center center fixed;
+  background: url(${bg}) no-repeat center center;
   background-size: cover;
   min-height: 100vh;
   display: flex;

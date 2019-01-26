@@ -41,7 +41,7 @@ const ServiceSlide = props => {
         <SlideHeader align="right" bold size={7}>
           {name}
         </SlideHeader>
-        <MarkdownText align="right" as={Markdown}>
+        <MarkdownText size={2} align="right" as={Markdown}>
           {description}
         </MarkdownText>
       </TextSection>

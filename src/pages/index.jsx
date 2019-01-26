@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import ReactFullpage from '@fullpage/react-fullpage';
-import 'fullpage.js/vendors/scrolloverflow';
 
 import AppLayout from '../components/AppLayout';
 import HomePresentation from '../page-components/Home/Presentation';
@@ -16,6 +15,10 @@ import OurClients from '../page-components/Home/OurClients';
 import Contact from '../page-components/Home/Contact';
 import { navbarIds } from '../components/Navbar';
 
+const wrapper = () => {
+  require('fullpage.js/vendors/scrolloverflow');
+}
+
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,11 +29,13 @@ function Home() {
   return (
     <AppLayout>
       <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
-      <Layout>
+      
+        <Layout>
         <ReactFullpage
           licenseKey="Key"
           anchors={["home", navbarIds.about, navbarIds.services, navbarIds.featured, navbarIds.projects, "customers", navbarIds.contact]}
           scrollOverflow
+          pluginWrapper={wrapper}
           render={() => {
             return (
               <ReactFullpage.Wrapper>

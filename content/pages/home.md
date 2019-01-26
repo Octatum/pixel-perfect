@@ -14,7 +14,7 @@ whoAreWe:
 services:
   content: ''
   initialSlide:
-    image: /uploads/serviciosblank.png
+    image: /uploads/servicesblank.jpg
     lowerText: >-
       Our services include production and post-production services for visual
       media projects. We also offer  training courses for those seeking a career
@@ -50,7 +50,7 @@ services:
         We specialize on combining multiple image sequences that were filmed
         separately or created digitally to achieve a seamless final result with
         film industry quality.
-      image: /uploads/serviciosblank.png
+      image: /uploads/servicesblank.jpg
       name: Compositing
     - content: >-
         Creating computer generated imagery, such as 3D models, animations and

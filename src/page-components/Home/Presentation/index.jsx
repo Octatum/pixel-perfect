@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { device } from '../../../utils/device';
 import BackgroundVideoPlayer from './BackgroundVideoPlayer';
 import backgroundImage from './assets/vfx.png';
-import backgroundVideo from './assets/demoreel.mp4';
+import backgroundVideo from './assets/demoreel_old.mp4';
 
 const Layout = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const Layout = styled.div`
   justify-content: flex-end;
 
   ${device.tablet} {
-    background: url("${backgroundImage}") no-repeat center center fixed;
+    background: url("${backgroundImage}") no-repeat center center;
     background-size: cover;
     justify-content: center;
   }
@@ -34,7 +34,6 @@ const Header = styled.h1`
   width: 30%;
   padding: 2rem;
   text-align: left;
-  background: rgba(0, 0, 0, 0.3);
   margin-right: 3rem;
   transition: 500ms ease-in-out all;
 
