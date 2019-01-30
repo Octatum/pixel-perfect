@@ -1,11 +1,11 @@
 import React from 'react';
-
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Markdown from 'react-markdown';
 
 import { device } from '../../../utils/device';
 import BackgroundVideoPlayer from './BackgroundVideoPlayer';
 import backgroundImage from './assets/vfx.png';
-import backgroundVideo from './assets/demoreel_old.mp4';
 
 const Layout = styled.div`
   display: flex;
@@ -52,35 +52,43 @@ const Header = styled.h1`
   }
 `;
 
-const Subheader = styled.div`
-  font-size: 0.5em;
-
+const Subheader = styled(Markdown)`
   > a {
     font-weight: 700;
     color: white;
   }
 `;
 
-function Presentation() {
+function Presentation(props) {
+  const {
+    backgroundVideo,
+    content,
+  } = props.data.markdownRemark.frontmatter.demoReel;
+
   return (
     <Layout>
       <BackgroundVideoPlayer video={backgroundVideo} poster={backgroundImage} />
       <Header>
-        Perfecting the <br />
-        VFX industry in <strong>Monterrey</strong>
-        <Subheader>
-          Watch our{' '}
-          <a
-            href="https://vimeo.com/256454623"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Demo Reel
-          </a>
-        </Subheader>
+        <Subheader>{content}</Subheader>
       </Header>
     </Layout>
   );
 }
 
-export default Presentation;
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            demoReel {
+              backgroundVideo
+              content
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Presentation {...props} data={data} />}
+  />
+);

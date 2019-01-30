@@ -115,7 +115,7 @@ export const navbarIds = {
   contact: 'contact',
 };
 
-function Navbar () {
+function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
@@ -123,13 +123,8 @@ function Navbar () {
       <LogoDiv>
         <Logo to="/">PIXELPERFECT</Logo>
       </LogoDiv>
-      <DropdownButton
-        onClick={() => setNavOpen(true)}
-        open={navOpen}
-      >
-        <i
-          className={navOpen ? 'fas fa-times' : 'fas fa-bars'}
-        />
+      <DropdownButton onClick={() => setNavOpen(true)} open={navOpen}>
+        <i className={navOpen ? 'fas fa-times' : 'fas fa-bars'} />
       </DropdownButton>
       <Links open={navOpen}>
         {Object.keys(navbarIds).map(key => {

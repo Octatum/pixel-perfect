@@ -6,7 +6,6 @@ const Layout = styled('div')`
   flex: 1;
   height: 16.18vw;
   position: relative;
-  background-color: red;
   background-image: url('${({ src }) => src}');
   background-position: center;
   background-size: cover;
