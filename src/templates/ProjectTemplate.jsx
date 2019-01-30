@@ -30,6 +30,9 @@ export const pageQuery = graphql`
         banner
         genre
         studio
+        images {
+          image
+        }
         releaseDate
         plot
         videoData {

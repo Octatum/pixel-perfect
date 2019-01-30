@@ -28,7 +28,6 @@ const Section = ({ children }) => <div className="section">{children}</div>;
 function Home() {
   const [_, setValue] = useState(null);
   const b = useContext(FullpageContext);
-  console.log(b);
 
   return (
     <AppLayout>

@@ -34,7 +34,7 @@ const ProjectContainer = props => {
     releaseDate = '',
     plot = '',
     videoData = undefined,
-    slideshowImages = [],
+    images = [],
     activities = '',
     beforeAfterImages = [],
   } = props.data;
@@ -68,7 +68,7 @@ const ProjectContainer = props => {
         <BeforeAfter beforeAfterImages={beforeAfterImages} />
       )}
       {activities && <WhatWeDid activities={activities} />}
-      {slideshowImages.length > 0 && <Slideshow images={slideshowImages} />}
+      {images && <Slideshow images={images} />}
       <Share title={`${title} - PixelPerfect's projects.`} description={plot} />
     </Layout>
   );
@@ -84,7 +84,7 @@ ProjectContainer.propTypes = {
     type: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }),
-  slideshowImages: PropTypes.arrayOf(PropTypes.string),
+  images: PropTypes.arrayOf(PropTypes.string),
   activities: PropTypes.string,
   beforeAfterImages: PropTypes.arrayOf(
     PropTypes.shape({
@@ -95,7 +95,7 @@ ProjectContainer.propTypes = {
 };
 
 ProjectContainer.defaultProps = {
-  slideshowImages: [],
+  images: [],
   beforeAfterImages: [],
   videoData: null,
 };

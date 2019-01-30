@@ -43,12 +43,13 @@ const Slideshow = props => {
     ],
     customPaging: i => <Dot />,
   };
+  console.log(images);
 
   return (
     <Layout>
       <Slider {...settings}>
-        {images.map(imageSrc => (
-          <Image src={imageSrc} key={imageSrc} />
+        {images.map(imageObject => (
+          <Image src={imageObject.image} key={imageObject.image} />
         ))}
       </Slider>
     </Layout>
