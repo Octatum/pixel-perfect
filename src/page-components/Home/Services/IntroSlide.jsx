@@ -14,11 +14,14 @@ const IntroSlide = props => {
     lowerText,
     upperText,
     title,
-    image
+    image,
   } = props.data.markdownRemark.frontmatter.services.initialSlide;
 
   return (
-    <SlideLayout style={{alignItems: 'flex-end'}} background={`url('${image}')`}>
+    <SlideLayout
+      style={{ alignItems: 'flex-end' }}
+      background={`url('${image}')`}
+    >
       <Text as="h1" align="right" size={10}>
         {title}
       </Text>

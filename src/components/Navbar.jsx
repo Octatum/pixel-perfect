@@ -1,16 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../utils/device';
 import Link from './Link';
-
-const elasticTransitionTimingFunction = `
-  -webkit-transition-timing-function: cubic-bezier(0.295, 0, 0.675, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
-    -moz-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
-      -o-transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); 
-          transition-timing-function: cubic-bezier(0.295, -0.545, 0.675, 1.490); /* custom */
-`;
 
 const Navsection = styled.nav`
   position: fixed;
@@ -31,11 +23,7 @@ const Navsection = styled.nav`
   }
 `;
 
-const DropdownButton = styled.a.attrs({
-  style: ({ open }) => ({
-    // transform: `rotate(${(open ? 0 : 360)}deg)`
-  }),
-})`
+const DropdownButton = styled.a`
   position: fixed;
   right: 1em;
   display: none;
@@ -45,7 +33,6 @@ const DropdownButton = styled.a.attrs({
   cursor: pointer;
   z-index: 1;
   transition: 0.5s all;
-  ${elasticTransitionTimingFunction};
 
   ${device.mobile} {
     display: block;
@@ -72,7 +59,7 @@ const Logo = styled(Link)`
   justify-content: center;
 `;
 
-const Links = styled.ul.attrs()`
+const Links = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,6 +71,7 @@ const Links = styled.ul.attrs()`
     display: ${({ open }) => (open ? 'flex' : 'none')};
     position: fixed;
     height: 100vh;
+    width: 100%;
     background: black;
     flex-direction: column;
     left: 0;
@@ -119,62 +107,6 @@ const ListElement = styled.li`
   }
 `;
 
-const HoverableListItem = styled(ListElement)`
-  position: relative;
-
-  :hover > ul {
-    transform: translateX(-50%) translateY(0) scaleY(1);
-    opacity: 1;
-  }
-`;
-
-const SubmenuItems = styled.ul`
-  position: absolute;
-  min-width: 100%;
-  border-top: 1px solid white;
-  margin-top: 1.5em;
-  left: 50%;
-  transition: 300ms ease-in-out all;
-  transform: translateX(-50%) translateY(-50%) scaleY(0);
-  opacity: 0;
-
-  > li:not(:first-of-type)::before {
-    content: '';
-    position: absolute;
-    width: 70%;
-    left: 15%;
-    height: 1px;
-    background: white;
-    top: 0;
-  }
-
-  ${device.mobile} {
-    display: none;
-  }
-`;
-
-const SubmenuItem = styled.li`
-  color: white;
-  position: relative;
-  text-align: center;
-`;
-
-const SubmenuLink = styled(Link)`
-  box-sizing: border-box;
-  display: block;
-  padding: 0.7rem;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  transition: background-color 300ms ease-in-out;
-  background-color: rgba(0, 0, 0, 0.3);
-  font-size: 0.9rem;
-
-  :hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-`;
-
 export const navbarIds = {
   about: 'about',
   services: 'services',
@@ -183,78 +115,35 @@ export const navbarIds = {
   contact: 'contact',
 };
 
-class Navbar extends Component {
-  state = {
-    showNavMenu: false,
-  };
+function Navbar () {
+  const [navOpen, setNavOpen] = useState(false);
 
-  toggleNavMenu = () => {
-    this.setState({ showNavMenu: !this.state.showNavMenu });
-  };
-
-  closeNavbar = () => {
-    this.setState({ showNavMenu: false });
-  };
-
-  render() {
-    return (
-      <Navsection>
-        <LogoDiv>
-          <Logo to="/">PIXELPERFECT</Logo>
-        </LogoDiv>
-        <DropdownButton
-          onClick={this.toggleNavMenu}
-          open={this.state.showNavMenu}
-        >
-          <i
-            className={this.state.showNavMenu ? 'fas fa-times' : 'fas fa-bars'}
-          />
-        </DropdownButton>
-        <Links open={this.state.showNavMenu}>
-          <ListElement>
-            <Link
-              onClick={() => this.closeNavbar()}
-              to={`/#${navbarIds.about}`}
-            >
-              about
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link
-              onClick={() => this.closeNavbar()}
-              to={`/#${navbarIds.services}`}
-            >
-              services
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link
-              onClick={() => this.closeNavbar()}
-              to={`/#${navbarIds.featured}`}
-            >
-              featured
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link
-              onClick={() => this.closeNavbar()}
-              to={`/#${navbarIds.projects}`}
-            >
-              projects
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link
-              onClick={() => this.closeNavbar()}
-              to={`/#${navbarIds.contact}`}
-            >
-              contact
-            </Link>
-          </ListElement>
-        </Links>
-      </Navsection>
-    );
-  }
+  return (
+    <Navsection>
+      <LogoDiv>
+        <Logo to="/">PIXELPERFECT</Logo>
+      </LogoDiv>
+      <DropdownButton
+        onClick={() => setNavOpen(true)}
+        open={navOpen}
+      >
+        <i
+          className={navOpen ? 'fas fa-times' : 'fas fa-bars'}
+        />
+      </DropdownButton>
+      <Links open={navOpen}>
+        {Object.keys(navbarIds).map(key => {
+          return (
+            <ListElement key={key}>
+              <Link onClick={() => setNavOpen(false)} to={`/#${key}`}>
+                {key}
+              </Link>
+            </ListElement>
+          );
+        })}
+      </Links>
+    </Navsection>
+  );
 }
 
 export default Navbar;

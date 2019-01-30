@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import AppLayout from '../components/AppLayout';
+import AppLayout, { FullpageContext } from '../components/AppLayout';
 import HomePresentation from '../page-components/Home/Presentation';
 import About from '../page-components/Home/About';
 import Services from '../page-components/Home/Services';
@@ -17,7 +17,7 @@ import { navbarIds } from '../components/Navbar';
 
 const wrapper = () => {
   require('fullpage.js/vendors/scrolloverflow');
-}
+};
 
 const Layout = styled.div`
   display: flex;
@@ -26,17 +26,30 @@ const Layout = styled.div`
 const Section = ({ children }) => <div className="section">{children}</div>;
 
 function Home() {
+  const [_, setValue] = useState(null);
+  const b = useContext(FullpageContext);
+  console.log(b);
+
   return (
     <AppLayout>
       <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
-      
-        <Layout>
+
+      <Layout>
         <ReactFullpage
           licenseKey="Key"
-          anchors={["home", navbarIds.about, navbarIds.services, navbarIds.featured, navbarIds.projects, "customers", navbarIds.contact]}
+          anchors={[
+            'home',
+            navbarIds.about,
+            navbarIds.services,
+            navbarIds.featured,
+            navbarIds.projects,
+            'customers',
+            navbarIds.contact,
+          ]}
           scrollOverflow
           pluginWrapper={wrapper}
-          render={() => {
+          render={({fullpageApi}) => {
+
             return (
               <ReactFullpage.Wrapper>
                 <Section>
