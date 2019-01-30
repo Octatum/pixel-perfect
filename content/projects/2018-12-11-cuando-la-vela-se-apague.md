@@ -14,7 +14,7 @@ plot: >-
   mysterious rite of initiation.
 videoData:
   type: vimeo
-  url: 'https://vimeo.com/272864287'
+  id: '272864287'
 beforeAfterImages: []
 ---
 

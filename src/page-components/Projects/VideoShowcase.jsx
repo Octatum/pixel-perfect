@@ -23,14 +23,13 @@ const Iframe = styled('iframe')`
 `;
 
 const VideoShowcase = props => {
-  const { videoData } = props;
-  const videoId = videoData.url.replace(/\D/g, '');
+  const { id, type } = props.videoData;
 
-  return (
+  return type === 'sin video' ? <div /> : (
     <Layout>
       <Iframe
-        title="vimeoVideo"
-        src={`https://player.vimeo.com/video/${videoId}`}
+        title="videoPlayer"
+        src={type === 'vimeo' ? `//player.vimeo.com/video/${id}` : `//www.youtube.com/embed/${id}`}
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen

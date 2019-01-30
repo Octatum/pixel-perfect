@@ -102,8 +102,8 @@ collections:
         widget: "object"
         required: false
         fields:
-          - { label: "Liga del video", name: "url", widget: "string", default: "" }
-          - { label: "Tipo", name: "type", widget: "select", options: ["vimeo", "youtube"] }
+          - { label: "Id del video", name: "id", widget: "string", default: "", "required": false }
+          - { label: "Tipo", name: "type", widget: "select", options: ["sin video", "vimeo", "youtube"], default: "sin video"}
       - { label: "Actividades", name: "activities", widget: "markdown", required: false, default: "" }
       - label: "Imágenes antes/después"
         name: "beforeAfterImages"

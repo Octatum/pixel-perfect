@@ -13,7 +13,7 @@ releaseDate: '2018'
 plot: ''
 videoData:
   type: vimeo
-  url: 'https://vimeo.com/280275296'
+  id: '280275296'
 activities: ''
 beforeAfterImages:
   - after: /uploads/celebrate-after.png

@@ -12,8 +12,8 @@ studio: ''
 releaseDate: ''
 plot: ''
 videoData:
-  type: vimeo
-  url: ''
+  type: 'sin video'
+  id: ''
 activities: ''
 ---
 

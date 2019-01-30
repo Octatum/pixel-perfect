@@ -37,7 +37,7 @@ export const pageQuery = graphql`
         plot
         videoData {
           type
-          url
+          id
         }
         beforeAfterImages {
           before
