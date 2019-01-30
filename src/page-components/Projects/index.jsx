@@ -68,7 +68,7 @@ const ProjectContainer = props => {
         <BeforeAfter beforeAfterImages={beforeAfterImages} />
       )}
       {activities && <WhatWeDid activities={activities} />}
-      {images && <Slideshow images={images} />}
+      {images && images.length > 0 && <Slideshow images={images} />}
       <Share title={`${title} - PixelPerfect's projects.`} description={plot} />
     </Layout>
   );
