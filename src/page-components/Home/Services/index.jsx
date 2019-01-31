@@ -28,24 +28,12 @@ const Layout = styled.section`
   }
 `;
 
-const slidesData = [
-  {
-    name: 'Screen Replacements',
-    description: `
-We assist in the post-production process with services like compositing, rotoscoping, cleanup, 3D tracking and CGI services like **3D modelling** and animation, lighting, etc.
-
-
-[See more...](/course-template)
-  `,
-  },
-];
-
 const Overlay = styled(SlideLayout)`
   position: absolute;
   justify-content: flex-start;
 `;
 
-const _PrevArrow = styled('img')`
+const PreviousArrow = styled('img')`
   --arrow-width: 1.8rem;
   --arrow-height: calc(2 * var(--arrow-width));
   position: absolute;
@@ -65,19 +53,19 @@ const _PrevArrow = styled('img')`
   }
 `;
 
-const _NextArrow = styled(_PrevArrow)`
+const NextiArrow = styled(PreviousArrow)`
   right: var(--margin);
   transform: rotate(180deg);
 `;
 
 function PrevArrow(props) {
   const { onClick } = props;
-  return <_PrevArrow onClick={onClick} src={arrowImage} />;
+  return <PreviousArrow onClick={onClick} src={arrowImage} />;
 }
 
 function NextArrow(props) {
   const { onClick } = props;
-  return <_NextArrow onClick={onClick} src={arrowImage} />;
+  return <NextiArrow onClick={onClick} src={arrowImage} />;
 }
 
 const settings = {
@@ -103,6 +91,7 @@ const Services = props => {
         <IntroSlide />
         {serviceList.map(slide => (
           <ServiceSlide
+            key={slide.name}
             name={slide.name}
             description={slide.content}
             background={slide.image}

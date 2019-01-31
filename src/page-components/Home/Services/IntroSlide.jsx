@@ -3,10 +3,20 @@ import Text from '../../../components/Text';
 import SlideLayout from './SlideLayout';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import { device } from '../../../utils/device';
 
 const TextBox = styled(Text)`
   width: 50%;
   margin-bottom: 3rem;
+
+  ${device.tablet} {
+    width: 80%;
+  }
+
+  ${device.mobile} {
+    width: 100%;
+    text-align: justify;
+  }
 `;
 
 const IntroSlide = props => {

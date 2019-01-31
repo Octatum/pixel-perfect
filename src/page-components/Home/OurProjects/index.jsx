@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import OurLayout from '../OurLayout';
 import TextSection from '../TextSection';
-import Text from '../../../components/Text';
+import Text, { Markdown } from '../../../components/Text';
 import ProjectGrid from './ProjectGrid';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -16,6 +16,9 @@ const OurProjects = props => {
     ...node.frontmatter,
   }));
 
+  const { ourProjectsContent } = props.data.content.frontmatter;
+
+
   return (
     <Layout>
       <TextSection>
@@ -25,10 +28,9 @@ const OurProjects = props => {
           </Text>
           Projects
         </Text>
-        <Text size={1}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy{' '}
-        </Text>
+        <Markdown size={1}>
+          {ourProjectsContent}
+        </Markdown>
       </TextSection>
       <ProjectGrid projects={projects} />
     </Layout>
@@ -53,6 +55,12 @@ export default props => (
                 }
               }
             }
+          }
+        }
+
+        content: markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            ourProjectsContent
           }
         }
       }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { device } from '../../../utils/device';
-import Text from '../../../components/Text';
+import Text, { Markdown } from '../../../components/Text';
 import FeaturedGrid from './FeaturedGrid';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -36,6 +36,8 @@ const FeaturedIn = props => {
     ...node.frontmatter,
   }));
 
+  const { featuredInContent } = props.data.content.frontmatter;
+
   return (
     <Layout>
       <HeaderSection>
@@ -45,10 +47,9 @@ const FeaturedIn = props => {
             in
           </Text>
         </Text>
-        <Text size={2}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.{' '}
-        </Text>
+        <Markdown size={2}>
+          {featuredInContent}
+        </Markdown>
       </HeaderSection>
       <FeaturedGrid items={data} />
     </Layout>
@@ -75,6 +76,12 @@ export default props => (
                 }
               }
             }
+          }
+        }
+        
+        content: markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            featuredInContent
           }
         }
       }

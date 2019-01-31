@@ -76,7 +76,7 @@ const OurClients = props => {
       </HeaderSection>
       <CustomerSection>
         {customers.map(customer => (
-          <CustomerCell src={customer.image} />
+          <CustomerCell key={customer.image} src={customer.image} />
         ))}
       </CustomerSection>
     </Layout>

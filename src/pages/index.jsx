@@ -47,7 +47,7 @@ function Home() {
           ]}
           scrollOverflow
           pluginWrapper={wrapper}
-          render={({ fullpageApi }) => {
+          render={() => {
             return (
               <ReactFullpage.Wrapper>
                 <Section>

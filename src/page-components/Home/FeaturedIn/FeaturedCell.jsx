@@ -103,8 +103,8 @@ FeaturedCell.defaultProps = {
 };
 
 FeaturedCell.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  name: PropTypes.string,
   description: PropTypes.string.isRequired,
   highlight: PropTypes.bool,
 };

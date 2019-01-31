@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import Markdown from 'react-markdown';
 
 import TeamSlider from './TeamSlider';
-import bg from './assets/about-bg.jpg';
 import { device } from '../../../utils/device';
-import Text from '../../../components/Text';
+import Text, { withTextStyle } from '../../../components/Text';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Background = styled.div`
   position: relative;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  background: black;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -49,7 +49,9 @@ const TextLayout = styled.div`
   }
 `;
 
-const Subtext = styled(Text)`
+const MarkdownContent = withTextStyle(Markdown);
+
+const MarkdownBlock = styled(MarkdownContent)`
   margin-top: 1em;
 
   ${device.tablet} {
@@ -77,19 +79,16 @@ const SliderLayout = styled.div`
   }
 `;
 
-function About() {
+function About(props) {
+  const { content, title } = props.data.markdownRemark.frontmatter.whoAreWe;
   return (
     <Background>
       <Layout>
         <TextLayout>
-          <Text size={9}>Who are we?</Text>
-          <Subtext size={2} mobileSize={3}>
-            Pixel Perfect VFX is a visual effects studio and training center
-            based in Monterrey, Mexico. This company was born by the idea of
-            perfecting the industry in Monterrey, our mission is to deliver the
-            highest quality product in the north of Mexico and eventually the
-            whole country.
-          </Subtext>
+          <Text size={9}>{title}</Text>
+          <MarkdownBlock size={2} mobileSize={3}>
+            {content}
+          </MarkdownBlock>
         </TextLayout>
         <SliderLayout>
           <TeamSlider />
@@ -99,4 +98,22 @@ function About() {
   );
 }
 
-export default About;
+
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            whoAreWe {
+              content
+              title
+            }
+          }
+        }
+      }
+    `}
+    render={data => <About {...props} data={data} />}
+  />
+);
+

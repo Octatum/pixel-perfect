@@ -80,7 +80,8 @@ services:
       name: Training
   title: Our services
 featuredInContent: Latest updates
-ourStaffContent: This are some projects our staff has worked on.
-ourStudentsContent: And this are some projects our ex-alumni have worked on.
+ourStaffContent: These are some projects our staff has worked on.
+ourStudentsContent: And these are some projects our ex-alumni have worked on.
+ourProjectsContent: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
 ---
 

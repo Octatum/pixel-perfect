@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import ReactMarkdown from 'react-markdown';
 import { device } from '../utils/device';
 
 const defaultSize = 1;
@@ -32,7 +33,7 @@ const setAlign = ({ align }) => {
   return align || 'inherit';
 };
 
-const Text = styled.div`
+export const withTextStyle = component => styled(component)`
   line-height: ${({ lineHeight }) => lineHeight || '1.2em'};
   font-family: ${({ theme }) => theme.font.main};
   color: ${setColor};
@@ -53,5 +54,9 @@ const Text = styled.div`
       setFontSize({ size: props.mobileSize || props.size }, increments.mobile)};
   }
 `;
+
+export const Markdown = withTextStyle(ReactMarkdown);
+
+const Text = withTextStyle('div');
 
 export default Text;

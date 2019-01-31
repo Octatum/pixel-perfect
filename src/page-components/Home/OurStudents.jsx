@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from '../../components/Text';
+
+import Text, { Markdown } from '../../components/Text';
 import SlidesSection from './SlidesSection';
 import TextSection from './TextSection';
 import { graphql, StaticQuery } from 'gatsby';
@@ -18,6 +19,8 @@ const OurStudents = props => {
     ...node.frontmatter,
   }));
 
+  const { ourStudentsContent } = data.content.frontmatter;
+
   return (
     <Layout>
       <TextSection align="end">
@@ -27,10 +30,9 @@ const OurStudents = props => {
           </Text>
           Students
         </Text>
-        <Text align="right" size={1}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy{' '}
-        </Text>
+        <Markdown align="right" size={1}>
+          {ourStudentsContent}
+        </Markdown>
       </TextSection>
       <SlidesSection items={slides} />
     </Layout>
@@ -51,6 +53,12 @@ export default props => (
                 image
               }
             }
+          }
+        }
+
+        content: markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            ourStudentsContent
           }
         }
       }
