@@ -7,6 +7,7 @@ dimensions:
   height: '1'
   width: '1'
 banner: /uploads/vela-banner.jpg
+genre: Feature film
 studio: 'Dark Mountain '
 releaseDate: '2018'
 images:
