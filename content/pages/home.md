@@ -43,7 +43,7 @@ services:
         Using different techniques we create the illusion that an environment is
         larger than what was originally filmed, reducing on-set production costs
         and adding production value.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/setextension-service.jpg
       name: Set Extension
     - content: >-
         Through this technique we create a digital replicate of a real-life
@@ -55,18 +55,18 @@ services:
         We specialize on combining multiple image sequences that were filmed
         separately or created digitally to achieve a seamless final result with
         film industry quality.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/compositing-service.jpg
       name: Compositing
     - content: >-
         Creating computer generated imagery, such as 3D models, animations and
         lightning allows us to take your production to the next level.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/cgi-service.jpg
       name: CGI
     - content: >-
         Simulating elements such fire, smoke, water or even creating destruction
         are examples of visuals that can be crafted by our team FX artists,
         ready to help achieve the director's vision
-      image: /uploads/servicesblank.jpg
+      image: /uploads/fx-service.jpg
       name: FX
     - content: >-
         With the help of our on-set VFX supervisors, we make sure your green
