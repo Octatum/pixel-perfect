@@ -6,8 +6,7 @@ demoReel:
   content: |-
     Perfecting the VFX industry in **Monterrey**
 
-
-
+    <br></br>
 
     Watch [_demo reel_](https://vimeo.com/311582840)
 whoAreWe:
