@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import ReactFullpage from '@fullpage/react-fullpage';
 
-import AppLayout, { FullpageContext } from '../components/AppLayout';
+import AppLayout from '../components/AppLayout';
 import HomePresentation from '../page-components/Home/Presentation';
 import About from '../page-components/Home/About';
 import Services from '../page-components/Home/Services';
@@ -26,9 +26,6 @@ const Layout = styled.div`
 const Section = ({ children }) => <div className="section">{children}</div>;
 
 function Home() {
-  const [_, setValue] = useState(null);
-  const b = useContext(FullpageContext);
-
   return (
     <AppLayout>
       <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
@@ -37,7 +34,7 @@ function Home() {
         <ReactFullpage
           licenseKey="Key"
           anchors={[
-            'home',
+            navbarIds.home,
             navbarIds.about,
             navbarIds.services,
             navbarIds.featured,
@@ -47,11 +44,12 @@ function Home() {
           ]}
           scrollOverflow
           pluginWrapper={wrapper}
-          render={() => {
+          render={({ fullpageApi }) => {
+
             return (
               <ReactFullpage.Wrapper>
-                <Section>
-                  <HomePresentation />
+                <Section data-anchor={navbarIds.home}>
+                  <HomePresentation api={fullpageApi} />
                 </Section>
                 <Section data-anchor={navbarIds.about}>
                   <About />

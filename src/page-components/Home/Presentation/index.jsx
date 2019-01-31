@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Markdown from 'react-markdown';
@@ -6,6 +6,7 @@ import Markdown from 'react-markdown';
 import { device } from '../../../utils/device';
 import BackgroundVideoPlayer from './BackgroundVideoPlayer';
 import backgroundImage from './assets/vfx.png';
+import { FullpageContext } from '../../../components/AppLayout';
 
 const Layout = styled.div`
   display: flex;
@@ -60,6 +61,17 @@ const Subheader = styled(Markdown)`
 `;
 
 function Presentation(props) {
+  const { api } = props;
+  const [value, setValue] = useContext(FullpageContext);
+
+  useEffect(() => {
+    setValue(api);
+
+    return () => {
+      setValue(null);
+    }
+  });
+
   const {
     backgroundVideo,
     content,

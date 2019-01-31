@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../utils/device';
 import Link from './Link';
+import { FullpageContext } from './AppLayout';
 
 const Navsection = styled.nav`
   position: fixed;
@@ -108,6 +109,7 @@ const ListElement = styled.li`
 `;
 
 export const navbarIds = {
+  home: 'home',
   about: 'about',
   services: 'services',
   featured: 'featured',
@@ -117,20 +119,28 @@ export const navbarIds = {
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
+  const [fullpageApi] = useContext(FullpageContext);
+
+  const moveToSection = (section) => {
+    setNavOpen(false);
+    if (!fullpageApi) return;
+
+    fullpageApi.moveTo(section);
+  }
 
   return (
     <Navsection>
       <LogoDiv>
         <Logo to="/">PIXELPERFECT</Logo>
       </LogoDiv>
-      <DropdownButton onClick={() => setNavOpen(true)} open={navOpen}>
+      <DropdownButton onClick={() => moveToSection(navbarIds.home)} open={navOpen}>
         <i className={navOpen ? 'fas fa-times' : 'fas fa-bars'} />
       </DropdownButton>
       <Links open={navOpen}>
         {Object.keys(navbarIds).map(key => {
           return (
             <ListElement key={key}>
-              <Link onClick={() => setNavOpen(false)} to={`/#${key}`}>
+              <Link onClick={() => moveToSection(key)} to={`/#${key}`}>
                 {key}
               </Link>
             </ListElement>
