@@ -4,9 +4,9 @@ type: start-page
 demoReel:
   backgroundVideo: /uploads/demoreel_webcut7.mp4
   content: |-
-    Perfecting the VFX industry in **Monterrey**<br/>
+    # Perfecting the VFX industry in **Monterrey**
 
-
+    ****
 
     Watch [_demo reel_](https://vimeo.com/311582840)
 whoAreWe:
