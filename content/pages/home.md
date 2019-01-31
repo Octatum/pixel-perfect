@@ -2,7 +2,7 @@
 title: Our services
 type: start-page
 demoReel:
-  backgroundVideo: /uploads/demoreel.mp4
+  backgroundVideo: /uploads/demoreel_webcut7.mp4
   content: |-
     Perfecting the VFX industry in **Monterrey**
 
