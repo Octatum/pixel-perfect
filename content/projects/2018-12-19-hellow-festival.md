@@ -12,8 +12,8 @@ studio: ''
 releaseDate: ''
 plot: ''
 videoData:
-  type: 'sin video'
-  id: ''
+  id: Wj2VrYkcuEs
+  type: youtube
 activities: ''
 ---
 
