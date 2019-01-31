@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import Markdown from 'react-markdown';
 
 import { device } from '../../../utils/device';
 import BackgroundVideoPlayer from './BackgroundVideoPlayer';
 import backgroundImage from './assets/vfx.png';
 import { FullpageContext } from '../../../components/AppLayout';
+import { Markdown } from '../../../components/Text';
 
 const Layout = styled.div`
   display: flex;
@@ -26,37 +26,50 @@ const Layout = styled.div`
 `;
 
 const Header = styled.h1`
-  color: ${props => props.theme.color.light};
   position: relative;
-  font-family: ${props => props.theme.font.main};
   z-index: 1;
-  font-size: 3em;
   font-weight: 400;
   width: 30%;
   padding: 2rem;
-  text-align: left;
   margin-right: 3rem;
-  transition: 500ms ease-in-out all;
-
-  ${device.laptop} {
-    font-size: 2.5rem;
-  }
 
   ${device.tablet} {
-    margin: 0;
     z-index: 0;
     text-align: center;
     opacity: 1;
-    filter: none;
     width: 60%;
     justify-self: center;
   }
 `;
 
 const Subheader = styled(Markdown)`
-  > a {
-    font-weight: 700;
+  line-height: 1;
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: normal;
+  }
+
+  a {
     color: white;
+  }
+
+  * {
+    color: inherit;
   }
 `;
 
@@ -81,7 +94,7 @@ function Presentation(props) {
     <Layout>
       <BackgroundVideoPlayer video={backgroundVideo} poster={backgroundImage} />
       <Header>
-        <Subheader>{content}</Subheader>
+        <Subheader size={4}>{content}</Subheader>
       </Header>
     </Layout>
   );

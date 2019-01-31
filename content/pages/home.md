@@ -6,9 +6,7 @@ demoReel:
   content: |-
     # Perfecting the VFX industry in **Monterrey**
 
-
-
-    Watch [_demo reel_](https://vimeo.com/311582840)
+    Watch [demo reel](https://vimeo.com/311582840)
 whoAreWe:
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based
