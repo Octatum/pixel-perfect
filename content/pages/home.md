@@ -81,7 +81,9 @@ services:
   title: Our services
 featuredInContent: Latest updates
 ourStaffContent: These are some projects our staff has worked on.
-ourStudentsContent: And these are some projects our ex-alumni have worked on.
-ourProjectsContent: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+ourStudentsContent: And these are some projects our former students have worked on.
+ourProjectsContent: >-
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  Lorem Ipsum has been the industry
 ---
 
