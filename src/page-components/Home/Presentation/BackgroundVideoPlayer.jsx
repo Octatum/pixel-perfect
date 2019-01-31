@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import isMobile from 'ismobilejs';
+import { device } from '../../../utils/device';
 
 const Video = styled.video`
   position: absolute;
@@ -15,16 +17,20 @@ const Video = styled.video`
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+
+  ${device.mobile} {
+    display: none;
+  } 
 `;
 
 function BackgroundVideoPlayer(props) {
   const { video, poster } = props;
   const videoRef = useRef(null);
   useEffect(() => {
-    if (videoRef && videoRef.current.paused) {
+    if (videoRef && videoRef.current.paused && !isMobile.any) {
       videoRef.current.play();
     }
-  });
+  }, [videoRef]);
 
   return (
     <Video playsInline ref={videoRef} muted loop poster={poster} autoPlay>

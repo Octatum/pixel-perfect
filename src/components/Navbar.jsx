@@ -109,7 +109,6 @@ const ListElement = styled.li`
 `;
 
 export const navbarIds = {
-  home: 'home',
   about: 'about',
   services: 'services',
   featured: 'featured',
@@ -133,7 +132,7 @@ function Navbar() {
       <LogoDiv>
         <Logo to="/">PIXELPERFECT</Logo>
       </LogoDiv>
-      <DropdownButton onClick={() => moveToSection(navbarIds.home)} open={navOpen}>
+      <DropdownButton onClick={() => setNavOpen(!navOpen)} open={navOpen}>
         <i className={navOpen ? 'fas fa-times' : 'fas fa-bars'} />
       </DropdownButton>
       <Links open={navOpen}>

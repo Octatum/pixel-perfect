@@ -34,7 +34,7 @@ function Home() {
         <ReactFullpage
           licenseKey="Key"
           anchors={[
-            navbarIds.home,
+            'home',
             navbarIds.about,
             navbarIds.services,
             navbarIds.featured,

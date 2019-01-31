@@ -66,11 +66,11 @@ function Presentation(props) {
 
   useEffect(() => {
     setValue(api);
-
+    
     return () => {
       setValue(null);
     }
-  });
+  }, [value]);
 
   const {
     backgroundVideo,
