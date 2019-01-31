@@ -9,12 +9,15 @@ dimensions:
 banner: /uploads/vela-banner.jpg
 studio: 'Dark Mountain '
 releaseDate: '2018'
+images:
+  - image: /uploads/cuando-la-vela-se-apague-2.jpg
+  - image: /uploads/cuando-la-vela-se-apague-1.jpg
 plot: >-
   Susana, a teenager girl scout, walks with her friends into the woods to play a
   mysterious rite of initiation.
 videoData:
-  type: vimeo
   id: '272864287'
+  type: vimeo
 beforeAfterImages: []
 ---
 
