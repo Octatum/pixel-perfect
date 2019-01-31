@@ -4,9 +4,9 @@ type: start-page
 demoReel:
   backgroundVideo: /uploads/demoreel_webcut7.mp4
   content: |-
-    Perfecting the VFX industry in **Monterrey**
+    ## Perfecting the VFX industry in **Monterrey**
 
-    Watch [_demo reel_](https://vimeo.com/311582840)__
+    Watch [_demo reel_](https://vimeo.com/311582840)
 whoAreWe:
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based
