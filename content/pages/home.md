@@ -28,7 +28,10 @@ services:
     image: /uploads/roto-service.jpg
     lowerText: ''
     title: Rotoscoping
-    upperText: ''
+    upperText: >-
+      Our services include production and post-production services for visual
+      media projects. We also offer  training courses for those seeking a career
+      in VFX industry. 
   serviceList:
     - content: >-
         We specialize on combining multiple image sequences that were filmed
