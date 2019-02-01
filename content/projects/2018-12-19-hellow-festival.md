@@ -6,7 +6,7 @@ index: 11
 dimensions:
   height: '1'
   width: '1'
-banner: /uploads/hellow-banner.jpg
+banner: /uploads/hellow-banner_02.jpg
 genre: ''
 studio: ''
 releaseDate: ''
