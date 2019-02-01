@@ -28,7 +28,7 @@ services:
       media projects. We also offer  training courses for those seeking a career
       in VFX industry. 
     title: What we do
-    upperText: ''
+    upperText: at Pixel Perfect
   serviceList:
     - content: >-
         We specialize on combining multiple image sequences that were filmed
