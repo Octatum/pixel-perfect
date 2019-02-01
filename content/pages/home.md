@@ -12,9 +12,12 @@ demoReel:
 whoAreWe:
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based
-    in Monterrey, Mexico. This company was born by the idea of perfecting the
-    industry in Monterrey, our mission is to deliver the highest quality product
-    in the north of Mexico and eventually the whole country.
+    in **Monterrey, Mexico.** 
+
+
+    This company was born by the idea of perfecting the industry in Monterrey,
+    our mission is to deliver the _highest quality_ product in the north of
+    Mexico and eventually the whole country.
   title: Who are we?
 services:
   content: ''
