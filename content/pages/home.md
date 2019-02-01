@@ -85,7 +85,7 @@ services:
     - content: >-
         We provide training courses in Rotoscoping and Matchmove for those
         seeking to start a career in VFX industry.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/training-service.jpg
       name: Training
   title: Our services
 featuredInContent: Latest updates.
