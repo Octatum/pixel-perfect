@@ -1,14 +1,14 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
-import ProjectContainer from '../page-components/Projects';
 import { graphql } from 'gatsby';
+import CoursePresentation from '../page-components/CoursePresentation';
 
 const ProjectTemplate = props => {
   const data = props.data.markdownRemark.frontmatter;
 
   return (
     <AppLayout>
-      <ProjectContainer data={data} />
+      <CoursePresentation data={data} />
     </AppLayout>
   );
 };
