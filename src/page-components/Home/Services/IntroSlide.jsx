@@ -7,7 +7,7 @@ import { device } from '../../../utils/device';
 
 const TextBox = styled(Text)`
   width: 50%;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
   ${device.tablet} {
     width: 80%;

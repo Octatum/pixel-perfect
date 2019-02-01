@@ -31,6 +31,10 @@ const Layout = styled.section`
 const Overlay = styled(SlideLayout)`
   position: absolute;
   justify-content: flex-start;
+
+  ${device.tablet} {
+    top: 3rem;
+  }
 `;
 
 const PreviousArrow = styled('img')`
@@ -45,6 +49,7 @@ const PreviousArrow = styled('img')`
   cursor: pointer;
 
   ${device.tablet} {
+    top: calc(var(--margin) * 2.5);
     --arrow-width: 1.6rem;
   }
 
@@ -69,7 +74,7 @@ function NextArrow(props) {
 }
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   arrows: true,
   speed: 1000,
@@ -99,7 +104,7 @@ const Services = props => {
         ))}
       </Slider>
       <Overlay>
-        <Text size={10} as="h1">
+        <Text size={10} mobileSize={6} as="h1">
           {title}
         </Text>
       </Overlay>

@@ -6,7 +6,7 @@ import { device } from '../../../utils/device';
 import SlideLayout from './SlideLayout';
 
 const TextSection = styled.div`
-  margin-bottom: 3em;
+  margin-bottom: 1.5rem;
   padding-left: 50%;
   box-sizing: border-box;
 

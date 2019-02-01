@@ -12,7 +12,7 @@ demoReel:
 
     ---
 
-    [demo **reel**](https://vimeo.com/311582840)
+    ## [demo **reel**](https://vimeo.com/311582840)
 whoAreWe:
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based

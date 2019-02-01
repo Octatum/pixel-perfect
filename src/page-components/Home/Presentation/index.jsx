@@ -45,11 +45,19 @@ const Header = styled.h1`
 const Subheader = styled(Markdown)`
   line-height: 1;
   h1 {
-    font-size: 1.5em;
+    font-size: 3.4em;
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 2.8em;
+  }
+
+  h3 {
+    font-size: 2.2em;
+  }
+
+  h4 {
+    font-size: 1.6em;
   }
 
   h1, h2, h3, h4 {
@@ -58,6 +66,7 @@ const Subheader = styled(Markdown)`
 
   a {
     color: white;
+    font-size: 1.6em
   }
 
   * {
@@ -91,7 +100,7 @@ function Presentation(props) {
     <Layout>
       <BackgroundVideoPlayer video={backgroundVideo} poster={backgroundImage} />
       <Header>
-        <Subheader size={4}>{content}</Subheader>
+        <Subheader>{content}</Subheader>
       </Header>
     </Layout>
   );
