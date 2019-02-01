@@ -20,14 +20,14 @@ whoAreWe:
     Mexico and eventually the whole country.
   title: Who are we?
 services:
-  content: ''
+  content: >-
+    We specialize on **Rotoscoping,** the art of animating masks on a timeline,
+    isolating any elements so they can be individually used in further post
+    production processes.
   initialSlide:
-    image: /uploads/servicesblank.jpg
-    lowerText: >-
-      Our services include production and post-production services for visual
-      media projects. We also offer  training courses for those seeking a career
-      in VFX industry. 
-    title: What we do
+    image: /uploads/roto-service.jpg
+    lowerText: ''
+    title: Rotoscoping
     upperText: ''
   serviceList:
     - content: >-
