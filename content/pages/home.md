@@ -23,12 +23,12 @@ services:
   content: ''
   initialSlide:
     image: /uploads/servicesblank.jpg
-    lowerText: ''
-    title: What we do
-    upperText: >-
+    lowerText: >-
       Our services include production and post-production services for visual
       media projects. We also offer  training courses for those seeking a career
       in VFX industry. 
+    title: What we do
+    upperText: ''
   serviceList:
     - content: >-
         We specialize on combining multiple image sequences that were filmed
