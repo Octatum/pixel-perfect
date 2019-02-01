@@ -49,14 +49,6 @@ const Subheader = styled(Markdown)`
   }
 
   h2 {
-    font-size: 1.4em;
-  }
-
-  h3 {
-    font-size: 1.3em;
-  }
-
-  h4 {
     font-size: 1.2em;
   }
 
@@ -70,6 +62,11 @@ const Subheader = styled(Markdown)`
 
   * {
     color: inherit;
+  }
+
+  hr {
+    border-color: transparent;
+    margin: 0.25em;
   }
 `;
 

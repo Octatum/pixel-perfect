@@ -10,9 +10,7 @@ demoReel:
 
     ## **Monterrey**
 
-
-
-
+    ---
 
     [demo **reel**](https://vimeo.com/311582840)
 whoAreWe:

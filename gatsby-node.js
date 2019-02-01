@@ -1,5 +1,25 @@
 const path = require("path");
 
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+
+  if(!node.frontmatter || !node.frontmatter.type || node.frontmatter.type !== "project") return;
+
+  createNodeField({
+    node,
+    name: "next",
+    value: null
+  })
+
+  createNodeField({
+    node,
+    name: "previous",
+    value: null
+  })
+
+  console.log(node);
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const
     { createPage } = actions,
@@ -15,6 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               title
+              index
             }
           }
         }
@@ -46,7 +67,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: `/project/${route}`,
         component: projectTemplate,
         context: {
-          title: node.frontmatter.title
+          title: node.frontmatter.title,
         }
       });
     });

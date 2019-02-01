@@ -9,7 +9,6 @@ const Layout = styled('div')`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 5%;
 
   > div:not(:last-child) {
     margin-bottom: 1em;
@@ -40,7 +39,7 @@ const MovieData = props => {
 
       {genre && (
         <TextContainer>
-          <Text bold>Genre</Text>
+          <Text bold>Project</Text>
           <Text>{genre}</Text>
         </TextContainer>
       )}
