@@ -64,6 +64,13 @@ services:
       image: /uploads/roto-service.jpg
       name: Rotoscoping
     - content: >-
+        With the help of our on-set VFX supervisors, we make sure your green
+        screens are set up properly, track markers are efficiently placed, while
+        gathering data and preventing problems that may arise so the post
+        production pipeline runs smoothly.
+      image: /uploads/setsup-service.jpg
+      name: Set Supervision
+    - content: >-
         With this technique we remove any unintended productions tools from a
         scene (such as wires, harnesses, microphones) or unwanted environment
         scenery (logos, ads, vehicles, etc.) to keep the final image flawless.
@@ -75,13 +82,6 @@ services:
         further stages in post-production.
       image: /uploads/servicesblank.jpg
       name: 3D Tracking
-    - content: >-
-        With the help of our on-set VFX supervisors, we make sure your green
-        screens are set up properly, track markers are efficiently placed, while
-        gathering data and preventing problems that may arise so the post
-        production pipeline runs smoothly.
-      image: /uploads/servicesblank.jpg
-      name: Set Supervision
     - content: >-
         We provide training courses in Rotoscoping and Matchmove for those
         seeking to start a career in VFX industry.
