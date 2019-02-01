@@ -52,7 +52,7 @@ services:
         We specialize on **Rotoscoping,** the art of animating masks on a
         timeline, isolating any elements so they can be individually used in
         further post production processes.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/roto-service.jpg
       name: Rotoscoping
     - content: >-
         With this technique we remove any unintended productions tools from a
