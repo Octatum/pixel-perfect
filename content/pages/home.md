@@ -80,7 +80,7 @@ services:
         Through this technique we create a digital replicate of a real-life
         camera movement, allowing us to add computer-generated elements during
         further stages in post-production.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/3dtrack-service.jpg
       name: 3D Tracking
     - content: >-
         We provide training courses in Rotoscoping and Matchmove for those
