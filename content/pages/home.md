@@ -88,9 +88,9 @@ services:
       image: /uploads/servicesblank.jpg
       name: Training
   title: Our services
-featuredInContent: Latest updates
+featuredInContent: Latest updates.
 ourStaffContent: These are some projects our staff has worked on.
 ourStudentsContent: And these are some projects our former students have worked on.
-ourProjectsContent: Take a look at our projects
+ourProjectsContent: Take a look at our projects.
 ---
 
