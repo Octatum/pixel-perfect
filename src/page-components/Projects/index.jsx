@@ -37,6 +37,8 @@ const ProjectContainer = props => {
     images = [],
     activities = '',
     beforeAfterImages = [],
+    previousProjectRoute = "",
+    nextProjectRoute = ""
   } = props.data;
 
   return (
@@ -53,7 +55,10 @@ const ProjectContainer = props => {
         <meta property="og:image" content={banner} />
       </Helmet>
       <Banner src={banner} />
-      <NavigationButtons />
+      <NavigationButtons
+        previousProjectRoute={previousProjectRoute}
+        nextProjectRoute={nextProjectRoute}
+      />
       <MovieData
         data={{
           title,

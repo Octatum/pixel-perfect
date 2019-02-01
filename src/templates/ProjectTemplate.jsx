@@ -4,7 +4,7 @@ import ProjectContainer from '../page-components/Projects';
 import { graphql } from 'gatsby';
 
 const ProjectTemplate = props => {
-  const data = props.data.markdownRemark.frontmatter;
+  const data = {...props.data.markdownRemark.frontmatter, ...props.data.markdownRemark.fields};
 
   return (
     <AppLayout>
@@ -20,6 +20,10 @@ export const pageQuery = graphql`
     markdownRemark(
       frontmatter: { type: { eq: "project" }, title: { eq: $title } }
     ) {
+      fields {
+        previousProjectRoute
+        nextProjectRoute
+      }
       frontmatter {
         title
         image
