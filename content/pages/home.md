@@ -10,9 +10,9 @@ demoReel:
 
     ## **Monterrey**
 
-    ---
+    - - -
 
-    ## [demo **reel**](https://vimeo.com/311582840)
+    [demo **reel**](https://vimeo.com/311582840)
 whoAreWe:
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based
@@ -64,38 +64,33 @@ services:
       image: /uploads/roto-service.jpg
       name: Rotoscoping
     - content: >-
+        With the help of our on-set VFX supervisors, we make sure your green
+        screens are set up properly, track markers are efficiently placed, while
+        gathering data and preventing problems that may arise so the post
+        production pipeline runs smoothly.
+      image: /uploads/setsup-service.jpg
+      name: Set Supervision
+    - content: >-
         With this technique we remove any unintended productions tools from a
         scene (such as wires, harnesses, microphones) or unwanted environment
         scenery (logos, ads, vehicles, etc.) to keep the final image flawless.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/cleanup-service.jpg
       name: Clean up
     - content: >-
         Through this technique we create a digital replicate of a real-life
         camera movement, allowing us to add computer-generated elements during
         further stages in post-production.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/3dtrack-service.jpg
       name: 3D Tracking
-    - content: >-
-        With the help of our on-set VFX supervisors, we make sure your green
-        screens are set up properly, track markers are efficiently placed, while
-        gathering data and preventing problems that may arise so the post
-        production pipeline runs smoothly.
-      image: /uploads/servicesblank.jpg
-      name: Set Supervision
     - content: >-
         We provide training courses in Rotoscoping and Matchmove for those
         seeking to start a career in VFX industry.
-
-
-        Click here to view more.
       image: /uploads/servicesblank.jpg
       name: Training
   title: Our services
-featuredInContent: Latest updates
+featuredInContent: Latest updates.
 ourStaffContent: These are some projects our staff has worked on.
 ourStudentsContent: And these are some projects our former students have worked on.
-ourProjectsContent: >-
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry
+ourProjectsContent: Take a look at our projects.
 ---
 
