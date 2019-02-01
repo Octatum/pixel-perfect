@@ -74,7 +74,7 @@ services:
         With this technique we remove any unintended productions tools from a
         scene (such as wires, harnesses, microphones) or unwanted environment
         scenery (logos, ads, vehicles, etc.) to keep the final image flawless.
-      image: /uploads/servicesblank.jpg
+      image: /uploads/cleanup-service.jpg
       name: Clean up
     - content: >-
         Through this technique we create a digital replicate of a real-life
