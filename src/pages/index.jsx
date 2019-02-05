@@ -1,77 +1,82 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import ReactFullpage from '@fullpage/react-fullpage';
 
-import backgroundVideo from '../components/Home/assets/demoreel.mp4'
-import BackgroundVideoPlayer from '../components/Home/BackgroundVideoPlayer';
-import backgroundImage from '../components/Home/assets/vfx.png'
-import { device } from '../utils/device';
+import AppLayout from '../components/AppLayout';
+import HomePresentation from '../page-components/Home/Presentation';
+import About from '../page-components/Home/About';
+import Services from '../page-components/Home/Services';
+import FeaturedIn from '../page-components/Home/FeaturedIn';
+import OurStaff from '../page-components/Home/OurStaff';
+import OurStudents from '../page-components/Home/OurStudents';
+import OurProjects from '../page-components/Home/OurProjects';
+import OurClients from '../page-components/Home/OurClients';
+import Contact from '../page-components/Home/Contact';
+import { navbarIds } from '../components/Navbar';
+
+const wrapper = () => {
+  require('fullpage.js/vendors/scrolloverflow');
+};
 
 const Layout = styled.div`
   display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background: url("${backgroundImage}") no-repeat center center fixed;
-  background-size: auto 100%;
-  align-items: center;
-  justify-content: flex-end;
-
-  ${device.tablet} {
-    justify-content: center;
-  }
+  flex-direction: column;
 `;
+const Section = ({ children }) => <div className="section">{children}</div>;
 
-const Header = styled.h1`
-  color: ${props => props.theme.color.light};
-  position: relative;
-  font-family: ${props => props.theme.font.main};
-  z-index: 1;
-  font-size: 3em;
-  font-weight: 400;
-  width: 30%;
-  padding: 2rem;
-  text-align: left;
-  background: rgba(0, 0, 0, 0.3);
-  margin-right: 3rem;
-  transition: 500ms ease-in-out all;
-
-  ${device.laptop} {
-    font-size: 2.5rem;
-  }
-  
-  ${device.tablet} {
-    margin: 0;
-    z-index: 0;
-    text-align: center;
-    opacity: 1;
-    filter: none;
-    width: 60%;
-    justify-self: center;
-  }
-`;
-
-const Subheader = styled.div`
-  font-size: 0.5em;
-
-  > a {
-    font-weight: 700;
-    color: white;
-  }
-`;
-
-function Home() { 
+function Home() {
   return (
-    <Layout>
-      <BackgroundVideoPlayer 
-        video={backgroundVideo}
-        poster={backgroundImage}
-      />
-      <Header >
-        Perfecting the <br />VFX industry in <strong>Monterrey</strong>
-        <Subheader>Watch our <a href="https://vimeo.com/256454623" target="_blank">Demo Reel</a></Subheader>
-      </Header>
-    </Layout>
+    <AppLayout>
+      <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
+
+      <Layout>
+        <ReactFullpage
+          licenseKey="Key"
+          anchors={[
+            'home',
+            navbarIds.about,
+            navbarIds.services,
+            navbarIds.featured,
+            navbarIds.projects,
+            'customers',
+            navbarIds.contact,
+          ]}
+          scrollOverflow
+          pluginWrapper={wrapper}
+          render={({ fullpageApi }) => {
+
+            return (
+              <ReactFullpage.Wrapper>
+                <Section data-anchor={navbarIds.home}>
+                  <HomePresentation api={fullpageApi} />
+                </Section>
+                <Section data-anchor={navbarIds.about}>
+                  <About />
+                </Section>
+                <Section data-anchor={navbarIds.services}>
+                  <Services />
+                </Section>
+                <Section data-anchor={navbarIds.featured}>
+                  <FeaturedIn />
+                  <OurStaff />
+                  <OurStudents />
+                </Section>
+                <Section data-anchor={navbarIds.projects}>
+                  <OurProjects />
+                </Section>
+                <Section>
+                  <OurClients />
+                </Section>
+                <Section data-anchor={navbarIds.contact}>
+                  <Contact />
+                </Section>
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
+      </Layout>
+    </AppLayout>
   );
 }
 
