@@ -13,26 +13,28 @@ exports.sourceNodes = ({ actions, getNodes }) => {
     )
   const projectsLength = projectNodes.length;
 
-  projectNodes.forEach((node, index) => {
-    const previousProjectIndex = (index + projectsLength - 1) % projectsLength;
-    const nextProjectIndex = (index + 1) % projectsLength;
-    const previousProjectNode = projectNodes[previousProjectIndex];
-    const nextProjectNode = projectNodes[nextProjectIndex];
-    const previousProjectRoute = createRouteFromString(previousProjectNode.frontmatter.title);
-    const nextProjectRoute = createRouteFromString(nextProjectNode.frontmatter.title);
+  projectNodes
+    .sort((nodeA, nodeB) => nodeA.index - nodeB.index)
+    .forEach((node, index) => {
+      const previousProjectIndex = (index + projectsLength - 1) % projectsLength;
+      const nextProjectIndex = (index + 1) % projectsLength;
+      const previousProjectNode = projectNodes[previousProjectIndex];
+      const nextProjectNode = projectNodes[nextProjectIndex];
+      const previousProjectRoute = createRouteFromString(previousProjectNode.frontmatter.title);
+      const nextProjectRoute = createRouteFromString(nextProjectNode.frontmatter.title);
 
-    createNodeField({
-      node,
-      name: 'previousProjectRoute',
-      value: previousProjectRoute
-    });
+      createNodeField({
+        node,
+        name: 'previousProjectRoute',
+        value: previousProjectRoute
+      });
 
-    createNodeField({
-      node,
-      name: 'nextProjectRoute',
-      value: nextProjectRoute
-    });
-  })
+      createNodeField({
+        node,
+        name: 'nextProjectRoute',
+        value: nextProjectRoute
+      });
+    })
 }
 
 exports.createPages = ({ actions, graphql }) => {
@@ -50,7 +52,6 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               title
-              index
             }
           }
         }
@@ -75,7 +76,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     const { courses, projects } = result.data;
     
-    projects && projects.edges.forEach(({ node }, index) => {
+    projects && projects.edges.forEach(({ node }) => {
       const route = createRouteFromString(node.frontmatter.title);
 
       createPage({

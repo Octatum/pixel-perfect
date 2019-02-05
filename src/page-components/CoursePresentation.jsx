@@ -96,7 +96,7 @@ const Img = styled('img')`
 `;
 
 const CoursePresentation = props => {
-  const { title, description, requirements, learnings, programFile } = props;
+  const { title, description, requirements, learnings, programFile } = props.data;
 
   return (
     <BackgroundImageContainer>
@@ -150,12 +150,14 @@ const CoursePresentation = props => {
           Full
           <br />
           program{' '}
-          <Img height="0.8em" src={downloadButton} alt="download program" />
+          <a href={programFile} target="_blank" rel="noopener noreferrer">
+            <Img height="0.8em" src={downloadButton} alt="download program" />
+          </a>
         </Text>
         <Text>
           <br />
           Need more info?
-          <Text as={GatsbyLink} to="" bold>
+          <Text as={GatsbyLink} to={`/#${navbarIds.contact}`} bold>
             <br /> Write us!
           </Text>
         </Text>
