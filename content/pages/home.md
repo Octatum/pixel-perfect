@@ -1,5 +1,5 @@
 ---
-title: Our services
+title: Pixel Perfect VFX
 type: start-page
 demoReel:
   backgroundVideo: /uploads/demoreel_webcut7.mp4
