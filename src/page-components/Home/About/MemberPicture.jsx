@@ -34,7 +34,7 @@ const _Icons = ({ className, linkedin, imdb }) => {
   const result = [];
   let i = 0;
 
-  if (linkedin !== undefined) {
+  if (linkedin !== undefined && linkedin) {
     result.push(
       <Text
         as="a"
@@ -48,7 +48,7 @@ const _Icons = ({ className, linkedin, imdb }) => {
     );
   }
 
-  if (imdb !== undefined) {
+  if (imdb !== undefined && imdb) {
     result.push(
       <Text
         as="a"
@@ -94,7 +94,7 @@ export default props => (
     <Overlay>
       <Name className="name">
         <Text bold>{props.name}</Text>
-        <Text>{props.role}</Text>
+        {props.role && <Text>{props.role}</Text>}
       </Name>
       <Icons linkedin={props.linkedin} imdb={props.imdb} />
     </Overlay>

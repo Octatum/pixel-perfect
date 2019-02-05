@@ -151,6 +151,17 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string", default: "Who are we?" }
               - { label: "Contenido de bloque", name: "content", widget: "markdown" }
+              - { label: "Imagen de fondo", name: "backgroundImage", widget: "image", required: false }
+              - label: "Miembros del equipo"
+                name: "teamMembers"
+                required: true
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Rol", name: "role", widget: "string", required: false }
+                  - { label: "Perfil de linkedin", name: "linkedin", widget: "string", required: false }
+                  - { label: "Perfil de imdb", name: "imdb", widget: "string", required: false }
+                  - { label: "Imagen", name: "image", widget: "image" }
           - label: "Services"
             name: "services"
             widget: "object"

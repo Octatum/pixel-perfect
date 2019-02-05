@@ -23,6 +23,30 @@ whoAreWe:
     our mission is to deliver the _highest quality_ product in the north of
     Mexico and eventually the whole country.
   title: Who are we?
+  backgroundImage: ""
+  teamMembers:
+    - name: 'Rene Allegretti'
+      role: 'Co-founder'
+      image: '/uploads/Rene.png'
+      imdb: 'https://www.imdb.com/name/nm5727065/'
+      linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/'
+    - name: 'Edén Muñoz'
+      role: 'Co-founder'
+      image: '/uploads/eden.png'
+      imdb: 'https://www.imdb.com/name/nm6097371/'
+      linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/'
+    - name: 'Eduardo Parra'
+      role: 'Visual Effects Executive Producer'
+      image: '/uploads/eduardo.jpg'
+      linkedin: 'https://www.linkedin.com/in/edparrao/'
+    - name: 'Ricardo Santillana'
+      role: 'CG Generalist'
+      image: '/uploads/Rikcy.png'
+      linkedin: 'https://www.linkedin.com/in/rsantillana/'
+    - name: 'Ana Luisa López Segovia'
+      role: 'Project Manager, CG Generalist'
+      image: '/uploads/Ana.png'
+      linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
 services:
   content: ''
   initialSlide:

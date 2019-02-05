@@ -9,11 +9,12 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const Background = styled.div`
   position: relative;
-  background: black;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('${({backgroundImage}) => backgroundImage}');
 `;
 
 const Layout = styled.div`
@@ -80,9 +81,9 @@ const SliderLayout = styled.div`
 `;
 
 function About(props) {
-  const { content, title } = props.data.markdownRemark.frontmatter.whoAreWe;
+  const { content, title, backgroundImage, teamMembers } = props.data.markdownRemark.frontmatter.whoAreWe;
   return (
-    <Background>
+    <Background backgroundImage={backgroundImage}>
       <Layout>
         <TextLayout>
           <Text size={9}>{title}</Text>
@@ -91,7 +92,7 @@ function About(props) {
           </MarkdownBlock>
         </TextLayout>
         <SliderLayout>
-          <TeamSlider />
+          <TeamSlider teamMembers={teamMembers} />
         </SliderLayout>
       </Layout>
     </Background>
@@ -106,8 +107,16 @@ export default props => (
         markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
           frontmatter {
             whoAreWe {
-              content
               title
+              content
+              backgroundImage
+              teamMembers {
+                name
+                role
+                linkedin
+                imdb
+                image
+              }
             }
           }
         }

@@ -1,6 +1,6 @@
 import React from 'react';
-import AppLayout from '../components/AppLayout';
 import { graphql } from 'gatsby';
+import AppLayout from '../components/AppLayout';
 import CoursePresentation from '../page-components/CoursePresentation';
 
 const ProjectTemplate = props => {
