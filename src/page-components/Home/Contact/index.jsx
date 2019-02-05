@@ -41,8 +41,11 @@ const SocialsSection = styled.div`
   grid-area: socials;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding-bottom: 3rem;
+
+  > * {
+    margin-bottom: 1.5em;
+  }
 `;
 
 const Icon = styled('img')`

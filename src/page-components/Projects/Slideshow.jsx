@@ -13,7 +13,7 @@ const Image = styled('img')`
 
 const Dot = styled('div')`
   padding: 2px;
-  background: rgba(255, 255, 255, 1);
+  background: white;
   margin-top: 0.5rem;
   transition: 0.3s ease-in-out all;
 
@@ -43,7 +43,6 @@ const Slideshow = props => {
     ],
     customPaging: i => <Dot />,
   };
-  console.log(images);
 
   return (
     <Layout>

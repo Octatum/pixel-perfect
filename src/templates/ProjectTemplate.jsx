@@ -4,7 +4,10 @@ import ProjectContainer from '../page-components/Projects';
 import { graphql } from 'gatsby';
 
 const ProjectTemplate = props => {
-  const data = {...props.data.markdownRemark.frontmatter, ...props.data.markdownRemark.fields};
+  const data = {
+    ...props.data.markdownRemark.frontmatter,
+    ...props.data.markdownRemark.fields,
+  };
 
   return (
     <AppLayout>

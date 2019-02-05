@@ -14,7 +14,7 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('${({backgroundImage}) => backgroundImage}');
+  background-image: url('${({ backgroundImage }) => backgroundImage}');
 `;
 
 const Layout = styled.div`
@@ -81,7 +81,12 @@ const SliderLayout = styled.div`
 `;
 
 function About(props) {
-  const { content, title, backgroundImage, teamMembers } = props.data.markdownRemark.frontmatter.whoAreWe;
+  const {
+    content,
+    title,
+    backgroundImage,
+    teamMembers,
+  } = props.data.markdownRemark.frontmatter.whoAreWe;
   return (
     <Background backgroundImage={backgroundImage}>
       <Layout>
@@ -98,7 +103,6 @@ function About(props) {
     </Background>
   );
 }
-
 
 export default props => (
   <StaticQuery
@@ -125,4 +129,3 @@ export default props => (
     render={data => <About {...props} data={data} />}
   />
 );
-

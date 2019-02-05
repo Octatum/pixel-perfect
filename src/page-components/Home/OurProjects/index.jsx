@@ -18,7 +18,6 @@ const OurProjects = props => {
 
   const { ourProjectsContent } = props.data.content.frontmatter;
 
-
   return (
     <Layout>
       <TextSection>
@@ -28,9 +27,7 @@ const OurProjects = props => {
           </Text>
           Projects
         </Text>
-        <Markdown size={1}>
-          {ourProjectsContent}
-        </Markdown>
+        <Markdown size={1}>{ourProjectsContent}</Markdown>
       </TextSection>
       <ProjectGrid projects={projects} />
     </Layout>

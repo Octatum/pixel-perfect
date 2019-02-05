@@ -25,11 +25,17 @@ const Iframe = styled('iframe')`
 const VideoShowcase = props => {
   const { id, type } = props.videoData;
 
-  return type === 'sin video' ? <div /> : (
+  return type === 'sin video' ? (
+    <div />
+  ) : (
     <Layout>
       <Iframe
         title="videoPlayer"
-        src={type === 'vimeo' ? `//player.vimeo.com/video/${id}` : `//www.youtube.com/embed/${id}`}
+        src={
+          type === 'vimeo'
+            ? `//player.vimeo.com/video/${id}`
+            : `//www.youtube.com/embed/${id}`
+        }
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen

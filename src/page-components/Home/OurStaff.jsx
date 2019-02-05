@@ -22,9 +22,7 @@ const OurStaff = props => {
           </Text>
           Staff
         </Text>
-        <Markdown size={1}>
-          {ourStaffContent}
-        </Markdown>
+        <Markdown size={1}>{ourStaffContent}</Markdown>
       </TextSection>
       <SlidesSection items={slides} rtl />
     </OurLayout>
