@@ -19,7 +19,7 @@ You’ll also be introduced to texturing, lighting and rendering techniques.
 const CourseTemplate = () => {
   return (
     <AppLayout>
-      <CoursePresentation {...testData} />
+      <CoursePresentation data={testData} />
     </AppLayout>
   );
 };
