@@ -47,9 +47,7 @@ const FeaturedIn = props => {
             in
           </Text>
         </Text>
-        <Markdown size={2}>
-          {featuredInContent}
-        </Markdown>
+        <Markdown size={2}>{featuredInContent}</Markdown>
       </HeaderSection>
       <FeaturedGrid items={data} />
     </Layout>
@@ -78,7 +76,7 @@ export default props => (
             }
           }
         }
-        
+
         content: markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
           frontmatter {
             featuredInContent

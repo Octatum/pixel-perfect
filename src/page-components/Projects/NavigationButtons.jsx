@@ -15,7 +15,7 @@ const ImageIcon = styled('img')`
   height: 1.2rem;
 `;
 
-const NavigationButtons = (props) => {
+const NavigationButtons = props => {
   const { previousProjectRoute, nextProjectRoute } = props;
 
   return (
@@ -29,7 +29,7 @@ const NavigationButtons = (props) => {
         <GatsbyLink to={`/project/${previousProjectRoute}`}>
           <ImageIcon src={arrow} alt="Previous project" />
         </GatsbyLink>
-        <GatsbyLink to={`/project/${nextProjectRoute}`}>        
+        <GatsbyLink to={`/project/${nextProjectRoute}`}>
           <ImageIcon
             style={{ transform: 'rotate(180deg)' }}
             src={arrow}

@@ -60,13 +60,16 @@ const Subheader = styled(Markdown)`
     font-size: 1.6em;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-weight: normal;
   }
 
   a {
     color: white;
-    font-size: 1.6em
+    font-size: 1.6em;
   }
 
   * {
@@ -83,13 +86,16 @@ function Presentation(props) {
   const { api } = props;
   const [value, setValue] = useContext(FullpageContext);
 
-  useEffect(() => {
-    setValue(api);
-    
-    return () => {
-      setValue(null);
-    }
-  }, [value]);
+  useEffect(
+    () => {
+      setValue(api);
+
+      return () => {
+        setValue(null);
+      };
+    },
+    [value]
+  );
 
   const {
     backgroundVideo,

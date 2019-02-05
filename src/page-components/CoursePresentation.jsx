@@ -96,7 +96,13 @@ const Img = styled('img')`
 `;
 
 const CoursePresentation = props => {
-  const { title, description, requirements, learnings, programFile } = props.data;
+  const {
+    title,
+    description,
+    requirements,
+    learnings,
+    programFile,
+  } = props.data;
 
   return (
     <BackgroundImageContainer>

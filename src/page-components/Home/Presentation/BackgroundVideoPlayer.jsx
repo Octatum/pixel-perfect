@@ -20,17 +20,20 @@ const Video = styled.video`
 
   ${device.mobile} {
     display: none;
-  } 
+  }
 `;
 
 function BackgroundVideoPlayer(props) {
   const { video, poster } = props;
   const videoRef = useRef(null);
-  useEffect(() => {
-    if (videoRef && videoRef.current.paused && !isMobile.any) {
-      videoRef.current.play();
-    }
-  }, [videoRef]);
+  useEffect(
+    () => {
+      if (videoRef && videoRef.current.paused && !isMobile.any) {
+        videoRef.current.play();
+      }
+    },
+    [videoRef]
+  );
 
   return (
     <Video playsInline ref={videoRef} muted loop poster={poster} autoPlay>

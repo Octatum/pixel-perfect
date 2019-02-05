@@ -37,8 +37,8 @@ const ProjectContainer = props => {
     images = [],
     activities = '',
     beforeAfterImages = [],
-    previousProjectRoute = "",
-    nextProjectRoute = ""
+    previousProjectRoute = '',
+    nextProjectRoute = '',
   } = props.data;
 
   return (

@@ -120,12 +120,12 @@ function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const [fullpageApi] = useContext(FullpageContext);
 
-  const moveToSection = (section) => {
+  const moveToSection = section => {
     setNavOpen(false);
     if (!fullpageApi) return;
 
     fullpageApi.moveTo(section);
-  }
+  };
 
   return (
     <Navsection>

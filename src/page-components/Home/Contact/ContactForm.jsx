@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Formik } from 'formik';
+import { Formik, FastField } from 'formik';
 
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
@@ -21,10 +21,10 @@ const Form = styled.form`
 `;
 
 const FlexDiv = styled('div')`
-  flex: ${({flex}) => flex || 1};
-  justify-content: ${({justify}) => justify};
+  flex: ${({ flex }) => flex || 1};
+  justify-content: ${({ justify }) => justify};
   display: flex;
-  align-items: ${({align}) => align};
+  align-items: ${({ align }) => align};
 `;
 
 const ButtonSection = styled('div')`
@@ -43,7 +43,7 @@ const FormErrorText = styled(Text)`
 const ContactForm = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [formError, setFormError] = useState(false);
-  const formName = "contacto";
+  const formName = 'contacto';
 
   return (
     <Formik
@@ -59,30 +59,32 @@ const ContactForm = () => {
               'form-name': formName,
               ...values,
             }),
-          })
-          setMessageSent(true)
-          alert("Your message has been sent");
+          });
+          setMessageSent(true);
+          alert('Your message has been sent');
         } catch (exception) {
           setFormError(true);
         }
 
         actions.setSubmitting(false);
       }}
-      render={(props) => (
-        <Form name={formName} onSubmit={props.handleSubmit}>
+      render={props => (
+        <Form
+          name={formName}
+          onSubmit={props.handleSubmit}
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <p hidden>
+            <label>
+              Don’t fill this out: <FastField name="bot-field" />
+            </label>
+          </p>
+          <LabelInput labelText="Name" name="name" disabled={messageSent} />
+          <LabelInput labelText="Email" name="email" disabled={messageSent} />
           <LabelInput
-            labelText='Name'
-            name='name'
-            disabled={messageSent}
-          />
-          <LabelInput
-            labelText='Email'
-            name='email'
-            disabled={messageSent}
-          />
-          <LabelInput
-            labelText='Message'
-            name='message'
+            labelText="Message"
+            name="message"
             component="textarea"
             disabled={messageSent}
           />
@@ -92,10 +94,12 @@ const ContactForm = () => {
                 <FormErrorText>
                   There was an error sending your message.
                 </FormErrorText>
-              )}  
+              )}
             </FlexDiv>
             <FlexDiv align="flex-start" justify="flex-end">
-              <Text type="submit" as={Button} disabled={messageSent}>Send</Text>
+              <Text type="submit" as={Button} disabled={messageSent}>
+                Send
+              </Text>
             </FlexDiv>
           </ButtonSection>
         </Form>

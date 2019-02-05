@@ -45,7 +45,6 @@ function Home() {
           scrollOverflow
           pluginWrapper={wrapper}
           render={({ fullpageApi }) => {
-
             return (
               <ReactFullpage.Wrapper>
                 <Section data-anchor={navbarIds.home}>
