@@ -1,7 +1,7 @@
 ---
 title: VanArts News Article
 type: featured
-index: 2
+index: 5
 backgroundImage: /uploads/vanarts.jpg
 description: News article featuring Eden Muñoz and Eduardo Parra.
 url: >-
