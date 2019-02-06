@@ -1,6 +1,7 @@
 ---
 title: Our services
 type: start-page
+siteDescription: Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico.
 demoReel:
   backgroundVideo: /uploads/demoreel_webcut7.mp4
   content: |-
