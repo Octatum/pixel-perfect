@@ -17,19 +17,15 @@ const Layout = ({ children }) => {
         <React.Fragment>
           <Helmet
             titleTemplate={`%s - Pixel Perfect VFX`}
-            meta={[
-              { name: 'description', content: 'Pixel perfect' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
             link={[
               {
                 rel: 'shortcut icon',
-                href: '/favicon.ico?v=2',
+                href: '/favicon.ico',
                 type: 'image/x-icon',
               },
               {
                 rel: 'icon',
-                href: '/favicon.ico?v=2',
+                href: '/favicon.ico',
                 type: 'image/x-icon',
               },
             ]}

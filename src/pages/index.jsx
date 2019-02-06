@@ -14,6 +14,7 @@ import OurProjects from '../page-components/Home/OurProjects';
 import OurClients from '../page-components/Home/OurClients';
 import Contact from '../page-components/Home/Contact';
 import { navbarIds } from '../components/Navbar';
+import { StaticQuery, graphql } from 'gatsby';
 
 const wrapper = () => {
   require('fullpage.js/vendors/scrolloverflow');
@@ -25,10 +26,18 @@ const Layout = styled.div`
 `;
 const Section = ({ children }) => <div className="section">{children}</div>;
 
-function Home() {
+function Home(props) {
+  console.log(props);
+  const { siteDescription } = props.data.markdownRemark.frontmatter;
+
   return (
     <AppLayout>
-      <Helmet title={'Pixel Perfect VFX'} titleTemplate={''} />
+      <Helmet title={'Pixel Perfect VFX'} titleTemplate={''}>
+        <meta
+          name="description"
+          content={siteDescription}
+        />
+      </Helmet>
 
       <Layout>
         <ReactFullpage
@@ -79,4 +88,15 @@ function Home() {
   );
 }
 
-export default Home;
+export default props => <StaticQuery 
+  query={graphql`
+    query {
+      markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+        frontmatter {
+          siteDescription
+        }
+      }
+    }
+  `}
+  render={(data) => <Home data={data} {...props} />}
+/>;

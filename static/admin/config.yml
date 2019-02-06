@@ -128,7 +128,6 @@ collections:
       - { label: "Programa", name: "programFile", widget: "file" }
       - { name: "index", label: "Indice", widget: "number", valueType: "int", min: 1, default: 1 }
 
-
   - label: "Página"
     name: "page"
     files:
@@ -136,8 +135,9 @@ collections:
         name: "home"
         file: "content/pages/home.md"
         fields: 
-          - { label: "Título", name: "title", widget: "string", default: "Pixel Perfect" }
           - { label: "type", name: "type", widget: "hidden", default: "start-page" }
+          - { label: "Título del sitio", name: "title", widget: "string", default: "Pixel Perfect" }
+          - { label: "Descripción del sitio", name: "siteDescription", widget: "text", default: "Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico." }
           - label: "Demo reel"
             name: "demoReel"
             widget: "object"
