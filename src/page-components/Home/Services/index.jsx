@@ -9,6 +9,7 @@ import SlideLayout from './SlideLayout';
 import arrowImage from '../../assets/arrow.svg';
 import { device } from '../../../utils/device';
 import { StaticQuery, graphql } from 'gatsby';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled.section`
   flex: 1;
@@ -91,7 +92,7 @@ const Services = props => {
   const { serviceList } = props.data.markdownRemark.frontmatter.services;
 
   return (
-    <Layout>
+    <Layout id={navbarIds.services}>
       <Slider {...settings}>
         <IntroSlide />
         {serviceList.map(slide => (

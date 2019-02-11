@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
@@ -6,14 +6,10 @@ import './index.css';
 import Navbar from '../Navbar';
 import { globalTheme } from '../../utils/themes';
 
-export const FullpageContext = React.createContext(null);
-
 const Layout = ({ children }) => {
-  const [fullpageApi, setFullpageApi] = useState(null);
 
   return (
     <ThemeProvider theme={globalTheme}>
-      <FullpageContext.Provider value={[fullpageApi, setFullpageApi]}>
         <React.Fragment>
           <Helmet
             titleTemplate={`%s - Pixel Perfect VFX`}
@@ -54,7 +50,6 @@ const Layout = ({ children }) => {
           <Navbar />
           {children}
         </React.Fragment>
-      </FullpageContext.Provider>
     </ThemeProvider>
   );
 };
