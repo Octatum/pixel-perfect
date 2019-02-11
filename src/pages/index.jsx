@@ -25,10 +25,7 @@ function Home(props) {
   return (
     <AppLayout>
       <Helmet title={'Pixel Perfect VFX'} titleTemplate={''}>
-        <meta
-          name="description"
-          content={siteDescription}
-        />
+        <meta name="description" content={siteDescription} />
       </Helmet>
 
       <Layout>
@@ -46,15 +43,17 @@ function Home(props) {
   );
 }
 
-export default props => <StaticQuery 
-  query={graphql`
-    query {
-      markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
-        frontmatter {
-          siteDescription
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        markdownRemark(frontmatter: { type: { eq: "start-page" } }) {
+          frontmatter {
+            siteDescription
+          }
         }
       }
-    }
-  `}
-  render={(data) => <Home data={data} {...props} />}
-/>;
+    `}
+    render={data => <Home data={data} {...props} />}
+  />
+);
