@@ -1,11 +1,10 @@
-import React, { useEffect, useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
 import { device } from '../../../utils/device';
 import BackgroundVideoPlayer from './BackgroundVideoPlayer';
 import backgroundImage from './assets/vfx.png';
-import { FullpageContext } from '../../../components/AppLayout';
 import { Markdown } from '../../../components/Text';
 
 const Layout = styled.div`
@@ -83,20 +82,6 @@ const Subheader = styled(Markdown)`
 `;
 
 function Presentation(props) {
-  const { api } = props;
-  const [value, setValue] = useContext(FullpageContext);
-
-  useEffect(
-    () => {
-      setValue(api);
-
-      return () => {
-        setValue(null);
-      };
-    },
-    [value]
-  );
-
   const {
     backgroundVideo,
     content,

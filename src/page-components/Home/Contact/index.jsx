@@ -6,6 +6,7 @@ import { device } from '../../../utils/device';
 import FacebookIcon from './assets/facebook.svg';
 import HomeIcon from './assets/home.svg';
 import PhoneIcon from './assets/phone.svg';
+import { navbarIds } from '../../../components/Navbar';
 
 const Layout = styled.div`
   padding: 6em 4em;
@@ -65,7 +66,7 @@ const IconSpacer = styled('span')`
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout id={navbarIds.contact}>
       <HeaderSection>
         <Text size={9} align="right">
           Contact

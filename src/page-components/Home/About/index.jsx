@@ -6,6 +6,7 @@ import TeamSlider from './TeamSlider';
 import { device } from '../../../utils/device';
 import Text, { withTextStyle } from '../../../components/Text';
 import { StaticQuery, graphql } from 'gatsby';
+import { navbarIds } from '../../../components/Navbar';
 
 const Background = styled.div`
   position: relative;
@@ -88,7 +89,7 @@ function About(props) {
     teamMembers,
   } = props.data.markdownRemark.frontmatter.whoAreWe;
   return (
-    <Background backgroundImage={backgroundImage}>
+    <Background id={navbarIds.about} backgroundImage={backgroundImage}>
       <Layout>
         <TextLayout>
           <Text size={9}>{title}</Text>

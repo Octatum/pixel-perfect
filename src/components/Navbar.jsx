@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { device } from '../utils/device';
 import Link from './Link';
-import { FullpageContext } from './AppLayout';
 
 const Navsection = styled.nav`
   position: fixed;
@@ -118,13 +117,9 @@ export const navbarIds = {
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
-  const [fullpageApi] = useContext(FullpageContext);
 
-  const moveToSection = section => {
+  const moveToSection = () => {
     setNavOpen(false);
-    if (!fullpageApi) return;
-
-    fullpageApi.moveTo(section);
   };
 
   return (
