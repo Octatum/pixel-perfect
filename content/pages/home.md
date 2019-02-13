@@ -1,9 +1,11 @@
 ---
-title: Our services
 type: start-page
-siteDescription: Pixel Perfect VFX is a visual effects studio and training center based in Monterrey, Mexico.
+title: Our services
+siteDescription: >-
+  Pixel Perfect VFX is a visual effects studio and training center based in
+  Monterrey, Mexico.
 demoReel:
-  backgroundVideo: /uploads/demoreel_webcut7.mp4
+  backgroundVideo: /uploads/demoreel_webcut8.mp4
   content: |-
     # Perfecting
 
@@ -15,6 +17,7 @@ demoReel:
 
     [demo**reel**](https://vimeo.com/311582840)
 whoAreWe:
+  backgroundImage: ''
   content: >-
     **Pixel Perfect VFX** is a visual effects studio and training center based
     in **Monterrey, Mexico.** 
@@ -23,31 +26,30 @@ whoAreWe:
     This company was born by the idea of perfecting the industry in Monterrey,
     our mission is to deliver the _highest quality_ product in the north of
     Mexico and eventually the whole country.
-  title: Who are we?
-  backgroundImage: ""
   teamMembers:
-    - name: 'Rene Allegretti'
-      role: 'Co-founder'
-      image: '/uploads/Rene.png'
+    - image: /uploads/Rene.png
       imdb: 'https://www.imdb.com/name/nm5727065/'
       linkedin: 'https://www.linkedin.com/in/rene-allegretti-4269b546/'
-    - name: 'Edén Muñoz'
-      role: 'Co-founder'
-      image: '/uploads/eden.png'
+      name: Rene Allegretti
+      role: Co-founder
+    - image: /uploads/eden.png
       imdb: 'https://www.imdb.com/name/nm6097371/'
       linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/'
-    - name: 'Eduardo Parra'
-      role: 'Visual Effects Executive Producer'
-      image: '/uploads/eduardo.jpg'
+      name: Edén Muñoz
+      role: Co-founder
+    - image: /uploads/eduardo.jpg
       linkedin: 'https://www.linkedin.com/in/edparrao/'
-    - name: 'Ricardo Santillana'
-      role: 'CG Generalist'
-      image: '/uploads/Rikcy.png'
+      name: Eduardo Parra
+      role: Visual Effects Executive Producer
+    - image: /uploads/Rikcy.png
       linkedin: 'https://www.linkedin.com/in/rsantillana/'
-    - name: 'Ana Luisa López Segovia'
-      role: 'Project Manager, CG Generalist'
-      image: '/uploads/Ana.png'
+      name: Ricardo Santillana
+      role: CG Generalist
+    - image: /uploads/Ana.png
       linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
+      name: Ana Luisa López Segovia
+      role: 'Project Manager, CG Generalist'
+  title: Who are we?
 services:
   content: ''
   initialSlide:
