@@ -172,7 +172,7 @@ const CoursePresentation = props => {
   );
 };
 
-CoursePresentation.proptypes = {
+CoursePresentation.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   requirements: PropTypes.string.isRequired,
