@@ -1,6 +1,6 @@
 const path = require("path");
 
-function createRouteFromString(string) {
+function cleanString(string) {
   return string.replace(' ', '_').toLowerCase().replace(/\W/g, '');
 }
 
@@ -20,8 +20,8 @@ exports.sourceNodes = ({ actions, getNodes }) => {
       const nextProjectIndex = (index + 1) % projectsLength;
       const previousProjectNode = projectNodes[previousProjectIndex];
       const nextProjectNode = projectNodes[nextProjectIndex];
-      const previousProjectRoute = createRouteFromString(previousProjectNode.frontmatter.title);
-      const nextProjectRoute = createRouteFromString(nextProjectNode.frontmatter.title);
+      const previousProjectRoute = cleanString(previousProjectNode.frontmatter.title);
+      const nextProjectRoute = cleanString(nextProjectNode.frontmatter.title);
 
       createNodeField({
         node,
@@ -77,7 +77,7 @@ exports.createPages = ({ actions, graphql }) => {
     const { courses, projects } = result.data;
     
     projects && projects.edges.forEach(({ node }) => {
-      const route = createRouteFromString(node.frontmatter.title);
+      const route = cleanString(node.frontmatter.title);
 
       createPage({
         path: `/project/${route}`,
@@ -89,7 +89,7 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     courses && courses.edges.forEach(({ node }) => {
-      const route = createRouteFromString(node.frontmatter.title);
+      const route = cleanString(node.frontmatter.title);
 
       createPage({
         path: `/course/${route}`,

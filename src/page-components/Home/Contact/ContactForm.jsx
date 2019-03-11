@@ -64,9 +64,9 @@ const ContactForm = () => {
           alert('Your message has been sent');
         } catch (exception) {
           setFormError(true);
+        } finally {
+          actions.setSubmitting(false);
         }
-
-        actions.setSubmitting(false);
       }}
       render={props => (
         <Form
