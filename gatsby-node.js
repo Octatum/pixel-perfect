@@ -7,55 +7,16 @@ function cleanString(string) {
     .replace(/\W/g, '');
 }
 
-exports.sourceNodes = ({ actions, getNodes }) => {
-  const { createNodeField } = actions;
-  const projectNodes = getNodes().filter(
-    node =>
-      node.internal.type === 'MarkdownRemark' &&
-      node.frontmatter.type === 'project'
-  );
-  const projectsLength = projectNodes.length;
+function createRouteFields({ createNodeField, nodes }) {
+  const nodesLength = nodes.length;
 
-  const courseNodes = getNodes().filter(
-    node =>
-      node.internal.type === 'MarkdownRemark' &&
-      node.frontmatter.type === 'courses'
-  );
-  const coursesLength = courseNodes.length;
-
-  projectNodes
+  nodes
     .sort((nodeA, nodeB) => nodeA.index - nodeB.index)
     .forEach((node, index) => {
-      const previousProjectIndex =
-        (index + projectsLength - 1) % projectsLength;
-      const nextProjectIndex = (index + 1) % projectsLength;
-      const previousProjectNode = projectNodes[previousProjectIndex];
-      const nextProjectNode = projectNodes[nextProjectIndex];
-      const previousProjectRoute = cleanString(
-        previousProjectNode.frontmatter.title
-      );
-      const nextProjectRoute = cleanString(nextProjectNode.frontmatter.title);
-
-      createNodeField({
-        node,
-        name: 'previousProjectRoute',
-        value: previousProjectRoute,
-      });
-
-      createNodeField({
-        node,
-        name: 'nextProjectRoute',
-        value: nextProjectRoute,
-      });
-    });
-
-  courseNodes
-    .sort((nodeA, nodeB) => nodeA.index - nodeB.index)
-    .forEach((node, index) => {
-      const previousIndex = (index + coursesLength - 1) % coursesLength;
-      const nextIndex = (index + 1) % coursesLength;
-      const previousNode = courseNodes[previousIndex];
-      const nextNode = courseNodes[nextIndex];
+      const previousIndex = (index + nodesLength - 1) % nodesLength;
+      const nextIndex = (index + 1) % nodesLength;
+      const previousNode = nodes[previousIndex];
+      const nextNode = nodes[nextIndex];
       const previousRoute = cleanString(previousNode.frontmatter.title);
       const nextRoute = cleanString(nextNode.frontmatter.title);
 
@@ -71,6 +32,24 @@ exports.sourceNodes = ({ actions, getNodes }) => {
         value: nextRoute,
       });
     });
+}
+
+exports.sourceNodes = ({ actions, getNodes }) => {
+  const { createNodeField } = actions;
+  const projectNodes = getNodes().filter(
+    node =>
+      node.internal.type === 'MarkdownRemark' &&
+      node.frontmatter.type === 'project'
+  );
+
+  const courseNodes = getNodes().filter(
+    node =>
+      node.internal.type === 'MarkdownRemark' &&
+      node.frontmatter.type === 'courses'
+  );
+
+  createRouteFields({ nodes: projectNodes, createNodeField });
+  createRouteFields({ nodes: courseNodes, createNodeField });
 };
 
 exports.createPages = ({ actions, graphql }) => {

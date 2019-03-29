@@ -24,8 +24,8 @@ export const pageQuery = graphql`
       frontmatter: { type: { eq: "project" }, title: { eq: $title } }
     ) {
       fields {
-        previousProjectRoute
-        nextProjectRoute
+        previousRoute
+        nextRoute
       }
       frontmatter {
         title

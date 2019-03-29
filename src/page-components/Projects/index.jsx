@@ -37,8 +37,8 @@ const ProjectContainer = props => {
     images = [],
     activities = '',
     beforeAfterImages = [],
-    previousProjectRoute = '',
-    nextProjectRoute = '',
+    previousRoute = '',
+    nextRoute = '',
   } = props.data;
 
   return (
@@ -56,8 +56,8 @@ const ProjectContainer = props => {
       </Helmet>
       <Banner src={banner} />
       <NavigationButtons
-        previousProjectRoute={previousProjectRoute}
-        nextProjectRoute={nextProjectRoute}
+        previousProjectRoute={previousRoute}
+        nextProjectRoute={nextRoute}
       />
       <MovieData
         data={{
