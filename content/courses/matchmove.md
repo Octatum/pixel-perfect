@@ -1,5 +1,5 @@
 ---
-type: course
+type: courses
 title: Matchmove
 requirements: Basic knowledge of 3D software (preferably Autodesk Maya)
 description: >-
@@ -13,4 +13,3 @@ image: /uploads/matchmove_course.jpg
 programFile: /uploads/matchmove.pdf
 index: 1
 ---
-

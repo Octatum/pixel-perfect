@@ -13,7 +13,7 @@ const SliderLayout = styled.div`
 `;
 
 const settings = {
-  dots: false,
+  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 4,
@@ -32,7 +32,6 @@ const settings = {
       breakpoint: numberValues.tablet,
       settings: {
         slidesToShow: 2,
-        dots: false,
         arrows: true,
       },
     },
