@@ -9,7 +9,7 @@ learnings: >-
   In this course you’ll learn to use camera and object tracking techniques, and
   the interaction between the 3D tracking and modelling softwares. You’ll also
   be introduced to texturing, lighting and rendering techniques.
-image: /uploads/servicesblank.jpg
+image: /uploads/matchmove_course.jpg
 programFile: /uploads/matchmove.pdf
 index: 1
 ---
