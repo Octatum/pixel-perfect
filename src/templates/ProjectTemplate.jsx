@@ -8,7 +8,6 @@ const ProjectTemplate = props => {
     ...props.data.markdownRemark.frontmatter,
     ...props.data.markdownRemark.fields,
   };
-  console.log(data);
 
   return (
     <AppLayout>
