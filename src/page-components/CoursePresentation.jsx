@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import GatsbyLink from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 import slideArrow from './assets/arrow.svg';
 import Text from '../components/Text';
@@ -10,12 +11,13 @@ import downloadButton from './assets/download.svg';
 import { device } from '../utils/device';
 import backArrow from './assets/back-arrow.svg';
 import { navbarIds } from '../components/Navbar';
+import getCurrentLocation from '../utils/getCurrentLocation';
 
 const BackgroundImageContainer = styled('div')`
   --padding: 3.5rem;
   --padding-vertical: 2rem;
 
-  background-image: url('https://s3-alpha.figma.com/img/6994/6c48/03ffef8204480aedbeb638f080734aff');
+  background-image: url(${({ image }) => image});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -102,10 +104,24 @@ const CoursePresentation = props => {
     requirements,
     learnings,
     programFile,
+    image,
+    previousRoute,
+    nextRoute,
   } = props.data;
 
   return (
-    <BackgroundImageContainer>
+    <BackgroundImageContainer image={image}>
+      <Helmet>
+        <title>{title}</title>
+        <meta property="og:url" content={`${getCurrentLocation()}`} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`${title} - A project by Pixel Perfect`}
+        />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+      </Helmet>
       <Container data-testid="container">
         <GridCell area="back-arrow" align="center" justify="start">
           <GatsbyLink to={`/#${navbarIds.services}`}>
@@ -114,10 +130,10 @@ const CoursePresentation = props => {
         </GridCell>
         <GridCell area="arrows" align="center" justify="flex-end">
           <Text size={2}>
-            <GatsbyLink to="">
+            <GatsbyLink to={`/course/${previousRoute}`}>
               <Img height="1.5rem" src={slideArrow} />
             </GatsbyLink>
-            <RightSlideArrow as={GatsbyLink} to="">
+            <RightSlideArrow as={GatsbyLink} to={`/course/${nextRoute}`}>
               <Img height="1.5rem" src={slideArrow} />
             </RightSlideArrow>
           </Text>
