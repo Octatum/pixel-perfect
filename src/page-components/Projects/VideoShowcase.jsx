@@ -24,6 +24,15 @@ const Iframe = styled('iframe')`
 
 const VideoShowcase = props => {
   const { id, type } = props.videoData;
+  let videoUrl = '';
+
+  if (type === 'vimeo') {
+    videoUrl = `//player.vimeo.com/video/${id}`;
+  } else if (type === 'facebook') {
+    videoUrl = `https://www.facebook.com/plugins/video.php?href=${id}`;
+  } else {
+    videoUrl = `//www.youtube.com/embed/${id}`;
+  }
 
   return type === 'sin video' ? (
     <div />
@@ -31,11 +40,7 @@ const VideoShowcase = props => {
     <Layout>
       <Iframe
         title="videoPlayer"
-        src={
-          type === 'vimeo'
-            ? `//player.vimeo.com/video/${id}`
-            : `//www.youtube.com/embed/${id}`
-        }
+        src={videoUrl}
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen

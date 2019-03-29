@@ -8,6 +8,7 @@ const ProjectTemplate = props => {
     ...props.data.markdownRemark.frontmatter,
     ...props.data.markdownRemark.fields,
   };
+  console.log(data);
 
   return (
     <AppLayout>
@@ -24,8 +25,8 @@ export const pageQuery = graphql`
       frontmatter: { type: { eq: "project" }, title: { eq: $title } }
     ) {
       fields {
-        previousProjectRoute
-        nextProjectRoute
+        previousRoute
+        nextRoute
       }
       frontmatter {
         title
