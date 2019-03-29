@@ -114,7 +114,13 @@ services:
         seeking to start a career in VFX industry.
 
 
-        [Check our courses here!](https://pixelperfectvfx.com/course/matchmove)
+        Right now we offer the following courses:
+
+
+        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
+
+
+        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
       image: /uploads/training-service.jpg
       name: Training
   title: Our services
