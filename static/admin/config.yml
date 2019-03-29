@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  branch: dev
 
 media_folder: 'static/uploads'
 public_folder: '/uploads'
@@ -346,6 +345,7 @@ collections:
                 required: false
                 widget: 'list'
                 fields:
+
                   - { label: 'Nombre', name: 'name', widget: 'string' }
                   - {
                       label: 'Contenido',

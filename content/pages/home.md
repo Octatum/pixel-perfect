@@ -51,7 +51,7 @@ whoAreWe:
       role: 'Project Manager, CG Generalist'
   title: Who are we?
 services:
-  content: ''
+  content: .
   initialSlide:
     image: /uploads/main-service.jpg
     lowerText: >-
@@ -112,6 +112,15 @@ services:
     - content: >-
         We provide training courses in Rotoscoping and Matchmove for those
         seeking to start a career in VFX industry.
+
+
+        Right now we offer the following courses:
+
+
+        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
+
+
+        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
       image: /uploads/training-service.jpg
       name: Training
   title: Our services
