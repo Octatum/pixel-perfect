@@ -1,49 +1,35 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React, { useState } from 'react';
+import Carousel from 'react-alice-carousel';
 import styled from 'styled-components';
+
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 import { numberValues } from '../../../utils/device';
 import MemberPicture from './MemberPicture';
 
 const SliderLayout = styled.div`
+  height: calc((50vw - 8em) / 4);
+  margin: auto 0;
+
   .slick-dots li button::before,
   .slick-dots li.slick-active button::before {
     color: white;
   }
-`;
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  autoplaySpeed: 2000,
-  autoplay: true,
-  responsive: [
-    {
-      breakpoint: numberValues.laptop,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: numberValues.tablet,
-      settings: {
-        slidesToShow: 2,
-        arrows: true,
-      },
-    },
-  ],
-};
+  img {
+  }
+`;
 
 function SimpleSlider(props) {
   const { teamMembers } = props;
 
   return (
     <SliderLayout>
-      <Slider {...settings}>
+      <Carousel
+        responsive={{ 0: { items: 2 }, 767: { items: 3 }, 1023: { items: 4 } }}
+        duration={400}
+        dotsDisabled={true}
+      >
         {teamMembers.map(member => (
           <MemberPicture
             key={member.name + member.role}
@@ -54,7 +40,7 @@ function SimpleSlider(props) {
             imdb={member.imdb}
           />
         ))}
-      </Slider>
+      </Carousel>
     </SliderLayout>
   );
 }
