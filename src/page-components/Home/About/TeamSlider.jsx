@@ -16,7 +16,30 @@ const SliderLayout = styled.div`
     color: white;
   }
 
-  img {
+  .alice-carousel__prev-btn,
+  .alice-carousel__next-btn {
+    width: initial;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .alice-carousel__prev-btn {
+    text-align: initial;
+    left: -2.5em;
+  }
+
+  .alice-carousel__next-btn {
+    text-align: initial;
+    right: -2.5em;
+  }
+
+  .alice-carousel__prev-btn [data-area]::after {
+    content: '<';
+  }
+
+  .alice-carousel__next-btn [data-area]::after {
+    content: '>';
   }
 `;
 
