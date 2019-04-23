@@ -16,6 +16,10 @@ videoData:
   id: 'https://www.facebook.com/AtunMarinaAzul/videos/613163875777167/'
   type: facebook
 activities: ''
-beforeAfterImages: []
+beforeAfterImages:
+  - after: /uploads/marinaazulafter-1.jpg
+    before: /uploads/marinaazulbefore-1.jpg
+  - after: /uploads/marinaazulafter-3.jpg
+    before: /uploads/marinaazulbefore-3.jpg
 ---
 
