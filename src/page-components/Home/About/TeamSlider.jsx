@@ -8,7 +8,6 @@ import { numberValues } from '../../../utils/device';
 import MemberPicture from './MemberPicture';
 
 const SliderLayout = styled.div`
-  height: calc((50vw - 8em) / 4);
   margin: auto 0;
 
   .slick-dots li button::before,
