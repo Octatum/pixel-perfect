@@ -9,7 +9,7 @@ dimensions:
 banner: /uploads/marinaazul-banner.jpg
 genre: ''
 studio: ''
-releaseDate: ''
+releaseDate: '2019'
 images: []
 plot: ''
 videoData:

@@ -52,6 +52,7 @@
     "jest": "^24.4.0",
     "jest-dom": "^2.1.1",
     "prettier": "^1.16.4",
+    "react-alice-carousel": "^1.13.11",
     "react-test-renderer": "^16.8.4",
     "react-testing-library": "^5.9.0"
   },

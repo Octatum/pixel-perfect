@@ -4,8 +4,10 @@ import { device } from '../../../utils/device';
 import Text from '../../../components/Text';
 
 const Layout = styled.div`
+  ${'' /* display: inline-block; */}
   position: relative;
   height: calc((50vw - 8em) / 4);
+  ${'' /* width: calc((50vw - 8em) / 4); */}
   background: url(${props => (props.picture ? props.picture : null)}) no-repeat
     center center;
   background-size: cover;
