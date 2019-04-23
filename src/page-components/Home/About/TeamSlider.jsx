@@ -34,12 +34,22 @@ const SliderLayout = styled.div`
     right: -2.5em;
   }
 
+  .alice-carousel__prev-btn [data-area]::after,
+  .alice-carousel__next-btn [data-area]::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 900;
+    color: white;
+    text-decoration: inherit;
+  }
+
   .alice-carousel__prev-btn [data-area]::after {
-    content: '<';
+    content: '\f053';
   }
 
   .alice-carousel__next-btn [data-area]::after {
-    content: '>';
+    content: '\f054';
   }
 `;
 
