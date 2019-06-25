@@ -58,19 +58,6 @@ collections:
               options: ['1', '2'],
             }
 
-  - label: 'Miembros de equipo'
-    name: 'teamMembers'
-    folder: 'content/team-members'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - { label: 'Nombre', name: 'title', widget: 'string' }
-      - { label: 'Tipo', name: 'type', widget: 'hidden', default: 'teamMember' }
-      - { label: 'Rol', name: 'role', widget: 'string' }
-      - { label: 'Linkedin', name: 'linkedin', widget: 'string' }
-      - { label: 'IMDB', name: 'imdb', widget: 'string', required: false }
-      - { label: 'Imagen', name: 'image', widget: 'image' }
-
   - name: 'ourStaff'
     label: Our staff projects
     folder: 'content/staff-projects'
@@ -346,7 +333,6 @@ collections:
                 required: false
                 widget: 'list'
                 fields:
-
                   - { label: 'Nombre', name: 'name', widget: 'string' }
                   - {
                       label: 'Contenido',
