@@ -33,10 +33,10 @@ function Home(props) {
         <About />
         <Services />
         <FeaturedIn />
-        <OurStaff />
+        {/* <OurStaff /> */}
         <OurStudents />
-        <OurProjects />
-        <OurClients />
+        {/* <OurProjects /> */}
+        {/* <OurClients /> */}
         <Contact />
       </Layout>
     </AppLayout>
