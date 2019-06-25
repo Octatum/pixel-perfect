@@ -37,18 +37,6 @@ whoAreWe:
       linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/'
       name: Edén Muñoz
       role: Co-founder
-    - image: /uploads/eduardo.jpg
-      linkedin: 'https://www.linkedin.com/in/edparrao/'
-      name: Eduardo Parra
-      role: Visual Effects Executive Producer
-    - image: /uploads/Rikcy.png
-      linkedin: 'https://www.linkedin.com/in/rsantillana/'
-      name: Ricardo Santillana
-      role: CG Generalist
-    - image: /uploads/Ana.png
-      linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
-      name: Ana Luisa López Segovia
-      role: 'Project Manager, CG Generalist'
   title: Who are we?
 services:
   content: .
