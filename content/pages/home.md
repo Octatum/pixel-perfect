@@ -37,6 +37,10 @@ whoAreWe:
       linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/'
       name: Edén Muñoz
       role: Co-founder
+    - image: /uploads/blankmember.jpg
+      name: '-'
+    - image: /uploads/blankmember.jpg
+      name: '-'
   title: Who are we?
 services:
   content: .
