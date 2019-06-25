@@ -62,6 +62,20 @@ services:
     upperText: ''
   serviceList:
     - content: >-
+        We provide training courses in Rotoscoping and Matchmove for those
+        seeking to start a career in VFX industry.
+
+
+        Right now we offer the following courses:
+
+
+        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
+
+
+        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
+      image: /uploads/training-service.jpg
+      name: Training
+    - content: >-
         We specialize on combining multiple image sequences that were filmed
         separately or created digitally to achieve a seamless final result with
         film industry quality.
@@ -109,20 +123,6 @@ services:
         further stages in post-production.
       image: /uploads/3dtrack-service.jpg
       name: 3D Tracking
-    - content: >-
-        We provide training courses in Rotoscoping and Matchmove for those
-        seeking to start a career in VFX industry.
-
-
-        Right now we offer the following courses:
-
-
-        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
-
-
-        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
-      image: /uploads/training-service.jpg
-      name: Training
   title: Our services
 featuredInContent: Latest updates.
 ourStaffContent: These are some projects our staff has worked on.
