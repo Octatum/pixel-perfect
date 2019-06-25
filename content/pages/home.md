@@ -118,7 +118,7 @@ services:
   title: Our services
 featuredInContent: Latest updates.
 ourStaffContent: These are some projects our staff has worked on.
-ourStudentsContent: And these are some projects our former students have worked on.
+ourStudentsContent: These are some projects our former students have worked on.
 ourProjectsContent: Take a look at our projects.
 ---
 
