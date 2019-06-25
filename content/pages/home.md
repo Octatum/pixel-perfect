@@ -37,18 +37,6 @@ whoAreWe:
       linkedin: 'https://www.linkedin.com/in/eden-mu%C3%B1oz-58496b36/'
       name: Edén Muñoz
       role: Co-founder
-    - image: /uploads/eduardo.jpg
-      linkedin: 'https://www.linkedin.com/in/edparrao/'
-      name: Eduardo Parra
-      role: Visual Effects Executive Producer
-    - image: /uploads/Rikcy.png
-      linkedin: 'https://www.linkedin.com/in/rsantillana/'
-      name: Ricardo Santillana
-      role: CG Generalist
-    - image: /uploads/Ana.png
-      linkedin: 'https://www.linkedin.com/in/ana-luisa-lopez-segovia/'
-      name: Ana Luisa López Segovia
-      role: 'Project Manager, CG Generalist'
   title: Who are we?
 services:
   content: .
@@ -61,6 +49,20 @@ services:
     title: What we do
     upperText: ''
   serviceList:
+    - content: >-
+        We provide training courses in Rotoscoping and Matchmove for those
+        seeking to start a career in VFX industry.
+
+
+        Right now we offer the following courses:
+
+
+        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
+
+
+        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
+      image: /uploads/training-service.jpg
+      name: Training
     - content: >-
         We specialize on combining multiple image sequences that were filmed
         separately or created digitally to achieve a seamless final result with
@@ -109,20 +111,6 @@ services:
         further stages in post-production.
       image: /uploads/3dtrack-service.jpg
       name: 3D Tracking
-    - content: >-
-        We provide training courses in Rotoscoping and Matchmove for those
-        seeking to start a career in VFX industry.
-
-
-        Right now we offer the following courses:
-
-
-        [Matchmove](https://pixelperfectvfx.com/course/matchmove)
-
-
-        [Roto Painting](https://pixelperfectvfx.com/course/roto_paint)
-      image: /uploads/training-service.jpg
-      name: Training
   title: Our services
 featuredInContent: Latest updates.
 ourStaffContent: These are some projects our staff has worked on.
