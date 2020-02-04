@@ -80,21 +80,9 @@ const Contact = () => {
       </ContactSection>
       <SocialsSection>
         <Text align="right">
-          Lago Chapala #287, Monterrey, N.L.{' '}
-          <IconSpacer>
-            <Icon size={2} as="img" src={HomeIcon} />
-          </IconSpacer>
-        </Text>
-        <Text align="right">
           8123541330{' '}
           <IconSpacer>
             <Icon size={2} as="img" src={PhoneIcon} />
-          </IconSpacer>
-        </Text>
-        <Text align="right">
-          /Pixelperfectvfx{' '}
-          <IconSpacer>
-            <Icon size={2} as="img" src={FacebookIcon} />
           </IconSpacer>
         </Text>
       </SocialsSection>
